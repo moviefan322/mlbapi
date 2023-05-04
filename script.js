@@ -1,3 +1,7 @@
+import teamKeys from "./teamKeys.js";
+
+const keys = teamKeys;
+
 const getTodaysGames = async () => {
   const response = await fetch(
     `https://statsapi.mlb.com/api/v1/schedule/games/?sportId=1`
@@ -13,28 +17,38 @@ const displayTodaysGames = async () => {
   const gameContainer = document.querySelector("#main");
 
   gameData.forEach((game) => {
+    const awayTeam = game.teams.away.team.name;
+    const homeTeam = game.teams.home.team.name;
     const newDiv = document.createElement("div");
     newDiv.classList.add("card");
     newDiv.innerHTML = `
-    <h3>${game.teams.away.team.name} (${game.teams.away.leagueRecord.wins}-${
+    <div class="game">
+    <h3>${keys[awayTeam].abbreviation} (${game.teams.away.leagueRecord.wins}-${
       game.teams.away.leagueRecord.losses
-    }) @ ${game.teams.home.team.name}(${game.teams.home.leagueRecord.wins}-${
+    }) @ ${keys[homeTeam].abbreviation}(${game.teams.home.leagueRecord.wins}-${
       game.teams.home.leagueRecord.losses
     })</h3>
+    <div class="score">
+    <img class="icon" src="./assets/images/logos/${
+      keys[awayTeam].abbreviation
+    }.png" alt="" />
     <h3>${
-      game.status.abstractGameCode === "L" || "F"
+      game.status.abstractGameCode === "L" ||
+      game.status.abstractGameCode === "F"
         ? `${game.teams.away.score}:${game.teams.home.score}`
         : `${formatDate(game.gameDate)}`
     }</h3>
+    <img class="icon" src="./assets/images/logos/${
+      keys[homeTeam].abbreviation
+    }.png" alt="" />
+    </div>
     <h4>${
       game.status.abstractGameCode === "L"
         ? `LIVE`
         : game.status.abstractGameCode === "F"
         ? `FINAL`
-        : "{formatTime(game.gameDate)}"
-    }</h4>
-    <img class="icon" src="./assets/images/baseball.svg" alt="" />
-    <img class="icon" src="./assets/images/baseball.svg" alt="" />`;
+        : `${formatTime(game.gameDate)}`
+    }</h4></div>`;
     gameContainer.appendChild(newDiv);
   });
 };
