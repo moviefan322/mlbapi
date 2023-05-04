@@ -10,18 +10,24 @@ body {
 
 .card-container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  width: 60vw;
+  width: 100%;
 }
 
 .card {
-  border: 2px red solid;
+  display: flex;
+  flex-direction: column;
+  background-color: slategrey;
+  border: 2px rgba(145, 251, 189, 0.723) dashed;
   align-items: center;
   text-align: center;
   margin: auto;
   margin: 1rem;
-  width: 250px;
+  width: 500px;
   height: 150px;
+  justify-content: center;
+  padding: 0.5rem;
 }
 
 .icon {
@@ -30,9 +36,10 @@ body {
 }
 
 .score {
-  margin-top: 1rem;
+  margin: 0.5rem;
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .bottom {

@@ -32,10 +32,9 @@ const displayTodaysGames = async () => {
     const newDiv = document.createElement("div");
     newDiv.classList.add("card");
     newDiv.innerHTML = `
-    <div class="game">
     <h3>${keys[awayTeam].abbreviation} (${game.teams.away.leagueRecord.wins}-${
       game.teams.away.leagueRecord.losses
-    }) @ ${keys[homeTeam].abbreviation}(${game.teams.home.leagueRecord.wins}-${
+    }) @ ${keys[homeTeam].abbreviation} (${game.teams.home.leagueRecord.wins}-${
       game.teams.home.leagueRecord.losses
     })</h3>
     <div class="score">
@@ -78,7 +77,7 @@ const displayTodaysGames = async () => {
         : game.status.abstractGameCode === "F"
         ? `FINAL`
         : `${singleGame.gameData.probablePitchers.home.fullName} vs. ${singleGame.gameData.probablePitchers.away.fullName}`
-    }</h4></div>`;
+    }</h4>`;
     gameContainer.appendChild(newDiv);
   });
 };
