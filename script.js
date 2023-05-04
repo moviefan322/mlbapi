@@ -10,13 +10,23 @@ const getTodaysGames = async () => {
   return data;
 };
 
+const getSingleGameData = async (gamePk) => {
+  const response = await fetch(
+    `https://statsapi.mlb.com/api/v1.1/game/${gamePk}/feed/live`
+  );
+  const data = await response.json();
+  return data;
+};
+
 const displayTodaysGames = async () => {
   const todaysGames = await getTodaysGames();
   const gameData = todaysGames.dates[0].games;
   console.log(gameData);
   const gameContainer = document.querySelector("#main");
 
-  gameData.forEach((game) => {
+  gameData.forEach(async (game) => {
+    const singleGame = await getSingleGameData(game.gamePk);
+    console.log(singleGame);
     const awayTeam = game.teams.away.team.name;
     const homeTeam = game.teams.home.team.name;
     const newDiv = document.createElement("div");
@@ -32,22 +42,42 @@ const displayTodaysGames = async () => {
     <img class="icon" src="./assets/images/logos/${
       keys[awayTeam].abbreviation
     }.png" alt="" />
-    <h3>${
+    <div class="data"><h3>${
       game.status.abstractGameCode === "L" ||
       game.status.abstractGameCode === "F"
         ? `${game.teams.away.score}:${game.teams.home.score}`
-        : `${formatDate(game.gameDate)}`
+        : `${formatTime(game.gameDate)}`
     }</h3>
+    <br>
+    <h6>${
+      game.status.abstractGameCode === "L"
+        ? "P: " + singleGame.liveData.plays.currentPlay.matchup.pitcher.fullName
+        : ""
+    }${
+      game.status.abstractGameCode === "F"
+        ? "W: " + singleGame.liveData.decisions.winner.fullName
+        : ""
+    }</h6>
+    <h6>${
+      game.status.abstractGameCode === "L"
+        ? "B: " + singleGame.liveData.plays.currentPlay.matchup.batter.fullName
+        : ""
+    }${
+      game.status.abstractGameCode === "F"
+        ? "L: " + singleGame.liveData.decisions.loser.fullName
+        : ""
+    }</h6>
+    </div>
     <img class="icon" src="./assets/images/logos/${
       keys[homeTeam].abbreviation
     }.png" alt="" />
     </div>
-    <h4>${
+    <h4 class="bottom">${
       game.status.abstractGameCode === "L"
-        ? `LIVE`
+        ? `${singleGame.liveData.linescore.inningHalf} ${singleGame.liveData.linescore.currentInning}`
         : game.status.abstractGameCode === "F"
         ? `FINAL`
-        : `${formatTime(game.gameDate)}`
+        : `${singleGame.gameData.probablePitchers.home.fullName} vs. ${singleGame.gameData.probablePitchers.away.fullName}`
     }</h4></div>`;
     gameContainer.appendChild(newDiv);
   });

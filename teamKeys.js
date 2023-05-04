@@ -1,18 +1,15 @@
 const teamKeys = {
   "Chicago Cubs": {
     abbreviation: "CHC",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Chicago_Cubs_logo.svg/1200px-Chicago_Cubs_logo.svg.png",
+    image: "./assets/logos/CHC.png",
   },
   "Cincinnati Reds": {
     abbreviation: "CIN",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Cincinnati_Reds_Logo.svg/1200px-Cincinnati_Reds_Logo.svg.png",
+    image: "./assets/logos/CIN.png",
   },
   "Milwaukee Brewers": {
     abbreviation: "MIL",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Milwaukee_Brewers_Logo.svg/1200px-Milwaukee_Brewers_Logo.svg.png",
+    image: "./assets/logos/MIL.png",
   },
   "Pittsburgh Pirates": {
     abbreviation: "PIT",
@@ -81,8 +78,7 @@ const teamKeys = {
   },
   "Miami Marlins": {
     abbreviation: "MIA",
-    image:
-      "https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Marlins_team_logo.svg/1200px-Marlins_team_logo.svg.png",
+    image: "https://i.imgur.com/37QjW98.png",
   },
   "New York Mets": {
     abbreviation: "NYM",
@@ -97,7 +93,7 @@ const teamKeys = {
   "Washington Nationals": {
     abbreviation: "WSH",
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Washington_Nationals_logo.svg/1200px-Washington_Nationals_logo.svg.png",
+      "https://cdn.freebiesupply.com/images/large/2x/washington-nationals-logo-transparent.png",
   },
   "Chicago White Sox": {
     abbreviation: "CWS",
