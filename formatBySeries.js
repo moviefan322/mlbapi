@@ -29,7 +29,6 @@ const getFullSchedule = async () => {
     }
   });
 
-  console.log(teams);
   return teams;
 };
 
@@ -56,7 +55,10 @@ const formatBySeries = async () => {
     }
   }
 
+  console.log(teamSchedule);
   return teamSchedule;
 };
 
-module_exports = formatBySeries;
+formatBySeries();
+
+export default formatBySeries;

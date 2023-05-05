@@ -39,14 +39,14 @@ const displayTodaysGames = async () => {
     const newDiv = document.createElement("div");
     newDiv.classList.add("card");
     newDiv.innerHTML = `
-    <h3>${keys[awayTeam].abbreviation} (${game.teams.away.leagueRecord.wins}-${
+    <h3>${keys[awayTeam].abb} (${game.teams.away.leagueRecord.wins}-${
       game.teams.away.leagueRecord.losses
-    }) @ ${keys[homeTeam].abbreviation} (${game.teams.home.leagueRecord.wins}-${
+    }) @ ${keys[homeTeam].abb} (${game.teams.home.leagueRecord.wins}-${
       game.teams.home.leagueRecord.losses
     })</h3>
     <div class="score">
     <img class="icon" src="./assets/images/logos/${
-      keys[awayTeam].abbreviation
+      keys[awayTeam].abb
     }.png" alt="" />
     <div class="data"><h3>${
       game.status.abstractGameCode === "L" ||
@@ -75,7 +75,7 @@ const displayTodaysGames = async () => {
     }</h6>
     </div>
     <img class="icon" src="./assets/images/logos/${
-      keys[homeTeam].abbreviation
+      keys[homeTeam].abb
     }.png" alt="" />
     </div>
     <h4 class="bottom">${
