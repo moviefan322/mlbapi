@@ -18,15 +18,22 @@ const getSingleGameData = async (gamePk) => {
   return data;
 };
 
+const getFullSchedule = async () => {
+  const response = await fetch(
+    "https://statsapi.mlb.com/api/v1/schedule/games/?sportId=1&startDate=2019-03-28&endDate=2019-09-29"
+  );
+  const data = await response.json();
+  console.log(data);
+  return data;
+};
+
 const displayTodaysGames = async () => {
   const todaysGames = await getTodaysGames();
   const gameData = todaysGames.dates[0].games;
-  console.log(gameData);
   const gameContainer = document.querySelector("#main");
 
   gameData.forEach(async (game) => {
     const singleGame = await getSingleGameData(game.gamePk);
-    console.log(singleGame);
     const awayTeam = game.teams.away.team.name;
     const homeTeam = game.teams.home.team.name;
     const newDiv = document.createElement("div");
@@ -83,6 +90,7 @@ const displayTodaysGames = async () => {
 };
 
 displayTodaysGames();
+getFullSchedule();
 
 const formatDate = (date) => {
   const dateObj = new Date(date);
