@@ -76,7 +76,7 @@ const displayTodaysGames = async () => {
         ? `${singleGame.liveData.linescore.inningHalf} ${singleGame.liveData.linescore.currentInning}`
         : game.status.abstractGameCode === "F"
         ? `FINAL`
-        : `${singleGame.gameData.probablePitchers.home.fullName} vs. ${singleGame.gameData.probablePitchers.away.fullName}`
+        : `${singleGame.gameData.probablePitchers.away.fullName} vs. ${singleGame.gameData.probablePitchers.home.fullName}`
     }</h4>`;
     gameContainer.appendChild(newDiv);
   });
