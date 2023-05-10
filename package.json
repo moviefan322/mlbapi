@@ -4,7 +4,7 @@
   "description": "App to follow and bet on sports",
   "main": "server.js",
   "scripts": {
-    "test": "test",
+    "test": "jest",
     "start": "node server/server.js",
     "watch": "nodemon server/server.js",
     "client": "npm start --prefix client",
@@ -32,6 +32,8 @@
     "mongoose": "^7.1.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.22",
+    "supertest": "^6.3.3"
   }
 }

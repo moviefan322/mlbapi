@@ -24,6 +24,16 @@ app.use("/users", require("./routes/userRoutes"));
 
 app.use(errorHandler);
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server is running on port ${PORT} 🚀`.brightYellow.bold);
-});
+if (process.env.NODE_ENV !== "test") {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server is running on port ${PORT} 🚀`.brightYellow.bold);
+  });
+} else {
+  app.listen(3002, () => {
+    console.log(
+      `🚀 Server is running on port 3002 for testing 🚀`.brightYellow.bold
+    );
+  });
+}
+
+module.exports = { app };
