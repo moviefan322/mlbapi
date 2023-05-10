@@ -12,7 +12,6 @@ describe("registerUser", () => {
   afterAll(async () => {
     // close database connection after all tests complete
     await mongoose.connection.close();
-    app.close();
   }, 30000);
   beforeEach(async () => {
     await User.deleteMany();
@@ -40,4 +39,41 @@ describe("registerUser", () => {
     expect(user.accountBalance).toBe(100);
     expect(user.isAdmin).toBe(false);
   }, 10000);
+
+  it("should return an error if user already exists", async () => {
+    // create a user with same email
+    await User.create({
+      name: "Jane Doe",
+      email: "janedoe@example.com",
+      password: "password",
+      isAdmin: false,
+      accountBalance: 100,
+    });
+
+    // attempt to register with same email
+    const res = await request(app)
+      .post("/users")
+      .send({
+        name: "John Doe",
+        email: "janedoe@example.com",
+        password: "password",
+      })
+      .expect(400);
+
+    // assert response
+    expect(res.body.error).toBe("User already exists");
+  });
+
+  it("should return an error if required fields are missing", async () => {
+    const res = await request(app)
+      .post("/users")
+      .send({
+        name: "John Doe",
+        password: "password",
+      })
+      .expect(400);
+
+    // assert response
+    expect(res.body.error).toBe("Please fill out all fields");
+  });
 });
