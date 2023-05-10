@@ -61,7 +61,24 @@ const loginUser = asyncHandler(async (req, res) => {
     throw new Error("Please fill out all fields");
   }
 
-  res.send("success");
+  const user = await User.findOne({ email });
+  const checkPassword = await bcrypt.compare(password, user.password);
+
+  if (!user || !checkPassword) {
+    res.status(400);
+    throw new Error("Invalid email or password");
+  }
+
+  if (user && checkPassword) {
+    res.status(200);
+    res.json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      accountBalance: user.accountBalance,
+      isAdmin: user.isAdmin,
+    });
+  }
 });
 
 module.exports = {
