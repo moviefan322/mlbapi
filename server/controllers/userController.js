@@ -90,7 +90,22 @@ const generateToken = (id) => {
   });
 };
 
+// @desc get current user
+// @route GET /users/me
+// @access Private
+const getMe = asyncHandler(async (req, res) => {
+  const user = {
+    _id: req.user._id,
+    name: req.user.name,
+    email: req.user.email,
+    isAdmin: req.user.isAdmin,
+    accountBalance: req.user.accountBalance,
+  };
+  res.status(200).json(user);
+});
+
 module.exports = {
   registerUser,
   loginUser,
+  getMe,
 };
