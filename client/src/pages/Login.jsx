@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { login } from "../redux/actions/authActions";
+import { login } from "../features/auth/authSlice";
 import { toast } from "react-toastify";
 import { FaUser } from "react-icons/fa";
 import Spinner from "../components/Spinner";
