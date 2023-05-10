@@ -23,7 +23,6 @@ const renderTeamSchedule = async (id, abbr) => {
   const data = await formatBySeries();
   const schedule = data[id];
 
-
   const schedule04Container = document.querySelector("#schedule04");
   const row04 = document.createElement("tr");
   row04.innerHTML = `
@@ -71,8 +70,6 @@ const renderTeamSchedule = async (id, abbr) => {
     `;
     row04.appendChild(td);
   }
-
-
 
   const scheduleContainer = document.querySelector("#schedule05");
   const row = document.createElement("tr");
@@ -126,8 +123,12 @@ const renderTeamSchedule = async (id, abbr) => {
 const renderAllTeamSchedules = async () => {
   const promises = [];
 
-  for (let key in teamKeys) {
-    promises.push(renderTeamSchedule(teamKeys[key].id, teamKeys[key].abb));
+  const sortedTeams = Object.values(teamKeys).sort((a, b) =>
+    a.abb.localeCompare(b.abb)
+  );
+
+  for (let team of sortedTeams) {
+    promises.push(renderTeamSchedule(team.id, team.abb));
   }
 
   await Promise.all(promises);
