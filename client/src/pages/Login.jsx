@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { login } from "../redux/actions/authActions";
 import { toast } from "react-toastify";
 import { FaUser } from "react-icons/fa";
+import Spinner from "../components/Spinner";
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -9,6 +12,12 @@ function Login() {
   });
 
   const { email, password } = formData;
+
+  const dispatch = useDispatch();
+
+  const { user, isLoading, isScuccess, message } = useSelector(
+    (state) => state.auth
+  );
 
   const onChange = (e) => {
     setFormData((prev) => ({
@@ -20,8 +29,15 @@ function Login() {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    console.log("Submit");
+    const userData = {
+      email,
+      password,
+    };
+
+    dispatch(login(userData));
   };
+
+  if (isLoading) return <Spinner />;
 
   return (
     <>
