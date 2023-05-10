@@ -1,11 +1,11 @@
 const express = require("express");
 const cors = require("cors");
 const colors = require("colors");
-const { errorHandler } = require("./middleware/errorHandler");
+const { errorHandler } = require("../../server/middleware/errorHandler");
 require("dotenv").config();
-const connectDB = require("./config/db");
+const connectDB = require("../../server/config/db");
 
-const PORT = process.env.PORT || 3001;
+const PORT = 3002;
 
 // Connect to MongoDB
 connectDB();
@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 });
 
 // Routes
-app.use("/api/users", require("./routes/userRoutes"));
+app.use("/api/users", require("../../server/routes/userRoutes"));
 
 app.use(errorHandler);
 
@@ -31,6 +31,8 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`🚀 Server is running on port ${PORT} 🚀`.brightYellow.bold);
 });
+
+module.exports = server;

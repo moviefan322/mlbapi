@@ -1,5 +1,5 @@
 const request = require("supertest");
-const { app } = require("../../../server/server.js");
+const server = require("../testserver.js");
 const User = require("../../../server/models/userModel.js");
 const mongoose = require("mongoose");
 const db = require("../../../server/config/db.js");
@@ -12,14 +12,15 @@ describe("registerUser", () => {
   afterAll(async () => {
     // close database connection after all tests complete
     await mongoose.connection.close();
+    server.close();
   }, 30000);
   beforeEach(async () => {
     await User.deleteMany();
   }, 30000);
 
   it("should register a new user", async () => {
-    const res = await request(app)
-      .post("/users")
+    const res = await request(server)
+      .post("/api/users")
       .send({
         name: "Ass McButthole",
         email: "butthole@poop.biz",
@@ -51,22 +52,22 @@ describe("registerUser", () => {
     });
 
     // attempt to register with same email
-    const res = await request(app)
-      .post("/users")
+    const res = await request(server)
+      .post("/api/users")
       .send({
-        name: "John Doe",
+        name: "Jane Doe",
         email: "janedoe@example.com",
         password: "password",
       })
       .expect(400);
 
     // assert response
-    expect(res.body.error).toBe("User already exists");
+    expect(res.body.message).toBe("User already exists");
   });
 
   it("should return an error if required fields are missing", async () => {
-    const res = await request(app)
-      .post("/users")
+    const res = await request(server)
+      .post("/api/users")
       .send({
         name: "John Doe",
         password: "password",
@@ -74,6 +75,20 @@ describe("registerUser", () => {
       .expect(400);
 
     // assert response
-    expect(res.body.error).toBe("Please fill out all fields");
+    expect(res.body.message).toBe("Please fill out all fields");
+  });
+
+  it("should hash the password", async () => {
+    const password = "password";
+    const res = await request(server)
+      .post("/api/users")
+      .send({
+        name: "John Doe",
+        email: "John@john.com",
+        password: password,
+      })
+      .expect(201);
+
+    expect(res.body.password).not.toBe(password);
   });
 });
