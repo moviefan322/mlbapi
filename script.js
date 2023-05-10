@@ -15,7 +15,7 @@ const getSingleGameData = async (gamePk) => {
     `https://statsapi.mlb.com/api/v1.1/game/${gamePk}/feed/live`
   );
   const data = await response.json();
-  return data;
+  return data.dates[0].games;
 };
 
 const getFullSchedule = async () => {
