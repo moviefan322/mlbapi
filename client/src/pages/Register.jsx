@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 import { FaUser } from "react-icons/fa";
 
 function Register() {
@@ -22,7 +23,7 @@ function Register() {
     e.preventDefault();
 
     if (password !== password2) {
-      console.log("Password do not match");
+      toast.error("Password do not match");
     }
     console.log("Submit");
   };
@@ -42,6 +43,7 @@ function Register() {
               type="text"
               className="form-control"
               id="name"
+              name="name"
               value={name}
               onChange={onChange}
               placeholder="Enter your name"
