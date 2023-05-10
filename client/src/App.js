@@ -1,3 +1,4 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -8,6 +9,9 @@ import Register from "./pages/Register";
 import Schedule from "./pages/Schedule";
 
 function App() {
+  if (typeof window !== "undefined") {
+    window.React = React;
+  }
   return (
     <>
       <Router>
