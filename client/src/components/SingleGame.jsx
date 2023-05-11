@@ -18,8 +18,6 @@ function SingleGame({ game }) {
     });
   }, [game.gamePk]);
 
-  console.log("singleGame", singleGame);
-
   if (isLoading || singleGame === null) {
     return <Spinner />;
   }
@@ -33,8 +31,8 @@ function SingleGame({ game }) {
         {game.teams.home.leagueRecord.losses})
       </h3>
       <div className="score">
-        <img class="icon" src={teamKeys[awayTeam].image} alt="" />
-        <div class="data">
+        <img className="icon" src={teamKeys[awayTeam].image} alt="" />
+        <div className="data">
           <h3>
             {game.status.abstractGameCode === "L" ||
             game.status.abstractGameCode === "F"
@@ -60,7 +58,7 @@ function SingleGame({ game }) {
               : ""}
           </h6>
         </div>
-        <img class="icon" src={teamKeys[homeTeam].image} alt="" />
+        <img className="icon" src={teamKeys[homeTeam].image} alt="" />
       </div>
       <h4 className="bottom">
         {game.status.abstractGameCode === "L"
@@ -68,9 +66,9 @@ function SingleGame({ game }) {
           : game.status.abstractGameCode === "F"
           ? "FINAL"
           : `${
-              singleGame.gameData?.probablePitchers?.away?.fullName ?? "TBD"
+              singleGame.gameData?.probablePitchers.away?.fullName ?? "TBD"
             } vs. ${
-              singleGame.gameData?.probablePitchers?.home?.fullName ?? "TBD"
+              singleGame.gameData?.probablePitchers.home?.fullName ?? "TBD"
             }`}
       </h4>
     </div>
