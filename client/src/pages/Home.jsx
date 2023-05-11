@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react";
-import { getTodaysGames } from "../utils/MLBAPI.js";
-import { get } from "mongoose";
+import { getTodaysGames, getSingleGameData } from "../utils/MLBAPI.js";
+import SingleGame from "../components/SingleGame.jsx";
 
 function Home() {
   const [games, setGames] = useState([]);
-
-  getTodaysGames().then((res) => {
-    console.log(res);
-  });
 
   useEffect(() => {
     getTodaysGames().then((res) => {
@@ -17,7 +13,12 @@ function Home() {
 
   return (
     <div id="main" className="card-container">
-      OmgHi!
+      {games.map((game, index) => (
+        <SingleGame
+          key={index}
+          game={game}
+        />
+      ))}
     </div>
   );
 }
