@@ -33,13 +33,7 @@ function SingleGame({ game }) {
         {game.teams.home.leagueRecord.losses})
       </h3>
       <div className="score">
-        <img
-          class="icon"
-          src="../assets/images/logos/${
-      keys[awayTeam].abb
-    }.png"
-          alt=""
-        />
+        <img class="icon" src={teamKeys[awayTeam].image} alt="" />
         <div class="data">
           <h3>
             {game.status.abstractGameCode === "L" ||
@@ -66,13 +60,7 @@ function SingleGame({ game }) {
               : ""}
           </h6>
         </div>
-        <img
-          class="icon"
-          src="../assets/images/logos/{
-      keys[homeTeam].abb
-    }.png"
-          alt=""
-        />
+        <img class="icon" src={teamKeys[homeTeam].image} alt="" />
       </div>
       <h4 className="bottom">
         {game.status.abstractGameCode === "L"
