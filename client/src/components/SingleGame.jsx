@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import teamKeys from "../utils/teamKeys";
 import { getSingleGameData } from "../utils/MLBAPI";
 import { formatTime } from "../utils/formatTime";
+import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
 import Spinner from "./Spinner";
 
 function SingleGame({ game }) {
@@ -35,9 +36,13 @@ function SingleGame({ game }) {
         <div className="data">
           <h3>
             {game.status.abstractGameCode === "L" ||
-            game.status.abstractGameCode === "F"
-              ? `${game.teams.away.score}:${game.teams.home.score}`
-              : formatTime(game.gameDate)}
+            game.status.abstractGameCode === "F" ? (
+              <>
+                {game.teams.away.score} - {game.teams.home.score}
+              </>
+            ) : (
+              formatTime(game.gameDate)
+            )}
           </h3>
           <h6>
             {game.status.abstractGameCode === "L"
@@ -61,15 +66,28 @@ function SingleGame({ game }) {
         <img className="icon" src={teamKeys[homeTeam].image} alt="" />
       </div>
       <h4 className="bottom">
-        {game.status.abstractGameCode === "L"
-          ? `${singleGame.liveData?.linescore.inningHalf} ${singleGame.liveData?.linescore.currentInning}`
-          : game.status.abstractGameCode === "F"
-          ? "FINAL"
-          : `${
-              singleGame.gameData?.probablePitchers.away?.fullName ?? "TBD"
-            } vs. ${
-              singleGame.gameData?.probablePitchers.home?.fullName ?? "TBD"
-            }`}
+        {game.status.abstractGameCode === "L" ? (
+          <>
+            {singleGame.liveData?.linescore.balls}-
+            {singleGame.liveData?.linescore.strikes}{" "}
+            {singleGame.liveData?.linescore.outs}{" "}
+            {singleGame.liveData?.linescore.outs === 1 ? "out" : "outs"}{" "}
+            {singleGame.liveData?.linescore.inningHalf === "Top" ? (
+              <AiOutlineArrowUp />
+            ) : (
+              <AiOutlineArrowDown />
+            )}
+            {singleGame.liveData?.linescore.currentInning}
+          </>
+        ) : game.status.abstractGameCode === "F" ? (
+          "FINAL"
+        ) : (
+          `${
+            singleGame.gameData?.probablePitchers.away?.fullName ?? "TBD"
+          } vs. ${
+            singleGame.gameData?.probablePitchers.home?.fullName ?? "TBD"
+          }`
+        )}
       </h4>
     </div>
   );
