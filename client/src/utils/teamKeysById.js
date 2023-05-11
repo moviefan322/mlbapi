@@ -29,157 +29,157 @@ import TEX from "../assets/logos/TEX.png";
 import TOR from "../assets/logos/TOR.png";
 import WSH from "../assets/logos/WSH.png";
 
-const teamKeys = {
-  "Chicago Cubs": {
-    id: 112,
+const teamKeysById = {
+  112: {
+    name: "Chicago Cubs",
     abb: "CHC",
     image: CHC,
   },
-  "Cincinnati Reds": {
-    id: 113,
+  113: {
+    name: "Cincinnati Reds",
     abb: "CIN",
     image: CIN,
   },
-  "Milwaukee Brewers": {
-    id: 158,
+  158: {
+    name: "Milwaukee Brewers",
     abb: "MIL",
     image: MIL,
   },
-  "Pittsburgh Pirates": {
-    id: 134,
+  134: {
+    name: "Pittsburgh Pirates",
     abb: "PIT",
     image: PIT,
   },
-  "St. Louis Cardinals": {
-    id: 138,
+  138: {
+    name: "St. Louis Cardinals",
     abb: "STL",
     image: STL,
   },
-  "Arizona Diamondbacks": {
-    id: 109,
+  109: {
+    name: "Arizona Diamondbacks",
     abb: "ARI",
     image: ARI,
   },
-  "Colorado Rockies": {
-    id: 115,
+  115: {
+    name: "Colorado Rockies",
     abb: "COL",
     image: COL,
   },
-  "Los Angeles Dodgers": {
-    id: 119,
+  119: {
+    name: "Los Angeles Dodgers",
     abb: "LAD",
     image: LAD,
   },
-  "San Diego Padres": {
-    id: 135,
+  135: {
+    name: "San Diego Padres",
     abb: "SD",
     image: SD,
   },
-  "San Francisco Giants": {
-    id: 137,
+  137: {
+    name: "San Francisco Giants",
     abb: "SF",
     image: SF,
   },
-  "Baltimore Orioles": {
-    id: 110,
+  110: {
+    name: "Baltimore Orioles",
     abb: "BAL",
     image: BAL,
   },
-  "Boston Red Sox": {
-    id: 111,
+  111: {
+    name: "Boston Red Sox",
     abb: "BOS",
     image: BOS,
   },
-  "New York Yankees": {
-    id: 147,
+  147: {
+    name: "New York Yankees",
     abb: "NYY",
     image: NYY,
   },
-  "Tampa Bay Rays": {
-    id: 139,
+  139: {
+    name: "Tampa Bay Rays",
     abb: "TB",
     image: TB,
   },
-  "Toronto Blue Jays": {
-    id: 141,
+  141: {
+    name: "Toronto Blue Jays",
     abb: "TOR",
     image: TOR,
   },
-  "Atlanta Braves": {
-    id: 144,
+  144: {
+    name: "Atlanta Braves",
     abb: "ATL",
     image: ATL,
   },
-  "Miami Marlins": {
-    id: 146,
+  146: {
+    name: "Miami Marlins",
     abb: "MIA",
     image: MIA,
   },
-  "New York Mets": {
-    id: 121,
+  121: {
+    name: "New York Mets",
     abb: "NYM",
     image: NYM,
   },
-  "Philadelphia Phillies": {
-    id: 143,
+  143: {
+    name: "Philadelphia Phillies",
     abb: "PHI",
     image: PHI,
   },
-  "Washington Nationals": {
-    id: 120,
+  120: {
+    name: "Washington Nationals",
     abb: "WSH",
     image: WSH,
   },
-  "Chicago White Sox": {
-    id: 145,
+  145: {
+    name: "Chicago White Sox",
     abb: "CWS",
     image: CWS,
   },
-  "Cleveland Guardians": {
-    id: 114,
+  114: {
+    name: "Cleveland Guardians",
     abb: "CLE",
     image: CLE,
   },
-  "Detroit Tigers": {
-    id: 116,
+  116: {
+    name: "Detroit Tigers",
     abb: "DET",
     image: DET,
   },
-  "Kansas City Royals": {
-    id: 118,
+  118: {
+    name: "Kansas City Royals",
     abb: "KC",
     image: KC,
   },
-  "Minnesota Twins": {
-    id: 142,
+  142: {
+    name: "Minnesota Twins",
     abb: "MIN",
     image: MIN,
   },
-  "Houston Astros": {
-    id: 117,
+  117: {
+    name: "Houston Astros",
     abb: "HOU",
     image: HOU,
   },
-  "Los Angeles Angels": {
-    id: 108,
+  108: {
+    name: "Los Angeles Angels",
     abb: "LAA",
     image: LAA,
   },
-  "Oakland Athletics": {
-    id: 133,
+  133: {
+    name: "Oakland Athletics",
     abb: "OAK",
     image: OAK,
   },
-  "Seattle Mariners": {
-    id: 136,
+  136: {
+    name: "Seattle Mariners",
     abb: "SEA",
     image: SEA,
   },
-  "Texas Rangers": {
-    id: 140,
+  140: {
+    name: "Texas Rangers",
     abb: "TEX",
     image: TEX,
-  }
+  },
 };
 
-export default teamKeys;
+export default teamKeysById;
