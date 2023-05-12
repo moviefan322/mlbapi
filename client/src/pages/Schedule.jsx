@@ -45,16 +45,9 @@ function Schedule() {
         <thead>
           <tr>
             <th>Team</th>
-            <th>Ser.9</th>
-            <th>Ser.10</th>
-            <th>Ser.11</th>
-            <th>Ser.12</th>
-            <th>Ser.13</th>
-            <th>Ser.14</th>
-            <th>Ser.15</th>
-            <th>Ser.16</th>
-            <th>Ser.17</th>
-            <th>Ser.18</th>
+            {monthSeries.map((series, index) => (
+              <th key={`${index}-${series}${Math.random}`}>Ser.{series}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
