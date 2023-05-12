@@ -1,14 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Spinner from "./Spinner";
 import LineItem from "./LineItem";
 
 function ScheduleLine({ team, schedule, series }) {
-  const { id } = team;
   if (!team || schedule.length === 0) {
     return (
       <td key={`${Math.random}`}>
-        <Spinner />
       </td>
     );
   } else {

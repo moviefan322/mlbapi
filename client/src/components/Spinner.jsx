@@ -1,9 +1,11 @@
-import React from "react";
+import { SpinnerCircular } from "spinners-react";
 
 function Spinner() {
   return (
-    <div className="loadingSpinnerContainer">
-      <div className="loadingSpinner"></div>
+    <div className="spinner-overlay">
+      <div className="spinner">
+        <SpinnerCircular />
+      </div>
     </div>
   );
 }

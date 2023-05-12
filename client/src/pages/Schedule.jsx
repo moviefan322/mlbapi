@@ -14,9 +14,9 @@ function Schedule() {
     const getSeasonData = async () => {
       const res = await formatBySeries();
       setSchedule(JSON.parse(JSON.stringify(res)));
+      setIsLoading(false);  
     };
     getSeasonData();
-    setIsLoading(false);
   }, []);
 
   if (isLoading) {
