@@ -1,124 +1,34 @@
 import formatBySeries from "../utils/formatBySeries";
-import { formatDate } from "../utils/formatTime";
+import { formattedMonth } from "../utils/formatTime";
 import teamKeys from "../utils/teamKeys";
+import { useEffect, useState } from "react";
 
 function Schedule() {
-  const renderTeamSchedule = async (id, abbr) => {
-    const data = await formatBySeries();
-    const schedule = data[id];
+  const [month, setMonth] = useState(formattedMonth);
+  const [schedule, setSchedule] = useState([]);
+  const [monthSchedule, setMonthSchedule] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-    const schedule04Container = document.querySelector("#schedule04");
-    const row04 = document.createElement("tr");
-    row04.innerHTML = `
-  <tr>
-  <td>${abbr}</td>`;
-    schedule04Container.appendChild(row04);
-    for (let i = 1; i <= 9; i++) {
-      const td = document.createElement("td");
-      td.classList.add("unit");
-      const currentSeries = schedule[`${i}`];
-      const homeRaw = currentSeries[0].teams.home.team.name;
-      const awayRaw = currentSeries[0].teams.away.team.name;
-      const home = teamKeys[homeRaw].abb;
-      const away = teamKeys[awayRaw].abb;
-      const isHomeTeam = currentSeries[0].teams.home.team.id === id;
-      let gameResults = "";
-      for (let j = 0; j < currentSeries.length; j++) {
-        const game = currentSeries[j];
-        const isAwayTeam = game.teams.away.team.id === id;
-        const isHomeTeam = game.teams.home.team.id === id;
-        const isWinner =
-          (isAwayTeam && game.teams.away.isWinner) ||
-          (isHomeTeam && game.teams.home.isWinner);
-        const isLoser =
-          (isAwayTeam && game.teams.away.isWinner === false) ||
-          (isHomeTeam && game.teams.home.isWinner === false);
-        const result = isWinner
-          ? "<span class='green'>W</span>"
-          : isLoser
-          ? "<span class='red'>L</span>"
-          : "";
-        gameResults += result;
-        if (j < currentSeries.length - 1) {
-          gameResults += "-";
-        }
-      }
+  useEffect(() => {
+    const getSeasonData = async () => {
+      const res = await formatBySeries();
+      setSchedule(res);
+    };
+    getSeasonData();
+  }, []);
 
-      td.innerHTML = `
-    ${formatDate(currentSeries[0].gameDate)}-${formatDate(
-        currentSeries[currentSeries.length - 1].gameDate
-      )}
-  <br>${isHomeTeam ? `v.${away}` : `@${home}`}
-  <br>
-  ${gameResults}
-    `;
-      row04.appendChild(td);
-    }
+  console.log(month);
 
-    const scheduleContainer = document.querySelector("#schedule05");
-    const row = document.createElement("tr");
-    row.innerHTML = `
-  <tr>
-  <td>${abbr}</td>`;
-    scheduleContainer.appendChild(row);
-    for (let i = 9; i <= 18; i++) {
-      const td = document.createElement("td");
-      td.classList.add("unit");
-      const currentSeries = schedule[`${i}`];
-      const homeRaw = currentSeries[0].teams.home.team.name;
-      const awayRaw = currentSeries[0].teams.away.team.name;
-      const home = teamKeys[homeRaw].abb;
-      const away = teamKeys[awayRaw].abb;
-      const isHomeTeam = currentSeries[0].teams.home.team.id === id;
-      let gameResults = "";
-      for (let j = 0; j < currentSeries.length; j++) {
-        const game = currentSeries[j];
-        const isAwayTeam = game.teams.away.team.id === id;
-        const isHomeTeam = game.teams.home.team.id === id;
-        const isWinner =
-          (isAwayTeam && game.teams.away.isWinner) ||
-          (isHomeTeam && game.teams.home.isWinner);
-        const isLoser =
-          (isAwayTeam && game.teams.away.isWinner === false) ||
-          (isHomeTeam && game.teams.home.isWinner === false);
-        const result = isWinner
-          ? "<span class='green'>W</span>"
-          : isLoser
-          ? "<span class='red'>L</span>"
-          : "";
-        gameResults += result;
-        if (j < currentSeries.length - 1) {
-          gameResults += "-";
-        }
-      }
+  // useEffect(() => {
+  //   for(let team in schedule) {
+  //     team.filter((series) => {
 
-      td.innerHTML = `
-    ${formatDate(currentSeries[0].gameDate)}-${formatDate(
-        currentSeries[currentSeries.length - 1].gameDate
-      )}
-  <br>${isHomeTeam ? `v.${away}` : `@${home}`}
-  <br>
-  ${gameResults}
-    `;
-      row.appendChild(td);
-    }
-  };
+  //     });
 
-  const renderAllTeamSchedules = async () => {
-    const promises = [];
+  //   }
+  // }, [schedule]);
 
-    const sortedTeams = Object.values(teamKeys).sort((a, b) =>
-      a.abb.localeCompare(b.abb)
-    );
-
-    for (let team of sortedTeams) {
-      promises.push(renderTeamSchedule(team.id, team.abb));
-    }
-
-    await Promise.all(promises);
-  };
-
-  renderAllTeamSchedules();
+  console.log(schedule);
 
   return (
     <>
