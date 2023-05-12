@@ -35,9 +35,7 @@ function Schedule() {
         <button className="btn btn-sm">
           <FaLongArrowAltLeft /> Prev
         </button>
-
-        <h1>May</h1>
-
+        ~<h1>{monthName}</h1>
         <button className="btn btn-sm">
           <FaLongArrowAltRight /> Next
         </button>
