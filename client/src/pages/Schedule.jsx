@@ -1,5 +1,5 @@
 import formatBySeries from "../utils/formatBySeries";
-import teamKeys from "../utils/teamKeys";
+import teamKeysArray from "../utils/teamKeysArray";
 import { useEffect, useState } from "react";
 
 function Schedule() {
@@ -20,45 +20,15 @@ function Schedule() {
   useEffect(() => {
     const getSeasonData = async () => {
       const res = await formatBySeries();
-      setSchedule(res);
+      setSchedule(JSON.parse(JSON.stringify(res)));
     };
     getSeasonData();
   }, []);
 
-  console.log(month);
-
-  // useEffect(() => {
-  //   for(let team in schedule) {
-  //     team.filter((series) => {
-
-  //     });
-
-  //   }
-  // }, [schedule]);
-
-  console.log(schedule);
+  console.log(teamKeysArray[0]);
 
   return (
     <>
-      <h1>April</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Team</th>
-            <th>Series 1</th>
-            <th>Series 2</th>
-            <th>Series 3</th>
-            <th>Series 4</th>
-            <th>Series 5</th>
-            <th>Series 6</th>
-            <th>Series 7</th>
-            <th>Series 8</th>
-            <th>Series 9</th>
-          </tr>
-        </thead>
-        <tbody id="schedule04"></tbody>
-      </table>
-      <br />
       <h1>May</h1>
       <table>
         <thead>
