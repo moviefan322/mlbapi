@@ -7,9 +7,9 @@ function ScheduleLine({ team, schedule, series }) {
   const { id } = team;
   if (!team || schedule.length === 0) {
     return (
-      <tr>
+      <td key={`${Math.random}`}>
         <Spinner />
-      </tr>
+      </td>
     );
   } else {
     return (
