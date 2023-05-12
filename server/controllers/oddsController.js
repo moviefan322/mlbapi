@@ -17,17 +17,21 @@ const options = {
   },
 };
 
+const fetchOdds = async () => {
+  try {
+    const response = await axios.request(options);
+    console.log(response.data);
+    odds = response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 // Set interval to get odds every 4 hours
 
-const fetchOdds = async () => {
+const fetchOddsAsync = async () => {
   setInterval(async () => {
-    try {
-      const response = await axios.request(options);
-      console.log(response.data);
-      odds = response.data;
-    } catch (error) {
-      console.error(error);
-    }
+    fetchOdds();
   }, 14400000);
 };
 
@@ -38,3 +42,7 @@ const fetchOdds = async () => {
 const getOdds = asyncHandler(async (req, res) => {
   res.json(odds);
 });
+
+fetchOdds();
+
+module.exports = { getOdds, fetchOdds };
