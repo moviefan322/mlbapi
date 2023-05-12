@@ -34,16 +34,19 @@ const teamKeysArray = [
     id: 109,
     abb: "ARI",
     image: ARI,
+    name: "Arizona Diamondbacks",
   },
   {
     id: 144,
     abb: "ATL",
     image: ATL,
+    name: "Atlanta Braves",
   },
   {
     id: 110,
     abb: "BAL",
     image: BAL,
+    name: "Baltimore Orioles",
   },
   {
     id: 111,
