@@ -38,7 +38,7 @@ const formatDate3 = (str) => {
 const formatTime = (date) => {
   const dateObj = new Date(date);
   const hours = dateObj.getHours();
-  const minutes = dateObj.getMinutes();
+  const minutes = dateObj.getMinutes().toString().padStart(2, "0");
   const newTime = hours + ":" + minutes;
   return newTime;
 };
