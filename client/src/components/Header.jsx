@@ -1,4 +1,4 @@
-import { FaSignInAlt, FaUser } from "react-icons/fa";
+import { FaSignInAlt, FaUser, FaCalendarAlt } from "react-icons/fa";
 import { CgLogOut } from "react-icons/cg";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -24,6 +24,11 @@ function Header() {
         </Link>
       </div>
       <ul>
+        <li>
+          <Link to="/schedule">
+            <FaCalendarAlt /> Schedule
+          </Link>
+        </li>
         {user ? (
           <li>
             <button onClick={onLogout} className="btn">
