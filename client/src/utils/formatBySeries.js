@@ -38,7 +38,7 @@ const formatBySeries = async () => {
 
   for (let teamId in fullSchedule) {
     const newTeamSchedule = {};
-    for (let i = 1; i < 52; i++) {
+    for (let i = 1; i < 53; i++) {
       const seriesVariableName = `${i}`;
       newTeamSchedule[seriesVariableName] = [];
     }

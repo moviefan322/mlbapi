@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { formatDate, formatDate2 } from "../utils/formatTime";
+import { formatDate, formatDate2, formatDate3 } from "../utils/formatTime";
 import teamKeys from "../utils/teamKeys";
 import Spinner from "./Spinner";
 
@@ -59,7 +59,9 @@ function LineItem({ team, series, schedule }) {
           ? `vs.${
               teamKeys[schedule[id][seriesNo][0]?.teams.away.team.name]?.abb
             }`
-          : `@${teamKeys[schedule[id][seriesNo][0]?.teams.home.team.name]?.abb}`}
+          : `@${
+              teamKeys[schedule[id][seriesNo][0]?.teams.home.team.name]?.abb
+            }`}
         <br />
         {gameResults}
       </>
