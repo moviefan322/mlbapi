@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getTodaysGames, getSingleGameData } from "../utils/MLBAPI.js";
+import { getTodaysGames } from "../utils/MLBAPI.js";
 import SingleGame from "../components/SingleGame.jsx";
 import axios from "axios";
 
@@ -13,7 +13,6 @@ function Home() {
       if (response.data) {
         setRawOdds(response.data);
       }
-      console.log(response.data);
     };
     fetchOdds();
   }, []);
@@ -27,7 +26,7 @@ function Home() {
   return (
     <div id="main" className="card-container">
       {games.map((game, index) => (
-        <SingleGame key={index} game={game} />
+        <SingleGame key={index} game={game} odds={rawOdds} />
       ))}
     </div>
   );

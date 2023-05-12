@@ -6,11 +6,13 @@ import { formatTime } from "../utils/formatTime";
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
 import Spinner from "./Spinner";
 
-function SingleGame({ game }) {
+function SingleGame({ game, odds }) {
   const [singleGame, setSingleGame] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const homeTeam = game.teams.home.team.name;
   const awayTeam = game.teams.away.team.name;
+  let homeOdds = 0;
+  let awayOdds = 0;
 
   useEffect(() => {
     getSingleGameData(game.gamePk).then((res) => {
@@ -23,6 +25,17 @@ function SingleGame({ game }) {
     return <Spinner />;
   }
 
+  const thisGame = odds.filter((odd) => {
+    return odd.away_team === awayTeam && odd.home_team === homeTeam;
+  });
+  if (homeTeam === thisGame[0].bookmakers[0].markets[0].outcomes[1].name) {
+    homeOdds = thisGame[0].bookmakers[0].markets[0].outcomes[1].price;
+    awayOdds = thisGame[0].bookmakers[0].markets[0].outcomes[0].price;
+  } else {
+    homeOdds = thisGame[0].bookmakers[0].markets[0].outcomes[0].price;
+    awayOdds = thisGame[0].bookmakers[0].markets[0].outcomes[1].price;
+  }
+
   return (
     <div className="card">
       <h3>
@@ -32,7 +45,12 @@ function SingleGame({ game }) {
         {game.teams.home.leagueRecord.losses})
       </h3>
       <div className="score">
-        <img className="icon" src={teamKeys[awayTeam].image} alt="" />
+        <div>
+          <img className="icon" src={teamKeys[awayTeam].image} alt="" />
+          <button className={`btn btn-sm ${awayOdds >= 0 ? "red" : "green"}`}>
+          {awayOdds >= 0 ? "+" : ""}{awayOdds}
+          </button>
+        </div>
         <div className="data">
           <h3>
             {game.status.abstractGameCode === "L" ||
@@ -63,7 +81,12 @@ function SingleGame({ game }) {
               : ""}
           </h6>
         </div>
-        <img className="icon" src={teamKeys[homeTeam].image} alt="" />
+        <div>
+          <img className="icon" src={teamKeys[homeTeam].image} alt="" />
+          <button className={`btn btn-sm ${homeOdds >= 0 ? "red" : "green"}`}>
+          {homeOdds >= 0 ? "+" : ""}{homeOdds}
+          </button>
+        </div>
       </div>
       <h4 className="bottom">
         {game.status.abstractGameCode === "L" ? (
@@ -95,6 +118,7 @@ function SingleGame({ game }) {
 
 SingleGame.propTypes = {
   game: PropTypes.object.isRequired,
+  odds: PropTypes.array.isRequired,
 };
 
 export default SingleGame;
