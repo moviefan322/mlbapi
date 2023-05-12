@@ -1,13 +1,21 @@
 import formatBySeries from "../utils/formatBySeries";
-import { formattedMonth } from "../utils/formatTime";
 import teamKeys from "../utils/teamKeys";
 import { useEffect, useState } from "react";
 
 function Schedule() {
-  const [month, setMonth] = useState(formattedMonth);
+  const [month, setMonth] = useState("");
   const [schedule, setSchedule] = useState([]);
   const [monthSchedule, setMonthSchedule] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const month = new Date().getMonth() + 1;
+    if (month < 10) {
+      setMonth("0" + month.toString());
+    } else {
+      setMonth(month.toString());
+    }
+  }, []);
 
   useEffect(() => {
     const getSeasonData = async () => {
