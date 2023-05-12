@@ -19,11 +19,20 @@ function Schedule() {
       const res = await formatBySeries();
       setSchedule(JSON.parse(JSON.stringify(res)));
       setMonthSeries(monthSeriesMap(month));
+      setMonthName(monthMap(month));
       setIsLoading(false);
       console.log(monthSeriesMap(month));
     };
     getSeasonData();
   }, [month]);
+
+  const prevMonth = () => {
+    if (month > 1) {
+      setIsLoading(true);
+      setMonth(month - 1);
+      setIsLoading(false);
+    }
+  };
 
   if (isLoading) {
     return <Spinner />;
@@ -32,10 +41,14 @@ function Schedule() {
   return (
     <>
       <div className="header">
-        <button className="btn btn-sm">
+        <button
+          className="btn btn-sm"
+          onClick={prevMonth}
+          disabled={month === 4}
+        >
           <FaLongArrowAltLeft /> Prev
         </button>
-        ~<h1>{monthName}</h1>
+        <h1>{monthName}</h1>
         <button className="btn btn-sm">
           <FaLongArrowAltRight /> Next
         </button>
