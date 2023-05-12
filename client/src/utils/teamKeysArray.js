@@ -71,7 +71,7 @@ const teamKeysArray = [
     id: 114,
     abb: "CLE",
     image: CLE,
-    name: "Cleveland Indians",
+    name: "Cleveland Guardians",
   },
   {
     id: 115,
