@@ -3,21 +3,27 @@ import teamKeysArray from "../utils/teamKeysArray";
 import { useEffect, useState } from "react";
 import ScheduleLine from "../components/ScheduleLine";
 import Spinner from "../components/Spinner";
+import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
+import monthSeriesMap from "../utils/monthSeriesMap";
+import monthMap from "../utils/monthMap";
 
 function Schedule() {
-  // const [month, setMonth] = useState(new Date().getMonth() + 1);
+  const [month, setMonth] = useState(new Date().getMonth() + 1);
   const [schedule, setSchedule] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const monthSeries = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+  const [monthSeries, setMonthSeries] = useState();
+  const [monthName, setMonthName] = useState(monthMap(month));
 
   useEffect(() => {
     const getSeasonData = async () => {
       const res = await formatBySeries();
       setSchedule(JSON.parse(JSON.stringify(res)));
-      setIsLoading(false);  
+      setMonthSeries(monthSeriesMap(month));
+      setIsLoading(false);
+      console.log(monthSeriesMap(month));
     };
     getSeasonData();
-  }, []);
+  }, [month]);
 
   if (isLoading) {
     return <Spinner />;
@@ -25,7 +31,18 @@ function Schedule() {
 
   return (
     <>
-      <h1>May</h1>
+      <div className="header">
+        <button className="btn btn-sm">
+          <FaLongArrowAltLeft /> Prev
+        </button>
+
+        <h1>May</h1>
+
+        <button className="btn btn-sm">
+          <FaLongArrowAltRight /> Next
+        </button>
+      </div>
+
       <table key={`${Math.random}`}>
         <thead>
           <tr>
