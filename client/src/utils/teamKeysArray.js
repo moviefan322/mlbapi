@@ -31,54 +31,14 @@ import WSH from "../assets/logos/WSH.png";
 
 const teamKeysArray = [
   {
-    id: 112,
-    abb: "CHC",
-    image: CHC,
-  },
-  {
-    id: 113,
-    abb: "CIN",
-    image: CIN,
-  },
-  {
-    id: 158,
-    abb: "MIL",
-    image: MIL,
-  },
-  {
-    id: 134,
-    abb: "PIT",
-    image: PIT,
-  },
-  {
-    id: 138,
-    abb: "STL",
-    image: STL,
-  },
-  {
     id: 109,
     abb: "ARI",
     image: ARI,
   },
   {
-    id: 115,
-    abb: "COL",
-    image: COL,
-  },
-  {
-    id: 119,
-    abb: "LAD",
-    image: LAD,
-  },
-  {
-    id: 135,
-    abb: "SD",
-    image: SD,
-  },
-  {
-    id: 137,
-    abb: "SF",
-    image: SF,
+    id: 144,
+    abb: "ATL",
+    image: ATL,
   },
   {
     id: 110,
@@ -90,50 +50,16 @@ const teamKeysArray = [
     abb: "BOS",
     image: BOS,
   },
+
   {
-    id: 147,
-    abb: "NYY",
-    image: NYY,
+    id: 112,
+    abb: "CHC",
+    image: CHC,
   },
   {
-    id: 139,
-    abb: "TB",
-    image: TB,
-  },
-  {
-    id: 141,
-    abb: "TOR",
-    image: TOR,
-  },
-  {
-    id: 144,
-    abb: "ATL",
-    image: ATL,
-  },
-  {
-    id: 146,
-    abb: "MIA",
-    image: MIA,
-  },
-  {
-    id: 121,
-    abb: "NYM",
-    image: NYM,
-  },
-  {
-    id: 143,
-    abb: "PHI",
-    image: PHI,
-  },
-  {
-    id: 120,
-    abb: "WSH",
-    image: WSH,
-  },
-  {
-    id: 145,
-    abb: "CWS",
-    image: CWS,
+    id: 113,
+    abb: "CIN",
+    image: CIN,
   },
   {
     id: 114,
@@ -141,19 +67,19 @@ const teamKeysArray = [
     image: CLE,
   },
   {
+    id: 115,
+    abb: "COL",
+    image: COL,
+  },
+  {
+    id: 145,
+    abb: "CWS",
+    image: CWS,
+  },
+  {
     id: 116,
     abb: "DET",
     image: DET,
-  },
-  {
-    id: 118,
-    abb: "KC",
-    image: KC,
-  },
-  {
-    id: 142,
-    abb: "MIN",
-    image: MIN,
   },
   {
     id: 117,
@@ -161,9 +87,44 @@ const teamKeysArray = [
     image: HOU,
   },
   {
+    id: 118,
+    abb: "KC",
+    image: KC,
+  },
+  {
     id: 108,
     abb: "LAA",
     image: LAA,
+  },
+  {
+    id: 119,
+    abb: "LAD",
+    image: LAD,
+  },
+  {
+    id: 146,
+    abb: "MIA",
+    image: MIA,
+  },
+  {
+    id: 158,
+    abb: "MIL",
+    image: MIL,
+  },
+  {
+    id: 142,
+    abb: "MIN",
+    image: MIN,
+  },
+  {
+    id: 121,
+    abb: "NYM",
+    image: NYM,
+  },
+  {
+    id: 147,
+    abb: "NYY",
+    image: NYY,
   },
   {
     id: 133,
@@ -171,14 +132,55 @@ const teamKeysArray = [
     image: OAK,
   },
   {
+    id: 143,
+    abb: "PHI",
+    image: PHI,
+  },
+  {
+    id: 134,
+    abb: "PIT",
+    image: PIT,
+  },
+  {
+    id: 135,
+    abb: "SD",
+    image: SD,
+  },
+  {
     id: 136,
     abb: "SEA",
     image: SEA,
   },
   {
+    id: 137,
+    abb: "SF",
+    image: SF,
+  },
+  {
+    id: 138,
+    abb: "STL",
+    image: STL,
+  },
+  {
+    id: 139,
+    abb: "TB",
+    image: TB,
+  },
+  {
     id: 140,
     abb: "TEX",
     image: TEX,
+  },
+
+  {
+    id: 141,
+    abb: "TOR",
+    image: TOR,
+  },
+  {
+    id: 120,
+    abb: "WSH",
+    image: WSH,
   },
 ];
 

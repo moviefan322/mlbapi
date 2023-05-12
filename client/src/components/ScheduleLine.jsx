@@ -1,26 +1,32 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Spinner from "./Spinner";
+import teamKeys from "../utils/teamKeys";
+import { formatDate } from "../utils/formatTime";
 
-function ScheduleLine({ team, schedule, monthSeries }) {
+function ScheduleLine({ team, schedule, series }) {
   const { id } = team;
-  console.log(schedule);
   if (!team || schedule.length === 0) {
-    return <Spinner />;
+    return (
+      <tr>
+        <Spinner />
+      </tr>
+    );
   } else {
+    console.log(schedule);
     return (
       <tr>
         <td>{team.abb}</td>
-        <td>{schedule[id][1][0].gameNumber}</td>
+        <td>
+          {formatDate(schedule[id][1][0].officialDate)}-
+          {formatDate(schedule[id][1][2].officialDate)}
+          <br />
+          {teamKeys[schedule[id][1][0].teams.home.team.name].abb === team.abb
+            ? `vs.${teamKeys[schedule[id][1][0].teams.away.team.name].abb}`
+            : `@${teamKeys[schedule[id][1][0].teams.home.team.name].abb}`}
+        </td>
       </tr>
     );
   }
 }
-
-ScheduleLine.propTypes = {
-  team: PropTypes.object.isRequired,
-  schedule: PropTypes.object.isRequired,
-  monthSeries: PropTypes.array.isRequired,
-};
 
 export default ScheduleLine;
