@@ -7,9 +7,9 @@ import Spinner from "./Spinner";
 function LineItem({ team, series, schedule }) {
   if (!team || schedule.length === 0) {
     return (
-      <tr>
+      <>
         <Spinner />
-      </tr>
+      </>
     );
   } else {
     const { id } = team;
@@ -36,7 +36,7 @@ function LineItem({ team, series, schedule }) {
           L
         </span>
       ) : (
-        ""
+        <span key={`bullshit-${i}`}></span>
       );
       gameResults.push(result);
       if (i < schedule[id][seriesNo].length - 1) {

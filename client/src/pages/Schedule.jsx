@@ -26,7 +26,7 @@ function Schedule() {
   return (
     <>
       <h1>May</h1>
-      <table>
+      <table key={`${Math.random}`}>
         <thead>
           <tr>
             <th>Team</th>
@@ -42,19 +42,16 @@ function Schedule() {
             <th>Ser.18</th>
           </tr>
         </thead>
-        <tbody id="schedule05">
-          {" "}
-          {teamKeysArray.map((team, index) => (
-            <tr>
-              <ScheduleLine
-                key={index}
-                team={team}
-                schedule={schedule}
-                series={monthSeries}
-              />
-            </tr>
-          ))}
-        </tbody>
+        {teamKeysArray.map((team, index) => (
+          <tr key={`${Math.random}-${index}`}>
+            <ScheduleLine
+              key={`${Math.random}`}
+              team={team}
+              schedule={schedule}
+              series={monthSeries}
+            />
+          </tr>
+        ))}
       </table>
     </>
   );

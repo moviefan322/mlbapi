@@ -17,13 +17,12 @@ function ScheduleLine({ team, schedule, series }) {
         <td>{team.abb}</td>
         {series.map((series, index) => (
           <td key={index} className="unit">
-            {" "}
             <LineItem
-              key={index}
+              key={`${index}-${series}${Math.random}`}
               team={team}
               series={series}
               schedule={schedule}
-            />{" "}
+            />
           </td>
         ))}
       </>
