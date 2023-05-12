@@ -21,6 +21,7 @@ function LineItem({ team, series, schedule }) {
     let gameResults = [];
     for (let i = 0; i < schedule[id][seriesNo].length; i++) {
       const game = schedule[id][seriesNo][i];
+      const isPPD = game.status.detailedState === "Postponed";
       const isWinner =
         (isAwayTeam && game.teams.away.isWinner) ||
         (isHomeTeam && game.teams.home.isWinner);
@@ -35,6 +36,8 @@ function LineItem({ team, series, schedule }) {
         <span key={`loss-${i}`} className="red">
           L
         </span>
+      ) : isPPD ? (
+        <span key={`ppd-${i}`} className="small">P</span>
       ) : (
         <span key={`bullshit-${i}`}></span>
       );
