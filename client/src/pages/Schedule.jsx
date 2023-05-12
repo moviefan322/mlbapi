@@ -30,27 +30,31 @@ function Schedule() {
         <thead>
           <tr>
             <th>Team</th>
-            <th>Series 9</th>
-            <th>Series 10</th>
-            <th>Series 11</th>
-            <th>Series 12</th>
-            <th>Series 13</th>
-            <th>Series 14</th>
-            <th>Series 15</th>
-            <th>Series 16</th>
-            <th>Series 17</th>
-            <th>Series 18</th>
+            <th>Ser.9</th>
+            <th>Ser.10</th>
+            <th>Ser.11</th>
+            <th>Ser.12</th>
+            <th>Ser.13</th>
+            <th>Ser.14</th>
+            <th>Ser.15</th>
+            <th>Ser.16</th>
+            <th>Ser.17</th>
+            <th>Ser.18</th>
           </tr>
-          {teamKeysArray.map((team, index) => (
-            <ScheduleLine
-              key={index}
-              team={team}
-              schedule={schedule}
-              series={monthSeries}
-            />
-          ))}
         </thead>
-        <tbody id="schedule05"></tbody>
+        <tbody id="schedule05">
+          {" "}
+          {teamKeysArray.map((team, index) => (
+            <tr>
+              <ScheduleLine
+                key={index}
+                team={team}
+                schedule={schedule}
+                series={monthSeries}
+              />
+            </tr>
+          ))}
+        </tbody>
       </table>
     </>
   );
