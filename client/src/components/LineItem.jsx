@@ -16,7 +16,8 @@ function LineItem({ team, series, schedule }) {
     const seriesNo = series;
     const lastGame = schedule[id][seriesNo]?.length - 1;
     const isHomeTeam =
-      teamKeys[schedule[id][seriesNo][0].teams.home.team.name].abb === team.abb;
+      teamKeys[schedule[id][seriesNo][0]?.teams.home.team.name]?.abb ===
+      team.abb;
     const isAwayTeam = !isHomeTeam;
     let gameResults = [];
     for (let i = 0; i < schedule[id][seriesNo].length; i++) {
@@ -37,7 +38,9 @@ function LineItem({ team, series, schedule }) {
           L
         </span>
       ) : isPPD ? (
-        <span key={`ppd-${i}`} className="small">P</span>
+        <span key={`ppd-${i}`} className="small">
+          P
+        </span>
       ) : (
         <span key={`bullshit-${i}`}></span>
       );
@@ -51,10 +54,12 @@ function LineItem({ team, series, schedule }) {
         {formatDate(schedule[id][seriesNo][0]?.officialDate)}-
         {formatDate2(schedule[id][seriesNo][lastGame]?.officialDate)}
         <br />
-        {teamKeys[schedule[id][seriesNo][0].teams.home.team.name].abb ===
+        {teamKeys[schedule[id][seriesNo][0]?.teams.home.team.name]?.abb ===
         team.abb
-          ? `vs.${teamKeys[schedule[id][seriesNo][0].teams.away.team.name].abb}`
-          : `@${teamKeys[schedule[id][seriesNo][0].teams.home.team.name].abb}`}
+          ? `vs.${
+              teamKeys[schedule[id][seriesNo][0]?.teams.away.team.name]?.abb
+            }`
+          : `@${teamKeys[schedule[id][seriesNo][0]?.teams.home.team.name]?.abb}`}
         <br />
         {gameResults}
       </>

@@ -156,6 +156,12 @@ h3 {
   transform: scale(0.98);
 }
 
+.btn.disabled {
+  color: #999;
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
 .spinner-overlay {
   position: fixed;
   top: 0;

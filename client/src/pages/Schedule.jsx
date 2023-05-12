@@ -34,6 +34,14 @@ function Schedule() {
     }
   };
 
+  const nextMonth = () => {
+    if (month > 1) {
+      setIsLoading(true);
+      setMonth(month + 1);
+      setIsLoading(false);
+    }
+  };
+
   if (isLoading) {
     return <Spinner />;
   }
@@ -42,14 +50,18 @@ function Schedule() {
     <>
       <div className="header">
         <button
-          className="btn btn-sm"
+          className={`btn btn-sm ${month === 4 ? "disabled" : ""}`}
           onClick={prevMonth}
           disabled={month === 4}
         >
           <FaLongArrowAltLeft /> Prev
         </button>
         <h1>{monthName}</h1>
-        <button className="btn btn-sm">
+        <button
+          className={`btn btn-sm ${month === 9 ? "disabled" : ""}`}
+          onClick={nextMonth}
+          disabled={month === 9}
+        >
           <FaLongArrowAltRight /> Next
         </button>
       </div>
