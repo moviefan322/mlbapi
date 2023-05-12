@@ -8,6 +8,7 @@ function Schedule() {
   // const [month, setMonth] = useState(new Date().getMonth() + 1);
   const [schedule, setSchedule] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const monthSeries = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
 
   useEffect(() => {
     const getSeasonData = async () => {
@@ -17,8 +18,6 @@ function Schedule() {
     getSeasonData();
     setIsLoading(false);
   }, []);
-
-  console.log(teamKeysArray[0]);
 
   if (isLoading) {
     return <Spinner />;
@@ -43,7 +42,12 @@ function Schedule() {
             <th>Series 18</th>
           </tr>
           {teamKeysArray.map((team, index) => (
-            <ScheduleLine key={index} team={team} schedule={schedule} />
+            <ScheduleLine
+              key={index}
+              team={team}
+              schedule={schedule}
+              series={monthSeries}
+            />
           ))}
         </thead>
         <tbody id="schedule05"></tbody>
