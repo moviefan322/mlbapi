@@ -15,8 +15,21 @@ const placeBet = async (betData, token) => {
   return response.data;
 };
 
+const getBets = async (token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const response = await axios.get(API_URL, config);
+
+  return response.data;
+};
+
 const betService = {
   placeBet,
+  getBets,
 };
 
 export default betService;
