@@ -7,6 +7,8 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Schedule from "./pages/Schedule";
+import PrivateRoute from "./components/PrivateRoute";
+import Bets from "./pages/Bets";
 
 function App() {
   if (typeof window !== "undefined") {
@@ -22,6 +24,9 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/schedule" element={<Schedule />} />
+            <Route path="/bets" element={<PrivateRoute />}>
+              <Route path="/bets" element={<Bets />} />
+            </Route>
           </Routes>
           <ToastContainer />
         </div>
