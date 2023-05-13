@@ -1,4 +1,4 @@
-const { getBets, placeBet, getBet } = require("../controllers/betController");
+const { getBets, placeBet, getBet, updateBet } = require("../controllers/betController");
 
 const { protect } = require("../middleware/authMiddleware");
 
