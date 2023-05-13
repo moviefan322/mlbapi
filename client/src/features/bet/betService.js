@@ -10,7 +10,13 @@ const placeBet = async (betData, token) => {
     },
   };
 
-    const response = await axios.post(API_URL, betData, config);
+  const response = await axios.post(API_URL, betData, config);
 
-    return response.data;
+  return response.data;
 };
+
+const betService = {
+  placeBet,
+};
+
+export default betService;
