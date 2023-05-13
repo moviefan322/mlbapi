@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -7,11 +7,12 @@ import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import PropTypes from "prop-types";
 import { formatDate } from "../utils/formatTime";
+import Spinner from "./Spinner";
 
 function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
   const [betAmount, setBetAmount] = useState("");
   const [betError, setBetError] = useState("");
-  const { accountBalance, user } = useSelector((state) => state.auth.user);
+  const { accountBalance } = useSelector((state) => state.auth.user);
   const { isLoading, isError, isSuccess, message } = useSelector(
     (state) => state.bet
   );
@@ -20,17 +21,19 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
   const awayTeam = game.teams.away.team.name;
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isError) {
       toast.error(message);
     }
     if (isSuccess) {
-      toast.success(message);
+      console.log("success");
+      toast.success("Bet successfully placed");
+      dispatch(reset());
+      navigate("/bets");
     }
-
-    dispatch(reset());
-  }, [isError, isSuccess, message, dispatch]);
+  }, [isSuccess, dispatch, navigate, isError, message]);
 
   const onPlaceBet = (e) => {
     e.preventDefault();
@@ -62,9 +65,13 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
         betTeam: bettingOn,
         gameId: game.gamePk,
       });
-      onClose();
+      // onClose();
     }
   };
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <div>
