@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import PropTypes from "prop-types";
 import teamKeys from "../utils/teamKeys";
 import { getSingleGameData } from "../utils/MLBAPI";
-import { formatTime, formatDate } from "../utils/formatTime";
+import { formatTime } from "../utils/formatTime";
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
 import BetModal from "./BetModal";
 import Spinner from "./Spinner";
