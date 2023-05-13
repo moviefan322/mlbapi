@@ -74,33 +74,10 @@ const placeBet = asyncHandler(async (req, res) => {
     betType,
     betOdds,
     betTeam,
-    betSeries,
-    betGame,
+    gameId,
   });
 
   res.status(201).json(bet);
-});
-
-// @desc    Update a bet
-// @route   PUT /api/bets/:id
-// @access  Internal
-const updateBet = asyncHandler(async (req, res) => {
-  const { betResult } = req.body;
-
-  const bet = await Bet.findById(req.params.id);
-
-  if (!bet) {
-    res.status(404);
-    throw new Error("Bet not found");
-  }
-
-  const updatedBet = await Bet.findByIdAndUpdate(
-    req.params.id,
-    { betResult },
-    { new: true }
-  );
-
-  res.status(200).json(updatedBet);
 });
 
 module.exports = { getBets, placeBet, getBet, updateBet };

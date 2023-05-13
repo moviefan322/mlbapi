@@ -24,11 +24,7 @@ const betSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    betSeries: {
-      type: Number,
-      required: true,
-    },
-    betGame: {
+    gameId: {
       type: Number,
       required: true,
     },
