@@ -7,14 +7,25 @@ import { formatDate } from "../utils/formatTime";
 
 function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
   const [betAmount, setBetAmount] = useState("");
+  const [betError, setBetError] = useState("");
   const { accountBalance } = useSelector((state) => state.auth.user);
-  console.log(accountBalance);
 
   const homeTeam = game.teams.home.team.name;
   const awayTeam = game.teams.away.team.name;
 
   const onPlaceBet = () => {
-    // Place bet logic here
+    if (betAmount > accountBalance) {
+      setBetError("Infuccient funds");
+    }
+    if (betAmount <= 0) {
+      setBetError("Bet amount must be greater than 0");
+    }
+    if (betAmount > 0 && betAmount <= accountBalance) {
+      setBetError("");
+      console.log(`Bet placed: ${betAmount} on ${bettingOn}`);
+    }
+
+    onClose();
   };
 
   return (
@@ -28,10 +39,24 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
         <p>Betting on: {bettingOn}</p>
         <p>Money Line: {odds}</p>
         <div className="flex-row">
-          <p>Amount to bet:</p> <input type="number" />{" "}
+          <p>Amount to bet:</p>
+          <input
+            className="narrow-input"
+            type="number"
+            name="betAmount"
+            value={betAmount}
+            onChange={(e) => setBetAmount(e.target.value)}
+          />{" "}
         </div>{" "}
         <br />
-        <button className="btn btn-sm btn-block">Place bet</button>
+        {betError && (
+          <p className="red">
+            <strong>{betError}</strong>
+          </p>
+        )}
+        <button className="btn btn-sm btn-block" onClick={onPlaceBet}>
+          Place bet
+        </button>
       </Modal>
     </div>
   );
