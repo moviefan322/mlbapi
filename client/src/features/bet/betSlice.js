@@ -30,6 +30,7 @@ export const placeBet = createAsyncThunk(
 
 // Get user bets
 export const getBets = createAsyncThunk("bet/getBets", async (_, thunkAPI) => {
+  console.log("getting bets");
   try {
     const token = thunkAPI.getState().auth.user.token;
     return await betService.getBets(token);

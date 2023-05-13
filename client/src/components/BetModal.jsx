@@ -1,5 +1,8 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { placeBet, reset } from "../features/bet/betSlice";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import PropTypes from "prop-types";
@@ -9,12 +12,28 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
   const [betAmount, setBetAmount] = useState("");
   const [betError, setBetError] = useState("");
   const { accountBalance, user } = useSelector((state) => state.auth.user);
-  const {isLoading, isError, isSuccess, message} = useSelector((state) => state.bet);
+  const { isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.bet
+  );
 
   const homeTeam = game.teams.home.team.name;
   const awayTeam = game.teams.away.team.name;
 
-  const onPlaceBet = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
+    }
+    if (isSuccess) {
+      toast.success(message);
+    }
+
+    dispatch(reset());
+  }, [isError, isSuccess, message, dispatch]);
+
+  const onPlaceBet = (e) => {
+    e.preventDefault();
     if (betAmount > accountBalance) {
       setBetError("Infuccient funds");
       setTimeout(() => {
@@ -29,7 +48,20 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
     }
     if (betAmount > 0 && betAmount <= accountBalance) {
       setBetError("");
-      console.log(`Bet placed: ${betAmount} on ${bettingOn}`);
+      dispatch(
+        placeBet({
+          betAmount,
+          betOdds: odds,
+          betTeam: bettingOn,
+          gameId: game.gamePk,
+        })
+      );
+      console.log({
+        betAmount,
+        betOdds: odds,
+        betTeam: bettingOn,
+        gameId: game.gamePk,
+      });
       onClose();
     }
   };

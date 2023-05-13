@@ -11,8 +11,7 @@ function Home() {
     const fetchOdds = async () => {
       const response = await axios.get("/api/odds");
       if (response.data) {
-        setRawOdds(response.data);
-        console.log(response.data);
+        setRawOdds(response.data);  
       }
     };
     fetchOdds();
