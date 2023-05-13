@@ -45,16 +45,9 @@ const getBet = asyncHandler(async (req, res) => {
 // @route   POST /api/bets
 // @access  Private
 const placeBet = asyncHandler(async (req, res) => {
-  const { betAmount, betType, betOdds, betTeam, betSeries, betGame } = req.body;
+  const { betAmount, betOdds, betTeam, gameId } = req.body;
 
-  if (
-    !betAmount ||
-    !betType ||
-    !betOdds ||
-    !betTeam ||
-    !betSeries ||
-    !betGame
-  ) {
+  if (!betAmount || !betOdds || !betTeam || !gameId) {
     res.status(400);
     throw new Error("Missing bet information");
   }
@@ -71,10 +64,11 @@ const placeBet = asyncHandler(async (req, res) => {
   const bet = await Bet.create({
     user: user._id,
     betAmount,
-    betType,
+    betType: "moneyline", // TODO: add bet type to request body
     betOdds,
     betTeam,
     gameId,
+    betResult: "pending", // TODO: add bet result to request body
   });
 
   res.status(201).json(bet);
