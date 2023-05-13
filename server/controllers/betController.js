@@ -15,7 +15,10 @@ const getBets = asyncHandler(async (req, res) => {
   }
 
   // get bets from user
-  const bets = await Bet.find({ user: user._id });
+  const bets = await Bet.aggregate([
+    { $match: { user: user._id } },
+    { $sort: { createdAt: -1 } },
+  ]);
   res.status(200).json(bets);
 });
 
