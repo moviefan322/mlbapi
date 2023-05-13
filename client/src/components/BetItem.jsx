@@ -9,8 +9,9 @@ function BetItem({ bet }) {
       <div>{formatDate(bet.createdAt)}</div>
       <div>{bet.gameId}</div>
       <div>
-        {bet.betAmount} on {teamKeys[bet.betTeam].abb} at {bet.betOdds}
+        {bet.betAmount} on {teamKeys[bet.betTeam].abb}
       </div>
+      <div>{bet.betOdds}</div>
       <div className={`status status-${bet.betResult}`}>{bet.betResult}</div>
     </div>
   );
