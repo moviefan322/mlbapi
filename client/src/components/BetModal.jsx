@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import PropTypes from "prop-types";
-import { formatTime, formatDate } from "../utils/formatTime";
+import { formatDate } from "../utils/formatTime";
 
 function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
   const [betAmount, setBetAmount] = useState("");
+  const { accountBalance } = useSelector((state) => state.auth.user);
+  console.log(accountBalance);
 
   const homeTeam = game.teams.home.team.name;
   const awayTeam = game.teams.away.team.name;
@@ -35,12 +38,11 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
 }
 
 BetModal.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
+  open: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
-  team: PropTypes.string.isRequired,
   odds: PropTypes.number.isRequired,
-  gameDate: PropTypes.string.isRequired,
-  onSubmit: PropTypes.func.isRequired,
+  bettingOn: PropTypes.string.isRequired,
+  game: PropTypes.object.isRequired,
 };
 
 export default BetModal;
