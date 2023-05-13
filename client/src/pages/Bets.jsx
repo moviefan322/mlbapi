@@ -25,8 +25,7 @@ function Bets() {
           <div>Date</div>
           <div>Game</div>
           <div>Bet</div>
-          <div>Status</div>
-          <div>$</div>
+          <div>Result</div>
         </div>
         {bets.map((bet) => (
           <BetItem key={bet._id} bet={bet} />

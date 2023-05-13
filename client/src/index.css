@@ -270,6 +270,19 @@ table {
   margin-left: 5%;
 }
 
+.bet {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background: #f4f4f4;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-align: center;
+}
+
 .bet-headings {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -281,4 +294,30 @@ table {
   padding: 10px 15px;
   border-radius: 5px;
   text-align: center;
+  font-weight: bolder;
+}
+
+.status {
+  background-color: #333;
+  color: #fff;
+  width: 100px;
+  padding: 0 20px;
+  justify-self: center;
+  font-size: 16px;
+  text-align: center;
+}
+
+.status-win {
+  background-color: green;
+  color: #fff;
+}
+
+.status-loss {
+  background-color: rgb(227, 2, 2);
+  color: #fff;
+}
+
+.status-pending {
+  background-color: rgb(163, 152, 0);
+  color: #fff;
 }
