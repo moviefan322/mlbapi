@@ -80,4 +80,4 @@ const placeBet = asyncHandler(async (req, res) => {
   res.status(201).json(bet);
 });
 
-module.exports = { getBets, placeBet, getBet, updateBet };
+module.exports = { getBets, placeBet, getBet };

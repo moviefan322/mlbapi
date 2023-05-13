@@ -28,6 +28,8 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
     onClose();
   };
 
+  console.log(game);
+
   return (
     <div>
       <Modal open={open} onClose={onClose} center>
