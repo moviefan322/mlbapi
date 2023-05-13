@@ -240,3 +240,7 @@ h3 {
   background-color: cornsilk;
   font-weight: bold;
 }
+
+.flex-row {
+  display: flex;
+}

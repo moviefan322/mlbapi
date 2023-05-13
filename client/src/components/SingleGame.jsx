@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from "react";
+import { Modal } from "react-responsive-modal";
+import "react-responsive-modal/styles.css";
 import PropTypes from "prop-types";
 import teamKeys from "../utils/teamKeys";
 import { getSingleGameData } from "../utils/MLBAPI";
-import { formatTime } from "../utils/formatTime";
+import { formatTime, formatDate } from "../utils/formatTime";
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
+import BetModal from "./BetModal";
 import Spinner from "./Spinner";
 
 function SingleGame({ game, odds }) {
+  const [openAway, setOpenAway] = useState(false);
+  const [openHome, setOpenHome] = useState(false);
   const [singleGame, setSingleGame] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const homeTeam = game.teams.home.team.name;
@@ -20,6 +25,11 @@ function SingleGame({ game, odds }) {
       setIsLoading(false);
     });
   }, [game.gamePk]);
+
+  const onOpenAway = () => setOpenAway(true);
+  const onCloseAway = () => setOpenAway(false);
+  const onOpenHome = () => setOpenHome(true);
+  const onCloseHome = () => setOpenHome(false);
 
   if (isLoading || singleGame === null) {
     return <Spinner />;
@@ -47,9 +57,25 @@ function SingleGame({ game, odds }) {
       <div className="score">
         <div>
           <img className="icon" src={teamKeys[awayTeam].image} alt="" />
-          <button className={`btn btn-sm ${awayOdds >= 0 ? "red" : "green"}`}>
-          {awayOdds >= 0 ? "+" : ""}{awayOdds}
+          <button
+            className={`btn btn-sm ${awayOdds >= 0 ? "red" : "green"}`}
+            onClick={onOpenAway}
+          >
+            {awayOdds >= 0 ? "+" : ""}
+            {awayOdds}
           </button>
+          {openAway && (
+            <BetModal
+              open={openAway}
+              onClose={onCloseAway}
+              teamKeys={teamKeys}
+              odds={awayOdds}
+              game={game}
+              bettingOn={awayTeam}
+              animationIn="fadeIn"
+              animationOut="fadeOut"
+            />
+          )}
         </div>
         <div className="data">
           <h3>
@@ -83,9 +109,25 @@ function SingleGame({ game, odds }) {
         </div>
         <div>
           <img className="icon" src={teamKeys[homeTeam].image} alt="" />
-          <button className={`btn btn-sm ${homeOdds >= 0 ? "red" : "green"}`}>
-          {homeOdds >= 0 ? "+" : ""}{homeOdds}
+          <button
+            className={`btn btn-sm ${homeOdds >= 0 ? "red" : "green"}`}
+            onClick={onOpenHome}
+          >
+            {homeOdds >= 0 ? "+" : ""}
+            {homeOdds}
           </button>
+          {openHome && (
+            <BetModal
+              open={openHome}
+              onClose={onCloseHome}
+              teamKeys={teamKeys}
+              odds={homeOdds}
+              game={game}
+              bettingOn={homeTeam}
+              animationIn="fadeIn"
+              animationOut="fadeOut"
+            />
+          )}
         </div>
       </div>
       <h4 className="bottom">
