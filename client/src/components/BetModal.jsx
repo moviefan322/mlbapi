@@ -16,22 +16,22 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
   const onPlaceBet = () => {
     if (betAmount > accountBalance) {
       setBetError("Infuccient funds");
+      setTimeout(() => {
+        setBetError("");
+      }, 3000);
     }
     if (betAmount <= 0) {
       setBetError("Bet amount must be greater than 0");
+      setTimeout(() => {
+        setBetError("");
+      }, 3000);
     }
     if (betAmount > 0 && betAmount <= accountBalance) {
       setBetError("");
       console.log(`Bet placed: ${betAmount} on ${bettingOn}`);
+      onClose();
     }
-
-    onClose();
   };
-
-  console.log(
-    game.gameDate.split("T")[1].slice(0, 8),
-    new Date().toString().split(" ")[4]
-  );
 
   return (
     <div>
