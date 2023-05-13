@@ -28,38 +28,54 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
     onClose();
   };
 
-  console.log(game);
+  console.log(
+    game.gameDate.split("T")[1].slice(0, 8),
+    new Date().toString().split(" ")[4]
+  );
 
   return (
     <div>
-      <Modal open={open} onClose={onClose} center>
-        <h3>Place a Bet</h3>
-        <p>
-          {teamKeys[awayTeam].abb}@{teamKeys[homeTeam].abb} on{" "}
-          {formatDate(game.gameDate)}
-        </p>
-        <p>Betting on: {bettingOn}</p>
-        <p>Money Line: {odds}</p>
-        <div className="flex-row">
-          <p>Amount to bet:</p>
-          <input
-            className="narrow-input"
-            type="number"
-            name="betAmount"
-            value={betAmount}
-            onChange={(e) => setBetAmount(e.target.value)}
-          />{" "}
-        </div>{" "}
-        <br />
-        {betError && (
-          <p className="red">
-            <strong>{betError}</strong>
+      {game.gameDate.split("T")[1].slice(0, 8) <
+      new Date().toString().split(" ")[4] ? (
+        <Modal open={open} onClose={onClose} center>
+          <h3>Betting is closed for this event</h3>
+          <p>
+            {" "}
+            Bets may not be placed on an event after it has started. Our team is
+            working hard to implement live betting, but for now all bets must be
+            placed before the event begins.{" "}
           </p>
-        )}
-        <button className="btn btn-sm btn-block" onClick={onPlaceBet}>
-          Place bet
-        </button>
-      </Modal>
+        </Modal>
+      ) : (
+        <Modal open={open} onClose={onClose} center>
+          <h3>Place a Bet</h3>
+          <p>
+            {teamKeys[awayTeam].abb}@{teamKeys[homeTeam].abb} on{" "}
+            {formatDate(game.gameDate)}
+          </p>
+          <p>Betting on: {bettingOn}</p>
+          <p>Money Line: {odds}</p>
+          <div className="flex-row">
+            <p>Amount to bet:</p>
+            <input
+              className="narrow-input"
+              type="number"
+              name="betAmount"
+              value={betAmount}
+              onChange={(e) => setBetAmount(e.target.value)}
+            />{" "}
+          </div>{" "}
+          <br />
+          {betError && (
+            <p className="red">
+              <strong>{betError}</strong>
+            </p>
+          )}
+          <button className="btn btn-sm btn-block" onClick={onPlaceBet}>
+            Place bet
+          </button>
+        </Modal>
+      )}
     </div>
   );
 }
