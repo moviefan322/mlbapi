@@ -269,3 +269,16 @@ table {
   width: 24%;
   margin-left: 5%;
 }
+
+.bet-headings {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background: #f4f4f4;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-align: center;
+}
