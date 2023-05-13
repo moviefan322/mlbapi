@@ -34,6 +34,14 @@ h3 {
   margin-bottom: 10px;
 }
 
+table {
+  left: -250px;
+  width: 100%;
+  border-collapse: collapse;
+  margin: auto;
+  justify-content: center;
+}
+
 .container {
   width: 100%;
   max-width: 960px;
@@ -261,4 +269,3 @@ h3 {
   width: 24%;
   margin-left: 5%;
 }
-
