@@ -66,7 +66,12 @@ export const betSlice = createSlice({
   name: "bet",
   initialState,
   reducers: {
-    reset: (state) => initialState,
+    reset: (state) => {
+      state.isError = false;
+      state.isLoading = false;
+      state.isLoading = false;
+      state.message = "";
+    },
   },
   extraReducers: (builder) => {
     builder

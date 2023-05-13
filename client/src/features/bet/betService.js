@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:3000/api/bets/";
+const API_URL = "/api/bets/";
 
 // Place a bet
 const placeBet = async (betData, token) => {

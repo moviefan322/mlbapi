@@ -5,6 +5,8 @@ import teamKeys from "../utils/teamKeys";
 import { getSingleGameData } from "../utils/MLBAPI";
 import { formatTime } from "../utils/formatTime";
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
+import { reset } from "../features/bet/betSlice";
+import { useDispatch } from "react-redux";
 import BetModal from "./BetModal";
 import Spinner from "./Spinner";
 
@@ -18,6 +20,8 @@ function SingleGame({ game, odds }) {
   let homeOdds = 0;
   let awayOdds = 0;
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
     getSingleGameData(game.gamePk).then((res) => {
       setSingleGame(res);
@@ -25,9 +29,15 @@ function SingleGame({ game, odds }) {
     });
   }, [game.gamePk]);
 
-  const onOpenAway = () => setOpenAway(true);
+  const onOpenAway = () => {
+    setOpenAway(true);
+    dispatch(reset());
+  };
   const onCloseAway = () => setOpenAway(false);
-  const onOpenHome = () => setOpenHome(true);
+  const onOpenHome = () => {
+    setOpenHome(true);
+    dispatch(reset());
+  };
   const onCloseHome = () => setOpenHome(false);
 
   if (isLoading || singleGame === null) {

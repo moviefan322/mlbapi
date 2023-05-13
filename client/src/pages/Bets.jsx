@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getBets } from "../features/bet/betSlice";
+import { getBets, reset } from "../features/bet/betSlice";
 import BetItem from "../components/BetItem";
 import Spinner from "../components/Spinner";
 
@@ -11,6 +11,7 @@ function Bets() {
 
   useEffect(() => {
     dispatch(getBets());
+    dispatch(reset());
   }, [dispatch]);
 
   if (isLoading) {
