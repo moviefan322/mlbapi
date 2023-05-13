@@ -27,9 +27,22 @@ const getBets = async (token) => {
   return response.data;
 };
 
+const getBet = async (betId, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const response = await axios.get(`${API_URL}${betId}`, config);
+
+  return response.data;
+};
+
 const betService = {
   placeBet,
   getBets,
+  getBet,
 };
 
 export default betService;
