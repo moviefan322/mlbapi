@@ -3,6 +3,8 @@ import {
   FaUser,
   FaCalendarAlt,
   FaRegCaretSquareLeft,
+  FaTicketAlt,
+  FaBaseballBall,
 } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -29,16 +31,28 @@ function Header() {
       </div>
       <ul>
         <li>
+          <Link to="/">
+            <FaBaseballBall /> Games
+          </Link>
+        </li>
+        <li>
           <Link to="/schedule">
             <FaCalendarAlt /> Schedule
           </Link>
         </li>
         {user ? (
-          <li>
-            <button onClick={onLogout} className="btn-none">
-              <FaRegCaretSquareLeft className="bigger" /> Logout
-            </button>
-          </li>
+          <>
+            <li>
+              <Link to="/bets">
+                <FaTicketAlt /> Bets
+              </Link>
+            </li>
+            <li>
+              <button onClick={onLogout} className="btn-none">
+                <FaRegCaretSquareLeft className="bigger" /> Logout
+              </button>
+            </li>
+          </>
         ) : (
           <>
             <li>
