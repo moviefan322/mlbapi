@@ -71,6 +71,7 @@ const placeBet = asyncHandler(async (req, res) => {
     betOdds,
     betTeam,
     gameId,
+    betPlain,
     betResult: "pending", // TODO: add bet result to request body
   });
 

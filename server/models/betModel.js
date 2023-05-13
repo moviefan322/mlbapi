@@ -28,9 +28,16 @@ const betSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
+    gamePlain: {
+      type: String,
+    },
     betResult: {
       type: String,
       default: "Pending",
+    },
+    plusMinus: {
+      type: Number,
+      default: 0,
     },
   },
   {

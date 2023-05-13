@@ -10,8 +10,8 @@ function Bets() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getBets());
     dispatch(reset());
+    dispatch(getBets());
   }, [dispatch]);
 
   if (isLoading) {

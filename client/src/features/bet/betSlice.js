@@ -67,10 +67,7 @@ export const betSlice = createSlice({
   initialState,
   reducers: {
     reset: (state) => {
-      state.isError = false;
-      state.isLoading = false;
-      state.isLoading = false;
-      state.message = "";
+      return (state = { ...initialState });
     },
   },
   extraReducers: (builder) => {

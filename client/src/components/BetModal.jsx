@@ -57,6 +57,7 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
           betOdds: odds,
           betTeam: bettingOn,
           gameId: game.gamePk,
+          betPlain: `${teamKeys[awayTeam].abb}@${teamKeys[homeTeam].abb}`,
         })
       );
       console.log({

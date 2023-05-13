@@ -7,7 +7,7 @@ function BetItem({ bet }) {
   return (
     <div className="bet">
       <div>{formatDate(bet.createdAt)}</div>
-      <div>{bet.gameId}</div>
+      <div>{bet.betPlain}</div>
       <div>
         {bet.betAmount} on {teamKeys[bet.betTeam].abb}
       </div>
