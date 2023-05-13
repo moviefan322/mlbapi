@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import betService from "../../services/betService";
+import betService from "./betService";
 
 const initialState = {
   bets: [],

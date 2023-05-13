@@ -8,7 +8,8 @@ import { formatDate } from "../utils/formatTime";
 function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
   const [betAmount, setBetAmount] = useState("");
   const [betError, setBetError] = useState("");
-  const { accountBalance } = useSelector((state) => state.auth.user);
+  const { accountBalance, user } = useSelector((state) => state.auth.user);
+  const {isLoading, isError, isSuccess, message} = useSelector((state) => state.bet);
 
   const homeTeam = game.teams.home.team.name;
   const awayTeam = game.teams.away.team.name;
