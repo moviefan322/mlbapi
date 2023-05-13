@@ -21,7 +21,6 @@ function Schedule() {
       setMonthSeries(monthSeriesMap(month));
       setMonthName(monthMap(month));
       setIsLoading(false);
-      console.log(monthSeriesMap(month));
     };
     getSeasonData();
   }, [month]);

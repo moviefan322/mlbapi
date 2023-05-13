@@ -123,6 +123,18 @@ h3 {
   justify-content: center;
 }
 
+.btn-none {
+  font-family: "Courier New", Courier, monospace;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .btn svg {
   margin-right: 8px;
 }
@@ -249,3 +261,4 @@ h3 {
   width: 24%;
   margin-left: 5%;
 }
+

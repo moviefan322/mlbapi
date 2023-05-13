@@ -1,5 +1,9 @@
-import { FaSignInAlt, FaUser, FaCalendarAlt } from "react-icons/fa";
-import { CgLogOut } from "react-icons/cg";
+import {
+  FaSignInAlt,
+  FaUser,
+  FaCalendarAlt,
+  FaRegCaretSquareLeft,
+} from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, reset } from "../features/auth/authSlice";
@@ -31,8 +35,8 @@ function Header() {
         </li>
         {user ? (
           <li>
-            <button onClick={onLogout} className="btn">
-              <CgLogOut /> Logout
+            <button onClick={onLogout} className="btn-none">
+              <FaRegCaretSquareLeft className="bigger" /> Logout
             </button>
           </li>
         ) : (
