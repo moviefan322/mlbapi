@@ -14,6 +14,7 @@ function App() {
   if (typeof window !== "undefined") {
     window.React = React;
   }
+
   return (
     <>
       <Router>
