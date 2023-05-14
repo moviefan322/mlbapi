@@ -5,6 +5,7 @@ import {
   FaRegCaretSquareLeft,
   FaTicketAlt,
   FaBaseballBall,
+  FaCoins,
 } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -46,6 +47,10 @@ function Header() {
               <Link to="/bets">
                 <FaTicketAlt /> Bets
               </Link>
+            </li>
+            <li>
+              <FaCoins />
+              {" " + user.accountBalance}
             </li>
             <li>
               <button onClick={onLogout} className="btn-none">
