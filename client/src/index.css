@@ -281,7 +281,7 @@ table {
   padding: 10px 15px;
   border-radius: 5px;
   text-align: center;
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .bet-headings {
@@ -321,4 +321,40 @@ table {
 .status-pending {
   background-color: rgb(163, 152, 0);
   color: #fff;
+}
+
+.tooltip {
+  position: relative;
+  display: block;
+}
+
+.tooltip .tooltiptext {
+  display: none;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  left: 50%;
+  margin-left: -60px;
+  font-size: 0.65rem;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  display: block;
 }
