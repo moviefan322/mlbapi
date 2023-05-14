@@ -1,6 +1,10 @@
 const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
 const Bet = require("../models/betModel");
+const {
+  calculateWinnings,
+  returnNegative,
+} = require("../../client/src/utils/moneyLine");
 
 // @desc    Get a users bets
 // @route   GET /api/bets
@@ -48,7 +52,7 @@ const getBet = asyncHandler(async (req, res) => {
 // @route   POST /api/bets
 // @access  Private
 const placeBet = asyncHandler(async (req, res) => {
-  const { betAmount, betOdds, betTeam, gameId } = req.body;
+  const { betAmount, betOdds, betTeam, gameId, gamePlain } = req.body;
 
   if (!betAmount || !betOdds || !betTeam || !gameId) {
     res.status(400);
@@ -71,11 +75,46 @@ const placeBet = asyncHandler(async (req, res) => {
     betOdds,
     betTeam,
     gameId,
-    betPlain,
+    gamePlain,
     betResult: "pending", // TODO: add bet result to request body
   });
 
   res.status(201).json(bet);
 });
 
-module.exports = { getBets, placeBet, getBet };
+const updateBets = asyncHandler(async (req, res) => {
+  const results = req.body;
+  console.log(results);
+  const bets = await Bet.find({ betResult: "pending" });
+  const updatedBets = await Promise.all(
+    // find all bets where game id matches
+    bets.map(async (bet) => {
+      const result = results.find((result) => result.gameId === bet.gameId);
+      console.log("result", result);
+      if (result) {
+        // if bet team matches result team
+        if (
+          bet.betTeam.trim().toLowerCase() ===
+          result.winner.trim().toLowerCase()
+        ) {
+          // change bet result to win
+          bet.betResult = "win";
+          // calculate winnings
+          bet.plusMinus = calculateWinnings(bet.betOdds, bet.betAmount);
+        } else {
+          // change bet result to loss
+          bet.betResult = "loss";
+          // calculate winnings
+          bet.plusMinus = returnNegative(bet.betAmount);
+        }
+        // save bet
+        await bet.save();
+      }
+      return bet;
+    })
+  );
+
+  res.status(200).json({ updatedBets });
+});
+
+module.exports = { getBets, placeBet, getBet, updateBets };

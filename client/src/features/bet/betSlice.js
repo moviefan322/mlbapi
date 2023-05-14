@@ -30,7 +30,6 @@ export const placeBet = createAsyncThunk(
 
 // Get user bets
 export const getBets = createAsyncThunk("bet/getBets", async (_, thunkAPI) => {
-  console.log("getting bets");
   try {
     const token = thunkAPI.getState().auth.user.token;
     return await betService.getBets(token);
@@ -51,6 +50,26 @@ export const getBet = createAsyncThunk(
     try {
       const token = thunkAPI.getState().auth.user.token;
       return await betService.getBet(betId, token);
+    } catch (error) {
+      const message =
+        (error.response && error.response.data.message) ||
+        error.message ||
+        error.toString();
+
+      return thunkAPI.rejectWithValue(message);
+    }
+  }
+);
+
+export const updateBets = createAsyncThunk(
+  "bet/updateBets",
+  async (_, thunkAPI) => {
+    try {
+      const token = thunkAPI.getState().auth.user.token;
+      const bets = thunkAPI.getState().bet.bets;
+      const activeBets = bets.filter((bet) => bet.betResult === "pending");
+      console.log(activeBets);
+      return await betService.updateBets(activeBets, token);
     } catch (error) {
       const message =
         (error.response && error.response.data.message) ||
@@ -107,6 +126,19 @@ export const betSlice = createSlice({
         state.bet = action.payload;
       })
       .addCase(getBet.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+      })
+      .addCase(updateBets.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(updateBets.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        console.log("paylpad", action.payload);
+      })
+      .addCase(updateBets.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload;

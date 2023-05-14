@@ -38,6 +38,7 @@ const betSchema = mongoose.Schema(
     plusMinus: {
       type: Number,
       default: 0,
+      cast: false,
     },
   },
   {

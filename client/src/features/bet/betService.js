@@ -39,10 +39,24 @@ const getBet = async (betId, token) => {
   return response.data;
 };
 
+const updateBets = async (bets, token) => {
+  console.log("bets from betService", bets)
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  const response = await axios.put(API_URL, bets, config);
+
+  return response.data;
+};
+
 const betService = {
   placeBet,
   getBets,
   getBet,
+  updateBets,
 };
 
 export default betService;
