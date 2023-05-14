@@ -31,7 +31,6 @@ function Home() {
         loser,
       });
     });
-    console.log("game controller", gameResults);
     return gameResults;
   };
 
@@ -59,6 +58,8 @@ function Home() {
     };
     sendResults();
   }, [games]);
+
+  console.log("games", games);
 
   return (
     <div id="main" className="card-container">

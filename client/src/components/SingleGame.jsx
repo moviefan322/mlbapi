@@ -91,7 +91,9 @@ function SingleGame({ game, odds }) {
             {game.status.abstractGameCode === "L" ||
             game.status.abstractGameCode === "F" ? (
               <>
-                {game.teams.away.score} - {game.teams.home.score}
+                {/* {game.teams.away.score} - {game.teams.home.score} */}
+                {singleGame.liveData.linescore.teams.away.runs} -{" "}
+                {singleGame.liveData.linescore.teams.home.runs}
               </>
             ) : (
               formatTime(game.gameDate)
