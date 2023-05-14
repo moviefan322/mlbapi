@@ -45,13 +45,9 @@ const fetchOdds = async () => {
   }
 };
 
-// Set interval to get odds every 4 hours
+// Set interval to get odds every 12 hours
 
-const fetchOddsAsync = async () => {
-  setInterval(async () => {
-    fetchOdds();
-  }, 14400000);
-};
+setInterval(fetchOdds, 43200000);
 
 // @desc   Get all odds
 // @route  GET /odds
