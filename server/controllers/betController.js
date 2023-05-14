@@ -90,7 +90,6 @@ const updateBets = asyncHandler(async (req, res) => {
     // find all bets where game id matches
     bets.map(async (bet) => {
       const result = results.find((result) => result.gameId === bet.gameId);
-      console.log("result", result);
       if (result) {
         // if bet team matches result team
         if (
@@ -113,6 +112,13 @@ const updateBets = asyncHandler(async (req, res) => {
       return bet;
     })
   );
+
+  // adjust users account balance
+  for (const bet of updatedBets) {
+    await User.findByIdAndUpdate(bet.user, {
+      $inc: { accountBalance: bet.plusMinus },
+    });
+  }
 
   res.status(200).json({ updatedBets });
 });
