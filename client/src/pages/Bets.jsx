@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getBets, reset } from "../features/bet/betSlice";
 import { getUserData } from "../features/auth/authSlice";
@@ -8,6 +8,7 @@ import BetItem from "../components/BetItem";
 import Spinner from "../components/Spinner";
 
 function Bets() {
+  const [updatedBets, setUpdatedBets] = useState(false);
   const { bets, isLoading } = useSelector((state) => state.bet);
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
@@ -19,15 +20,13 @@ function Bets() {
       console.log("sent");
     };
     sendResults();
-  }, []);
-
-  useEffect(() => {
     dispatch(reset());
     dispatch(getBets());
     dispatch(getUserData(user.token));
+    setUpdatedBets(true);
   }, []);
 
-  if (isLoading) {
+  if (isLoading || !updatedBets) {
     return <Spinner />;
   }
 

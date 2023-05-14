@@ -23,6 +23,7 @@ const userSchema = mongoose.Schema(
       type: Number,
       required: true,
       default: 100,
+      set: (value) => parseFloat(value.toFixed(2)),
     },
   },
   {
