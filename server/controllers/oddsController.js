@@ -26,7 +26,7 @@ const fetchOdds = async () => {
     const response = await axios.request(options);
     odds = response.data;
     fs.writeFile(
-      path.join(__dirname, '../devData/odds.json'),
+      path.join(__dirname, "../devData/odds.json"),
       JSON.stringify(response.data),
       {
         encoding: "utf8",
@@ -54,7 +54,11 @@ setInterval(fetchOdds, 43200000);
 // @access Public
 
 const getOdds = asyncHandler(async (req, res) => {
-  res.json(odds);
+  try {
+    res.status(200).json(odds);
+  } catch (error) {
+    res.status(500).json(error);
+  }
 });
 
 // fetchOdds();
