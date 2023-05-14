@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getUserData } from "../features/auth/authSlice.js";
 import { getTodaysGames } from "../utils/MLBAPI.js";
 import SingleGame from "../components/SingleGame.jsx";
 import axios from "axios";
-import { get } from "mongoose";
 
 function Home() {
   const [games, setGames] = useState([]);
   const [rawOdds, setRawOdds] = useState([]);
+  const { user } = useSelector((state) => state.auth);
+
+  const dispatch = useDispatch();
 
   const getResults = async () => {
     const completedGames = games.filter(
@@ -45,6 +49,7 @@ function Home() {
   }, []);
 
   useEffect(() => {
+    dispatch(getUserData(user.token));
     getTodaysGames().then((res) => {
       setGames(res);
     });

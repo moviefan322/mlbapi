@@ -111,7 +111,14 @@ const getMe = asyncHandler(async (req, res) => {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     const user = await User.findById(decoded.id).select("-password");
     if (user) {
-      res.status(200).json(user);
+      res.status(200).json({
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        accountBalance: user.accountBalance,
+        isAdmin: user.isAdmin,
+        token: generateToken(user._id),
+      });
     } else {
       res.status(404);
       throw new Error("User not found");
