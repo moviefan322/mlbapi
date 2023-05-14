@@ -39,7 +39,7 @@ describe("registerUser", () => {
     expect(user.name).toBe("Ass McButthole");
     expect(user.accountBalance).toBe(100);
     expect(user.isAdmin).toBe(false);
-  }, 10000);
+  });
 
   it("should return an error if user already exists", async () => {
     // create a user with same email
@@ -90,5 +90,19 @@ describe("registerUser", () => {
       .expect(201);
 
     expect(res.body.password).not.toBe(password);
+  });
+
+  it("should reject an invalid emal", async () => {
+    const res = await request(server)
+      .post("/api/users")
+      .send({
+        name: "Ass McButthole",
+        email: "butthole",
+        password: "password",
+      })
+      .expect(400);
+
+    // assert response
+    expect(res.body.message).toBe("Please enter a valid email address");
   });
 });

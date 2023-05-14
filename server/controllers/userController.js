@@ -7,6 +7,7 @@ const jwt = require("jsonwebtoken");
 // @route   POST /users
 // @access  Public
 const registerUser = asyncHandler(async (req, res) => {
+  const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
   const { name, email, password } = req.body;
 
   const userExists = await User.findOne({ email });
@@ -21,6 +22,11 @@ const registerUser = asyncHandler(async (req, res) => {
   if (!name || !email || !password) {
     res.status(400);
     throw new Error("Please fill out all fields");
+  }
+
+  if (!emailRegex.test(email)) {
+   res.status(400);
+    throw new Error("Please enter a valid email address");
   }
 
   // Hash password
