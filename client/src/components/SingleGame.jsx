@@ -44,6 +44,13 @@ function SingleGame({ game, odds }) {
     return <Spinner />;
   }
 
+  const showData = async () => {
+    const singleGameData = await getSingleGameData(718182);
+    console.log(singleGameData);
+  };
+
+  showData();
+
   const thisGame = odds.filter((odd) => {
     return odd.away_team === awayTeam && odd.home_team === homeTeam;
   });
@@ -88,13 +95,14 @@ function SingleGame({ game, odds }) {
         </div>
         <div className="data">
           <h3>
-            {game.status.abstractGameCode === "L" ||
+            {game.status.statusCode === "I" ||
             game.status.abstractGameCode === "F" ? (
               <>
-                {/* {game.teams.away.score} - {game.teams.home.score} */}
                 {singleGame.liveData.linescore.teams.away.runs} -{" "}
                 {singleGame.liveData.linescore.teams.home.runs}
               </>
+            ) : game.status.statusCode === "PW" ? (
+              "WARMUP"
             ) : (
               formatTime(game.gameDate)
             )}
