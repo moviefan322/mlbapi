@@ -98,15 +98,28 @@ const generateToken = (id) => {
 // @desc get current user
 // @route GET /users/me
 // @access Private
+
 const getMe = asyncHandler(async (req, res) => {
-  const user = {
-    _id: req.user._id,
-    name: req.user.name,
-    email: req.user.email,
-    isAdmin: req.user.isAdmin,
-    accountBalance: req.user.accountBalance,
-  };
-  res.status(200).json(user);
+  const authorizationHeader = req.headers.authorization;
+  if (!authorizationHeader) {
+    res.status(401);
+    throw new Error("Authorization header missing");
+  }
+
+  const token = authorizationHeader.split(" ")[1];
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await User.findById(decoded.id).select("-password");
+    if (user) {
+      res.status(200).json(user);
+    } else {
+      res.status(404);
+      throw new Error("User not found");
+    }
+  } catch (err) {
+    res.status(401);
+    throw new Error("Invalid token");
+  }
 });
 
 module.exports = {
