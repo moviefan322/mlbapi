@@ -11,6 +11,8 @@ import { calculateWinnings } from "../utils/moneyLine";
 import Spinner from "./Spinner";
 
 function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
+  const [confirmBtn, setConfirmBtn] = useState("none");
+  const [betBtn, setBetBtn] = useState("");
   const [betAmount, setBetAmount] = useState("");
   const [betError, setBetError] = useState("");
   const { accountBalance } = useSelector((state) => state.auth.user);
@@ -62,6 +64,28 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
     }
   };
 
+  const showConfirm = () => {
+    if (betAmount > accountBalance) {
+      setBetError("Infuccient funds");
+      setTimeout(() => {
+        setBetError("");
+      }, 3000);
+    } else if (betAmount <= 0) {
+      setBetError("Bet amount must be greater than 0");
+      setTimeout(() => {
+        setBetError("");
+      }, 3000);
+    } else {
+      setConfirmBtn("flex");
+      setBetBtn("none");
+    }
+  };
+
+  const hideConfirm = () => {
+    setConfirmBtn("none");
+    setBetBtn("");
+  };
+
   if (isLoading) {
     return <Spinner />;
   }
@@ -73,8 +97,10 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
       <Modal open={open} onClose={onClose} center>
         <h3>Place a Bet</h3>
         <p>
-          {teamKeys[awayTeam].abb}@{teamKeys[homeTeam].abb} on{" "}
-          {formatDate(game.gameDate)}
+          <strong>
+            {teamKeys[awayTeam].abb}@{teamKeys[homeTeam].abb}
+          </strong>{" "}
+          on <strong>{formatDate(game.gameDate)}</strong>
         </p>
         <p>Betting on: {bettingOn}</p>
         <p>Money Line: {odds}</p>
@@ -86,10 +112,16 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
             name="betAmount"
             value={betAmount}
             onChange={(e) => setBetAmount(e.target.value)}
+            readOnly={confirmBtn === "flex" ? true : false}
           />
         </div>
         <div>
-          <p>Amount to win: {calculateWinnings(odds, betAmount)}</p>{" "}
+          <p>
+            Amount to win:{" "}
+            <strong>
+              {Number(calculateWinnings(odds, betAmount)) + Number(betAmount)}
+            </strong>
+          </p>{" "}
         </div>
         <br />
         {betError && (
@@ -97,9 +129,19 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
             <strong>{betError}</strong>
           </p>
         )}
-        <button className="btn btn-sm btn-block" onClick={onPlaceBet}>
+        <button
+          className={`btn btn-sm btn-block`}
+          onClick={showConfirm}
+          style={{ display: `${betBtn}` }}
+        >
           Place bet
         </button>
+        <div className="confirm-cancel" style={{ display: `${confirmBtn}` }}>
+          <button className="btn btn-sm  btn-green" onClick={onPlaceBet}>
+            Confirm Bet
+          </button>
+          <button className="btn btn-sm btn-red" onClick={hideConfirm}>Cancel Bet</button>
+        </div>
       </Modal>
     </div>
   );

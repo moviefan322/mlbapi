@@ -172,7 +172,6 @@ table {
 
 .btn-block {
   width: 100%;
-  margin-bottom: 20px;
 }
 
 .btn-sm {
@@ -376,4 +375,36 @@ table {
 
 .tooltip:hover .tooltiptext {
   display: block;
+}
+
+.confirm-cancel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.btn-green {
+  background-color: green;
+  color: #fff;
+  padding: 8px 20px;
+  justify-self: center;
+  text-align: center;
+  width: 45%;
+}
+
+.btn-red {
+  background-color: rgb(193, 4, 4);
+  color: #fff;
+  padding: 8px 20px;
+  justify-self: center;
+  text-align: center;
+  width: 45%;
+}
+
+.hidden {
+  display: none;
 }
