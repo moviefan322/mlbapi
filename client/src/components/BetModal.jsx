@@ -58,13 +58,6 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
           gamePlain: `${teamKeys[awayTeam].abb}@${teamKeys[homeTeam].abb}`,
         })
       );
-      console.log({
-        betAmount,
-        betOdds: odds,
-        betTeam: bettingOn,
-        gameId: game.gamePk,
-      });
-      // onClose();
     }
   };
 
@@ -72,9 +65,14 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
     return <Spinner />;
   }
 
+  console.log(
+    game.gameDate.split("T")[1].slice(0, 8),
+    new Date().toString().split(" ")[4]
+  );
+
   return (
     <div>
-      {/* {game.gameDate.split("T")[1].slice(0, 8) <
+      {game.gameDate.split("T")[1].slice(0, 8) <
       new Date().toString().split(" ")[4] ? (
         <Modal open={open} onClose={onClose} center>
           <h3>Betting is closed for this event</h3>
@@ -85,36 +83,36 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
             placed before the event begins.{" "}
           </p>
         </Modal>
-      ) : ( */}
-      <Modal open={open} onClose={onClose} center>
-        <h3>Place a Bet</h3>
-        <p>
-          {teamKeys[awayTeam].abb}@{teamKeys[homeTeam].abb} on{" "}
-          {formatDate(game.gameDate)}
-        </p>
-        <p>Betting on: {bettingOn}</p>
-        <p>Money Line: {odds}</p>
-        <div className="flex-row">
-          <p>Amount to bet:</p>
-          <input
-            className="narrow-input"
-            type="number"
-            name="betAmount"
-            value={betAmount}
-            onChange={(e) => setBetAmount(e.target.value)}
-          />{" "}
-        </div>{" "}
-        <br />
-        {betError && (
-          <p className="red">
-            <strong>{betError}</strong>
+      ) : (
+        <Modal open={open} onClose={onClose} center>
+          <h3>Place a Bet</h3>
+          <p>
+            {teamKeys[awayTeam].abb}@{teamKeys[homeTeam].abb} on{" "}
+            {formatDate(game.gameDate)}
           </p>
-        )}
-        <button className="btn btn-sm btn-block" onClick={onPlaceBet}>
-          Place bet
-        </button>
-      </Modal>
-      {/* )} */}
+          <p>Betting on: {bettingOn}</p>
+          <p>Money Line: {odds}</p>
+          <div className="flex-row">
+            <p>Amount to bet:</p>
+            <input
+              className="narrow-input"
+              type="number"
+              name="betAmount"
+              value={betAmount}
+              onChange={(e) => setBetAmount(e.target.value)}
+            />{" "}
+          </div>{" "}
+          <br />
+          {betError && (
+            <p className="red">
+              <strong>{betError}</strong>
+            </p>
+          )}
+          <button className="btn btn-sm btn-block" onClick={onPlaceBet}>
+            Place bet
+          </button>
+        </Modal>
+      )}
     </div>
   );
 }

@@ -17,7 +17,6 @@ function Bets() {
     const sendResults = async () => {
       const results = await getGameResults();
       await axios.put("/api/bets/", results);
-      console.log("sent");
     };
     sendResults();
     dispatch(reset());

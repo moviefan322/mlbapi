@@ -1,3 +1,4 @@
+const path = require("path");
 const axios = require("axios");
 const asyncHandler = require("express-async-handler");
 const fs = require("fs");
@@ -23,10 +24,9 @@ const options = {
 const fetchOdds = async () => {
   try {
     const response = await axios.request(options);
-    console.log(response.data);
     odds = response.data;
     fs.writeFile(
-      "odds.json",
+      path.join(__dirname, '../devData/odds.json'),
       JSON.stringify(response.data),
       {
         encoding: "utf8",

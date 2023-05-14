@@ -59,12 +59,9 @@ function Home() {
     const sendResults = async () => {
       const results = await getResults();
       await axios.put("/api/bets/", results);
-      console.log("sent");
     };
     sendResults();
   }, [games]);
-
-  console.log("games", games);
 
   return (
     <div id="main" className="card-container">

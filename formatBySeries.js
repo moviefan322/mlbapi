@@ -55,7 +55,6 @@ const formatBySeries = async () => {
     }
   }
 
-  console.log(teamSchedule);
   return teamSchedule;
 };
 

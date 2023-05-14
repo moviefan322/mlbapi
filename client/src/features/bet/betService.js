@@ -40,7 +40,6 @@ const getBet = async (betId, token) => {
 };
 
 const updateBets = async (bets, token) => {
-  console.log("bets from betService", bets)
   const config = {
     headers: {
       Authorization: `Bearer ${token}`,

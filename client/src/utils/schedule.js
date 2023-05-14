@@ -1,8 +1,6 @@
 import teamKeys from "./teamKeys.js";
 import formatBySeries from "./formatBySeries.js";
 
-// console.log(teamKeys);
-
 const formatDate = (date) => {
   const dateObj = new Date(date);
   const month = dateObj.getMonth() + 1;

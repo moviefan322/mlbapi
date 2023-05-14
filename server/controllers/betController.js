@@ -96,7 +96,6 @@ const placeBet = asyncHandler(async (req, res) => {
 
 const updateBets = asyncHandler(async (req, res) => {
   const results = req.body;
-  console.log(results);
   const bets = await Bet.find({ betResult: "pending" });
   const updatedBets = await Promise.all(
     // find all bets where game id matches

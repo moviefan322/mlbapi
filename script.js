@@ -23,7 +23,6 @@ const getFullSchedule = async () => {
     "https://statsapi.mlb.com/api/v1/schedule/games/?sportId=1&startDate=2023-03-30&endDate=2023-10-01"
   );
   const data = await response.json();
-  console.log(data);
   return data;
 };
 
