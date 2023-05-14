@@ -19,20 +19,27 @@ function Bets() {
 
   return (
     <>
-      <h1>Bets</h1>
-      <div className="bets">
-        <div className="bet-headings">
-          <div>Date</div>
-          <div>Game</div>
-          <div>Bet</div>
-          <div>Line</div>
-          <div>Result</div>
-          <div>+/</div>
-        </div>
-        {bets.map((bet) => (
-          <BetItem key={bet._id} bet={bet} />
-        ))}
-      </div>
+      {bets.length === 0 ? (
+        <h4>No bets placed yet</h4>
+      ) : (
+        <>
+          {" "}
+          <h1>Bets</h1>
+          <div className="bets">
+            <div className="bet-headings">
+              <div>Date</div>
+              <div>Game</div>
+              <div>Bet</div>
+              <div>Line</div>
+              <div>Result</div>
+              <div>+/</div>
+            </div>
+            {bets.map((bet) => (
+              <BetItem key={bet._id} bet={bet} />
+            ))}
+          </div>
+        </>
+      )}
     </>
   );
 }
