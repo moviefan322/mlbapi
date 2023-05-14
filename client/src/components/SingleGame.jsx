@@ -45,7 +45,7 @@ function SingleGame({ game, odds }) {
   }
 
   const showData = async () => {
-    const singleGameData = await getSingleGameData(718182);
+    const singleGameData = await getSingleGameData(718203);
     console.log(singleGameData);
   };
 
