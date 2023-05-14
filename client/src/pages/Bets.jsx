@@ -1,16 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getBets, reset, updateBets } from "../features/bet/betSlice";
+import { getBets, reset } from "../features/bet/betSlice";
 import BetItem from "../components/BetItem";
 import Spinner from "../components/Spinner";
 
 function Bets() {
   const { bets, isLoading } = useSelector((state) => state.bet);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(updateBets());
-  }, [dispatch, bets]);
 
   useEffect(() => {
     dispatch(reset());
