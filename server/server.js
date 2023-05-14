@@ -3,6 +3,7 @@ const cors = require("cors");
 const colors = require("colors");
 const { errorHandler } = require("./middleware/errorHandler");
 require("dotenv").config();
+const { runAllTasks } = require("./services/scheduledTasks");
 const connectDB = require("./config/db");
 
 const PORT = process.env.PORT || 3001;
@@ -17,6 +18,9 @@ app.use(cors());
 // Middlware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// Scheduled tasks
+runAllTasks();
 
 // Routes
 app.use("/api/users", require("./routes/userRoutes"));
