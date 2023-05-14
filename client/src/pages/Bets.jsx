@@ -1,17 +1,31 @@
+import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getBets, reset } from "../features/bet/betSlice";
+import { getUserData } from "../features/auth/authSlice";
+import getGameResults from "../utils/gameResults";
 import BetItem from "../components/BetItem";
 import Spinner from "../components/Spinner";
 
 function Bets() {
   const { bets, isLoading } = useSelector((state) => state.bet);
+  const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const sendResults = async () => {
+      const results = await getGameResults();
+      await axios.put("/api/bets/", results);
+      console.log("sent");
+    };
+    sendResults();
+  }, []);
 
   useEffect(() => {
     dispatch(reset());
     dispatch(getBets());
-  }, [dispatch]);
+    dispatch(getUserData(user.token));
+  }, []);
 
   if (isLoading) {
     return <Spinner />;

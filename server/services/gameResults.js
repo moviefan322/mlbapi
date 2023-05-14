@@ -33,7 +33,6 @@ const getGameResults = async () => {
       loser,
     });
   });
-  console.log("game controller", gameResults);
   return gameResults;
 };
 
