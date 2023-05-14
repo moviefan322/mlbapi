@@ -7,6 +7,7 @@ import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import PropTypes from "prop-types";
 import { formatDate } from "../utils/formatTime";
+import { calculateWinnings } from "../utils/moneyLine";
 import Spinner from "./Spinner";
 
 function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
@@ -69,11 +70,7 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
 
   return (
     <div>
-      <Modal
-        open={open}
-        onClose={onClose}
-        center
-      >
+      <Modal open={open} onClose={onClose} center>
         <h3>Place a Bet</h3>
         <p>
           {teamKeys[awayTeam].abb}@{teamKeys[homeTeam].abb} on{" "}
@@ -89,8 +86,11 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
             name="betAmount"
             value={betAmount}
             onChange={(e) => setBetAmount(e.target.value)}
-          />{" "}
-        </div>{" "}
+          />
+        </div>
+        <div>
+          <p>Amount to win: {calculateWinnings(odds, betAmount)}</p>{" "}
+        </div>
         <br />
         {betError && (
           <p className="red">
