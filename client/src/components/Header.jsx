@@ -50,7 +50,7 @@ function Header() {
             </li>
             <li>
               <FaCoins />
-              {" " + user.accountBalance}
+              {" " + user.accountBalance.toFixed(2)}
             </li>
             <li>
               <button onClick={onLogout} className="btn-none">
