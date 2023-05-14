@@ -65,14 +65,15 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
     return <Spinner />;
   }
 
-  console.log(
-    game.gameDate.split("T")[1].slice(0, 8),
-    new Date().toString().split(" ")[4]
-  );
+  console.log(game.status.codedGameState);
 
   return (
     <div>
-      <Modal open={open} onClose={onClose} center>
+      <Modal
+        open={open}
+        onClose={onClose}
+        center
+      >
         <h3>Place a Bet</h3>
         <p>
           {teamKeys[awayTeam].abb}@{teamKeys[homeTeam].abb} on{" "}
