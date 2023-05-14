@@ -20,13 +20,15 @@ const task5 = cron.schedule("*/1 12-23,0-3 * * *", () => {
 });
 
 // Fetches odds every day at 10:15AM
-const fetchOdds = cron.schedule("15 10 * 3-10 *", () => {
+const scheduleFetchOdds = cron.schedule("15 10 * 3-10 *", () => {
   fetchOdds();
+  console.log("Odds have been fetched!");
 });
 
 // Checks for game resuls every minute during baseball hours
 const scheduleBetUpdates = cron.schedule("*/1 12-23,0-3 * 3-10 *", () => {
   callUpdateBets();
+  console.log("Checking for game results!");
 });
 
 const runAllTasks = () => {
@@ -35,6 +37,7 @@ const runAllTasks = () => {
   task3.start();
   task5.start();
   scheduleBetUpdates.start();
+  scheduleFetchOdds.start();
 };
 
 module.exports = { runAllTasks };

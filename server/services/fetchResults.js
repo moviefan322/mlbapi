@@ -38,4 +38,4 @@ const getGameResults = async () => {
 
 getGameResults();
 
-module.exports = getGameResults;
+module.exports = { getGameResults };

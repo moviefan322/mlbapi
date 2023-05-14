@@ -1,7 +1,7 @@
 const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
 const Bet = require("../models/betModel");
-const getGameResults = require("./services/getGameResults");
+const { getGameResults } = require("./fetchResults");
 
 const updateBets = asyncHandler(async (req, res) => {
   const results = req.body;
