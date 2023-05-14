@@ -79,7 +79,19 @@ const placeBet = asyncHandler(async (req, res) => {
     betResult: "pending", // TODO: add bet result to request body
   });
 
-  res.status(201).json(bet);
+  // adjust users account balance
+  try {
+    const updatedUser = await User.findOneAndUpdate(
+      { _id: user._id },
+      { $inc: { accountBalance: returnNegative(betAmount) } },
+      { new: true }
+    );
+    res.status(201).json({ bet, accountBalance: updatedUser.accountBalance });
+  } catch (error) {
+    res.status(500).json({ error: "Error updating user account balance" });
+  }
+
+  res.status(201).json({ bet, accountBalance: user.accountBalance });
 });
 
 const updateBets = asyncHandler(async (req, res) => {
