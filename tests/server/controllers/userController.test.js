@@ -65,12 +65,38 @@ describe("registerUser", () => {
     expect(res.body.message).toBe("User already exists");
   });
 
-  it("should return an error if required fields are missing", async () => {
+  it("should return an error if required fields are missing (email)", async () => {
     const res = await request(server)
       .post("/api/users")
       .send({
         name: "John Doe",
         password: "password",
+      })
+      .expect(400);
+
+    // assert response
+    expect(res.body.message).toBe("Please fill out all fields");
+  });
+
+  it("should return an error if required fields are missing (name)", async () => {
+    const res = await request(server)
+      .post("/api/users")
+      .send({
+        email: "John@Doe.com",
+        password: "password",
+      })
+      .expect(400);
+
+    // assert response
+    expect(res.body.message).toBe("Please fill out all fields");
+  });
+
+  it("should return an error if required fields are missing (password)", async () => {
+    const res = await request(server)
+      .post("/api/users")
+      .send({
+        email: "John@Doe.com",
+        name: "password",
       })
       .expect(400);
 
