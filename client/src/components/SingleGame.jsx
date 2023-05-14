@@ -142,7 +142,7 @@ function SingleGame({ game, odds }) {
         </div>
       </div>
       <h4 className="bottom">
-        {game.status.abstractGameCode === "L" ? (
+        {game.status.statusCode === "I" ? (
           <>
             {singleGame.liveData?.linescore.balls}-
             {singleGame.liveData?.linescore.strikes}{" "}
@@ -153,10 +153,21 @@ function SingleGame({ game, odds }) {
             ) : (
               <AiOutlineArrowDown />
             )}
-            {singleGame.liveData?.linescore.currentInning}
+            {singleGame.liveData?.linescore.currentInningOrdinal}
           </>
         ) : game.status.abstractGameCode === "F" ? (
           "FINAL"
+        ) : game.status.statusCode === "UI" ? (
+          <div>
+            SUSPENDED
+            <br />
+            {singleGame.liveData?.linescore.inningHalf === "Top" ? (
+              <AiOutlineArrowUp />
+            ) : (
+              <AiOutlineArrowDown />
+            )}
+            {singleGame.liveData?.linescore.currentInningOrdinal}
+          </div>
         ) : (
           `${
             singleGame.gameData?.probablePitchers.away?.fullName ?? "TBD"
