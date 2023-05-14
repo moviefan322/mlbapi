@@ -71,20 +71,31 @@ function SingleGame({ game, odds }) {
       <div className="score">
         <div>
           <img className="icon" src={teamKeys[awayTeam].image} alt="" />
-          <button
-            className={`btn btn-sm ${awayOdds >= 0 ? "red" : "green"}`}
-            onClick={onOpenAway}
-            disabled={
-              !(
-                game.status.codedGameState === "S" ||
-                game.status.codedGameState === "P" ||
-                game.status.codedGameState === "PW"
-              )
-            }
-          >
-            {awayOdds >= 0 ? "+" : ""}
-            {awayOdds}
-          </button>
+          <div className="tooltip">
+            <button
+              className={`btn btn-sm ${awayOdds >= 0 ? "red" : "green"}`}
+              onClick={onOpenAway}
+              disabled={
+                !(
+                  game.status.codedGameState === "S" ||
+                  game.status.codedGameState === "P" ||
+                  game.status.codedGameState === "PW"
+                )
+              }
+            >
+              {awayOdds >= 0 ? "+" : ""}
+              {awayOdds}
+            </button>
+            {!(
+              game.status.codedGameState === "S" ||
+              game.status.codedGameState === "P" ||
+              game.status.codedGameState === "PW"
+            ) && (
+              <span className="tooltiptext">
+                Betting is closed at first pitch
+              </span>
+            )}
+          </div>
           {openAway && (
             <BetModal
               open={openAway}
