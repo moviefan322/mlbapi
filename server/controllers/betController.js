@@ -126,7 +126,8 @@ const updateBets = asyncHandler(async (req, res) => {
   );
 
   // adjust users account balance
-  for (const bet of updatedBets) {
+  const winningBets = updatedBets.filter((bet) => bet.betResult === "win");
+  for (const bet of winningBets) {
     await User.findByIdAndUpdate(bet.user, {
       $inc: { accountBalance: bet.plusMinus },
     });
