@@ -1,9 +1,7 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getBets, reset } from "../features/bet/betSlice";
 import { getUserData } from "../features/auth/authSlice";
-import getGameResults from "../utils/gameResults";
 import BetItem from "../components/BetItem";
 import Spinner from "../components/Spinner";
 
@@ -14,11 +12,6 @@ function Bets() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const sendResults = async () => {
-      const results = await getGameResults();
-      await axios.put("/api/bets/", results);
-    };
-    sendResults();
     dispatch(reset());
     dispatch(getBets());
     dispatch(getUserData(user.token));

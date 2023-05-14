@@ -2,6 +2,10 @@ const asyncHandler = require("express-async-handler");
 const User = require("../models/userModel");
 const Bet = require("../models/betModel");
 const { getGameResults } = require("./fetchResults");
+const {
+  calculateWinnings,
+  returnNegative,
+} = require("../../client/src/utils/moneyLine");
 
 const updateBets = asyncHandler(async (req, res) => {
   const results = req.body;
@@ -83,6 +87,7 @@ const updateBetsInternally = async (gameResults) => {
       $inc: { accountBalance: deposit },
     });
   }
+  console.log("Bets updated");
 };
 
 const callUpdateBets = async () => {

@@ -12,32 +12,6 @@ function Home() {
 
   const dispatch = useDispatch();
 
-  const getResults = async () => {
-    const completedGames = games.filter(
-      (game) => game.status.codedGameState === "F"
-    );
-
-    let gameResults = [];
-
-    completedGames.forEach((game) => {
-      let winner;
-      let loser;
-      if (game.teams.away.isWinner === true) {
-        winner = game.teams.away.team.name;
-        loser = game.teams.home.team.name;
-      } else {
-        winner = game.teams.home.team.name;
-        loser = game.teams.away.team.name;
-      }
-      gameResults.push({
-        gameId: game.gamePk,
-        winner,
-        loser,
-      });
-    });
-    return gameResults;
-  };
-
   useEffect(() => {
     const fetchOdds = async () => {
       const response = await axios.get("/api/odds");
@@ -54,14 +28,6 @@ function Home() {
       setGames(res);
     });
   }, []);
-
-  useEffect(() => {
-    const sendResults = async () => {
-      const results = await getResults();
-      await axios.put("/api/bets/", results);
-    };
-    sendResults();
-  }, [games]);
 
   return (
     <div id="main" className="card-container">
