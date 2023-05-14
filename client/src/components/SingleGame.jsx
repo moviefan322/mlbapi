@@ -7,6 +7,7 @@ import { formatTime } from "../utils/formatTime";
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
 import { reset } from "../features/bet/betSlice";
 import { useDispatch } from "react-redux";
+import renderOnBaseImage from "../utils/baserunners";
 import BetModal from "./BetModal";
 import Spinner from "./Spinner";
 
@@ -45,9 +46,11 @@ function SingleGame({ game, odds }) {
   }
 
   const showData = async () => {
-    const singleGameData = await getSingleGameData(718203);
+    const singleGameData = await getSingleGameData(718174);
     console.log(singleGameData);
   };
+
+  showData();
 
   const thisGame = odds.filter((odd) => {
     return odd.away_team === awayTeam && odd.home_team === homeTeam;
@@ -123,6 +126,60 @@ function SingleGame({ game, odds }) {
               formatTime(game.gameDate)
             )}
           </h3>
+          {game.status.statusCode === "I" && (
+            <div className="onbase">
+              <div>
+                <img
+                  src={renderOnBaseImage(singleGame)}
+                  alt="baserunners"
+                  height="70px"
+                  width="70px"
+                  className="onbaseimg"
+                />
+              </div>
+              <div className="BSO">
+                <p>
+                  B:{" "}
+                  <span className="green">
+                    {" "}
+                    {[...Array(singleGame.liveData?.linescore.balls)].map(
+                      (_, index) => (
+                        <span key={index} className="count">
+                          &bull;
+                        </span>
+                      )
+                    )}
+                  </span>
+                </p>
+                <p>
+                  S:{" "}
+                  <span className="red">
+                    {" "}
+                    {[...Array(singleGame.liveData?.linescore.strikes)].map(
+                      (_, index) => (
+                        <span key={index} className="count">
+                          &bull;
+                        </span>
+                      )
+                    )}
+                  </span>
+                </p>
+                <p>
+                  O:{" "}
+                  <span>
+                    {" "}
+                    {[...Array(singleGame.liveData?.linescore.outs)].map(
+                      (_, index) => (
+                        <span key={index} className="count">
+                          &bull;
+                        </span>
+                      )
+                    )}
+                  </span>
+                </p>
+              </div>
+            </div>
+          )}
           <h6>
             {game.status.abstractGameCode === "L"
               ? "P: " +
@@ -186,13 +243,10 @@ function SingleGame({ game, odds }) {
           )}
         </div>
       </div>
+
       <h4 className="bottom">
         {game.status.statusCode === "I" ? (
           <>
-            {singleGame.liveData?.linescore.balls}-
-            {singleGame.liveData?.linescore.strikes}{" "}
-            {singleGame.liveData?.linescore.outs}{" "}
-            {singleGame.liveData?.linescore.outs === 1 ? "out" : "outs"}{" "}
             {singleGame.liveData?.linescore.inningHalf === "Top" ? (
               <AiOutlineArrowUp />
             ) : (

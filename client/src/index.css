@@ -252,10 +252,6 @@ table {
   width: 100%;
 }
 
-.bottom {
-  margin-top: 1rem;
-}
-
 .green {
   color: rgb(0, 154, 0);
   font-size: 0.8rem;
@@ -407,4 +403,54 @@ table {
 
 .hidden {
   display: none;
+}
+
+.data {
+  margin: 0;
+}
+
+.onbase {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 200%;
+  justify-content: center;
+  margin-left: -45%;
+}
+
+.onbase div {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.onbaseimg {
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+
+.BSO {
+  font-size: 0.6rem;
+  line-height: 0.2em;
+  font-weight: bolder;
+}
+
+.BSO p {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+.BSO span {
+  font-weight: 800;
+}
+
+.count {
+  position: relative;
+  font-size: 1.8rem;
+  margin: 0rem 0.2rem 0 -0.5rem;
+  padding: 0;
+  line-height: 0.2em;
+  top: 0.35rem;
 }
