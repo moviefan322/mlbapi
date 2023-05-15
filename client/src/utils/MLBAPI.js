@@ -22,8 +22,4 @@ const getFullSchedule = async () => {
   return data;
 };
 
-module.exports = {
-  getTodaysGames,
-  getSingleGameData,
-  getFullSchedule,
-};
+export { getTodaysGames, getSingleGameData, getFullSchedule };
