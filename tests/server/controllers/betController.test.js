@@ -177,5 +177,39 @@ describe("getBets", () => {
       expect(404);
       expect(res.body.message).toBe("Bet not found");
     });
+
+    it("should reject if it is not the user's bet", async () => {
+      await request(server).post("/api/users/").send({
+        name: "lady shitaton",
+        email: "doctorpooper@example.com",
+        password: "password123",
+      });
+
+      const res = await request(server).post("/api/users/login").send({
+        email: "doctorpooper@example.com",
+        password: "password123",
+      });
+
+      const newToken = res.body.token;
+
+      const newBet = await request(server)
+        .post("/api/bets")
+        .set("Authorization", `Bearer ${newToken}`)
+        .send({
+          betAmount: 10,
+          betOdds: -125,
+          betTeam: "Team 1",
+          gameId: 12345,
+        });
+
+      const newBetId = newBet.body.bet._id;
+
+      const res2 = await request(server)
+        .get(`/api/bets/${newBetId}`)
+        .set("Authorization", `Bearer ${token}`);
+
+      expect(401);
+      expect(res2.body.message).toBe("Unauthorized");
+    });
   });
 });
