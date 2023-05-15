@@ -1,3 +1,6 @@
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import {
   FaSignInAlt,
   FaUser,
@@ -7,20 +10,21 @@ import {
   FaBaseballBall,
   FaCoins,
 } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
 import { logout, reset } from "../features/auth/authSlice";
 import baseball from "../assets/baseball.png";
 
 function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [loggedOut, setLoggedOut] = useState(false);
   const { user } = useSelector((state) => state.auth);
 
   const onLogout = () => {
+    setLoggedOut(true);
     dispatch(logout());
     dispatch(reset());
     navigate("/");
+    localStorage.removeItem("user");
   };
 
   return (
@@ -41,7 +45,7 @@ function Header() {
             <FaCalendarAlt /> Schedule
           </Link>
         </li>
-        {user ? (
+        {!loggedOut ? (
           <>
             <li>
               <Link to="/bets">
