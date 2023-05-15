@@ -161,5 +161,12 @@ describe("getBets", () => {
       expect(res.body.gameId).toBe(12345);
       expect(res.body.plusMinus).toBe(0);
     });
+
+    it("should reject a request if user is not logged in", async () => {
+      const res = await request(server).get(`/api/bets/${betId}`);
+
+      expect(400);
+      expect(res.body.message).toBe("Not authorized, no token");
+    });
   });
 });
