@@ -27,12 +27,11 @@ function Home() {
     fetchOdds();
   }, []);
 
-
   useEffect(() => {
     if (user) {
       dispatch(getUserData(user._id));
     }
-  }, [user]);
+  }, []);
 
   return (
     <div id="main" className="card-container">

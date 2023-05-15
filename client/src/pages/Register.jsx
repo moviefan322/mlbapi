@@ -29,10 +29,8 @@ function Register() {
     }
 
     if (isSuccess) {
-      toast.success("Registration Successful!");
       navigate("/");
     }
-    dispatch(reset());
   }, [isSuccess, isError, message, dispatch, navigate]);
 
   const onChange = (e) => {

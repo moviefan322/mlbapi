@@ -20,9 +20,9 @@ function Header() {
   const { user } = useSelector((state) => state.auth);
 
   const onLogout = () => {
-    setLoggedOut(true);
-    dispatch(logout());
     dispatch(reset());
+    // setLoggedOut(true);
+    dispatch(logout());
     navigate("/");
     localStorage.removeItem("user");
   };
@@ -45,7 +45,7 @@ function Header() {
             <FaCalendarAlt /> Schedule
           </Link>
         </li>
-        {!loggedOut ? (
+        {user ? (
           <>
             <li>
               <Link to="/bets">
