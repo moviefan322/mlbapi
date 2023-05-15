@@ -70,7 +70,11 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     reset: (state) => {
-      state = initialState;
+      state.user = user ? user : null;
+      state.isError = false;
+      state.isSuccess = false;
+      state.isLoading = false;
+      state.message = "";
     },
   },
   extraReducers: (builder) => {
