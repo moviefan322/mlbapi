@@ -75,7 +75,6 @@ const loginUser = asyncHandler(async (req, res) => {
   }
 
   const checkPassword = await bcrypt.compare(password, user.password);
-  console.log(password, user.password, checkPassword);
 
   if (!checkPassword) {
     res.status(400);

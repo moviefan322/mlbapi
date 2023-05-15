@@ -38,20 +38,33 @@ const getBet = asyncHandler(async (req, res) => {
     throw new Error("User not found");
   }
 
-  const bet = await Bet.findById(req.params.id);
+  // get bet from user
+  let bet;
+  try {
+    bet = await Bet.findById(req.params.id);
+  } catch (error) {
+    res.status(404);
+    throw new Error("Bet not found");
+  }
 
   if (bet.user.toString() !== user._id.toString()) {
     res.status(401);
     throw new Error("Unauthorized");
   }
 
-  res.status(200).json(bet);
+  try {
+    res.status(200).json(bet);
+  } catch (error) {
+    res.status(500);
+    throw new Error("Something went wrong");
+  }
 });
 
 // @desc    Place a bet
 // @route   POST /api/bets
 // @access  Private
 const placeBet = asyncHandler(async (req, res) => {
+  console.log(req.body);
   const { betAmount, betOdds, betTeam, gameId, gamePlain } = req.body;
 
   if (!betAmount || !betOdds || !betTeam || !gameId) {
@@ -65,6 +78,12 @@ const placeBet = asyncHandler(async (req, res) => {
   if (!user) {
     res.status(404);
     throw new Error("User not found");
+  }
+
+  // check if user has enough money to place bet
+  if (user.accountBalance < betAmount) {
+    res.status(400);
+    throw new Error("Insufficient funds");
   }
 
   // create bet
@@ -94,46 +113,4 @@ const placeBet = asyncHandler(async (req, res) => {
   res.status(201).json({ bet, accountBalance: user.accountBalance });
 });
 
-const updateBets = asyncHandler(async (req, res) => {
-  const results = req.body;
-  const bets = await Bet.find({ betResult: "pending" });
-  const updatedBets = await Promise.all(
-    // find all bets where game id matches
-    bets.map(async (bet) => {
-      const result = results.find((result) => result.gameId === bet.gameId);
-      if (result) {
-        // if bet team matches result team
-        if (
-          bet.betTeam.trim().toLowerCase() ===
-          result.winner.trim().toLowerCase()
-        ) {
-          // change bet result to win
-          bet.betResult = "win";
-          // calculate winnings
-          bet.plusMinus = calculateWinnings(bet.betOdds, bet.betAmount);
-        } else {
-          // change bet result to loss
-          bet.betResult = "loss";
-          // calculate winnings
-          bet.plusMinus = returnNegative(bet.betAmount);
-        }
-        // save bet
-        await bet.save();
-      }
-      return bet;
-    })
-  );
-
-  // adjust users account balance
-  const winningBets = updatedBets.filter((bet) => bet.betResult === "win");
-  for (const bet of winningBets) {
-    const deposit = bet.plusMinus + bet.betAmount;
-    await User.findByIdAndUpdate(bet.user, {
-      $inc: { accountBalance: deposit },
-    });
-  }
-
-  res.status(200).json({ updatedBets });
-});
-
-module.exports = { getBets, placeBet, getBet, updateBets };
+module.exports = { getBets, placeBet, getBet };

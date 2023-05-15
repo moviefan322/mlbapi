@@ -3,12 +3,8 @@ const cors = require("cors");
 const colors = require("colors");
 const { errorHandler } = require("../../server/middleware/errorHandler");
 require("dotenv").config();
-const connectDB = require("../../server/config/db");
 
 const PORT = 3002;
-
-// Connect to MongoDB
-connectDB();
 
 const app = express();
 
@@ -18,12 +14,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
 // Routes
 app.use("/api/users", require("../../server/routes/userRoutes"));
+app.use("/api/bets", require("../../server/routes/betRoutes"));
+app.use("/api/odds", require("../../server/routes/oddsRoutes"));
 
 app.use(errorHandler);
 
