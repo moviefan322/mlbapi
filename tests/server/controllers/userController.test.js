@@ -7,6 +7,7 @@ const { MongoMemoryServer } = require("mongodb-memory-server");
 let mongod;
 
 beforeAll(async () => {
+  server.close();
   await mongoose.disconnect();
   mongod = await MongoMemoryServer.create();
   const uri = mongod.getUri();
@@ -20,6 +21,7 @@ beforeAll(async () => {
 afterAll(async () => {
   await mongoose.disconnect();
   await mongod.stop();
+  server.close();
 });
 
 describe("registerUser", () => {

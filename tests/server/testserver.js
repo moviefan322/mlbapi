@@ -31,8 +31,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-const server = app.listen(PORT, () => {
-  console.log(`🚀 Server is running on port ${PORT} 🚀`.brightYellow.bold);
+const server = app.listen(0, () => {
+  const port = server.address().port;
+  console.log(`🚀 Server is running on port ${port} 🚀`.brightYellow.bold);
 });
 
 module.exports = server;
