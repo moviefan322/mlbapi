@@ -8,6 +8,7 @@ const { MongoMemoryServer } = require("mongodb-memory-server");
 let mongod;
 let token;
 let id;
+let betId;
 
 beforeAll(async () => {
   server.close();
@@ -71,7 +72,7 @@ describe("placeBets", () => {
     console.log(res.body);
 
     expect(res.body).toBeDefined();
-    const betId = res.body.bet._id;
+    betId = res.body.bet._id;
     expect(res.body.bet.betOdds).toEqual(-125);
     expect(res.body.bet.betType).toBe("moneyline");
     expect(res.body.bet.betAmount).toEqual(10);
@@ -143,5 +144,22 @@ describe("getBets", () => {
 
     expect(400);
     expect(res.body.message).toBe("Not authorized, no token");
+  });
+
+  describe("getBet", () => {
+    it("should get a bet by id", async () => {
+      const res = await request(server)
+        .get(`/api/bets/${betId}`)
+        .set("Authorization", `Bearer ${token}`);
+
+      expect(200);
+      expect(res.body).toBeDefined();
+      expect(res.body.betType).toBe("moneyline");
+      expect(res.body.betOdds).toBe(-125);
+      expect(res.body.betAmount).toBe(10);
+      expect(res.body.betTeam).toBe("Team 1");
+      expect(res.body.gameId).toBe(12345);
+      expect(res.body.plusMinus).toBe(0);
+    });
   });
 });
