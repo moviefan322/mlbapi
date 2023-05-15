@@ -64,7 +64,6 @@ const getBet = asyncHandler(async (req, res) => {
 // @route   POST /api/bets
 // @access  Private
 const placeBet = asyncHandler(async (req, res) => {
-  console.log(req.body);
   const { betAmount, betOdds, betTeam, gameId, gamePlain } = req.body;
 
   if (!betAmount || !betOdds || !betTeam || !gameId) {

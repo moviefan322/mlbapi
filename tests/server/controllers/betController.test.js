@@ -69,8 +69,6 @@ describe("placeBets", () => {
       });
     expect(201);
 
-    console.log(res.body);
-
     expect(res.body).toBeDefined();
     betId = res.body.bet._id;
     expect(res.body.bet.betOdds).toEqual(-125);

@@ -9,8 +9,6 @@ describe("getOddds", () => {
   it("should fetch latest odds", async () => {
     const res = await request(server).get("/api/odds");
 
-    console.log(res.body);
-
     expect(200);
     expect(res.body).toBeDefined();
     expect(typeof res.body).toBe("object");
