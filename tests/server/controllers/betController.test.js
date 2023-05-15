@@ -120,3 +120,28 @@ describe("placeBets", () => {
     expect(res.body.message).toBe("Not authorized, no token");
   });
 });
+
+describe("getBets", () => {
+  it("should get all bets for a user", async () => {
+    const res = await request(server)
+      .get("/api/bets")
+      .set("Authorization", `Bearer ${token}`);
+    expect(200);
+    expect(res.body).toBeDefined();
+    expect(res.body).toBeDefined();
+    expect(res.body.length).toBe(1);
+    expect(res.body[0].betType).toBe("moneyline");
+    expect(res.body[0].betOdds).toBe(-125);
+    expect(res.body[0].betAmount).toBe(10);
+    expect(res.body[0].betTeam).toBe("Team 1");
+    expect(res.body[0].gameId).toBe(12345);
+    expect(res.body[0].plusMinus).toBe(0);
+  });
+
+  it("should reject a request if user is not logged in", async () => {
+    const res = await request(server).get("/api/bets");
+
+    expect(400);
+    expect(res.body.message).toBe("Not authorized, no token");
+  });
+});
