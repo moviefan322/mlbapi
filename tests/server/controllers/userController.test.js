@@ -2,24 +2,25 @@ const request = require("supertest");
 const server = require("../testserver.js");
 const User = require("../../../server/models/userModel.js");
 const mongoose = require("mongoose");
-const db = require("../../../server/config/db.js");
-const jwt = require("jsonwebtoken");
+const { MongoMemoryServer } = require("mongodb-memory-server");
 
-const generateToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, {
-    expiresIn: "30d",
-  });
-};
+let mongod;
 
 beforeAll(async () => {
-  // connect to database before running any tests
-  db();
-}, 30000);
+  await mongoose.disconnect();
+  mongod = await MongoMemoryServer.create();
+  const uri = mongod.getUri();
+  const mongooseOpts = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  };
+  await mongoose.connect(uri, mongooseOpts);
+});
+
 afterAll(async () => {
-  // close database connection after all tests complete
-  await mongoose.connection.close();
-  server.close();
-}, 30000);
+  await mongoose.disconnect();
+  await mongod.stop();
+});
 
 describe("registerUser", () => {
   afterEach(async () => {
@@ -264,7 +265,10 @@ describe("getMe", () => {
     expect(res.body.message).toBe("Not authorized, no token");
   });
   it("should reject if no token is invalid", async () => {
-    const res = await request(server).get("/api/users/me").set("Authorization", `Bearer jhcbvjhsdkjfdnalasndkjlasnkjdnaskjn12321`).expect(401);
+    const res = await request(server)
+      .get("/api/users/me")
+      .set("Authorization", `Bearer jhcbvjhsdkjfdnalasndkjlasnkjdnaskjn12321`)
+      .expect(401);
 
     expect(res.body.message).toBe("Not authorized, token failed");
   });
