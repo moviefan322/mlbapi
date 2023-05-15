@@ -36,6 +36,5 @@ const getGameResults = async () => {
   return gameResults;
 };
 
-getGameResults();
 
 export default getGameResults;

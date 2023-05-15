@@ -1,19 +1,14 @@
 const axios = require("axios");
-const path = require("path");
 const fs = require("fs");
+const path = require("path");
+const { getTodaysGames } = require("./todaysGames");
 
 let games = [];
 
-const scoreboard = () => {
-  return games;
-};
-
 const getGameResults = async () => {
   try {
-    const response = await axios.get(
-      `https://statsapi.mlb.com/api/v1/schedule/games/?sportId=1`
-    );
-    games = response.data.dates[0].games;
+    games = await getTodaysGames();
+    // console.log(games);
   } catch (error) {
     console.error(error);
   }
@@ -41,22 +36,13 @@ const getGameResults = async () => {
     });
   });
 
-  fs.writeFile(
-    path.join(__dirname, "../devData/scoreboard.json"),
-    JSON.stringify(games),
-    {
-      encoding: "utf8",
-      flag: "w",
-      mode: 0o666,
-    },
-    (err) => {
-      if (err) console.log(err);
-      else {
-        console.log("Scoreboard written successfully\n");
-      }
-    }
-  );
+  console.log("results", gameResults);
   return gameResults;
+};
+
+const scoreboard = async () => {
+  const games = await getTodaysGames();
+  return games;
 };
 
 module.exports = { getGameResults, scoreboard };

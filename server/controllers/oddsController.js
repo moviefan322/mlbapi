@@ -22,7 +22,8 @@ const getOdds = asyncHandler(async (req, res) => {
 
 const postScores = asyncHandler(async (req, res) => {
   const games = await scoreboard();
-  if (games.length > 0) {
+  console.log(games);
+  if (games) {
     try {
       res.status(200).json(games);
     } catch (error) {
@@ -30,9 +31,9 @@ const postScores = asyncHandler(async (req, res) => {
     }
   } else {
     try {
-      res.status(200).json(currentScores);
+      res.status(200).json(odds);
     } catch (error) {
-      res.status(500).json(error);
+      console.log(error);
     }
   }
 });
