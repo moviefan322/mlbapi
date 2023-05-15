@@ -168,5 +168,14 @@ describe("getBets", () => {
       expect(400);
       expect(res.body.message).toBe("Not authorized, no token");
     });
+
+    it("should reject a request if bet id is invalid", async () => {
+      const res = await request(server)
+        .get(`/api/bets/123456789`)
+        .set("Authorization", `Bearer ${token}`);
+
+      expect(404);
+      expect(res.body.message).toBe("Bet not found");
+    });
   });
 });
