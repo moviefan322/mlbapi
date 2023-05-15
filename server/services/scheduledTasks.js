@@ -1,6 +1,7 @@
 const { callUpdateBets } = require("./updateBets");
 const fetchOdds = require("./fetchOdds");
 const { writeTodaysGames } = require("./todaysGames");
+const { handleBetUpdates } = require("../controllers/sseController");
 
 const cron = require("node-cron");
 
@@ -26,6 +27,8 @@ const scheduleFetchOdds = cron.schedule("46 10 * 3-10 *", () => {
 // Checks for game resuls every minute during baseball hours
 const scheduleBetUpdates = cron.schedule("*/1 12-23,0-3 * 3-10 *", () => {
   callUpdateBets();
+  const data = { event: "betUpdated", message: "New bet update" };
+  handleBetUpdates(data);
 });
 
 const runAllTasks = () => {
