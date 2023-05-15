@@ -2,15 +2,13 @@ const axios = require("axios");
 const path = require("path");
 const fs = require("fs");
 
-const scoreboard = async () => {
-  const response = await axios.get(
-    `https://statsapi.mlb.com/api/v1/schedule/games/?sportId=1`
-  );
-  return response.data.dates[0].games;
+let games = [];
+
+const scoreboard = () => {
+  return games;
 };
 
 const getGameResults = async () => {
-  let games = [];
   try {
     const response = await axios.get(
       `https://statsapi.mlb.com/api/v1/schedule/games/?sportId=1`
