@@ -54,6 +54,5 @@ const getGameResults = async () => {
   return gameResults;
 };
 
-getGameResults();
 
 module.exports = { getGameResults };

@@ -1,3 +1,4 @@
+import axios from "axios";
 import formatBySeries from "../utils/formatBySeries";
 import teamKeysArray from "../utils/teamKeysArray";
 import { useEffect, useState } from "react";
@@ -6,6 +7,7 @@ import Spinner from "../components/Spinner";
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import monthSeriesMap from "../utils/monthSeriesMap";
 import monthMap from "../utils/monthMap";
+import { set } from "mongoose";
 
 function Schedule() {
   const [month, setMonth] = useState(new Date().getMonth() + 1);
@@ -13,11 +15,14 @@ function Schedule() {
   const [isLoading, setIsLoading] = useState(true);
   const [monthSeries, setMonthSeries] = useState();
   const [monthName, setMonthName] = useState(monthMap(month));
+  const [scoreboard, setScoreboard] = useState([]);
 
   useEffect(() => {
     const getSeasonData = async () => {
       const res = await formatBySeries();
+      const scores = await axios.get("/api/odds/scoreboard");
       setSchedule(JSON.parse(JSON.stringify(res)));
+      setScoreboard(scores.data);
       setMonthSeries(monthSeriesMap(month));
       setMonthName(monthMap(month));
       setIsLoading(false);
@@ -82,6 +87,7 @@ function Schedule() {
                 team={team}
                 schedule={schedule}
                 series={monthSeries}
+                scoreboard={scoreboard}
               />
             </tr>
           ))}
