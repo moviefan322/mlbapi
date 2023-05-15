@@ -245,7 +245,6 @@ describe("getMe", () => {
     });
 
     const token = res.body.token;
-    console.log(token);
     const id = res.body._id;
 
     const response = await request(server)
