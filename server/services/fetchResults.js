@@ -1,6 +1,6 @@
 const axios = require("axios");
-
-let currentScores = [];
+const path = require("path");
+const fs = require("fs");
 
 const getGameResults = async () => {
   let games = [];
@@ -35,10 +35,25 @@ const getGameResults = async () => {
       loser,
     });
   });
-  currentScores = gameResults;
+
+  fs.writeFile(
+    path.join(__dirname, "../devData/scoreboard.json"),
+    JSON.stringify(games),
+    {
+      encoding: "utf8",
+      flag: "w",
+      mode: 0o666,
+    },
+    (err) => {
+      if (err) console.log(err);
+      else {
+        console.log("Scoreboard written successfully\n");
+      }
+    }
+  );
   return gameResults;
 };
 
 getGameResults();
 
-module.exports = { getGameResults, currentScores };
+module.exports = { getGameResults };

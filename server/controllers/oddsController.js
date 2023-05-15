@@ -3,7 +3,7 @@ const axios = require("axios");
 const asyncHandler = require("express-async-handler");
 const fs = require("fs");
 const hardCodeOdds = require("../devData/odds.json");
-const currentScores = require("../services/fetchResults");
+const currentScores = require("../devData/scoreboard.json");
 
 let odds = hardCodeOdds;
 

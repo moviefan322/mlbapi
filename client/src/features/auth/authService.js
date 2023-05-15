@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const API_URL = "/api/users";
+axios.defaults.headers.common["accepts"] = `application/json`;
 
 // Register User
 const register = async (userData) => {

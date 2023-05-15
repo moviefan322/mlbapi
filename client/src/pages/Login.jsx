@@ -29,8 +29,6 @@ function Login() {
     if (isSuccess || user) {
       navigate("/");
     }
-
-    dispatch(reset());
   }, [isError, message, user, isSuccess, navigate, dispatch]);
 
   const onChange = (e) => {
@@ -41,6 +39,7 @@ function Login() {
   };
 
   const onSubmit = async (e) => {
+    console.log("submitted");
     e.preventDefault();
 
     const userData = {

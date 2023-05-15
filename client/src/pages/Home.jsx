@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getUserData } from "../features/auth/authSlice.js";
-import { getTodaysGames } from "../utils/MLBAPI.js";
 import SingleGame from "../components/SingleGame.jsx";
 import axios from "axios";
-import { set } from "mongoose";
+
+axios.defaults.headers.common["accepts"] = `application/json
+`;
 
 function Home() {
   const [games, setGames] = useState([]);
@@ -15,21 +16,17 @@ function Home() {
 
   useEffect(() => {
     const fetchOdds = async () => {
-      const scoreboard = await axios.get("/api/scoreboard");
+      const scoreboard = await axios.get("/api/odds/scoreboard");
       const response = await axios.get("/api/odds");
-      if (response.data || scoreboard.data) {
+      if (response.data) {
         setRawOdds(response.data);
+        // console.log(response.data);
         setGames(scoreboard.data);
       }
     };
     fetchOdds();
   }, []);
 
-  // useEffect(() => {
-  //   getTodaysGames().then((res) => {
-  //     setGames(res);
-  //   });
-  // }, []);
 
   useEffect(() => {
     if (user) {

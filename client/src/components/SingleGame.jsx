@@ -50,8 +50,6 @@ function SingleGame({ game, odds }) {
     console.log(singleGameData);
   };
 
-  showData();
-
   const thisGame = odds.filter((odd) => {
     return odd.away_team === awayTeam && odd.home_team === homeTeam;
   });
@@ -74,31 +72,33 @@ function SingleGame({ game, odds }) {
       <div className="score">
         <div>
           <img className="icon" src={teamKeys[awayTeam].image} alt="" />
-          <div className="tooltip">
-            <button
-              className={`btn btn-sm ${awayOdds >= 0 ? "red" : "green"}`}
-              onClick={onOpenAway}
-              disabled={
-                !(
-                  game.status.codedGameState === "S" ||
-                  game.status.codedGameState === "P" ||
-                  game.status.codedGameState === "PW"
-                )
-              }
-            >
-              {awayOdds >= 0 ? "+" : ""}
-              {awayOdds}
-            </button>
-            {!(
-              game.status.codedGameState === "S" ||
-              game.status.codedGameState === "P" ||
-              game.status.codedGameState === "PW"
-            ) && (
-              <span className="tooltiptext">
-                Betting is closed at first pitch
-              </span>
-            )}
-          </div>
+          {awayOdds && (
+            <div className="tooltip">
+              <button
+                className={`btn btn-sm ${awayOdds >= 0 ? "red" : "green"}`}
+                onClick={onOpenAway}
+                disabled={
+                  !(
+                    game.status.codedGameState === "S" ||
+                    game.status.codedGameState === "P" ||
+                    game.status.codedGameState === "PW"
+                  )
+                }
+              >
+                {awayOdds >= 0 ? "+" : ""}
+                {awayOdds}
+              </button>
+              {!(
+                game.status.codedGameState === "S" ||
+                game.status.codedGameState === "P" ||
+                game.status.codedGameState === "PW"
+              ) && (
+                <span className="tooltiptext">
+                  Betting is closed at first pitch
+                </span>
+              )}
+            </div>
+          )}
           {openAway && (
             <BetModal
               open={openAway}
@@ -201,33 +201,35 @@ function SingleGame({ game, odds }) {
         </div>
         <div>
           <img className="icon" src={teamKeys[homeTeam].image} alt="" />
-          <div className="tooltip">
-            <button
-              className={`bet-btn btn btn-sm ${
-                homeOdds >= 0 ? "red" : "green"
-              }`}
-              onClick={onOpenHome}
-              disabled={
-                !(
-                  game.status.codedGameState === "S" ||
-                  game.status.codedGameState === "P" ||
-                  game.status.codedGameState === "PW"
-                )
-              }
-            >
-              {homeOdds >= 0 ? "+" : ""}
-              {homeOdds}
-            </button>
-            {!(
-              game.status.codedGameState === "S" ||
-              game.status.codedGameState === "P" ||
-              game.status.codedGameState === "PW"
-            ) && (
-              <span className="tooltiptext">
-                Betting is closed at first pitch
-              </span>
-            )}
-          </div>
+          {homeOdds && (
+            <div className="tooltip">
+              <button
+                className={`bet-btn btn btn-sm ${
+                  homeOdds >= 0 ? "red" : "green"
+                }`}
+                onClick={onOpenHome}
+                disabled={
+                  !(
+                    game.status.codedGameState === "S" ||
+                    game.status.codedGameState === "P" ||
+                    game.status.codedGameState === "PW"
+                  )
+                }
+              >
+                {homeOdds >= 0 ? "+" : ""}
+                {homeOdds}
+              </button>
+              {!(
+                game.status.codedGameState === "S" ||
+                game.status.codedGameState === "P" ||
+                game.status.codedGameState === "PW"
+              ) && (
+                <span className="tooltiptext">
+                  Betting is closed at first pitch
+                </span>
+              )}
+            </div>
+          )}
 
           {openHome && (
             <BetModal

@@ -12,9 +12,9 @@ const task5 = cron.schedule("*/1 12-23,0-3 * * *", () => {
 });
 
 // Fetches odds every day at 10:15AM
-const scheduleFetchOdds = cron.schedule("15 10 * 3-10 *", () => {
+const scheduleFetchOdds = cron.schedule("46 10 * 3-10 *", () => {
   fetchOdds();
-  console.log("It's 10:15 AM and todays odds have been fetched!");
+  console.log("It's 10:45 AM and todays odds have been fetched!");
 });
 
 // Checks for game resuls every minute during baseball hours

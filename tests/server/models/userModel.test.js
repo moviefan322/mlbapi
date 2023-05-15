@@ -166,7 +166,6 @@ describe("User model", () => {
       error = err;
     }
 
-    console.log(error);
 
     expect(error).toBeInstanceOf(mongoose.Error.ValidationError);
     expect(error.errors.email.message).toBe("Please enter a valid email");
