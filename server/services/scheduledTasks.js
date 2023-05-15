@@ -7,7 +7,7 @@ const task3 = cron.schedule("15 10 * * *", () => {
   console.log("Time to fetch the odds!");
 });
 
-const task5 = cron.schedule("*/1 12-23,0-3 * * *", () => {
+const task5 = cron.schedule("*/1 11-23,0-3 * * *", () => {
   console.log("running every minute during baseball hours");
 });
 
