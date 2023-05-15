@@ -4,6 +4,7 @@ import { getUserData } from "../features/auth/authSlice.js";
 import { getTodaysGames } from "../utils/MLBAPI.js";
 import SingleGame from "../components/SingleGame.jsx";
 import axios from "axios";
+import { set } from "mongoose";
 
 function Home() {
   const [games, setGames] = useState([]);
@@ -14,19 +15,21 @@ function Home() {
 
   useEffect(() => {
     const fetchOdds = async () => {
+      const scoreboard = await axios.get("/api/scoreboard");
       const response = await axios.get("/api/odds");
-      if (response.data) {
+      if (response.data || scoreboard.data) {
         setRawOdds(response.data);
+        setGames(scoreboard.data);
       }
     };
     fetchOdds();
   }, []);
 
-  useEffect(() => {
-    getTodaysGames().then((res) => {
-      setGames(res);
-    });
-  }, []);
+  // useEffect(() => {
+  //   getTodaysGames().then((res) => {
+  //     setGames(res);
+  //   });
+  // }, []);
 
   useEffect(() => {
     if (user) {
