@@ -3,6 +3,7 @@ const axios = require("axios");
 const asyncHandler = require("express-async-handler");
 const fs = require("fs");
 const hardCodeOdds = require("../devData/odds.json");
+const currentScores = require("../services/fetchResults");
 
 let odds = hardCodeOdds;
 
@@ -57,5 +58,12 @@ const getOdds = asyncHandler(async (req, res) => {
   }
 });
 
+const postScores = asyncHandler(async (req, res) => {
+  try {
+    res.status(200).json(currentScores);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
 
-module.exports = { getOdds };
+module.exports = { getOdds, postScores };

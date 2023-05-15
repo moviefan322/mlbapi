@@ -1,5 +1,7 @@
 const axios = require("axios");
 
+let currentScores = [];
+
 const getGameResults = async () => {
   let games = [];
   try {
@@ -33,9 +35,10 @@ const getGameResults = async () => {
       loser,
     });
   });
+  currentScores = gameResults;
   return gameResults;
 };
 
 getGameResults();
 
-module.exports = { getGameResults };
+module.exports = { getGameResults, currentScores };
