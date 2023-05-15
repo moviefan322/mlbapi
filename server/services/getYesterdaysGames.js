@@ -34,6 +34,4 @@ const writeYesterdaysGames = async () => {
   );
 };
 
-writeYesterdaysGames();
-
 module.exports = { getYesterdaysGames, writeYesterdaysGames };
