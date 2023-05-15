@@ -7,7 +7,6 @@ import Spinner from "../components/Spinner";
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import monthSeriesMap from "../utils/monthSeriesMap";
 import monthMap from "../utils/monthMap";
-import { set } from "mongoose";
 
 function Schedule() {
   const [month, setMonth] = useState(new Date().getMonth() + 1);

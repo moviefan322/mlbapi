@@ -1,12 +1,8 @@
+import React from "react";
 import PropTypes from "prop-types";
 import LineItem from "./LineItem";
 
 function ScheduleLine({ team, schedule, series, scoreboard }) {
-  // console.log(schedule[team.id][1][0].calendarEventID.toString().slice(14, 4));
-  // console.log(
-  //   new Date().toLocaleDateString("en-US").split("/").splice(0, 2).join("-")
-  // );
-
   const latestGame = scoreboard.find((game) => {
     return (
       game.teams.away.team.id === team.id || game.teams.home.team.id === team.id
@@ -19,7 +15,17 @@ function ScheduleLine({ team, schedule, series, scoreboard }) {
       : latestGame.teams.home.leagueRecord.pct
     : null;
 
-  console.log(team.abb, teamPct);
+  // const yesterdaysGame = yesterdaysGames.find((game) => {
+  //   return (
+  //     game.teams.away.team.id === team.id || game.teams.home.team.id === team.id
+  //   );
+  // });
+
+  // const yesterdaysTeamPct = yesterdaysGame
+  //   ? yesterdaysGame.teams.away.team.id === team.id
+  //     ? yesterdaysGame.teams.away.leagueRecord.pct
+  //     : yesterdaysGame.teams.home.leagueRecord.pct
+  //   : null;
 
   if (!team || schedule.length === 0) {
     return <td key={`${Math.random}`}></td>;
