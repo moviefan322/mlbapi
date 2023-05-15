@@ -22,7 +22,6 @@ const getOdds = asyncHandler(async (req, res) => {
 
 const postScores = asyncHandler(async (req, res) => {
   const games = await scoreboard();
-  console.log(games);
   if (games) {
     try {
       res.status(200).json(games);
