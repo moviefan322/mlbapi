@@ -2,6 +2,7 @@ const { callUpdateBets } = require("./updateBets");
 const fetchOdds = require("./fetchOdds");
 const { writeTodaysGames } = require("./todaysGames");
 const { handleBetUpdates } = require("../controllers/sseController");
+const { writeYesterdaysGames } = require("./getYesterdaysGames");
 
 const cron = require("node-cron");
 
@@ -15,7 +16,10 @@ const task5 = cron.schedule("*/1 11-23,0-3 * * *", () => {
 
 const scheduleWriteTodaysGames = cron.schedule("01 10 * 3-10 *", () => {
   writeTodaysGames();
-  console.log("It's 10:01 AM and todays schedule has been writ!");
+  writeYesterdaysGames();
+  console.log(
+    "It's 10:01 AM and todays schedule has been writ (yesterdays too!)!"
+  );
 });
 
 // Fetches odds every day at 10:15AM
