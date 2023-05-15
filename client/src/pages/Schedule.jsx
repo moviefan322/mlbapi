@@ -15,6 +15,7 @@ function Schedule() {
   const [monthSeries, setMonthSeries] = useState();
   const [monthName, setMonthName] = useState(monthMap(month));
   const [scoreboard, setScoreboard] = useState([]);
+  const [yesterdaysScores, setYesterdaysScores] = useState([]);
 
   useEffect(() => {
     const getSeasonData = async () => {
@@ -24,6 +25,8 @@ function Schedule() {
       setScoreboard(scores.data);
       setMonthSeries(monthSeriesMap(month));
       setMonthName(monthMap(month));
+      const res2 = await axios.get("/api/odds/yesterdaysScores");
+      setYesterdaysScores(res2.data);
       setIsLoading(false);
     };
     getSeasonData();
@@ -87,6 +90,7 @@ function Schedule() {
                 schedule={schedule}
                 series={monthSeries}
                 scoreboard={scoreboard}
+                yesterdaysScores={yesterdaysScores}
               />
             </tr>
           ))}
