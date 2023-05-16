@@ -179,7 +179,7 @@ const teamKeys = {
     id: 140,
     abb: "TEX",
     image: TEX,
-  }
+  },
 };
 
 export default teamKeys;
