@@ -178,8 +178,8 @@ function BattingLinescoreAway({ boxscore }) {
 
       if (hrs.length === 1) {
         const hrCount =
-        boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
-          .seasonStats.batting.homeRuns;
+          boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
+            .seasonStats.batting.homeRuns;
         const player =
           boxscore.liveData.boxscore.teams.away.players[
             "ID" + hrs[0].matchup.batter.id
@@ -471,8 +471,11 @@ function BattingLinescoreAway({ boxscore }) {
       <div className="battingbox-bottom">
         {doubleLine.length > 0 && <p>2B: {doubleLine}</p>}
         {tripleLine.length > 0 && <p>3B: {tripleLine}</p>}
-        {tbLine.length > 0 && <p>TB: {tbLine}</p>}
         {hrLine.length > 0 && <p>HR: {hrLine}</p>}
+        {tbLine.length > 0 && <p>TB: {tbLine}</p>}
+        {boxscore.liveData.boxscore.teams.away.teamStats.batting.leftOnBase >
+          0 &&
+          `Team LOB: ${boxscore.liveData.boxscore.teams.away.teamStats.batting.leftOnBase}`}
       </div>
     </>
   );
