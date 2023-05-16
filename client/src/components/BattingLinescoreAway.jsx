@@ -645,7 +645,7 @@ function BattingLinescoreAway({ boxscore }) {
         {fieldingErrorsLine.length > 0 && <p>E: {fieldingErrorsLine}</p>}
       </div>
       <div className="pitcherstats">
-        <table>
+        <table className="battingbox">
           <thead>
             <tr>
               <th></th>
@@ -656,29 +656,82 @@ function BattingLinescoreAway({ boxscore }) {
               <th>BB</th>
               <th>SO</th>
               <th>HR</th>
-              <th>ERA</th>
+              <th>HBP</th>
+              <th>WP</th>
+              <th>BF</th>
+              <th>S/P</th>
             </tr>
           </thead>
           <tbody>
             {awayPitchers.map((pitcher) => (
-              <td className="batterName">
-              <span>{`${
-                boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
-                  .jerseyNumber
-              }`}</span>
-              <span>
-                {
-                  `${
+              <tr>
+                <td className="batterName">
+                  <span>{`${
                     boxscore.liveData.boxscore.teams.away.players[
                       `ID${pitcher}`
-                    ].person.fullName
-                  }`.split(" ")[1]
-                }
-              </span>
-              <span>{`${
-                boxscore.gameData.players[`ID${pitcher}`].pitchHand.code
-              }`}</span>
-            </td>
+                    ].jerseyNumber
+                  }`}</span>
+                  <span>
+                    {
+                      `${
+                        boxscore.liveData.boxscore.teams.away.players[
+                          `ID${pitcher}`
+                        ].person.fullName
+                      }`.split(" ")[1]
+                    }
+                  </span>
+                  <span>{`${
+                    boxscore.gameData.players[`ID${pitcher}`].pitchHand.code
+                  }`}</span>
+                </td>
+                <td>{`${
+                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                    .stats.pitching.inningsPitched
+                }`}</td>
+                <td>{`${
+                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                    .stats.pitching.hits
+                }`}</td>
+                <td>{`${
+                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                    .stats.pitching.runs
+                }`}</td>
+                <td>{`${
+                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                    .stats.pitching.earnedRuns
+                }`}</td>
+                <td>{`${
+                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                    .stats.pitching.baseOnBalls
+                }`}</td>
+                <td>{`${
+                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                    .stats.pitching.strikeOuts
+                }`}</td>
+                <td>{`${
+                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                    .stats.pitching.homeRuns
+                }`}</td>
+                <td>{`${
+                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                    .stats.pitching.hitByPitch
+                }`}</td>
+                <td>{`${
+                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                    .stats.pitching.wildPitches
+                }`}</td>
+                <td>{`${
+                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                    .stats.pitching.battersFaced
+                }`}</td>
+                <td>{`${
+                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                    .stats.pitching.strikes
+                }/${
+                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                    .stats.pitching.pitchesThrown
+                }`}</td>
+              </tr>
             ))}
           </tbody>
         </table>
