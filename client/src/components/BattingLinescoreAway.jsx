@@ -319,7 +319,31 @@ function BattingLinescoreAway({ boxscore }) {
     })
     .toString();
 
-  console.log(fieldingErrorsLine);
+  const doublePlays = boxscore.liveData.plays.allPlays.filter(
+    (play) =>
+      play.result.eventType.includes("double_play") &&
+      play.about.halfInning === "bottom"
+  );
+
+  const doublePlayLine = doublePlays.map((play) => {
+    const credits = play.runners[0].credits;
+    const creditCodes = credits.map((credit) => credit.player.id);
+    const playerNames = creditCodes.map((code) => {
+      return boxscore.liveData.boxscore.teams.away.players[
+        `ID${code}`
+      ].person.fullName.split(" ")[1];
+    });
+
+    if (creditCodes.length === 1) {
+      return `${creditCodes[0]}u`;
+    } else {
+      return playerNames.join("-").toString();
+    }
+  });
+
+  console.log(doublePlayLine);
+
+  console.log(doublePlays);
 
   return (
     <>
@@ -584,15 +608,23 @@ function BattingLinescoreAway({ boxscore }) {
         {rbiLine.length > 0 && <p>RBI: {rbiLine}</p>}
         {twoOutRbiLine.length > 0 && <p>2-out RBI: {twoOutRbiLine}</p>}
         {boxscore.liveData.boxscore.teams.away.teamStats.batting.leftOnBase >
-          0 &&
-          `Team LOB: ${boxscore.liveData.boxscore.teams.away.teamStats.batting.leftOnBase}`}
-        {boxscore.liveData.boxscore.teams.away.info[0].fieldList[8].value && (
+          0 && (
+          <p>
+            {" "}
+            Team LOB:
+            {boxscore.liveData.boxscore.teams.away.teamStats.batting.leftOnBase}
+          </p>
+        )}
+        {boxscore.liveData.boxscore.teams.away.info[0].fieldList[8]?.value && (
           <p>
             Team RISP:
             {RISP}
           </p>
         )}
-        <p>Fielding</p>
+        <p>
+          <strong>Fielding</strong>
+        </p>
+        {doublePlayLine.length > 0 && <p>DP: {doublePlayLine}</p>}
         {fieldingErrorsLine.length > 0 && <p>E: {fieldingErrorsLine}</p>}
       </div>
     </>
