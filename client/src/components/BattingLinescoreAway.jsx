@@ -20,6 +20,8 @@ function BattingLinescoreAway({ boxscore }) {
       ).length > 0
   );
 
+  const awayPitchers = boxscore.liveData.boxscore.teams.away.pitchers;
+
   function calculateTotalBases(boxscore, batter) {
     let basesPerInning = [];
     for (let i = 1; i <= 9; i++) {
@@ -296,8 +298,6 @@ function BattingLinescoreAway({ boxscore }) {
 
   const RISPline =
     RISP[0].value.split("-")[0] + " for " + RISP[0].value.split("-")[2];
-
-  console.log(RISPline);
 
   const fieldingErrors = boxscore.liveData.plays.allPlays.filter(
     (play) =>
@@ -643,6 +643,45 @@ function BattingLinescoreAway({ boxscore }) {
         </p>
         {doublePlayLine.length > 0 && <p>DP: {doublePlayLine}</p>}
         {fieldingErrorsLine.length > 0 && <p>E: {fieldingErrorsLine}</p>}
+      </div>
+      <div className="pitcherstats">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>IP</th>
+              <th>H</th>
+              <th>R</th>
+              <th>ER</th>
+              <th>BB</th>
+              <th>SO</th>
+              <th>HR</th>
+              <th>ERA</th>
+            </tr>
+          </thead>
+          <tbody>
+            {awayPitchers.map((pitcher) => (
+              <td className="batterName">
+              <span>{`${
+                boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                  .jerseyNumber
+              }`}</span>
+              <span>
+                {
+                  `${
+                    boxscore.liveData.boxscore.teams.away.players[
+                      `ID${pitcher}`
+                    ].person.fullName
+                  }`.split(" ")[1]
+                }
+              </span>
+              <span>{`${
+                boxscore.gameData.players[`ID${pitcher}`].pitchHand.code
+              }`}</span>
+            </td>
+            ))}
+          </tbody>
+        </table>
       </div>
     </>
   );
