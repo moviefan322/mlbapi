@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import ordinalSuffix from "../utils/ordinalSuffix";
 
 function BattingLinescoreAway({ boxscore }) {
   const awayBatters = boxscore.liveData.boxscore.teams.away.batters.filter(
@@ -80,15 +81,30 @@ function BattingLinescoreAway({ boxscore }) {
           play.result.eventType === "double"
       );
 
-      if (doubles.length > 0) {
+      if (doubles.length === 1) {
         const player =
           boxscore.liveData.boxscore.teams.away.players[
             "ID" + doubles[0].matchup.batter.id
           ];
-        const inning = doubles[0].about.inning;
+        const dblCount =
+          boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
+            .seasonStats.batting.doubles;
         const pitcher = doubles[0].matchup.pitcher.fullName.split(" ")[1];
         const lastName = player.person.fullName.split(" ")[1];
-        return ` ${lastName}(${inning}, ${pitcher})`;
+        return ` ${lastName}(${dblCount}, ${pitcher})`;
+      } else if (doubles.length > 1) {
+        const player =
+          boxscore.liveData.boxscore.teams.away.players[
+            "ID" + doubles[0].matchup.batter.id
+          ];
+        const dblCount =
+          boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
+            .seasonStats.batting.doubles;
+        const pitchers = doubles.map(
+          (doubles) => doubles.matchup.pitcher.fullName.split(" ")[1]
+        );
+        const lastName = player.person.fullName.split(" ")[1];
+        return ` ${lastName}(${dblCount}, ${pitchers.toString()})`;
       } else {
         return null;
       }
@@ -121,15 +137,76 @@ function BattingLinescoreAway({ boxscore }) {
           play.result.eventType === "triple"
       );
 
-      if (triples.length > 0) {
+      if (triples.length === 1) {
         const player =
           boxscore.liveData.boxscore.teams.away.players[
             "ID" + triples[0].matchup.batter.id
           ];
-        const inning = triples[0].about.inning;
+        const dblCount =
+          boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
+            .seasonStats.batting.triples;
         const pitcher = triples[0].matchup.pitcher.fullName.split(" ")[1];
         const lastName = player.person.fullName.split(" ")[1];
-        return ` ${lastName}(${inning}, ${pitcher})`;
+        return ` ${lastName}(${dblCount}, ${pitcher})`;
+      } else if (triples.length > 1) {
+        const player =
+          boxscore.liveData.boxscore.teams.away.players[
+            "ID" + triples[0].matchup.batter.id
+          ];
+        const dblCount =
+          boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
+            .seasonStats.batting.triples;
+        const pitchers = triples.map(
+          (matchup) => matchup.pitcher.fullName.split(" ")[1]
+        );
+        const lastName = player.person.fullName.split(" ")[1];
+        return ` ${lastName}(${dblCount}, ${pitchers.toString()})`;
+      } else {
+        return null;
+      }
+    })
+    .filter((batter) => batter !== null)
+    .toString();
+
+  const hrLine = awayBatters
+    .map((batter) => {
+      const hrs = boxscore.liveData.plays.allPlays.filter(
+        (play) =>
+          play.matchup.batter.id === batter &&
+          play.result.eventType === "home_run"
+      );
+
+      if (hrs.length === 1) {
+        const hrCount =
+        boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
+          .seasonStats.batting.homeRuns;
+        const player =
+          boxscore.liveData.boxscore.teams.away.players[
+            "ID" + hrs[0].matchup.batter.id
+          ];
+        const inning = hrs[0].about.inning;
+        const pitcher = hrs[0].matchup.pitcher.fullName.split(" ")[1];
+        const lastName = player.person.fullName.split(" ")[1];
+        return ` ${lastName}(${hrCount}, ${ordinalSuffix(inning)}: ${pitcher})`;
+      } else if (hrs.length > 1) {
+        const player =
+          boxscore.liveData.boxscore.teams.away.players[
+            "ID" + hrs[0].matchup.batter.id
+          ];
+
+        const hrCount =
+          boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
+            .seasonStats.batting.homeRuns;
+        const pitchers = hrs.map(
+          (matchup) => matchup.pitcher.fullName.split(" ")[1]
+        );
+        const inning = hrs.map((hr) => ordinalSuffix(hr.about.inning));
+        const combinedArray = inning.map((inningValue, index) => {
+          const pitcher = pitchers[index];
+          return `${inningValue}: ${pitcher}`;
+        });
+        const lastName = player.person.fullName.split(" ")[1];
+        return ` ${lastName}(${hrCount}, ${combinedArray.toString()})`;
       } else {
         return null;
       }
@@ -395,6 +472,7 @@ function BattingLinescoreAway({ boxscore }) {
         {doubleLine.length > 0 && <p>2B: {doubleLine}</p>}
         {tripleLine.length > 0 && <p>3B: {tripleLine}</p>}
         {tbLine.length > 0 && <p>TB: {tbLine}</p>}
+        {hrLine.length > 0 && <p>HR: {hrLine}</p>}
       </div>
     </>
   );
