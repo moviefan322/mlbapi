@@ -35,18 +35,31 @@ const formatDate3 = (str) => {
   return `${month}/${day}`;
 };
 
-const formatDate4 = (datestr2) => {
-  const datestr = new Date(datestr2);
+const formatDate4 = (input) => {
+  const date = new Date(input);
 
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const day = days[datestr.getUTCDay()];
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const day = days[date.getUTCDay()];
 
-  const month = datestr.getUTCMonth() + 1;
-  const year = datestr.getUTCFullYear().toString().slice(2);
+  const month = date.getUTCMonth();
+  const year = date.getUTCFullYear();
 
-  return `${day} ${month}-${datestr.getUTCDate()}-${year}`;
+  return `${months[month]} ${date.getUTCDate()}, ${year}`;
 };
-
 const formatTime = (date) => {
   const dateObj = new Date(date);
   const hours = dateObj.getHours();

@@ -472,7 +472,7 @@ table {
   right: 1.5rem;
 }
 
-.boxscore-top{
+.boxscore-top {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -485,4 +485,94 @@ table {
 
 .top {
   margin: 0 1rem;
+}
+
+.boxscore-gameinfo {
+  z-index: -1;
+  display: block;
+  width: 45%;
+  margin: auto;
+  margin-top: -3.5rem;
+  background-image: url(./assets/bballtext);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  text-align: center;
+  border-radius: 50px;
+  height: 7rem;
+}
+
+.boxscore-gameinfo p {
+  position: relative;
+  top: 2rem;
+  font-weight: bold;
+}
+
+.box-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+.boxteam {
+  width: 10%;
+  justify-content: center;
+}
+
+.boxteam {
+  font-weight: bold;
+  width: 205%;
+  right: 0.55rem;
+  line-height: 0.8rem;
+  padding-top: 0.17rem;
+  padding-bottom: 0.32rem;
+}
+
+.boxbox {
+  width: 80%;
+}
+
+.boxbox table td {
+  border: solid black 0.5px;
+}
+.boxbox table th {
+  border-bottom: solid black 1px;
+  border-right: solid black 1px;
+  border-left: solid black 1px;
+}
+
+.box-outline {
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #d7b49e;
+  padding-left: -3rem;
+  width: 90%;
+}
+
+.boxteam-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 8.5%;
+}
+.boxteam-container p {
+  position: relative;
+  font-size: 0.75rem;
+  top: 0.15rem;
+}
+
+.decision-container {
+  display: flex;
+  border-top: 1px solid black;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 0.1rem;
+  margin-bottom: -0.1rem;
+}
+
+.boxteam-away {
+  border-bottom: black solid 2px;
+  border-top: black solid 2px;
+  line-height: 0.5rem;
 }
