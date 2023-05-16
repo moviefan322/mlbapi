@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { formatDate, formatDate2 } from "../utils/formatTime";
+import { Link } from "react-router-dom";
 import teamKeys from "../utils/teamKeys";
 import Spinner from "./Spinner";
 
@@ -22,6 +23,7 @@ function LineItem({ team, series, schedule }) {
     let gameResults = [];
     for (let i = 0; i < schedule[id][seriesNo].length; i++) {
       const game = schedule[id][seriesNo][i];
+      console.log(game);
       const isPPD = game.status.detailedState === "Postponed";
       const isWinner =
         (isAwayTeam && game.teams.away.isWinner) ||
@@ -30,17 +32,24 @@ function LineItem({ team, series, schedule }) {
         (isAwayTeam && game.teams.away.isWinner === false) ||
         (isHomeTeam && game.teams.home.isWinner === false);
       const result = isWinner ? (
-        <span key={`win-${i}`} className="green">
-          W
-        </span>
+        <Link to={`/boxscore/${game.gamePk}`}>
+          <span key={`${game.gamePk}`} className="green">
+            W
+          </span>
+        </Link>
       ) : isLoser ? (
-        <span key={`loss-${i}`} className="red">
-          L
-        </span>
+        <Link to={`/boxscore/${game.gamePk}`}>
+          <span key={`loss-${game.gamePk}`} className="red">
+            L
+          </span>
+        </Link>
       ) : isPPD ? (
-        <span key={`ppd-${i}`} className="small">
-          P
-        </span>
+        <Link to={`/boxscore/${game.gamePk}`}>
+          {" "}
+          <span key={`ppd-${game.gamePk}`} className="small">
+            P
+          </span>
+        </Link>
       ) : (
         <span key={`bullshit-${i}`}></span>
       );
