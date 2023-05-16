@@ -290,14 +290,14 @@ function BattingLinescoreAway({ boxscore }) {
     .filter((batter) => batter !== null)
     .toString();
 
-  const RISP =
-    boxscore.liveData.boxscore.teams.away.info[0].fieldList[8]?.value.split(
-      "-"
-    )[0] +
-    " for " +
-    boxscore.liveData.boxscore.teams.away.info[0].fieldList[8]?.value.split(
-      "-"
-    )[2];
+  const RISP = boxscore.liveData.boxscore.teams.away.info[0].fieldList.filter(
+    (listitem) => listitem.label.includes("RISP")
+  );
+
+  const RISPline =
+    RISP[0].value.split("-")[0] + " for " + RISP[0].value.split("-")[2];
+
+  console.log(RISPline);
 
   const fieldingErrors = boxscore.liveData.plays.allPlays.filter(
     (play) =>
@@ -340,10 +340,6 @@ function BattingLinescoreAway({ boxscore }) {
       return playerNames.join("-").toString();
     }
   });
-
-  console.log(doublePlayLine);
-
-  console.log(doublePlays);
 
   return (
     <>
@@ -615,10 +611,10 @@ function BattingLinescoreAway({ boxscore }) {
             {boxscore.liveData.boxscore.teams.away.teamStats.batting.leftOnBase}
           </p>
         )}
-        {boxscore.liveData.boxscore.teams.away.info[0].fieldList[8]?.value && (
+        {RISPline.length > 0 && (
           <p>
             Team RISP:
-            {RISP}
+            {RISPline}
           </p>
         )}
         <p>
