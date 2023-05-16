@@ -341,6 +341,26 @@ function BattingLinescoreAway({ boxscore }) {
     }
   });
 
+  const GIDPline = awayBatters
+    .map((batter) => {
+      const GIDPcount = boxscore.liveData.plays.allPlays.filter(
+        (play) =>
+          play.matchup.batter.id === batter &&
+          play.result.eventType === "grounded_into_double_play"
+      ).length;
+      const player =
+        boxscore.liveData.boxscore.teams.away.players[`ID${batter}`].person
+          .fullName;
+
+      if (GIDPcount > 0) {
+        return ` ${player}(${GIDPcount})`;
+      } else {
+        return null;
+      }
+    })
+    .filter((batter) => batter !== null)
+    .toString();
+
   return (
     <>
       <table className="battingbox">
@@ -601,6 +621,7 @@ function BattingLinescoreAway({ boxscore }) {
         {hrLine.length > 0 && <p>HR: {hrLine}</p>}
         {sacFlyLine.length > 0 && <p>SF: {sacFlyLine}</p>}
         {tbLine.length > 0 && <p>TB: {tbLine}</p>}
+        {GIDPline.length > 0 && <p>GIDP: {GIDPline}</p>}
         {rbiLine.length > 0 && <p>RBI: {rbiLine}</p>}
         {twoOutRbiLine.length > 0 && <p>2-out RBI: {twoOutRbiLine}</p>}
         {boxscore.liveData.boxscore.teams.away.teamStats.batting.leftOnBase >
