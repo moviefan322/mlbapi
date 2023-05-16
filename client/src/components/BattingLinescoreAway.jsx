@@ -214,6 +214,60 @@ function BattingLinescoreAway({ boxscore }) {
     .filter((batter) => batter !== null)
     .toString();
 
+  const sacFlyLine = awayBatters
+    .map((batter) => {
+      const sacFlys = boxscore.liveData.plays.allPlays.filter(
+        (play) =>
+          play.matchup.batter.id === batter &&
+          play.result.eventType === "sac_fly"
+      );
+
+      if (sacFlys.length === 1) {
+        const player =
+          boxscore.liveData.boxscore.teams.away.players[
+            "ID" + sacFlys[0].matchup.batter.id
+          ];
+        const pitcher = sacFlys[0].matchup.pitcher.fullName.split(" ")[1];
+        const inning = ordinalSuffix(sacFlys[0].about.inning);
+        const lastName = player.person.fullName.split(" ")[1];
+        return ` ${lastName}(${inning}:${pitcher})`;
+      } else if (sacFlys.length > 1) {
+        const player =
+          boxscore.liveData.boxscore.teams.away.players[
+            "ID" + sacFlys[0].matchup.batter.id
+          ];
+        const pitchers = sacFlys.map(
+          (matchup) => matchup.pitcher.fullName.split(" ")[1]
+        );
+        const lastName = player.person.fullName.split(" ")[1];
+        return ` ${lastName}, ${pitchers.toString()})`;
+      } else {
+        return null;
+      }
+    })
+    .filter((batter) => batter !== null)
+    .toString();
+
+  const rbiLine = awayBatters
+    .map((batter) => {
+      const rbis = boxscore.liveData.boxscore.teams.away.players[`ID${batter}`].stats
+      .batting.rbi;
+      const player =
+        boxscore.liveData.boxscore.teams.away.players[
+          `ID${batter}`
+        ].person.fullName.split(" ")[1];
+
+      const seasonTotal =
+        boxscore.liveData.boxscore.teams.away.players[`ID${batter}`].seasonStats
+          .batting.rbi;
+
+      if (rbis === 0) return null;
+
+      return ` ${player} ${rbis}(${seasonTotal})`;
+    })
+    .filter((batter) => batter !== null)
+    .toString();
+
   return (
     <>
       <table className="battingbox">
@@ -472,7 +526,9 @@ function BattingLinescoreAway({ boxscore }) {
         {doubleLine.length > 0 && <p>2B: {doubleLine}</p>}
         {tripleLine.length > 0 && <p>3B: {tripleLine}</p>}
         {hrLine.length > 0 && <p>HR: {hrLine}</p>}
+        {sacFlyLine.length > 0 && <p>SF: {sacFlyLine}</p>}
         {tbLine.length > 0 && <p>TB: {tbLine}</p>}
+        {rbiLine.length > 0 && <p>RBI: {rbiLine}</p>}
         {boxscore.liveData.boxscore.teams.away.teamStats.batting.leftOnBase >
           0 &&
           `Team LOB: ${boxscore.liveData.boxscore.teams.away.teamStats.batting.leftOnBase}`}
