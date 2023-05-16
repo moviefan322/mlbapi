@@ -611,3 +611,22 @@ table {
 .battingbox th {
   border-left: black 1px solid;
 }
+
+.linescorecontainer {
+  justify-content: space-between;
+  margin: auto;
+}
+
+.scorescontainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.battingbox {
+  width: 90%;
+  margin-right: 6rem;
+}
+
+.battingbox tr {
+  width: 100%;
+}
