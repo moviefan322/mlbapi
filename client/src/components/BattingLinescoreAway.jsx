@@ -156,6 +156,8 @@ function BattingLinescoreAway({ boxscore }) {
                 }`}</td>
               </tr>
             ))}
+        </tbody>
+        <tfoot>
           <tr>
             <td>
               <strong>Totals:</strong>
@@ -269,7 +271,7 @@ function BattingLinescoreAway({ boxscore }) {
                 .substring(1)}
             </td>
           </tr>
-        </tbody>
+        </tfoot>
       </table>
     </>
   );
