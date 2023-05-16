@@ -66,19 +66,13 @@ function BattingLinescoreAway({ boxscore }) {
           return highestValue;
         }, 0);
 
-        console.log(`Inning ${i}: ${inningBases}`);
-
         basesPerInning.push(inningBases);
       }
     }
 
-    console.log("Bases per inning:", basesPerInning);
-
     const totalBases = basesPerInning.reduce((total, inning) => {
       return total + inning;
     }, 0);
-
-    console.log("Total bases:", totalBases);
 
     return totalBases;
   }
@@ -369,7 +363,6 @@ function BattingLinescoreAway({ boxscore }) {
           TB:{" "}
           {awayBatters.map((batter) => {
             const TB = calculateTotalBases(boxscore, batter);
-            // console.log(TB);
             const player =
               boxscore.liveData.boxscore.teams.away.players[
                 `ID${batter}`
@@ -383,7 +376,6 @@ function BattingLinescoreAway({ boxscore }) {
           }) !== null &&
             awayBatters.map((batter) => {
               const TB = calculateTotalBases(boxscore, batter);
-              // console.log(TB);
               const player =
                 boxscore.liveData.boxscore.teams.away.players[
                   `ID${batter}`
