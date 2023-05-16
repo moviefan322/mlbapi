@@ -18,11 +18,6 @@ function BattingLinescoreAway({ boxscore }) {
           play.result.eventType !== "hit_by_pitch"
       ).length > 0
   );
-  const teamDoubles = boxscore.liveData.plays.allPlays.filter(
-    (play) =>
-      awayBatters.includes(play.matchup.batter.id) &&
-      play.result.eventType === "double"
-  );
 
   function calculateTotalBases(boxscore, batter) {
     let basesPerInning = [];
@@ -76,6 +71,71 @@ function BattingLinescoreAway({ boxscore }) {
 
     return totalBases;
   }
+
+  const doubleLine = awayBatters
+    .map((batter) => {
+      const doubles = boxscore.liveData.plays.allPlays.filter(
+        (play) =>
+          play.matchup.batter.id === batter &&
+          play.result.eventType === "double"
+      );
+
+      if (doubles.length > 0) {
+        const player =
+          boxscore.liveData.boxscore.teams.away.players[
+            "ID" + doubles[0].matchup.batter.id
+          ];
+        const inning = doubles[0].about.inning;
+        const pitcher = doubles[0].matchup.pitcher.fullName.split(" ")[1];
+        const lastName = player.person.fullName.split(" ")[1];
+        return ` ${lastName}(${inning}, ${pitcher})`;
+      } else {
+        return null;
+      }
+    })
+    .filter((batter) => batter !== null)
+    .toString();
+
+  const tbLine = awayBatters
+    .map((batter) => {
+      const TB = calculateTotalBases(boxscore, batter);
+      const player =
+        boxscore.liveData.boxscore.teams.away.players[
+          `ID${batter}`
+        ].person.fullName.split(" ")[1];
+
+      if (TB > 0) {
+        return ` ${`${player}(${TB})`}`;
+      } else {
+        return null;
+      }
+    })
+    .filter((batter) => batter !== null)
+    .toString();
+
+  const tripleLine = awayBatters
+    .map((batter) => {
+      const triples = boxscore.liveData.plays.allPlays.filter(
+        (play) =>
+          play.matchup.batter.id === batter &&
+          play.result.eventType === "triple"
+      );
+
+      if (triples.length > 0) {
+        const player =
+          boxscore.liveData.boxscore.teams.away.players[
+            "ID" + triples[0].matchup.batter.id
+          ];
+        const inning = triples[0].about.inning;
+        const pitcher = triples[0].matchup.pitcher.fullName.split(" ")[1];
+        const lastName = player.person.fullName.split(" ")[1];
+        return ` ${lastName}(${inning}, ${pitcher})`;
+      } else {
+        return null;
+      }
+    })
+    .filter((batter) => batter !== null)
+    .toString();
 
   return (
     <>
@@ -332,62 +392,9 @@ function BattingLinescoreAway({ boxscore }) {
         </tfoot>
       </table>
       <div className="battingbox-bottom">
-        {teamDoubles.length > 0 && (
-          <p>
-            2B:{" "}
-            {awayBatters.map((batter) => {
-              const doubles = boxscore.liveData.plays.allPlays.filter(
-                (play) =>
-                  play.matchup.batter.id === batter &&
-                  play.result.eventType === "double"
-              );
-
-              if (doubles.length > 0) {
-                const player =
-                  boxscore.liveData.boxscore.teams.away.players[
-                    "ID" + doubles[0].matchup.batter.id
-                  ];
-                const inning = doubles[0].about.inning;
-                const pitcher =
-                  doubles[0].matchup.pitcher.fullName.split(" ")[1];
-                const lastName = player.person.fullName.split(" ")[1];
-                return lastName + `(${inning}, ${pitcher}) `;
-              } else {
-                return "";
-              }
-            })}
-          </p>
-        )}
-        <p>
-          {" "}
-          TB:{" "}
-          {awayBatters.map((batter) => {
-            const TB = calculateTotalBases(boxscore, batter);
-            const player =
-              boxscore.liveData.boxscore.teams.away.players[
-                `ID${batter}`
-              ].person.fullName.split(" ")[1];
-
-            if (TB > 0) {
-              return `${`${player}(${TB}) `}`;
-            } else {
-              return null;
-            }
-          }) !== null &&
-            awayBatters.map((batter) => {
-              const TB = calculateTotalBases(boxscore, batter);
-              const player =
-                boxscore.liveData.boxscore.teams.away.players[
-                  `ID${batter}`
-                ].person.fullName.split(" ")[1];
-
-              if (TB > 0) {
-                return `${`${player}(${TB}) `}`;
-              } else {
-                return null;
-              }
-            })}
-        </p>
+        {doubleLine.length > 0 && <p>2B: {doubleLine}</p>}
+        {tripleLine.length > 0 && <p>3B: {tripleLine}</p>}
+        {tbLine.length > 0 && <p>TB: {tbLine}</p>}
       </div>
     </>
   );
