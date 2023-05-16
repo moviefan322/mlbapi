@@ -95,58 +95,59 @@ function Boxscore() {
         <div className="box-container">
           <div className="boxteam-container">
             <p className="boxteam boxteam-away">
-              {" "}
               {teamKeys[boxscore.liveData.boxscore.teams.away.team.name].abb}
             </p>
             <p className="boxteam">
-              {" "}
               {teamKeys[boxscore.liveData.boxscore.teams.home.team.name].abb}
             </p>
           </div>
           <div className="boxbox">
             <table>
-              <tr>
-                <th>1</th>
-                <th>2</th>
-                <th>3</th>
-                <th>4</th>
-                <th>5</th>
-                <th>6</th>
-                <th>7</th>
-                <th>8</th>
-                <th>9</th>
-                <th>R</th>
-                <th>H</th>
-                <th>E</th>
-              </tr>
-              <tr>
-                {boxscore.liveData.linescore.innings.map((inning) => (
-                  <td>{inning.away.runs}</td>
-                ))}
-                <td>{boxscore.liveData.linescore.teams.away.runs}</td>
-                <td>{boxscore.liveData.linescore.teams.away.hits}</td>
-                <td>{boxscore.liveData.linescore.teams.away.errors}</td>
-              </tr>{" "}
-              <tr>
-                {" "}
-                {boxscore.liveData.linescore.innings.map((inning) => (
-                  <td>{inning.home.runs}</td>
-                ))}
-                <td>{boxscore.liveData.linescore.teams.home.runs}</td>
-                <td>{boxscore.liveData.linescore.teams.home.hits}</td>
-                <td>{boxscore.liveData.linescore.teams.home.errors}</td>
-              </tr>
+              <thead>
+                <tr>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3</th>
+                  <th>4</th>
+                  <th>5</th>
+                  <th>6</th>
+                  <th>7</th>
+                  <th>8</th>
+                  <th>9</th>
+                  <th>R</th>
+                  <th>H</th>
+                  <th>E</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  {boxscore.liveData.linescore.innings.map((inning, index) => (
+                    <td key={index}>{inning.away.runs}</td>
+                  ))}
+                  <td>{boxscore.liveData.linescore.teams.away.runs}</td>
+                  <td>{boxscore.liveData.linescore.teams.away.hits}</td>
+                  <td>{boxscore.liveData.linescore.teams.away.errors}</td>
+                </tr>
+                <tr>
+                  {boxscore.liveData.linescore.innings.map((inning, index) => (
+                    <td key={index}>{inning.home.runs}</td>
+                  ))}
+                  <td>{boxscore.liveData.linescore.teams.home.runs}</td>
+                  <td>{boxscore.liveData.linescore.teams.home.hits}</td>
+                  <td>{boxscore.liveData.linescore.teams.home.errors}</td>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
         <div className="decision-container">
           <strong className="decision">
             W:{boxscore.liveData.decisions.winner.fullName.split(" ")[1]}
-          </strong>{" "}
+          </strong>
           <strong className="decision">
             L:{boxscore.liveData.decisions.loser.fullName.split(" ")[1]}
-          </strong>{" "}
-        </div>{" "}
+          </strong>
+        </div>
       </div>
     </>
   );

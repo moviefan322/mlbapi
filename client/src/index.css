@@ -487,6 +487,15 @@ table {
   margin: 0 1rem;
 }
 
+.top p {
+  font-size: 0.7rem;
+}
+
+.top strong {
+  font-size: 1rem;
+  margin-top: -1rem;
+}
+
 .boxscore-gameinfo {
   z-index: -1;
   display: block;
@@ -512,7 +521,7 @@ table {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin: 0;
+  margin: 0 0 0;
   padding: 0;
 }
 .boxteam {
@@ -548,6 +557,7 @@ table {
   background-color: #d7b49e;
   padding-left: -3rem;
   width: 90%;
+  margin-top: 0.5rem;
 }
 
 .boxteam-container {
