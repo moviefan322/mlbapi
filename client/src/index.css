@@ -596,3 +596,18 @@ table {
   justify-content: space-between;
   padding-right: 0.6rem;
 }
+
+.battingbox {
+  background: #d7b49e;
+  width: 50%;
+  border: black 1px solid;
+}
+
+.battingbox td {
+  border-top: black 1px solid;
+  border-left: black 1px solid;
+}
+
+.battingbox th {
+  border-left: black 1px solid;
+}
