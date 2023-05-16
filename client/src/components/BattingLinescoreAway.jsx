@@ -18,6 +18,71 @@ function BattingLinescoreAway({ boxscore }) {
           play.result.eventType !== "hit_by_pitch"
       ).length > 0
   );
+  const teamDoubles = boxscore.liveData.plays.allPlays.filter(
+    (play) =>
+      awayBatters.includes(play.matchup.batter.id) &&
+      play.result.eventType === "double"
+  );
+
+  function calculateTotalBases(boxscore, batter) {
+    let basesPerInning = [];
+    for (let i = 1; i <= 9; i++) {
+      const batterIsOnBase = boxscore.liveData.plays.allPlays.filter((play) => {
+        return (
+          play.about.inning === i &&
+          (play.runners[0]?.details.runner.id === batter ||
+            play.runners[1]?.details.runner.id === batter ||
+            play.runners[2]?.details.runner.id === batter)
+        );
+      });
+      if (batterIsOnBase.length > 0) {
+        const inningBases = batterIsOnBase.reduce((highestValue, play) => {
+          let baseValue = 0;
+          if (play.runners[0]?.details.runner.id === batter) {
+            baseValue = play.runners[0]?.movement.end;
+          }
+          if (play.runners[1]?.details.runner.id === batter) {
+            baseValue = play.runners[1]?.movement.end;
+          }
+          if (play.runners[2]?.details.runner.id === batter) {
+            baseValue = play.runners[2]?.movement.end;
+          }
+          if (baseValue === "1B") {
+            baseValue = 1;
+          }
+          if (baseValue === "2B") {
+            baseValue = 2;
+          }
+          if (baseValue === "3B") {
+            baseValue = 3;
+          }
+          if (baseValue === "score") {
+            baseValue = 4;
+          }
+
+          if (baseValue > highestValue) {
+            highestValue = baseValue;
+          }
+          return highestValue;
+        }, 0);
+
+        console.log(`Inning ${i}: ${inningBases}`);
+
+        basesPerInning.push(inningBases);
+      }
+    }
+
+    console.log("Bases per inning:", basesPerInning);
+
+    const totalBases = basesPerInning.reduce((total, inning) => {
+      return total + inning;
+    }, 0);
+
+    console.log("Total bases:", totalBases);
+
+    return totalBases;
+  }
+
   return (
     <>
       <table className="battingbox">
@@ -55,15 +120,14 @@ function BattingLinescoreAway({ boxscore }) {
               <tr key={index}>
                 <td className="batterName">
                   <span>{`${
-                    boxscore.liveData.boxscore.teams.away.players[
-                      "ID" + `${batter}`
-                    ].jerseyNumber
+                    boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
+                      .jerseyNumber
                   }`}</span>
                   <span>
                     {
                       `${
                         boxscore.liveData.boxscore.teams.away.players[
-                          "ID" + `${batter}`
+                          `ID${batter}`
                         ].person.fullName
                       }`.split(" ")[1]
                     }
@@ -97,7 +161,7 @@ function BattingLinescoreAway({ boxscore }) {
                       play.result.description.includes(
                         `${
                           boxscore.liveData.boxscore.teams.away.players[
-                            "ID" + `${batter}`
+                            `ID${batter}`
                           ].person.fullName
                         } scores`
                       )
@@ -189,7 +253,7 @@ function BattingLinescoreAway({ boxscore }) {
                     play.result.description.includes(
                       `${
                         boxscore.liveData.boxscore.teams.away.players[
-                          "ID" + `${batter}`
+                          `ID${batter}`
                         ].person.fullName
                       } scores`
                     )
@@ -273,6 +337,66 @@ function BattingLinescoreAway({ boxscore }) {
           </tr>
         </tfoot>
       </table>
+      <div className="battingbox-bottom">
+        {teamDoubles.length > 0 && (
+          <p>
+            2B:{" "}
+            {awayBatters.map((batter) => {
+              const doubles = boxscore.liveData.plays.allPlays.filter(
+                (play) =>
+                  play.matchup.batter.id === batter &&
+                  play.result.eventType === "double"
+              );
+
+              if (doubles.length > 0) {
+                const player =
+                  boxscore.liveData.boxscore.teams.away.players[
+                    "ID" + doubles[0].matchup.batter.id
+                  ];
+                const inning = doubles[0].about.inning;
+                const pitcher =
+                  doubles[0].matchup.pitcher.fullName.split(" ")[1];
+                const lastName = player.person.fullName.split(" ")[1];
+                return lastName + `(${inning}, ${pitcher}) `;
+              } else {
+                return "";
+              }
+            })}
+          </p>
+        )}
+        <p>
+          {" "}
+          TB:{" "}
+          {awayBatters.map((batter) => {
+            const TB = calculateTotalBases(boxscore, batter);
+            // console.log(TB);
+            const player =
+              boxscore.liveData.boxscore.teams.away.players[
+                `ID${batter}`
+              ].person.fullName.split(" ")[1];
+
+            if (TB > 0) {
+              return `${`${player}(${TB}) `}`;
+            } else {
+              return null;
+            }
+          }) !== null &&
+            awayBatters.map((batter) => {
+              const TB = calculateTotalBases(boxscore, batter);
+              // console.log(TB);
+              const player =
+                boxscore.liveData.boxscore.teams.away.players[
+                  `ID${batter}`
+                ].person.fullName.split(" ")[1];
+
+              if (TB > 0) {
+                return `${`${player}(${TB}) `}`;
+              } else {
+                return null;
+              }
+            })}
+        </p>
+      </div>
     </>
   );
 }

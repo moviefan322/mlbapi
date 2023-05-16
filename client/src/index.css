@@ -485,11 +485,11 @@ table {
 
 .top {
   margin: 0 1rem;
-  width:150px;
+  width: 150px;
 }
 
 .top img {
-  position:relative;
+  position: relative;
   margin: auto;
   padding: 0;
   right: 5px;
@@ -637,4 +637,10 @@ table {
 
 .battingbox tr {
   width: 100%;
+}
+
+.battingbox-bottom {
+  display: inline;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 0.8rem;
 }

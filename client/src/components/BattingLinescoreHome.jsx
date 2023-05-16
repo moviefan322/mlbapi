@@ -56,14 +56,14 @@ function BattingLinescoreHome({ boxscore }) {
                 <td className="batterName">
                   <span>{`${
                     boxscore.liveData.boxscore.teams.home.players[
-                      "ID" + `${batter}`
+                      `ID${batter}`
                     ].jerseyNumber
                   }`}</span>
                   <span>
                     {
                       `${
                         boxscore.liveData.boxscore.teams.home.players[
-                          "ID" + `${batter}`
+                          `ID${batter}`
                         ].person.fullName
                       }`.split(" ")[1]
                     }
@@ -97,7 +97,7 @@ function BattingLinescoreHome({ boxscore }) {
                       play.result.description.includes(
                         `${
                           boxscore.liveData.boxscore.teams.home.players[
-                            "ID" + `${batter}`
+                            `ID${batter}`
                           ].person.fullName
                         } scores`
                       )
@@ -187,7 +187,7 @@ function BattingLinescoreHome({ boxscore }) {
                     play.result.description.includes(
                       `${
                         boxscore.liveData.boxscore.teams.home.players[
-                          "ID" + `${batter}`
+                          `ID${batter}`
                         ].person.fullName
                       } scores`
                     )

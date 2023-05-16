@@ -23,7 +23,7 @@ const scheduleWriteTodaysGames = cron.schedule("01 10 * 3-10 *", () => {
 });
 
 // Fetches odds every day at 10:15AM
-const scheduleFetchOdds = cron.schedule("46 10 * 3-10 *", () => {
+const scheduleFetchOdds = cron.schedule("51 09 * 3-10 *", () => {
   fetchOdds();
   console.log("It's 10:45 AM and todays odds have been fetched!");
 });
@@ -31,8 +31,6 @@ const scheduleFetchOdds = cron.schedule("46 10 * 3-10 *", () => {
 // Checks for game resuls every minute during baseball hours
 const scheduleBetUpdates = cron.schedule("*/1 12-23,0-3 * 3-10 *", () => {
   callUpdateBets();
-  const data = { event: "betUpdated", message: "New bet update" };
-  handleBetUpdates(data);
 });
 
 const runAllTasks = () => {
