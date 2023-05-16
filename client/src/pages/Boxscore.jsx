@@ -92,19 +92,11 @@ function Boxscore() {
         </div>
       </div>
       <div className="box-outline">
-        <div className="box-container">
-          <div className="boxteam-container">
-            <p className="boxteam boxteam-away">
-              {teamKeys[boxscore.liveData.boxscore.teams.away.team.name].abb}
-            </p>
-            <p className="boxteam">
-              {teamKeys[boxscore.liveData.boxscore.teams.home.team.name].abb}
-            </p>
-          </div>
           <div className="boxbox">
             <table>
               <thead>
                 <tr>
+                    <th></th>
                   <th>1</th>
                   <th>2</th>
                   <th>3</th>
@@ -121,6 +113,16 @@ function Boxscore() {
               </thead>
               <tbody>
                 <tr>
+                  <td>
+                    {" "}
+                    <strong>
+                      {
+                        teamKeys[
+                          boxscore.liveData.boxscore.teams.away.team.name
+                        ].abb
+                      }
+                    </strong>
+                  </td>
                   {boxscore.liveData.linescore.innings.map((inning, index) => (
                     <td key={index}>{inning.away.runs}</td>
                   ))}
@@ -129,6 +131,16 @@ function Boxscore() {
                   <td>{boxscore.liveData.linescore.teams.away.errors}</td>
                 </tr>
                 <tr>
+                <td>
+                    {" "}
+                    <strong>
+                      {
+                        teamKeys[
+                          boxscore.liveData.boxscore.teams.home.team.name
+                        ].abb
+                      }
+                    </strong>
+                  </td>
                   {boxscore.liveData.linescore.innings.map((inning, index) => (
                     <td key={index}>{inning.home.runs}</td>
                   ))}
@@ -139,7 +151,6 @@ function Boxscore() {
               </tbody>
             </table>
           </div>
-        </div>
         <div className="decision-container">
           <strong className="decision">
             W:{boxscore.liveData.decisions.winner.fullName.split(" ")[1]}

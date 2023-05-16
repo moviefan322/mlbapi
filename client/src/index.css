@@ -538,10 +538,6 @@ table {
   padding-bottom: 0.32rem;
 }
 
-.boxbox {
-  width: 80%;
-}
-
 .boxbox table td {
   border: solid black 0.5px;
 }
