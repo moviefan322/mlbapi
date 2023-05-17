@@ -271,9 +271,8 @@ function SingleGame({ game, odds }) {
           </div>
         ) : (
           <h4>
-            `${singleGame.gameData?.probablePitchers.away?.fullName ?? "TBD"}{" "}
-            vs. ${singleGame.gameData?.probablePitchers.home?.fullName ?? "TBD"}
-            `
+            {singleGame.gameData?.probablePitchers.away?.fullName ?? "TBD"} vs.{" "}
+            {singleGame.gameData?.probablePitchers.home?.fullName ?? "TBD"}
           </h4>
         )}
       </div>
