@@ -91,8 +91,8 @@ function BattingLinescoreHome({ boxscore }) {
         const dblCount =
           boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
             .seasonStats.batting.doubles;
-        const pitcher = doubles[0].matchup.pitcher.fullName.match(/\b(\w+)$/);
-        const lastName = player.person.fullName.match(/\b(\w+)$/);
+        const pitcher = doubles[0].matchup.pitcher.fullName.split(" ")[1];
+        const lastName = player.person.fullName.split(" ")[1];
         return ` ${lastName}(${dblCount}, ${pitcher})`;
       } else if (doubles.length > 1) {
         const player =
@@ -103,9 +103,9 @@ function BattingLinescoreHome({ boxscore }) {
           boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
             .seasonStats.batting.doubles;
         const pitchers = doubles.map(
-          (doubles) => doubles.matchup.pitcher.fullName.match(/\b(\w+)$/)
+          (doubles) => doubles.matchup.pitcher.fullName.split(" ")[1]
         );
-        const lastName = player.person.fullName.match(/\b(\w+)$/);
+        const lastName = player.person.fullName.split(" ")[1];
         return ` ${lastName}(${dblCount}, ${pitchers.toString()})`;
       } else {
         return null;
@@ -120,7 +120,7 @@ function BattingLinescoreHome({ boxscore }) {
       const player =
         boxscore.liveData.boxscore.teams.home.players[
           `ID${batter}`
-        ].person.fullName.match(/\b(\w+)$/);
+        ].person.fullName.split(" ")[1];
 
       if (TB > 0) {
         return ` ${`${player}(${TB})`}`;
@@ -147,8 +147,8 @@ function BattingLinescoreHome({ boxscore }) {
         const dblCount =
           boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
             .seasonStats.batting.triples;
-        const pitcher = triples[0].matchup.pitcher.fullName.match(/\b(\w+)$/);
-        const lastName = player.person.fullName.match(/\b(\w+)$/);
+        const pitcher = triples[0].matchup.pitcher.fullName.split(" ")[1];
+        const lastName = player.person.fullName.split(" ")[1];
         return ` ${lastName}(${dblCount}, ${pitcher})`;
       } else if (triples.length > 1) {
         const player =
@@ -159,9 +159,9 @@ function BattingLinescoreHome({ boxscore }) {
           boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
             .seasonStats.batting.triples;
         const pitchers = triples.map(
-          (matchup) => matchup.pitcher.fullName.match(/\b(\w+)$/)
+          (matchup) => matchup.pitcher.fullName.split(" ")[1]
         );
-        const lastName = player.person.fullName.match(/\b(\w+)$/);
+        const lastName = player.person.fullName.split(" ")[1];
         return ` ${lastName}(${dblCount}, ${pitchers.toString()})`;
       } else {
         return null;
@@ -187,8 +187,8 @@ function BattingLinescoreHome({ boxscore }) {
             "ID" + hrs[0].matchup.batter.id
           ];
         const inning = hrs[0].about.inning;
-        const pitcher = hrs[0].matchup.pitcher.fullName.match(/\b(\w+)$/);
-        const lastName = player.person.fullName.match(/\b(\w+)$/);
+        const pitcher = hrs[0].matchup.pitcher.fullName.split(" ")[1];
+        const lastName = player.person.fullName.split(" ")[1];
         return ` ${lastName}(${hrCount}, ${ordinalSuffix(inning)}: ${pitcher})`;
       } else if (hrs.length > 1) {
         const player =
@@ -200,14 +200,14 @@ function BattingLinescoreHome({ boxscore }) {
           boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
             .seasonStats.batting.homeRuns;
         const pitchers = hrs.map(
-          (hrs) => hrs.matchup.pitcher.fullName.match(/\b(\w+)$/)
+          (hrs) => hrs.matchup.pitcher.fullName.split(" ")[1]
         );
         const inning = hrs.map((hr) => ordinalSuffix(hr.about.inning));
         const combinedArray = inning.map((inningValue, index) => {
           const pitcher = pitchers[index];
           return `${inningValue}: ${pitcher}`;
         });
-        const lastName = player.person.fullName.match(/\b(\w+)$/);
+        const lastName = player.person.fullName.split(" ")[1];
         return ` ${lastName}(${hrCount}, ${combinedArray.toString()})`;
       } else {
         return null;
@@ -229,9 +229,9 @@ function BattingLinescoreHome({ boxscore }) {
           boxscore.liveData.boxscore.teams.home.players[
             "ID" + sacFlys[0].matchup.batter.id
           ];
-        const pitcher = sacFlys[0].matchup.pitcher.fullName.match(/\b(\w+)$/);
+        const pitcher = sacFlys[0].matchup.pitcher.fullName.split(" ")[1];
         const inning = ordinalSuffix(sacFlys[0].about.inning);
-        const lastName = player.person.fullName.match(/\b(\w+)$/);
+        const lastName = player.person.fullName.split(" ")[1];
         return ` ${lastName}(${inning}:${pitcher})`;
       } else if (sacFlys.length > 1) {
         const player =
@@ -239,9 +239,9 @@ function BattingLinescoreHome({ boxscore }) {
             "ID" + sacFlys[0].matchup.batter.id
           ];
         const pitchers = sacFlys.map(
-          (matchup) => matchup.pitcher.fullName.match(/\b(\w+)$/)
+          (matchup) => matchup.pitcher.fullName.split(" ")[1]
         );
-        const lastName = player.person.fullName.match(/\b(\w+)$/);
+        const lastName = player.person.fullName.split(" ")[1];
         return ` ${lastName}, ${pitchers.toString()})`;
       } else {
         return null;
@@ -258,7 +258,7 @@ function BattingLinescoreHome({ boxscore }) {
       const player =
         boxscore.liveData.boxscore.teams.home.players[
           `ID${batter}`
-        ].person.fullName.match(/\b(\w+)$/);
+        ].person.fullName.split(" ")[1];
 
       const seasonTotal =
         boxscore.liveData.boxscore.teams.home.players[`ID${batter}`].seasonStats
@@ -283,7 +283,7 @@ function BattingLinescoreHome({ boxscore }) {
       const player =
         boxscore.liveData.boxscore.teams.home.players[
           `ID${batter}`
-        ].person.fullName.match(/\b(\w+)$/);
+        ].person.fullName.split(" ")[1];
 
       if (rbis === 0) return null;
 
@@ -311,7 +311,7 @@ function BattingLinescoreHome({ boxscore }) {
       const player =
         boxscore.liveData.boxscore.teams.home.players[
           `ID${playerId}`
-        ]?.person.fullName.match(/\b(\w+)$/);
+        ]?.person.fullName.split(" ")[1];
       const errorCount =
         boxscore.liveData.boxscore.teams.home.players[`ID${playerId}`]?.stats
           .fielding.errors;
@@ -331,7 +331,7 @@ function BattingLinescoreHome({ boxscore }) {
     const playerNames = creditCodes.map((code) => {
       return boxscore.liveData.boxscore.teams.home.players[
         `ID${code}`
-      ].person.fullName.match(/\b(\w+)$/);
+      ].person.fullName.split(" ")[1];
     });
 
     if (creditCodes.length === 1) {

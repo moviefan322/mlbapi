@@ -4,6 +4,7 @@ import { formatDate, formatDate2 } from "../utils/formatTime";
 import { Link } from "react-router-dom";
 import teamKeys from "../utils/teamKeys";
 import Spinner from "./Spinner";
+import Boxscore from "./Boxscore";
 
 function LineItem({ team, series, schedule }) {
   if (!team || schedule.length === 0) {
@@ -45,7 +46,6 @@ function LineItem({ team, series, schedule }) {
         </Link>
       ) : isPPD ? (
         <Link to={`/boxscore/${game.gamePk}`}>
-          {" "}
           <span key={`ppd-${game.gamePk}`} className="small">
             P
           </span>

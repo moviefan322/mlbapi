@@ -9,7 +9,7 @@ import Register from "./pages/Register";
 import Schedule from "./pages/Schedule";
 import PrivateRoute from "./components/PrivateRoute";
 import Bets from "./pages/Bets";
-import Boxscore from "./pages/Boxscore";
+import Box from "./pages/Box";
 
 function App() {
   if (typeof window !== "undefined") {
@@ -29,7 +29,7 @@ function App() {
             <Route path="/bets" element={<PrivateRoute />}>
               <Route path="/bets" element={<Bets />} />
             </Route>
-            <Route path="/boxscore/:gamePk" element={<Boxscore />} />
+            <Route path="/boxscore/:gamePk" element={<Box />} />
           </Routes>
           <ToastContainer />
         </div>
