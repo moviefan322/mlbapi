@@ -3,7 +3,7 @@ const monthsWith30Days = [4, 6, 9, 11];
 const formatDate = (date) => {
   const dateObj = new Date(date);
   const month = dateObj.getMonth() + 1;
-  const day = dateObj.getDate() + 1;
+  const day = dateObj.getDate();
   if (day === 32) {
     return `${month + 1}/1`;
   }

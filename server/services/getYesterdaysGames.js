@@ -3,6 +3,17 @@ const path = require("path");
 const { writeFile } = require("fs/promises");
 const { write } = require("fs");
 
+const getXXXGames = async (xxx) => {
+  const date = xxx
+  const query = new Date(date.setDate(date.getDate()))
+    .toISOString()
+    .slice(0, 10);
+  const url = `http://statsapi.mlb.com/api/v1/schedule/games/?sportId=1&startDate=${query}&endDate=${query}`;
+
+  const { data } = await axios.get(url);
+  return data.dates[0].games;
+};
+
 const getYesterdaysGames = async () => {
   const date = new Date();
   const yesterday = new Date(date.setDate(date.getDate() - 1))
@@ -34,4 +45,4 @@ const writeYesterdaysGames = async () => {
   );
 };
 
-module.exports = { getYesterdaysGames, writeYesterdaysGames };
+module.exports = { getYesterdaysGames, writeYesterdaysGames, getXXXGames };
