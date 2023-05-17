@@ -176,10 +176,10 @@ function Boxscore() {
         </div>
         <div className="decision-container">
           <strong className="decision">
-            W:{boxscore.liveData.decisions.winner.fullName.split(" ")[1]}
+            W:{boxscore.liveData.decisions.winner.fullName.match(/\b(\w+)$/)}
           </strong>
           <strong className="decision">
-            L:{boxscore.liveData.decisions.loser.fullName.split(" ")[1]}
+            L:{boxscore.liveData.decisions.loser.fullName.match(/\b(\w+)$/)}
           </strong>
         </div>
       </div>

@@ -43,27 +43,24 @@ table {
 }
 
 .container {
-  width: 100%;
-  max-width: 960px;
+  width: 130%;
   margin: 0 auto;
-  padding: 0 20px;
   text-align: center;
   padding-bottom: 3rem;
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 20px 0;
   border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 60px;
+  margin-bottom: 5%;
+  width:100%
 }
 
 .header ul {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content:left;
 }
 
 .header ul li {
@@ -218,32 +215,27 @@ table {
 }
 
 .card-container {
-  display: flex;
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
   background-color: #d7b49e;
   border: 1px #51291e solid;
   border-bottom: 4px #51291e solid;
   border-radius: 10px;
-  align-items: center;
   text-align: center;
   margin: auto;
   margin: 1rem;
-  width: 500px;
-  height: 200px;
   justify-content: center;
-  padding: 1rem;
+  padding: 1rem 1rem 0.25rem 1rem;
 }
 
 .icon {
   width: 50px;
   height: 50px;
+  
 }
 
 .icon-scoreboard {
@@ -560,7 +552,6 @@ table {
   border-radius: 5px;
   background-color: #d7b49e;
   padding-left: -3rem;
-  width: 90%;
   margin-top: 0.5rem;
 }
 
@@ -645,4 +636,8 @@ table {
   display: inline;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 0.8rem;
+}
+
+header img {
+  display: none;
 }

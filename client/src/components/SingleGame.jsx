@@ -7,6 +7,7 @@ import { formatTime } from "../utils/formatTime";
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
 import { reset } from "../features/bet/betSlice";
 import { useDispatch } from "react-redux";
+import Boxscore from "./Boxscore";
 import renderOnBaseImage from "../utils/baserunners";
 import BetModal from "./BetModal";
 import Spinner from "./Spinner";
@@ -245,8 +246,7 @@ function SingleGame({ game, odds }) {
           )}
         </div>
       </div>
-
-      <h4 className="bottom">
+      <div classname="singlegamebox">
         {game.status.statusCode === "I" ? (
           <>
             {singleGame.liveData?.linescore.inningHalf === "Top" ? (
@@ -257,10 +257,10 @@ function SingleGame({ game, odds }) {
             {singleGame.liveData?.linescore.currentInningOrdinal}
           </>
         ) : game.status.abstractGameCode === "F" ? (
-          "FINAL"
+          <Boxscore boxscore={singleGame} />
         ) : game.status.statusCode === "UI" ? (
           <div>
-            SUSPENDED
+            <h4> SUSPENDED </h4>
             <br />
             {singleGame.liveData?.linescore.inningHalf === "Top" ? (
               <AiOutlineArrowUp />
@@ -270,13 +270,13 @@ function SingleGame({ game, odds }) {
             {singleGame.liveData?.linescore.currentInningOrdinal}
           </div>
         ) : (
-          `${
-            singleGame.gameData?.probablePitchers.away?.fullName ?? "TBD"
-          } vs. ${
-            singleGame.gameData?.probablePitchers.home?.fullName ?? "TBD"
-          }`
+          <h4>
+            `${singleGame.gameData?.probablePitchers.away?.fullName ?? "TBD"}{" "}
+            vs. ${singleGame.gameData?.probablePitchers.home?.fullName ?? "TBD"}
+            `
+          </h4>
         )}
-      </h4>
+      </div>
     </div>
   );
 }
