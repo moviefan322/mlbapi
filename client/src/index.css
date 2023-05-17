@@ -52,16 +52,17 @@ h3 {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 5%;
   width: 100%;
+  font-size: 0.9rem;
 }
 
 .header ul {
   display: flex;
-  align-items: center;
-  justify-content: left;
+  justify-content: space-around;
 }
 
 .header ul li {
   margin-left: 20px;
+  text-align: center;
 }
 
 .header ul li a {
@@ -503,6 +504,7 @@ h3 {
   text-align: center;
   font-size: 0.9rem;
   margin-top: -2rem;
+  margin-bottom: 1rem;
 }
 
 .top {
@@ -535,10 +537,10 @@ h3 {
   display: block;
   width: 45%;
   margin: auto;
-  margin-top: -3rem;
+  margin-top: -1rem;
   text-align: center;
   border-radius: 50px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.1rem;
   border: black dashed 1px;
   background: content-box
     radial-gradient(rgb(242, 233, 219), rgba(225, 163, 76, 0.846));
@@ -588,6 +590,10 @@ h3 {
 .box-outline {
   border: 1px solid black;
   background-color: #d7b49e;
+  margin: 0.5rem;
+}
+.box-outline div {
+  margin: 0;
 }
 
 .boxteam-container {
@@ -652,7 +658,7 @@ h3 {
   font-size: 0.7rem;
   width: 90%;
   padding: 0 1rem;
-  line-height: 0.9rem;;
+  line-height: 0.9rem;
   font-weight: 100;
 }
 
@@ -799,8 +805,18 @@ header img {
     justify-content: center;
   }
 
-  .schedule-container {
+  .linescore-container {
     display: flex;
+    flex-direction: row;
     justify-content: center;
+  }
+
+  .linescore-container div {
+    display: flex;
+    width: 50%;
+  }
+
+  .logout {
+    display: block;
   }
 }

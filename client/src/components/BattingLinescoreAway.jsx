@@ -283,12 +283,12 @@ function BattingLinescoreAway({ boxscore }) {
     .filter((batter) => batter !== null)
     .toString();
 
-  const RISP = boxscore.liveData.boxscore.teams.away.info[0].fieldList.filter(
+  const RISP = boxscore.liveData.boxscore.teams.away.info[0]?.fieldList.filter(
     (listitem) => listitem.label.includes("RISP")
   );
 
   const RISPline =
-    RISP[0].value.split("-")[0] + " for " + RISP[0].value.split("-")[2];
+    RISP[0]?.value.split("-")[0] + " for " + RISP[0]?.value.split("-")[2];
 
   const fieldingErrors = boxscore.liveData.plays.allPlays.filter(
     (play) =>
