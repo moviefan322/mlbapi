@@ -2,9 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const http = require("http");
 const path = require("path");
-
-import SocketIO from "socket.io";
-
+const SocketIO = require("socket.io");
 const colors = require("colors");
 const { errorHandler } = require("./middleware/errorHandler");
 require("dotenv").config();
