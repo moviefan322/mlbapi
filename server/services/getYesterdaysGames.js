@@ -3,11 +3,8 @@ const path = require("path");
 const { writeFile } = require("fs/promises");
 const { write } = require("fs");
 
-const getXXXGames = async (xxx) => {
-  const date = xxx
-  const query = new Date(date.setDate(date.getDate()))
-    .toISOString()
-    .slice(0, 10);
+const getXXXGames = async (query) => {
+
   const url = `http://statsapi.mlb.com/api/v1/schedule/games/?sportId=1&startDate=${query}&endDate=${query}`;
 
   const { data } = await axios.get(url);

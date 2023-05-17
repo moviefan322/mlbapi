@@ -6,6 +6,7 @@ const hardCodeOdds = require("../devData/odds.json");
 const currentScores = require("../devData/scoreboard.json");
 const { scoreboard } = require("../services/fetchResults");
 const yesterdayGames = require("../devData/yesterdaysGames.json");
+const { getXXXGames } = require("../services/getYesterdaysGames");
 
 let odds = hardCodeOdds;
 
@@ -46,4 +47,14 @@ const postYesterdaysScores = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { getOdds, postScores, postYesterdaysScores };
+const postXXXgames = asyncHandler(async (req, res) => {
+  try {
+    console.log("params ", req.params.date);
+    const response = await getXXXGames(req.params.date);
+    res.status(200).json(response);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+module.exports = { getOdds, postScores, postYesterdaysScores, postXXXgames };

@@ -246,7 +246,7 @@ function SingleGame({ game, odds }) {
           )}
         </div>
       </div>
-      <div classname="singlegamebox">
+      <div className="singlegamebox">
         {game.status.statusCode === "I" ? (
           <>
             {singleGame.liveData?.linescore.inningHalf === "Top" ? (

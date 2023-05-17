@@ -11,22 +11,18 @@ axios.defaults.headers.common["accepts"] = `application/json
 
 function Home() {
   const [games, setGames] = useState(null);
+  const [gamesLoading, setGamesLoading] = useState(false);
   const [day, setDay] = useState(null);
-  const [prevDay, setPrevDay] = useState();
   const [rawOdds, setRawOdds] = useState([]);
   const { user, isLoading } = useSelector((state) => state.auth);
+
+  const today = new Date().toString();
 
   useEffect(() => {
     setDay(new Date());
   }, []);
 
-  console.log(day);
-
   const dispatch = useDispatch();
-
-  const fetchPrevDaysGames = async () => {
-    console.log("poop")
-  }
 
   useEffect(() => {
     const fetchOdds = async () => {
@@ -47,22 +43,43 @@ function Home() {
     }
   }, []);
 
-  if (isLoading || day === null || games === null) {
+  const fetchPrevDaysGames = async () => {
+    const prevDay = new Date(day.getTime() - 24 * 60 * 60 * 1000);
+    const year = prevDay.getFullYear();
+    const month = String(prevDay.getMonth() + 1).padStart(2, "0");
+    const day2 = String(prevDay.getDate()).padStart(2, "0");
+    const query = `${year}-${month}-${day2}`;
+    setGamesLoading(true);
+    const prevDayGames = await axios.get(`/api/odds/${query}`);
+    console.log(prevDayGames.data);
+    setGames(prevDayGames.data);
+    setDay(prevDay);
+    setGamesLoading(false);
+  };
+
+  if (gamesLoading || day === null || games === null) {
     return <Spinner />;
   }
+
+  const prevDay = new Date(day.getTime() - 24 * 60 * 60 * 1000);
+  const year = prevDay.getFullYear();
+  const month = String(prevDay.getMonth() + 1).padStart(2, "0");
+  const day2 = String(prevDay.getDate()).padStart(2, "0");
+  const query = `${year}-${month}-${day2}`;
+
+  console.log(games);
 
   return (
     <>
       <div className="heading-home">
         <div>
-          <h4>Live Scores</h4>
+          {today === day ? (
+            <h4>Live Scores</h4>
+          ) : (
+            <h5>Games from {formatDate(day)}</h5>
+          )}
           <h6>(Click on the moneyline to place a bet)</h6>
-          <button
-            classname="heading-schedule-btn"
-            onClick={() =>
-              setDay(new Date(day.getTime() - 24 * 60 * 60 * 1000))
-            }
-          >
+          <button onClick={() => fetchPrevDaysGames()}>
             Games from{" "}
             {formatDate(new Date(day.getTime() - 24 * 60 * 60 * 1000))}
           </button>
