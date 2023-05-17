@@ -54,9 +54,9 @@ function Schedule() {
 
   return (
     <>
-      <div className="header">
+      <div className="heading-schedule">
         <button
-          className={`btn btn-sm ${month === 4 ? "disabled" : ""}`}
+          className={`heading-schedule-btn btn-sm ${month === 4 ? "disabled" : ""}`}
           onClick={prevMonth}
           disabled={month === 4}
         >
@@ -64,7 +64,7 @@ function Schedule() {
         </button>
         <h1>{monthName}</h1>
         <button
-          className={`btn btn-sm ${month === 9 ? "disabled" : ""}`}
+          className={`heading-schedule-btn btn-sm ${month === 9 ? "disabled" : ""}`}
           onClick={nextMonth}
           disabled={month === 9}
         >

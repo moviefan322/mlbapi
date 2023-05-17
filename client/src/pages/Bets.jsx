@@ -27,7 +27,7 @@ function Bets() {
       {bets.length === 0 ? (
         <h4>No bets placed yet</h4>
       ) : (
-        <>
+        <div className="bets-container">
           {" "}
           <h1>Bets</h1>
           <div className="bets">
@@ -43,7 +43,7 @@ function Bets() {
               <BetItem key={bet._id} bet={bet} />
             ))}
           </div>
-        </>
+        </div>
       )}
     </>
   );

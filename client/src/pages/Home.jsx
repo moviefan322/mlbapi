@@ -34,17 +34,19 @@ function Home() {
   }, []);
 
   return (
-    <div id="main" className="card-container">
+    <>
       <div className="heading-home">
         <div>
           <h4>Live Scores</h4>
           <h6>(Click on the moneyline to place a bet)</h6>
         </div>
       </div>
-      {games.map((game, index) => (
-        <SingleGame key={index} game={game} odds={rawOdds} />
-      ))}
-    </div>
+      <div id="main" className="card-container">
+        {games.map((game, index) => (
+          <SingleGame key={index} game={game} odds={rawOdds} />
+        ))}
+      </div>
+    </>
   );
 }
 

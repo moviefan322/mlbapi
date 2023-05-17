@@ -64,10 +64,10 @@ function Boxscore({ boxscore }) {
       </div>
       <div className="decision-container">
         <strong className="decision">
-          W:{boxscore.liveData.decisions.winner.fullName.match(/\b(\w+)$/)}
+          W:{boxscore.liveData.decisions.winner.fullName}
         </strong>
         <strong className="decision">
-        L: {boxscore.liveData.decisions.loser.fullName.match(/\b(\w+)$/)}
+        L: {boxscore.liveData.decisions.loser.fullName}
         </strong>
       </div>
     </div>
