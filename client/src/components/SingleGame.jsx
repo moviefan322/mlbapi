@@ -65,14 +65,16 @@ function SingleGame({ game, odds }) {
 
   return (
     <div className="card">
-      <h3>
-        {teamKeys[awayTeam].abb} ({game.teams.away.leagueRecord.wins} -{" "}
-        {game.teams.away.leagueRecord.losses}) @ {teamKeys[homeTeam].abb} (
-        {game.teams.home.leagueRecord.wins} -{" "}
-        {game.teams.home.leagueRecord.losses})
-      </h3>
-      <div className="score">
-        <div>
+      <div className="cardteams">
+      <div className="cardteam">
+          <h2>{teamKeys[awayTeam].abb}</h2>
+          <p>{game.teams.away.leagueRecord.pct}</p>
+          <p>
+            ({game.teams.away.leagueRecord.wins}-
+            {game.teams.away.leagueRecord.losses})
+          </p>
+        </div>{" "}
+        <div className="icon-container">
           <img className="icon" src={teamKeys[awayTeam].image} alt="" />
           {awayOdds && (
             <div className="tooltip">
@@ -114,6 +116,63 @@ function SingleGame({ game, odds }) {
             />
           )}
         </div>
+
+        <h1>@</h1>{" "}
+        <div>
+          <img className="icon" src={teamKeys[homeTeam].image} alt="" />
+          {homeOdds && (
+            <div className="tooltip">
+              <button
+                className={`bet-btn btn btn-sm ${
+                  homeOdds >= 0 ? "red" : "green"
+                }`}
+                onClick={onOpenHome}
+                disabled={
+                  !(
+                    game.status.codedGameState === "S" ||
+                    game.status.codedGameState === "P" ||
+                    game.status.codedGameState === "PW"
+                  )
+                }
+              >
+                {homeOdds >= 0 ? "+" : ""}
+                {homeOdds}
+              </button>
+              {!(
+                game.status.codedGameState === "S" ||
+                game.status.codedGameState === "P" ||
+                game.status.codedGameState === "PW"
+              ) && (
+                <span className="tooltiptext">
+                  Betting is closed at first pitch
+                </span>
+              )}
+            </div>
+          )}
+
+          {openHome && (
+            <BetModal
+              open={openHome}
+              onClose={onCloseHome}
+              teamKeys={teamKeys}
+              odds={homeOdds}
+              game={game}
+              bettingOn={homeTeam}
+              animationIn="fadeIn"
+              animationOut="fadeOut"
+            />
+          )}
+        </div>
+        <div className="cardteam">
+          <h2>{teamKeys[homeTeam].abb}</h2>
+          <p>{game.teams.home.leagueRecord.pct}</p>
+          <p>
+            ({game.teams.home.leagueRecord.wins}-
+            {game.teams.home.leagueRecord.losses})
+          </p>
+        </div>
+      </div>
+      <div className="score">
         <div className="data">
           <h3>
             {game.status.statusCode === "I" ||
@@ -207,51 +266,6 @@ function SingleGame({ game, odds }) {
             </>
           ) : (
             ""
-          )}
-        </div>
-        <div>
-          <img className="icon" src={teamKeys[homeTeam].image} alt="" />
-          {homeOdds && (
-            <div className="tooltip">
-              <button
-                className={`bet-btn btn btn-sm ${
-                  homeOdds >= 0 ? "red" : "green"
-                }`}
-                onClick={onOpenHome}
-                disabled={
-                  !(
-                    game.status.codedGameState === "S" ||
-                    game.status.codedGameState === "P" ||
-                    game.status.codedGameState === "PW"
-                  )
-                }
-              >
-                {homeOdds >= 0 ? "+" : ""}
-                {homeOdds}
-              </button>
-              {!(
-                game.status.codedGameState === "S" ||
-                game.status.codedGameState === "P" ||
-                game.status.codedGameState === "PW"
-              ) && (
-                <span className="tooltiptext">
-                  Betting is closed at first pitch
-                </span>
-              )}
-            </div>
-          )}
-
-          {openHome && (
-            <BetModal
-              open={openHome}
-              onClose={onCloseHome}
-              teamKeys={teamKeys}
-              odds={homeOdds}
-              game={game}
-              bettingOn={homeTeam}
-              animationIn="fadeIn"
-              animationOut="fadeOut"
-            />
           )}
         </div>
       </div>

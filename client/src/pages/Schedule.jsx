@@ -60,7 +60,7 @@ function Schedule() {
           onClick={prevMonth}
           disabled={month === 4}
         >
-          <FaLongArrowAltLeft /> Prev
+          <FaLongArrowAltLeft />
         </button>
         <h1>{monthName}</h1>
         <button
@@ -68,7 +68,7 @@ function Schedule() {
           onClick={nextMonth}
           disabled={month === 9}
         >
-          Next <FaLongArrowAltRight />
+          <FaLongArrowAltRight />
         </button>
       </div>
 

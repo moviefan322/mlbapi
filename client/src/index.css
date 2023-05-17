@@ -31,7 +31,6 @@ h1,
 h2,
 h3 {
   font-weight: 600;
-  margin-bottom: 10px;
 }
 
 table {
@@ -92,10 +91,17 @@ table {
 }
 
 .heading-home {
+  display: flex;
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 25px;
   padding: 0 20px;
+  border-bottom: 1px white solid;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.heading-home btn {
+  font-size: 2px;
 }
 
 .heading-home h6 {
@@ -153,7 +159,6 @@ table {
   font-size: 16px;
   cursor: pointer;
   text-align: center;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -221,6 +226,10 @@ table {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 415px;
   background-color: #d7b49e;
   border: 1px #51291e solid;
   border-bottom: 4px #51291e solid;
@@ -228,13 +237,35 @@ table {
   text-align: center;
   margin: auto;
   margin: 1rem;
-  justify-content: center;
-  padding: 1rem 1rem 0.25rem 1rem;
+  justify-content: space-between;
+  padding: 0.5rem;
+  align-items: center;
+}
+
+.cardteams {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.cardteam {
+  display: flex;
+  background: rgba(250, 250, 243, 0.515);
+  border: black 1px dashed;
+}
+
+.cardteam {
+  display: inline;
 }
 
 .icon {
   width: 50px;
   height: 50px;
+}
+
+.icon-container {
+  padding: 0;
 }
 
 .icon-scoreboard {
@@ -243,10 +274,6 @@ table {
 
 .score {
   margin: 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  width: 95%;
-  align-items: center;
 }
 
 .green {
@@ -700,10 +727,6 @@ header img {
   .container {
     width: 90%;
   }
-
-  /* .card {
-    width: 45%;
-  } */
 
   .header {
     display: flex;

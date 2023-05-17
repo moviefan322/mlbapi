@@ -24,7 +24,6 @@ function LineItem({ team, series, schedule }) {
     let gameResults = [];
     for (let i = 0; i < schedule[id][seriesNo].length; i++) {
       const game = schedule[id][seriesNo][i];
-      console.log(game);
       const isPPD = game.status.detailedState === "Postponed";
       const isWinner =
         (isAwayTeam && game.teams.away.isWinner) ||

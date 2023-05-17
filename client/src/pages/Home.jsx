@@ -81,18 +81,10 @@ function Home() {
       <div className="heading-home">
         <div className="btn-head">
           <button
-            className="btn btn-sm btn-head1"
+            className="btn"
             onClick={() => fetchPrevDaysGames()}
           >
             <FaLongArrowAltLeft />
-            {formatDate(new Date(day.getTime() - 24 * 60 * 60 * 1000))}
-          </button>
-          <button
-            className="btn btn-sm btn-head2"
-            onClick={() => fetchNextDaysGames()}
-          >
-            {formatDate(new Date(day.getTime() - 24 * 60 * 60 * 1000))}
-            <FaLongArrowAltRight />
           </button>
         </div>
         <div>
@@ -103,6 +95,12 @@ function Home() {
           )}
           <h6>(Click on the moneyline to place a bet)</h6>
         </div>
+        <button
+          className="btn"
+          onClick={() => fetchNextDaysGames()}
+        >
+          <FaLongArrowAltRight />
+        </button>
       </div>
       <div id="main" className="card-container">
         {games.map((game, index) => (
