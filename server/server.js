@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const http = require("http");
+const path = require("path");
 
 import SocketIO from "socket.io";
 
@@ -52,7 +53,15 @@ app.use("/api/bets", require("./routes/betRoutes"));
 app.use(errorHandler);
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+  app.use(express.static(path.join(__dirname, "../client/build")));
+
+  app.get("*", (req, res) =>
+    res.sendFile(__dirname, ("../", "client", "build", "index.html"))
+  );
+} else {
+  app.get("/", (req, res) => {
+    res.status(200).json({ message: "Welcome to the sports app" });
+  });
 }
 
 // Connect to MongoDB
