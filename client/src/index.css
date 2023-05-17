@@ -245,7 +245,8 @@ table {
   margin: 0.5rem;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 95%;
+  align-items: center;
 }
 
 .green {
@@ -692,7 +693,7 @@ header img {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 /* -------------------------------- */
 @media only screen and (min-width: 992px) {

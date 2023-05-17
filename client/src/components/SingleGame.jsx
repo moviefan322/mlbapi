@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import teamKeys from "../utils/teamKeys";
 import { getSingleGameData } from "../utils/MLBAPI";
 import { formatTime } from "../utils/formatTime";
+import { Link } from "react-router-dom";
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
 import { reset } from "../features/bet/betSlice";
 import { useDispatch } from "react-redux";
@@ -181,24 +182,32 @@ function SingleGame({ game, odds }) {
               </div>
             </div>
           )}
-          <h6>
-            {game.status.abstractGameCode === "L"
-              ? "P: " +
-                singleGame.liveData?.plays.currentPlay.matchup.pitcher.fullName
-              : ""}
-            {game.status.abstractGameCode === "F"
-              ? "W: " + singleGame.liveData?.decisions.winner.fullName
-              : ""}
-          </h6>
-          <h6>
-            {game.status.abstractGameCode === "L"
-              ? "B: " +
-                singleGame.liveData?.plays.currentPlay.matchup.batter.fullName
-              : ""}
-            {game.status.abstractGameCode === "F"
-              ? "L: " + singleGame.liveData?.decisions.loser.fullName
-              : ""}
-          </h6>
+          {game.status.abstractGameCode === "L" ? (
+            <>
+              <h6>
+                P:{" "}
+                {
+                  singleGame.liveData?.plays.currentPlay.matchup.pitcher
+                    .fullName
+                }
+              </h6>
+              <h6>
+                B:{" "}
+                {singleGame.liveData?.plays.currentPlay.matchup.batter.fullName}
+              </h6>
+            </>
+          ) : (
+            ""
+          )}
+          {game.status.abstractGameCode === "F" ? (
+            <>
+              {" "}
+              <h6>W: {singleGame.liveData?.decisions.winner.fullName}</h6>
+              <h6>L: {singleGame.liveData?.decisions.loser.fullName}</h6>
+            </>
+          ) : (
+            ""
+          )}
         </div>
         <div>
           <img className="icon" src={teamKeys[homeTeam].image} alt="" />
@@ -257,7 +266,9 @@ function SingleGame({ game, odds }) {
             {singleGame.liveData?.linescore.currentInningOrdinal}
           </>
         ) : game.status.abstractGameCode === "F" ? (
-          <Boxscore boxscore={singleGame} />
+          <Link to={`/boxscore/${game.gamePk}`}>
+            <Boxscore boxscore={singleGame} />
+          </Link>
         ) : game.status.statusCode === "UI" ? (
           <div>
             <h4> SUSPENDED </h4>
