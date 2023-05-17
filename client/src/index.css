@@ -524,6 +524,10 @@ table {
   margin-top: -1rem;
 }
 
+.singlegamebox {
+  width: 100%;
+}
+
 .boxscore-gameinfo {
   z-index: -1;
   display: block;
@@ -565,6 +569,10 @@ table {
   padding-bottom: 0.32rem;
 }
 
+.boxbox, .decision-container {
+  background-color: rgba(250, 250, 243, 0.515);
+}
+
 .boxbox table td {
   border: solid black 0.5px;
 }
@@ -576,10 +584,7 @@ table {
 
 .box-outline {
   border: 1px solid black;
-  border-radius: 5px;
   background-color: #d7b49e;
-  padding-left: -3rem;
-  margin-top: 0.5rem;
 }
 
 .boxteam-container {
