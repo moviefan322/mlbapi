@@ -1,5 +1,9 @@
 const express = require("express");
 const cors = require("cors");
+const http = require("http");
+
+import SocketIO from "socket.io";
+
 const colors = require("colors");
 const { errorHandler } = require("./middleware/errorHandler");
 require("dotenv").config();
@@ -8,9 +12,6 @@ const connectDB = require("./config/db");
 
 const PORT = process.env.PORT || 3001;
 
-// Connect to MongoDB
-connectDB();
-
 const app = express();
 
 app.use(cors());
@@ -18,6 +19,27 @@ app.use(cors());
 // Middlware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+const server = http.createServer(app);
+
+const io = SocketIO(server, {
+  cors: {
+    origin: "*",
+  },
+  // namesapce config
+  // headers - cookies i.e auth (jwt token)
+  // etc
+});
+
+io.on("connection", (socket) => {
+  console.log("connected");
+});
+
+io.on("disconnect", (socket) => {
+  console.log("disconnected");
+});
+
+app.set("socket.io", io);
 
 // Scheduled tasks
 runAllTasks();
@@ -33,6 +55,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.listen(PORT, () => {
+// Connect to MongoDB
+connectDB();
+
+server.listen(PORT, () => {
   console.log(`🚀 Server is running on port ${PORT} 🚀`.brightYellow.bold);
 });

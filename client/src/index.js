@@ -6,6 +6,7 @@ import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
+console.log(process.env);
 const container = document.getElementById("root");
 const root = createRoot(container);
 

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "start": "node server/server.js",
-    "watch": "nodemon server/server.js",
+    "build": "babel-node server/server.js",
+    "watch": "nodemon --exec npm run build",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run watch\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
@@ -35,10 +36,16 @@
     "mongoose": "^7.1.0",
     "node-cron": "^3.0.2",
     "react-spinners": "^0.13.8",
+    "socket.io": "^4.6.1",
     "spinners-react": "^1.0.7",
     "ws": "^8.13.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.21.8",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.21.5",
+    "babel-node": "^0.0.1-security",
     "jest": "^29.5.0",
     "nodemon": "^2.0.22",
     "react-testing-library": "^8.0.1",
