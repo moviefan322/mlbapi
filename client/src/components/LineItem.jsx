@@ -32,23 +32,21 @@ function LineItem({ team, series, schedule }) {
         (isAwayTeam && game.teams.away.isWinner === false) ||
         (isHomeTeam && game.teams.home.isWinner === false);
       const result = isWinner ? (
-        <Link to={`/boxscore/${game.gamePk}`}>
-          <span key={`${game.gamePk}`} className="green">
+        <Link key={`winlink-${game.gamePk}`} to={`/boxscore/${game.gamePk}`}>
+          <span key={`win-${game.gamePk}`} className="green unit-span">
             W
           </span>
         </Link>
       ) : isLoser ? (
-        <Link to={`/boxscore/${game.gamePk}`}>
-          <span key={`loss-${game.gamePk}`} className="red">
+        <Link key={`loss-link${game.gamePk}`} to={`/boxscore/${game.gamePk}`}>
+          <span key={`loss-${game.gamePk}`} className="red unit-span">
             L
           </span>
         </Link>
       ) : isPPD ? (
-        <Link to={`/boxscore/${game.gamePk}`}>
-          <span key={`ppd-${game.gamePk}`} className="small">
-            P
-          </span>
-        </Link>
+        <span key={`ppd-${game.gamePk}`} className="small unit-span">
+          P
+        </span>
       ) : (
         <span key={`bullshit-${i}`}></span>
       );
@@ -59,18 +57,20 @@ function LineItem({ team, series, schedule }) {
     }
     return (
       <>
-        {formatDate(schedule[id][seriesNo][0]?.officialDate)}-
-        {formatDate2(schedule[id][seriesNo][lastGame]?.officialDate)}
-        <br />
-        {teamKeys[schedule[id][seriesNo][0]?.teams.home.team.name]?.abb ===
-        team.abb
-          ? `vs.${
-              teamKeys[schedule[id][seriesNo][0]?.teams.away.team.name]?.abb
-            }`
-          : `@${
-              teamKeys[schedule[id][seriesNo][0]?.teams.home.team.name]?.abb
-            }`}
-        <br />
+        <span className="unit-info">
+          {formatDate2(schedule[id][seriesNo][0]?.officialDate)}-
+          {formatDate2(schedule[id][seriesNo][lastGame]?.officialDate)}
+          <br />
+          {teamKeys[schedule[id][seriesNo][0]?.teams.home.team.name]?.abb ===
+          team.abb
+            ? `vs.${
+                teamKeys[schedule[id][seriesNo][0]?.teams.away.team.name]?.abb
+              }`
+            : `@${
+                teamKeys[schedule[id][seriesNo][0]?.teams.home.team.name]?.abb
+              }`}
+          <br />
+        </span>
         {gameResults}
       </>
     );

@@ -125,7 +125,6 @@ function Box() {
           <h3> {boxscore.liveData.boxscore.teams.away.team.name}</h3>
           <BattingLinescoreAway boxscore={boxscore} />
         </div>
-        <div className="pitchers"></div>
         <div className="scorescontainer">
           <h3> {boxscore.liveData.boxscore.teams.home.team.name}</h3>
           <BattingLinescoreHome boxscore={boxscore} />

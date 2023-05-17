@@ -43,8 +43,8 @@ function ScheduleLine({
             className="icon-scoreboard"
             src={team.image}
             alt=""
-            height="35px"
-            width="35px"
+            height="25px"
+            width="25px"
           />
           {typeof teamPct === "string" ? (
             <span className="pct">{teamPct}</span>

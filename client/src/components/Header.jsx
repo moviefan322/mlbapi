@@ -58,7 +58,7 @@ function Header() {
                 {" " + user.accountBalance.toFixed(2)}
               </Link>
             </li>
-            <li>
+            <li className="logout">
               <button onClick={onLogout} className="btn-none">
                 <FaRegCaretSquareLeft className="bigger" /> Logout
               </button>

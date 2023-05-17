@@ -301,8 +301,7 @@ function BattingLinescoreHome({ boxscore }) {
 
   const fieldingErrors = boxscore.liveData.plays.allPlays.filter(
     (play) =>
-      play.result.eventType === "field_error" &&
-      play.about.halfInning === "top"
+      play.result.eventType === "field_error" && play.about.halfInning === "top"
   );
 
   const fieldingErrorsLine = fieldingErrors
@@ -366,7 +365,7 @@ function BattingLinescoreHome({ boxscore }) {
       <table className="battingbox">
         <thead>
           <tr>
-            <th></th>
+            <th>Batting</th>
             <th>AB</th>
             <th>R</th>
             <th>H</th>
@@ -615,40 +614,12 @@ function BattingLinescoreHome({ boxscore }) {
           </tr>
         </tfoot>
       </table>
-      <div className="battingbox-bottom">
-        {doubleLine.length > 0 && <p>2B: {doubleLine}</p>}
-        {tripleLine.length > 0 && <p>3B: {tripleLine}</p>}
-        {hrLine.length > 0 && <p>HR: {hrLine}</p>}
-        {sacFlyLine.length > 0 && <p>SF: {sacFlyLine}</p>}
-        {tbLine.length > 0 && <p>TB: {tbLine}</p>}
-        {GIDPline.length > 0 && <p>GIDP: {GIDPline}</p>}
-        {rbiLine.length > 0 && <p>RBI: {rbiLine}</p>}
-        {twoOutRbiLine.length > 0 && <p>2-out RBI: {twoOutRbiLine}</p>}
-        {boxscore.liveData.boxscore.teams.home.teamStats.batting.leftOnBase >
-          0 && (
-          <p>
-            {" "}
-            Team LOB:
-            {boxscore.liveData.boxscore.teams.home.teamStats.batting.leftOnBase}
-          </p>
-        )}
-        {RISPline.length > 0 && (
-          <p>
-            Team RISP:
-            {RISPline}
-          </p>
-        )}
-        <p>
-          <strong>Fielding</strong>
-        </p>
-        {doublePlayLine.length > 0 && <p>DP: {doublePlayLine}</p>}
-        {fieldingErrorsLine.length > 0 && <p>E: {fieldingErrorsLine}</p>}
-      </div>
+      <br />
       <div className="pitcherstats">
         <table className="battingbox">
           <thead>
             <tr>
-              <th></th>
+              <th>Pitching</th>
               <th>IP</th>
               <th>H</th>
               <th>R</th>
@@ -663,8 +634,8 @@ function BattingLinescoreHome({ boxscore }) {
             </tr>
           </thead>
           <tbody>
-            {homePitchers.map((pitcher) => (
-              <tr>
+            {homePitchers.map((pitcher, index) => (
+              <tr key={index}>
                 <td className="batterName">
                   <span>{`${
                     boxscore.liveData.boxscore.teams.home.players[
@@ -735,6 +706,82 @@ function BattingLinescoreHome({ boxscore }) {
             ))}
           </tbody>
         </table>
+        <br />
+        <div className="battingbox-bottom">
+          {doubleLine.length > 0 && (
+            <p>
+              <span>2B:</span> {doubleLine}
+            </p>
+          )}
+          {tripleLine.length > 0 && (
+            <p>
+              <span>3B:</span> {tripleLine}
+            </p>
+          )}
+          {hrLine.length > 0 && (
+            <p>
+              <span>HR:</span> {hrLine}
+            </p>
+          )}
+          {sacFlyLine.length > 0 && (
+            <p>
+              <span>SF:</span> {sacFlyLine}
+            </p>
+          )}
+          {tbLine.length > 0 && (
+            <p>
+              <span>TB:</span> {tbLine}
+            </p>
+          )}
+          {GIDPline.length > 0 && (
+            <p>
+              <span>GIDP:</span> {GIDPline}
+            </p>
+          )}
+          {rbiLine.length > 0 && (
+            <p>
+              <span>RBI:</span> {rbiLine}
+            </p>
+          )}
+          {twoOutRbiLine.length > 0 && (
+            <p>
+              <span>2-out RBI:</span> {twoOutRbiLine}
+            </p>
+          )}
+          {boxscore.liveData.boxscore.teams.home.teamStats.batting.leftOnBase >
+            0 && (
+            <p>
+              {" "}
+              <span> Team LOB: </span>
+              {
+                boxscore.liveData.boxscore.teams.home.teamStats.batting
+                  .leftOnBase
+              }
+            </p>
+          )}
+          {RISPline.length > 0 && (
+            <p>
+              <span>Team RISP:</span>
+              {RISPline}
+            </p>
+          )}
+          <br />
+          {(doublePlayLine.length > 0 || fieldingErrorsLine.length > 0) && (
+            <p>
+              <strong>Fielding</strong>
+            </p>
+          )}
+          {doublePlayLine.length > 0 && (
+            <p>
+              <span>DP:</span> {doublePlayLine}
+            </p>
+          )}
+          {fieldingErrorsLine.length > 0 && (
+            <p>
+              <span>E:</span> {fieldingErrorsLine}
+            </p>
+          )}
+        </div>
       </div>
     </>
   );

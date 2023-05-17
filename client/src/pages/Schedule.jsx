@@ -71,31 +71,32 @@ function Schedule() {
           <FaLongArrowAltRight />
         </button>
       </div>
-
-      <table key={`${Math.random}`}>
-        <thead>
-          <tr>
-            <th>Team</th>
-            {monthSeries.map((series, index) => (
-              <th key={`${index}-${series}${Math.random}`}>Ser.{series}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {teamKeysArray.map((team, index) => (
-            <tr key={`${Math.random}-${index}`}>
-              <ScheduleLine
-                key={`${Math.random}`}
-                team={team}
-                schedule={schedule}
-                series={monthSeries}
-                scoreboard={scoreboard}
-                yesterdaysScores={yesterdaysScores}
-              />
+      <div className="schedule-container">
+        <table className="schedule" key={`${Math.random}`}>
+          <thead>
+            <tr>
+              <th>Team</th>
+              {monthSeries.map((series, index) => (
+                <th key={`${index}-${series}${Math.random}`}>Ser.{series}</th>
+              ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {teamKeysArray.map((team, index) => (
+              <tr key={`${Math.random}-${index}`}>
+                <ScheduleLine
+                  key={`${Math.random}`}
+                  team={team}
+                  schedule={schedule}
+                  series={monthSeries}
+                  scoreboard={scoreboard}
+                  yesterdaysScores={yesterdaysScores}
+                />
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </>
   );
 }

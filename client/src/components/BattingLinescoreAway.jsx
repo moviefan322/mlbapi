@@ -118,9 +118,8 @@ function BattingLinescoreAway({ boxscore }) {
     .map((batter) => {
       const TB = calculateTotalBases(boxscore, batter);
       const player =
-        boxscore.liveData.boxscore.teams.away.players[
-          `ID${batter}`
-        ].person.fullName;
+        boxscore.liveData.boxscore.teams.away.players[`ID${batter}`].person
+          .fullName;
 
       if (TB > 0) {
         return ` ${`${player}(${TB})`}`;
@@ -158,9 +157,7 @@ function BattingLinescoreAway({ boxscore }) {
         const dblCount =
           boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
             .seasonStats.batting.triples;
-        const pitchers = triples.map(
-          (matchup) => matchup.pitcher.fullName
-        );
+        const pitchers = triples.map((matchup) => matchup.pitcher.fullName);
         const lastName = player.person.fullName;
         return ` ${lastName}(${dblCount}, ${pitchers.toString()})`;
       } else {
@@ -199,9 +196,7 @@ function BattingLinescoreAway({ boxscore }) {
         const hrCount =
           boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
             .seasonStats.batting.homeRuns;
-        const pitchers = hrs.map(
-          (hrs) => hrs.matchup.pitcher.fullName
-        );
+        const pitchers = hrs.map((hrs) => hrs.matchup.pitcher.fullName);
         const inning = hrs.map((hr) => ordinalSuffix(hr.about.inning));
         const combinedArray = inning.map((inningValue, index) => {
           const pitcher = pitchers[index];
@@ -238,9 +233,7 @@ function BattingLinescoreAway({ boxscore }) {
           boxscore.liveData.boxscore.teams.away.players[
             "ID" + sacFlys[0].matchup.batter.id
           ];
-        const pitchers = sacFlys.map(
-          (matchup) => matchup.pitcher.fullName
-        );
+        const pitchers = sacFlys.map((matchup) => matchup.pitcher.fullName);
         const lastName = player.person.fullName;
         return ` ${lastName}, ${pitchers.toString()})`;
       } else {
@@ -256,9 +249,8 @@ function BattingLinescoreAway({ boxscore }) {
         boxscore.liveData.boxscore.teams.away.players[`ID${batter}`].stats
           .batting.rbi;
       const player =
-        boxscore.liveData.boxscore.teams.away.players[
-          `ID${batter}`
-        ].person.fullName;
+        boxscore.liveData.boxscore.teams.away.players[`ID${batter}`].person
+          .fullName;
 
       const seasonTotal =
         boxscore.liveData.boxscore.teams.away.players[`ID${batter}`].seasonStats
@@ -281,9 +273,8 @@ function BattingLinescoreAway({ boxscore }) {
       ).length;
 
       const player =
-        boxscore.liveData.boxscore.teams.away.players[
-          `ID${batter}`
-        ].person.fullName;
+        boxscore.liveData.boxscore.teams.away.players[`ID${batter}`].person
+          .fullName;
 
       if (rbis === 0) return null;
 
@@ -309,9 +300,8 @@ function BattingLinescoreAway({ boxscore }) {
     .map((play) => {
       const playerId = play.runners[0].credits[0].player.id;
       const player =
-        boxscore.liveData.boxscore.teams.away.players[
-          `ID${playerId}`
-        ].person.fullName;
+        boxscore.liveData.boxscore.teams.away.players[`ID${playerId}`].person
+          .fullName;
       const errorCount =
         boxscore.liveData.boxscore.teams.away.players[`ID${playerId}`].stats
           .fielding.errors;
@@ -329,9 +319,8 @@ function BattingLinescoreAway({ boxscore }) {
     const credits = play.runners[0].credits;
     const creditCodes = credits.map((credit) => credit.player.id);
     const playerNames = creditCodes.map((code) => {
-      return boxscore.liveData.boxscore.teams.away.players[
-        `ID${code}`
-      ].person.fullName;
+      return boxscore.liveData.boxscore.teams.away.players[`ID${code}`].person
+        .fullName;
     });
 
     if (creditCodes.length === 1) {
@@ -366,7 +355,7 @@ function BattingLinescoreAway({ boxscore }) {
       <table className="battingbox">
         <thead>
           <tr>
-            <th></th>
+            <th>Batting</th>
             <th>AB</th>
             <th>R</th>
             <th>H</th>
@@ -395,7 +384,7 @@ function BattingLinescoreAway({ boxscore }) {
                 ).length > 0
             )
             .map((batter, index) => (
-              <tr key={index}>
+              <tr key={`away-${index}`}>
                 <td className="batterName">
                   <span>{`${
                     boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
@@ -615,40 +604,12 @@ function BattingLinescoreAway({ boxscore }) {
           </tr>
         </tfoot>
       </table>
-      <div className="battingbox-bottom">
-        {doubleLine.length > 0 && <p>2B: {doubleLine}</p>}
-        {tripleLine.length > 0 && <p>3B: {tripleLine}</p>}
-        {hrLine.length > 0 && <p>HR: {hrLine}</p>}
-        {sacFlyLine.length > 0 && <p>SF: {sacFlyLine}</p>}
-        {tbLine.length > 0 && <p>TB: {tbLine}</p>}
-        {GIDPline.length > 0 && <p>GIDP: {GIDPline}</p>}
-        {rbiLine.length > 0 && <p>RBI: {rbiLine}</p>}
-        {twoOutRbiLine.length > 0 && <p>2-out RBI: {twoOutRbiLine}</p>}
-        {boxscore.liveData.boxscore.teams.away.teamStats.batting.leftOnBase >
-          0 && (
-          <p>
-            {" "}
-            Team LOB:
-            {boxscore.liveData.boxscore.teams.away.teamStats.batting.leftOnBase}
-          </p>
-        )}
-        {RISPline.length > 0 && (
-          <p>
-            Team RISP:
-            {RISPline}
-          </p>
-        )}
-        <p>
-          <strong>Fielding</strong>
-        </p>
-        {doublePlayLine.length > 0 && <p>DP: {doublePlayLine}</p>}
-        {fieldingErrorsLine.length > 0 && <p>E: {fieldingErrorsLine}</p>}
-      </div>
+      <br />
       <div className="pitcherstats">
         <table className="battingbox">
           <thead>
             <tr>
-              <th></th>
+              <th>Pitching</th>
               <th>IP</th>
               <th>H</th>
               <th>R</th>
@@ -663,8 +624,8 @@ function BattingLinescoreAway({ boxscore }) {
             </tr>
           </thead>
           <tbody>
-            {awayPitchers.map((pitcher) => (
-              <tr>
+            {awayPitchers.map((pitcher, index) => (
+              <tr key={index}>
                 <td className="batterName">
                   <span>{`${
                     boxscore.liveData.boxscore.teams.away.players[
@@ -735,6 +696,78 @@ function BattingLinescoreAway({ boxscore }) {
             ))}
           </tbody>
         </table>
+        <br />
+        <div className="battingbox-bottom">
+          {doubleLine.length > 0 && (
+            <p>
+              <span>2B:</span> {doubleLine}
+            </p>
+          )}
+          {tripleLine.length > 0 && (
+            <p>
+              <span>3B:</span> {tripleLine}
+            </p>
+          )}
+          {hrLine.length > 0 && (
+            <p>
+              <span>HR:</span> {hrLine}
+            </p>
+          )}
+          {sacFlyLine.length > 0 && (
+            <p>
+              <span>SF:</span> {sacFlyLine}
+            </p>
+          )}
+          {tbLine.length > 0 && (
+            <p>
+              <span>TB:</span> {tbLine}
+            </p>
+          )}
+          {GIDPline.length > 0 && (
+            <p>
+              <span>GIDP:</span> {GIDPline}
+            </p>
+          )}
+          {rbiLine.length > 0 && (
+            <p>
+              <span>RBI:</span> {rbiLine}
+            </p>
+          )}
+          {twoOutRbiLine.length > 0 && <p><span>2-out RBI:</span> {twoOutRbiLine}</p>}
+          {boxscore.liveData.boxscore.teams.away.teamStats.batting.leftOnBase >
+            0 && (
+            <p>
+              {" "}
+              <span> Team LOB: </span>
+              {
+                boxscore.liveData.boxscore.teams.away.teamStats.batting
+                  .leftOnBase
+              }
+            </p>
+          )}
+          {RISPline.length > 0 && (
+            <p>
+              <span>Team RISP:</span>
+              {RISPline}
+            </p>
+          )}
+          <br />
+          {(doublePlayLine.length > 0 || fieldingErrorsLine.length > 0) && (
+            <p>
+              <strong>Fielding</strong>
+            </p>
+          )}
+          {doublePlayLine.length > 0 && (
+            <p>
+              <span>DP:</span> {doublePlayLine}
+            </p>
+          )}
+          {fieldingErrorsLine.length > 0 && (
+            <p>
+              <span>E:</span> {fieldingErrorsLine}
+            </p>
+          )}
+        </div>
       </div>
     </>
   );

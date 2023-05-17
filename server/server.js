@@ -21,24 +21,24 @@ app.use(express.urlencoded({ extended: false }));
 
 const server = http.createServer(app);
 
-// const io = SocketIO(server, {
-//   cors: {
-//     origin: "*",
-//   },
-//   // namesapce config
-//   // headers - cookies i.e auth (jwt token)
-//   // etc
-// });
+const io = SocketIO(server, {
+  cors: {
+    origin: "*",
+  },
+  // namesapce config
+  // headers - cookies i.e auth (jwt token)
+  // etc
+});
 
-// io.on("connection", (socket) => {
-//   console.log("connected");
-// });
+io.on("connection", (socket) => {
+  console.log("connected");
+});
 
-// io.on("disconnect", (socket) => {
-//   console.log("disconnected");
-// });
+io.on("disconnect", (socket) => {
+  console.log("disconnected");
+});
 
-// app.set("socket.io", io);
+app.set("socket.io", io);
 
 // Scheduled tasks
 runAllTasks();

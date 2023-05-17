@@ -33,10 +33,9 @@ h3 {
   font-weight: 600;
 }
 
-table {
-  left: -250px;
-  width: 100%;
+.boxbox table {
   border-collapse: collapse;
+  width: 100%;
   margin: auto;
   justify-content: center;
 }
@@ -270,6 +269,7 @@ table {
 
 .icon-scoreboard {
   margin-right: 100%;
+  margin-top: -0.5rem;
 }
 
 .score {
@@ -486,6 +486,8 @@ table {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 0.8rem;
+  text-align: right;
 }
 .pct {
   position: relative;
@@ -569,7 +571,8 @@ table {
   padding-bottom: 0.32rem;
 }
 
-.boxbox, .decision-container {
+.boxbox,
+.decision-container {
   background-color: rgba(250, 250, 243, 0.515);
 }
 
@@ -623,16 +626,38 @@ table {
   border: 1px dashed black;
 }
 
-.batterName {
-  display: flex;
-  justify-content: space-between;
-  padding-right: 0.6rem;
+.linescorecontainer {
+  margin: auto;
+  width: 100%;
+  justify-content: center;
+}
+
+.scorescontainer {
+  margin: 1rem;
+  width: 100%;
 }
 
 .battingbox {
+  margin: auto;
   background: #d7b49e;
-  width: 50%;
+  width: 100%;
   border: black 1px solid;
+  padding: -1rem;
+  background-color: #edcebb;
+  font-size: 0.8rem;
+}
+.battingbox-bottom p {
+  background-color: rgba(255, 255, 255, 0.291);
+  text-align: left;
+  font-size: 0.7rem;
+  width: 90%;
+  padding: 0 1rem;
+  line-height: 0.9rem;;
+  font-weight: 100;
+}
+
+.battingbox-bottom span {
+  font-weight: 600;
 }
 
 .battingbox td {
@@ -640,19 +665,16 @@ table {
   border-left: black 1px solid;
 }
 
-.battingbox th {
-  border-left: black 1px solid;
-}
-
-.linescorecontainer {
-  justify-content: space-between;
-  margin: auto;
-}
-
-.scorescontainer {
+.batterName {
   display: flex;
-  flex-direction: column;
-  margin-top: 1.5rem;
+  justify-content: space-between;
+  padding-right: 0.6rem;
+  border-left: none;
+}
+
+.battingbox th,
+.battingbox tfoot {
+  border-left: black 1px solid;
 }
 
 .battingbox {
@@ -727,6 +749,29 @@ header img {
   justify-content: space-between;
   margin-bottom: 0.5rem;
 }
+
+.schedule {
+  width: 100%;
+  justify-content: center;
+}
+
+.unit {
+  line-height: 0.5rem;
+  padding: 0;
+}
+
+.unit-info,
+.unit-span {
+  font-size: 0.7rem;
+}
+
+.schedule th {
+  font-size: 0.8rem;
+}
+
+.logout {
+  display: none;
+}
 /* -------------------------------- */
 @media only screen and (min-width: 992px) {
   .container {
@@ -745,7 +790,17 @@ header img {
   header img {
     display: block;
   }
-}
 
-/* .heading-home {display: flex;
-flex-direction: column;} */
+  .icon-scoreboard {
+    margin-right: 100%;
+  }
+
+  .scoreboard {
+    justify-content: center;
+  }
+
+  .schedule-container {
+    display: flex;
+    justify-content: center;
+  }
+}
