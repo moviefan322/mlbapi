@@ -375,6 +375,43 @@ const renderRBI = (boxscore, homeaway) => {
   return rbiLine;
 };
 
+const renderSF = (boxscore, homeaway) => {
+  const batters = getBatters(boxscore, homeaway);
+  const sacFlyLine = batters
+    .map((batter) => {
+      const sacFlys = boxscore.liveData.plays.allPlays.filter(
+        (play) =>
+          play.matchup.batter.id === batter &&
+          play.result.eventType === "sac_fly"
+      );
+
+      if (sacFlys.length === 1) {
+        const player =
+          boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+            "ID" + sacFlys[0].matchup.batter.id
+          ];
+        const pitcher = sacFlys[0].matchup.pitcher.fullName;
+        const inning = ordinalSuffix(sacFlys[0].about.inning);
+        const lastName = player.person.fullName.match(/\b(\w+)\b$/)?.[1];
+        return ` ${lastName}(${inning}:${pitcher})`;
+      } else if (sacFlys.length > 1) {
+        const player =
+          boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+            "ID" + sacFlys[0].matchup.batter.id
+          ];
+        const pitchers = sacFlys.map((matchup) => matchup.pitcher.fullName);
+        const lastName = player.person.fullName.match(/\b(\w+)\b$/)?.[1];
+        return ` ${lastName}, ${pitchers.toString()})`;
+      } else {
+        return null;
+      }
+    })
+    .filter((batter) => batter !== null)
+    .toString();
+
+  return sacFlyLine;
+};
+
 module.exports = {
   render2B,
   renderE,
@@ -383,4 +420,5 @@ module.exports = {
   render3B,
   renderHR,
   renderRBI,
+  renderSF,
 };

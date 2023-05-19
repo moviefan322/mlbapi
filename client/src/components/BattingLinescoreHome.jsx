@@ -8,6 +8,8 @@ import {
   renderTB,
   render3B,
   renderHR,
+  renderRBI,
+  renderSF,
 } from "../utils/boxscore";
 
 function BattingLinescoreHome({ boxscore }) {
@@ -32,58 +34,6 @@ function BattingLinescoreHome({ boxscore }) {
 
   const homePitchers = boxscore.liveData.boxscore.teams.home.pitchers;
 
-  const sacFlyLine = homeBatters
-    .map((batter) => {
-      const sacFlys = boxscore.liveData.plays.allPlays.filter(
-        (play) =>
-          play.matchup.batter.id === batter &&
-          play.result.eventType === "sac_fly"
-      );
-
-      if (sacFlys.length === 1) {
-        const player =
-          boxscore.liveData.boxscore.teams.home.players[
-            "ID" + sacFlys[0].matchup.batter.id
-          ];
-        const pitcher = sacFlys[0].matchup.pitcher.fullName;
-        const inning = ordinalSuffix(sacFlys[0].about.inning);
-        const lastName = player.person.fullName;
-        return ` ${lastName}(${inning}:${pitcher})`;
-      } else if (sacFlys.length > 1) {
-        const player =
-          boxscore.liveData.boxscore.teams.home.players[
-            "ID" + sacFlys[0].matchup.batter.id
-          ];
-        const pitchers = sacFlys.map((matchup) => matchup.pitcher.fullName);
-        const lastName = player.person.fullName;
-        return ` ${lastName}, ${pitchers.toString()})`;
-      } else {
-        return null;
-      }
-    })
-    .filter((batter) => batter !== null)
-    .toString();
-
-  const rbiLine = homeBatters
-    .map((batter) => {
-      const rbis =
-        boxscore.liveData.boxscore.teams.home.players[`ID${batter}`].stats
-          .batting.rbi;
-      const player =
-        boxscore.liveData.boxscore.teams.home.players[`ID${batter}`].person
-          .fullName;
-
-      const seasonTotal =
-        boxscore.liveData.boxscore.teams.home.players[`ID${batter}`].seasonStats
-          .batting.rbi;
-
-      if (rbis === 0) return null;
-
-      return ` ${player} ${rbis}(${seasonTotal})`;
-    })
-    .filter((batter) => batter !== null)
-    .toString();
-
   const twoOutRbiLine = homeBatters
     .map((batter) => {
       const rbis = boxscore.liveData.plays.allPlays.filter(
@@ -107,7 +57,7 @@ function BattingLinescoreHome({ boxscore }) {
   const doublePlays = boxscore.liveData.plays.allPlays.filter(
     (play) =>
       play.result.eventType.includes("double_play") &&
-      play.about.halfInning === "bottom"
+      play.about.halfInning === "top"
   );
 
   const doublePlayLine = doublePlays.map((play) => {
@@ -512,22 +462,29 @@ function BattingLinescoreHome({ boxscore }) {
               {renderHR(boxscore, homeaway)}
             </p>
           )}
-          {sacFlyLine.length > 0 && (
+          {renderSF(boxscore, homeaway) && (
             <p>
-              <span>SF:</span> {sacFlyLine}
+              <span>SF: </span>
+              {renderSF(boxscore, homeaway)}
             </p>
           )}
           {renderTB(boxscore, homeaway) && (
-            <p> TB: {renderTB(boxscore, homeaway)}</p>
+            <p>
+              {" "}
+              <span>TB: </span>
+              {renderTB(boxscore, homeaway)}
+            </p>
           )}
           {GIDPline.length > 0 && (
             <p>
               <span>GIDP:</span> {GIDPline}
             </p>
           )}
-          {rbiLine.length > 0 && (
+          {renderRBI(boxscore, homeaway) && (
             <p>
-              <span>RBI:</span> {rbiLine}
+              {" "}
+              <span>RBI: </span>
+              {renderRBI(boxscore, homeaway)}
             </p>
           )}
           {twoOutRbiLine.length > 0 && (
