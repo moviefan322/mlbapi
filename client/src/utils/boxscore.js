@@ -171,8 +171,84 @@ const renderRISP = (boxscore, homeaway) => {
   return `${RISPH.length} for ${RISP.length}`;
 };
 
+const renderTB = (boxscore, homeaway) => {
+  const batters = getBatters(boxscore, homeaway);
+  function calculateTotalBases(boxscore, batter) {
+    let basesPerInning = [];
+    for (let i = 1; i <= 9; i++) {
+      const batterIsOnBase = boxscore.liveData.plays.allPlays.filter((play) => {
+        return (
+          play.about.inning === i &&
+          (play.runners[0]?.details.runner.id === batter ||
+            play.runners[1]?.details.runner.id === batter ||
+            play.runners[2]?.details.runner.id === batter)
+        );
+      });
+      if (batterIsOnBase.length > 0) {
+        const inningBases = batterIsOnBase.reduce((highestValue, play) => {
+          let baseValue = 0;
+          if (play.runners[0]?.details.runner.id === batter) {
+            baseValue = play.runners[0]?.movement.end;
+          }
+          if (play.runners[1]?.details.runner.id === batter) {
+            baseValue = play.runners[1]?.movement.end;
+          }
+          if (play.runners[2]?.details.runner.id === batter) {
+            baseValue = play.runners[2]?.movement.end;
+          }
+          if (baseValue === "1B") {
+            baseValue = 1;
+          }
+          if (baseValue === "2B") {
+            baseValue = 2;
+          }
+          if (baseValue === "3B") {
+            baseValue = 3;
+          }
+          if (baseValue === "score") {
+            baseValue = 4;
+          }
+
+          if (baseValue > highestValue) {
+            highestValue = baseValue;
+          }
+          return highestValue;
+        }, 0);
+
+        basesPerInning.push(inningBases);
+      }
+    }
+
+    const totalBases = basesPerInning.reduce((total, inning) => {
+      return total + inning;
+    }, 0);
+
+    return totalBases;
+  }
+
+  const tbLine = batters
+    .map((batter) => {
+      const TB = calculateTotalBases(boxscore, batter);
+
+      if (TB > 0) {
+        const player =
+          boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+            `ID${batter}`
+          ].person.fullName.match(/\b(\w+)\b$/)?.[1];
+        return ` ${`${player}(${TB})`}`;
+      } else {
+        return null;
+      }
+    })
+    .filter((batter) => batter !== null)
+    .toString();
+
+  return tbLine;
+};
+
 module.exports = {
   render2B,
   renderE,
   renderRISP,
+  renderTB,
 };

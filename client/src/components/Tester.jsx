@@ -1,7 +1,7 @@
 // humber perfect:  317942
 // high scoring: 718124
 import { useEffect, useState } from "react";
-import { render2B, renderE, renderRISP } from "../utils/boxscore";
+import { render2B, renderE, renderRISP, renderTB } from "../utils/boxscore";
 
 function Tester() {
   const [boxscore, setBoxscore] = useState();
@@ -27,23 +27,6 @@ function Tester() {
   console.log(boxscore);
   // console.log(boxscore.liveData);
 
-  const homeBatters = boxscore.liveData.boxscore.teams.home.batters.filter(
-    (batter) =>
-      boxscore.liveData.plays.allPlays.filter(
-        (play) =>
-          play.matchup.batter.id === batter &&
-          play.result.type === "atBat" &&
-          play.result.eventType !== "sac_fly" &&
-          play.result.eventType !== "sac_bunt" &&
-          play.result.eventType !== "pickoff_1b" &&
-          play.result.eventType !== "pickoff_2b" &&
-          play.result.eventType !== "pickoff_3b" &&
-          play.result.eventType !== "batter_timeout" &&
-          play.result.eventType !== "walk" &&
-          play.result.eventType !== "hit_by_pitch"
-      ).length > 0
-  );
-
   return (
     <div>
       <p> E: {boxscore.liveData.linescore.teams.home.errors}</p>
@@ -56,7 +39,9 @@ function Tester() {
       <p> HR:</p>
       <p>SF: </p>
       <p>SB: </p>
-      <p> TB:</p>
+      {renderTB(boxscore, homeaway) && (
+        <p> TB: {renderTB(boxscore, homeaway)}</p>
+      )}
       <p>GIDP: </p>
       <p> RBI:</p>
       <p> 2-out RBI:</p>
