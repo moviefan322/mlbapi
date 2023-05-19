@@ -1,3 +1,5 @@
+const ordinalSuffix = require("../utils/ordinalSuffix");
+
 const getBatters = (boxscore, homeaway) => {
   const batters = boxscore.liveData.boxscore.teams[
     `${homeaway}`
@@ -295,10 +297,63 @@ const render3B = (boxscore, homeaway) => {
   }
 };
 
+const renderHR = (boxscore, homeaway) => {
+  const batters = getBatters(boxscore, homeaway);
+  const hrLine = batters
+    .map((batter) => {
+      const hrs = boxscore.liveData.plays.allPlays.filter(
+        (play) =>
+          play.matchup.batter.id === batter &&
+          play.result.eventType === "home_run"
+      );
+
+      if (hrs.length === 1) {
+        const hrCount =
+          boxscore.liveData.boxscore.teams[`${homeaway}`].players[`ID${batter}`]
+            .seasonStats.batting.homeRuns;
+        const player =
+          boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+            "ID" + hrs[0].matchup.batter.id
+          ];
+        const inning = hrs[0].about.inning;
+        const pitcher =
+          hrs[0].matchup.pitcher.fullName.match(/\b(\w+)\b$/)?.[1];
+        const lastName = player.person.fullName.match(/\b(\w+)\b$/)?.[1];
+        return ` ${lastName}(${hrCount}, ${ordinalSuffix(inning)}: ${pitcher})`;
+      } else if (hrs.length > 1) {
+        const player =
+          boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+            "ID" + hrs[0].matchup.batter.id
+          ];
+
+        const hrCount =
+          boxscore.liveData.boxscore.teams[`${homeaway}`].players[`ID${batter}`]
+            .seasonStats.batting.homeRuns;
+        const pitchers = hrs.map(
+          (hrs) => hrs.matchup.pitcher.fullName.match(/\b(\w+)\b$/)?.[1]
+        );
+        const inning = hrs.map((hr) => ordinalSuffix(hr.about.inning));
+        const combinedArray = inning.map((inningValue, index) => {
+          const pitcher = pitchers[index];
+          return ` ${inningValue}: ${pitcher}`;
+        });
+        const lastName = player.person.fullName.match(/\b(\w+)\b$/)?.[1];
+        return ` ${lastName}(${hrCount}, ${combinedArray.toString()})`;
+      } else {
+        return null;
+      }
+    })
+    .filter((batter) => batter !== null)
+    .toString();
+
+  return hrLine;
+};
+
 module.exports = {
   render2B,
   renderE,
   renderRISP,
   renderTB,
   render3B,
+  renderHR,
 };

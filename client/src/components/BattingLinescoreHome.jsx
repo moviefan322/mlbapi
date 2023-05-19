@@ -1,7 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ordinalSuffix from "../utils/ordinalSuffix";
-import { renderE, render2B, renderRISP, renderTB } from "../utils/boxscore";
+import {
+  renderE,
+  render2B,
+  renderRISP,
+  renderTB,
+  render3B,
+} from "../utils/boxscore";
 
 function BattingLinescoreHome({ boxscore }) {
   const homeBatters = boxscore.liveData.boxscore.teams.home.batters.filter(
@@ -24,43 +30,6 @@ function BattingLinescoreHome({ boxscore }) {
   const homeaway = "home";
 
   const homePitchers = boxscore.liveData.boxscore.teams.home.pitchers;
-
-  const tripleLine = homeBatters
-    .map((batter) => {
-      const triples = boxscore.liveData.plays.allPlays.filter(
-        (play) =>
-          play.matchup.batter.id === batter &&
-          play.result.eventType === "triple"
-      );
-
-      if (triples.length === 1) {
-        const player =
-          boxscore.liveData.boxscore.teams.home.players[
-            "ID" + triples[0].matchup.batter.id
-          ];
-        const dblCount =
-          boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
-            .seasonStats.batting.triples;
-        const pitcher = triples[0].matchup.pitcher.fullName;
-        const lastName = player.person.fullName;
-        return ` ${lastName}(${dblCount}, ${pitcher})`;
-      } else if (triples.length > 1) {
-        const player =
-          boxscore.liveData.boxscore.teams.home.players[
-            "ID" + triples[0].matchup.batter.id
-          ];
-        const dblCount =
-          boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
-            .seasonStats.batting.triples;
-        const pitchers = triples.map((matchup) => matchup.pitcher.fullName);
-        const lastName = player.person.fullName;
-        return ` ${lastName}(${dblCount}, ${pitchers.toString()})`;
-      } else {
-        return null;
-      }
-    })
-    .filter((batter) => batter !== null)
-    .toString();
 
   const hrLine = homeBatters
     .map((batter) => {
@@ -572,9 +541,11 @@ function BattingLinescoreHome({ boxscore }) {
               <span>2B:</span> {render2B(boxscore, homeaway)}
             </p>
           )}
-          {tripleLine.length > 0 && (
+          {render3B(boxscore, homeaway) && (
             <p>
-              <span>3B:</span> {tripleLine}
+              {" "}
+              <span>3B: </span>
+              {render3B(boxscore, homeaway)}
             </p>
           )}
           {hrLine.length > 0 && (

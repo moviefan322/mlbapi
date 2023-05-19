@@ -7,12 +7,13 @@ import {
   renderRISP,
   renderTB,
   render3B,
+  renderHR,
 } from "../utils/boxscore";
 
 function Tester() {
   const [boxscore, setBoxscore] = useState();
   const [loading, setLoading] = useState(true);
-  const homeaway = "away";
+  const homeaway = "home";
 
   useEffect(() => {
     const getSingleGameData = async (gamePk) => {
@@ -41,8 +42,10 @@ function Tester() {
       {render2B(boxscore, homeaway) && (
         <p>2B: {render2B(boxscore, homeaway)}</p>
       )}
-      <p> 3B: {render3B(boxscore, homeaway)}</p>
-      <p> HR:</p>
+      {render3B(boxscore, homeaway) && (
+        <p> 3B: {render3B(boxscore, homeaway)}</p>
+      )}
+      <p> HR: {renderHR(boxscore, homeaway)}</p>
       <p>SF: </p>
       <p>SB: </p>
       {renderTB(boxscore, homeaway) && (
