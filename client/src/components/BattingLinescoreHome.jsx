@@ -3,6 +3,9 @@ import PropTypes from "prop-types";
 import Linescore from "./Linescore";
 
 function BattingLinescoreHome({ boxscore }) {
+
+  const pitchers = boxscore.liveData.boxscore.teams[`${homeaway}`].pitchers;
+
   const homeBatters = boxscore.liveData.boxscore.teams.home.batters.filter(
     (batter) =>
       boxscore.liveData.plays.allPlays.filter(
@@ -21,29 +24,6 @@ function BattingLinescoreHome({ boxscore }) {
   );
 
   const homeaway = "home";
-
-  const homePitchers = boxscore.liveData.boxscore.teams.home.pitchers;
-
-  const GIDPline = homeBatters
-    .map((batter) => {
-      const GIDPcount = boxscore.liveData.plays.allPlays.filter(
-        (play) =>
-          play.matchup.batter.id === batter &&
-          play.result.eventType === "grounded_into_double_play"
-      ).length;
-      const player =
-        boxscore.liveData.boxscore.teams.home.players[`ID${batter}`].person
-          .fullName;
-
-      if (GIDPcount > 0) {
-        return ` ${player}(${GIDPcount})`;
-      } else {
-        return null;
-      }
-    })
-    .filter((batter) => batter !== null)
-    .toString();
-
   return (
     <>
       <table className="battingbox">
@@ -300,7 +280,7 @@ function BattingLinescoreHome({ boxscore }) {
       </table>
       <br />
       <div className="pitcherstats">
-        <table className="battingbox">
+        {/* <table className="battingbox">
           <thead>
             <tr>
               <th>Pitching</th>
@@ -389,7 +369,7 @@ function BattingLinescoreHome({ boxscore }) {
               </tr>
             ))}
           </tbody>
-        </table>
+        </table> */}
         <br />
         <Linescore boxscore={boxscore} homeaway={homeaway} />
       </div>
