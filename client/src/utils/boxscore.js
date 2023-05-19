@@ -246,9 +246,59 @@ const renderTB = (boxscore, homeaway) => {
   return tbLine;
 };
 
+const render3B = (boxscore, homeaway) => {
+  const batters = getBatters(boxscore, homeaway);
+  const tripleLine = batters
+    .map((batter) => {
+      const triples = boxscore.liveData.plays.allPlays.filter(
+        (play) =>
+          play.matchup.batter.id === batter &&
+          play.result.eventType === "triple"
+      );
+
+      if (triples.length === 1) {
+        const player =
+          boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+            "ID" + triples[0].matchup.batter.id
+          ];
+        const dblCount =
+          boxscore.liveData.boxscore.teams[`${homeaway}`].players[`ID${batter}`]
+            .seasonStats.batting.triples;
+        const pitcher =
+          triples[0].matchup.pitcher.fullName.match(/\b(\w+)\b$/)?.[1];
+        const lastName = player.person.fullName.match(/\b(\w+)\b$/)?.[1];
+        return ` ${lastName}(${dblCount}, ${pitcher})`;
+      } else if (triples.length > 1) {
+        const player =
+          boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+            "ID" + triples[0].matchup.batter.id
+          ];
+        const dblCount =
+          boxscore.liveData.boxscore.teams[`${homeaway}`].players[`ID${batter}`]
+            .seasonStats.batting.triples;
+        const pitchers = triples.map(
+          (matchup) => matchup.pitcher.fullName.match(/\b(\w+)\b$/)?.[1]
+        );
+        const lastName = player.person.fullName.match(/\b(\w+)\b$/)?.[1];
+        return ` ${lastName}(${dblCount}, ${pitchers.toString()})`;
+      } else {
+        return null;
+      }
+    })
+    .filter((batter) => batter !== null)
+    .toString();
+
+  if (tripleLine.length === 0) {
+    return null;
+  } else {
+    return tripleLine;
+  }
+};
+
 module.exports = {
   render2B,
   renderE,
   renderRISP,
   renderTB,
+  render3B,
 };

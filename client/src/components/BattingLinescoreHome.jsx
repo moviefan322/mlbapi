@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ordinalSuffix from "../utils/ordinalSuffix";
-import { renderE, render2B, renderRISP } from "../utils/boxscore";
+import { renderE, render2B, renderRISP, renderTB } from "../utils/boxscore";
 
 function BattingLinescoreHome({ boxscore }) {
   const homeBatters = boxscore.liveData.boxscore.teams.home.batters.filter(
@@ -24,75 +24,6 @@ function BattingLinescoreHome({ boxscore }) {
   const homeaway = "home";
 
   const homePitchers = boxscore.liveData.boxscore.teams.home.pitchers;
-
-  function calculateTotalBases(boxscore, batter) {
-    let basesPerInning = [];
-    for (let i = 1; i <= 9; i++) {
-      const batterIsOnBase = boxscore.liveData.plays.allPlays.filter((play) => {
-        return (
-          play.about.inning === i &&
-          (play.runners[0]?.details.runner.id === batter ||
-            play.runners[1]?.details.runner.id === batter ||
-            play.runners[2]?.details.runner.id === batter)
-        );
-      });
-      if (batterIsOnBase.length > 0) {
-        const inningBases = batterIsOnBase.reduce((highestValue, play) => {
-          let baseValue = 0;
-          if (play.runners[0]?.details.runner.id === batter) {
-            baseValue = play.runners[0]?.movement.end;
-          }
-          if (play.runners[1]?.details.runner.id === batter) {
-            baseValue = play.runners[1]?.movement.end;
-          }
-          if (play.runners[2]?.details.runner.id === batter) {
-            baseValue = play.runners[2]?.movement.end;
-          }
-          if (baseValue === "1B") {
-            baseValue = 1;
-          }
-          if (baseValue === "2B") {
-            baseValue = 2;
-          }
-          if (baseValue === "3B") {
-            baseValue = 3;
-          }
-          if (baseValue === "score") {
-            baseValue = 4;
-          }
-
-          if (baseValue > highestValue) {
-            highestValue = baseValue;
-          }
-          return highestValue;
-        }, 0);
-
-        basesPerInning.push(inningBases);
-      }
-    }
-
-    const totalBases = basesPerInning.reduce((total, inning) => {
-      return total + inning;
-    }, 0);
-
-    return totalBases;
-  }
-
-  const tbLine = homeBatters
-    .map((batter) => {
-      const TB = calculateTotalBases(boxscore, batter);
-      const player =
-        boxscore.liveData.boxscore.teams.home.players[`ID${batter}`].person
-          .fullName;
-
-      if (TB > 0) {
-        return ` ${`${player}(${TB})`}`;
-      } else {
-        return null;
-      }
-    })
-    .filter((batter) => batter !== null)
-    .toString();
 
   const tripleLine = homeBatters
     .map((batter) => {
@@ -656,10 +587,8 @@ function BattingLinescoreHome({ boxscore }) {
               <span>SF:</span> {sacFlyLine}
             </p>
           )}
-          {tbLine.length > 0 && (
-            <p>
-              <span>TB:</span> {tbLine}
-            </p>
+          {renderTB(boxscore, homeaway) && (
+            <p> TB: {renderTB(boxscore, homeaway)}</p>
           )}
           {GIDPline.length > 0 && (
             <p>
