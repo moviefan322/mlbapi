@@ -45,7 +45,10 @@ function Tester() {
       {render3B(boxscore, homeaway) && (
         <p> 3B: {render3B(boxscore, homeaway)}</p>
       )}
-      <p> HR: {renderHR(boxscore, homeaway)}</p>
+      {renderHR(boxscore, homeaway) && (
+        <p> HR: {renderHR(boxscore, homeaway)}</p>
+      )}
+
       <p>SF: </p>
       <p>SB: </p>
       {renderTB(boxscore, homeaway) && (

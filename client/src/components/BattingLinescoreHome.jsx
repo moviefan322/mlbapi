@@ -7,6 +7,7 @@ import {
   renderRISP,
   renderTB,
   render3B,
+  renderHR,
 } from "../utils/boxscore";
 
 function BattingLinescoreHome({ boxscore }) {
@@ -30,50 +31,6 @@ function BattingLinescoreHome({ boxscore }) {
   const homeaway = "home";
 
   const homePitchers = boxscore.liveData.boxscore.teams.home.pitchers;
-
-  const hrLine = homeBatters
-    .map((batter) => {
-      const hrs = boxscore.liveData.plays.allPlays.filter(
-        (play) =>
-          play.matchup.batter.id === batter &&
-          play.result.eventType === "home_run"
-      );
-
-      if (hrs.length === 1) {
-        const hrCount =
-          boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
-            .seasonStats.batting.homeRuns;
-        const player =
-          boxscore.liveData.boxscore.teams.home.players[
-            "ID" + hrs[0].matchup.batter.id
-          ];
-        const inning = hrs[0].about.inning;
-        const pitcher = hrs[0].matchup.pitcher.fullName;
-        const lastName = player.person.fullName;
-        return ` ${lastName}(${hrCount}, ${ordinalSuffix(inning)}: ${pitcher})`;
-      } else if (hrs.length > 1) {
-        const player =
-          boxscore.liveData.boxscore.teams.home.players[
-            "ID" + hrs[0].matchup.batter.id
-          ];
-
-        const hrCount =
-          boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
-            .seasonStats.batting.homeRuns;
-        const pitchers = hrs.map((hrs) => hrs.matchup.pitcher.fullName);
-        const inning = hrs.map((hr) => ordinalSuffix(hr.about.inning));
-        const combinedArray = inning.map((inningValue, index) => {
-          const pitcher = pitchers[index];
-          return `${inningValue}: ${pitcher}`;
-        });
-        const lastName = player.person.fullName;
-        return ` ${lastName}(${hrCount}, ${combinedArray.toString()})`;
-      } else {
-        return null;
-      }
-    })
-    .filter((batter) => batter !== null)
-    .toString();
 
   const sacFlyLine = homeBatters
     .map((batter) => {
@@ -548,9 +505,11 @@ function BattingLinescoreHome({ boxscore }) {
               {render3B(boxscore, homeaway)}
             </p>
           )}
-          {hrLine.length > 0 && (
+          {renderHR(boxscore, homeaway) && (
             <p>
-              <span>HR:</span> {hrLine}
+              {" "}
+              <span>HR: </span>
+              {renderHR(boxscore, homeaway)}
             </p>
           )}
           {sacFlyLine.length > 0 && (
