@@ -349,6 +349,32 @@ const renderHR = (boxscore, homeaway) => {
   return hrLine;
 };
 
+const renderRBI = (boxscore, homeaway) => {
+  const batters = getBatters(boxscore, homeaway);
+  const rbiLine = batters
+    .map((batter) => {
+      const rbis =
+        boxscore.liveData.boxscore.teams[`${homeaway}`].players[`ID${batter}`]
+          .stats.batting.rbi;
+      const player =
+        boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+          `ID${batter}`
+        ].person.fullName.match(/\b(\w+)\b$/)?.[1];
+
+      const seasonTotal =
+        boxscore.liveData.boxscore.teams[`${homeaway}`].players[`ID${batter}`]
+          .seasonStats.batting.rbi;
+
+      if (rbis === 0) return null;
+
+      return ` ${player} ${rbis}(${seasonTotal})`;
+    })
+    .filter((batter) => batter !== null)
+    .toString();
+
+  return rbiLine;
+};
+
 module.exports = {
   render2B,
   renderE,
@@ -356,4 +382,5 @@ module.exports = {
   renderTB,
   render3B,
   renderHR,
+  renderRBI,
 };

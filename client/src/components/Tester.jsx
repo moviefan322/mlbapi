@@ -8,6 +8,7 @@ import {
   renderTB,
   render3B,
   renderHR,
+  renderRBI,
 } from "../utils/boxscore";
 
 function Tester() {
@@ -18,7 +19,7 @@ function Tester() {
   useEffect(() => {
     const getSingleGameData = async (gamePk) => {
       const response = await fetch(
-        `https://statsapi.mlb.com/api/v1.1/game/718124/feed/live`
+        `https://statsapi.mlb.com/api/v1.1/game/317942/feed/live`
       );
       const data = await response.json();
       setBoxscore(data);
@@ -55,7 +56,9 @@ function Tester() {
         <p> TB: {renderTB(boxscore, homeaway)}</p>
       )}
       <p>GIDP: </p>
-      <p> RBI:</p>
+      {renderRBI(boxscore, homeaway) && (
+        <p> RBI: {renderRBI(boxscore, homeaway)}</p>
+      )}
       <p> 2-out RBI:</p>
       <p>Team LOB:</p>
       {renderRISP(boxscore, homeaway) && (
