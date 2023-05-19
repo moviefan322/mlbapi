@@ -11,12 +11,14 @@ import {
   renderRBI,
   renderSF,
   render2OutRBI,
+  renderDP,
+  renderGIDP,
 } from "../utils/boxscore";
 
 function Tester() {
   const [boxscore, setBoxscore] = useState();
   const [loading, setLoading] = useState(true);
-  const homeaway = "away";
+  const homeaway = "home";
 
   useEffect(() => {
     const getSingleGameData = async (gamePk) => {
@@ -58,17 +60,23 @@ function Tester() {
       {renderTB(boxscore, homeaway) && (
         <p> TB: {renderTB(boxscore, homeaway)}</p>
       )}
-      <p>GIDP: </p>
+      {renderGIDP(boxscore, homeaway) && (
+        <p>GIDP: {renderGIDP(boxscore, homeaway)}</p>
+      )}
       {renderRBI(boxscore, homeaway) && (
         <p> RBI: {renderRBI(boxscore, homeaway)}</p>
       )}
-      <p> 2-out RBI: {render2OutRBI(boxscore, homeaway)}</p>
+      {render2OutRBI(boxscore, homeaway) && (
+        <p> 2-out RBI: {render2OutRBI(boxscore, homeaway)}</p>
+      )}
       <p>Team LOB:</p>
       {renderRISP(boxscore, homeaway) && (
         <p>Team RISP: {renderRISP(boxscore, homeaway)}</p>
       )}
       <p>----</p>
-      <p>DB: </p>
+      {renderDP(boxscore, homeaway) && (
+        <p>DP: {renderDP(boxscore, homeaway)}</p>
+      )}
       {renderE(boxscore, homeaway) && <p>E: {renderE(boxscore, homeaway)}</p>}
     </div>
   );

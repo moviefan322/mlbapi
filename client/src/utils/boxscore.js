@@ -438,6 +438,71 @@ const render2OutRBI = (boxscore, homeaway) => {
   return twoOutRbiLine;
 };
 
+const renderDP = (boxscore, homeaway) => {
+  let doublePlays;
+  if (homeaway === "home") {
+    doublePlays = boxscore.liveData.plays.allPlays.filter(
+      (play) =>
+        play.result.eventType.includes("double_play") &&
+        play.about.halfInning === "top"
+    );
+  } else {
+    doublePlays = boxscore.liveData.plays.allPlays.filter(
+      (play) =>
+        play.result.eventType.includes("double_play") &&
+        play.about.halfInning === "bottom"
+    );
+  }
+
+  const doublePlayLine = doublePlays.map((play) => {
+    const credits = play.runners[0].credits;
+    const creditCodes = credits.map((credit) => credit.player.id);
+    const playerNames = creditCodes.map((code) => {
+      return boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+        `ID${code}`
+      ].person.fullName.match(/\b(\w+)\b$/)?.[1];
+    });
+
+    if (creditCodes.length === 1) {
+      return `${creditCodes[0]}u`;
+    } else {
+      return playerNames.join("-").toString();
+    }
+  });
+
+  if (doublePlayLine.length === 0) {
+    return null;
+  } else {
+    return doublePlayLine;
+  }
+};
+
+const renderGIDP = (boxscore, homeaway) => {
+  const batters = getBatters(boxscore, homeaway);
+  const GIDPline = batters
+    .map((batter) => {
+      const GIDPcount = boxscore.liveData.plays.allPlays.filter(
+        (play) =>
+          play.matchup.batter.id === batter &&
+          play.result.eventType === "grounded_into_double_play"
+      ).length;
+      const player =
+        boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+          `ID${batter}`
+        ].person.fullName.match(/\b(\w+)\b$/)?.[1];
+
+      if (GIDPcount > 0) {
+        return ` ${player}(${GIDPcount})`;
+      } else {
+        return null;
+      }
+    })
+    .filter((batter) => batter !== null)
+    .toString();
+
+  return GIDPline;
+};
+
 module.exports = {
   render2B,
   renderE,
@@ -448,4 +513,6 @@ module.exports = {
   renderRBI,
   renderSF,
   render2OutRBI,
+  renderDP,
+  renderGIDP,
 };

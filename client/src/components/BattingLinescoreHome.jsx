@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ordinalSuffix from "../utils/ordinalSuffix";
 import {
   renderE,
   render2B,
@@ -10,6 +9,9 @@ import {
   renderHR,
   renderRBI,
   renderSF,
+  render2OutRBI,
+  renderDP,
+  renderGIDP,
 } from "../utils/boxscore";
 
 function BattingLinescoreHome({ boxscore }) {
@@ -33,47 +35,6 @@ function BattingLinescoreHome({ boxscore }) {
   const homeaway = "home";
 
   const homePitchers = boxscore.liveData.boxscore.teams.home.pitchers;
-
-  const twoOutRbiLine = homeBatters
-    .map((batter) => {
-      const rbis = boxscore.liveData.plays.allPlays.filter(
-        (play) =>
-          play.matchup.batter.id === batter &&
-          play.result.rbi > 0 &&
-          play.count.outs === 2
-      ).length;
-
-      const player =
-        boxscore.liveData.boxscore.teams.home.players[`ID${batter}`].person
-          .fullName;
-
-      if (rbis === 0) return null;
-
-      return ` ${player} ${rbis}`;
-    })
-    .filter((batter) => batter !== null)
-    .toString();
-
-  const doublePlays = boxscore.liveData.plays.allPlays.filter(
-    (play) =>
-      play.result.eventType.includes("double_play") &&
-      play.about.halfInning === "top"
-  );
-
-  const doublePlayLine = doublePlays.map((play) => {
-    const credits = play.runners[0].credits;
-    const creditCodes = credits.map((credit) => credit.player.id);
-    const playerNames = creditCodes.map((code) => {
-      return boxscore.liveData.boxscore.teams.home.players[`ID${code}`].person
-        .fullName;
-    });
-
-    if (creditCodes.length === 1) {
-      return `${creditCodes[0]}u`;
-    } else {
-      return playerNames.join("-").toString();
-    }
-  });
 
   const GIDPline = homeBatters
     .map((batter) => {
@@ -475,9 +436,10 @@ function BattingLinescoreHome({ boxscore }) {
               {renderTB(boxscore, homeaway)}
             </p>
           )}
-          {GIDPline.length > 0 && (
+          {renderGIDP(boxscore, homeaway) && (
             <p>
-              <span>GIDP:</span> {GIDPline}
+              <strong>GIDP: </strong>
+              {renderGIDP(boxscore, homeaway)}
             </p>
           )}
           {renderRBI(boxscore, homeaway) && (
@@ -487,19 +449,21 @@ function BattingLinescoreHome({ boxscore }) {
               {renderRBI(boxscore, homeaway)}
             </p>
           )}
-          {twoOutRbiLine.length > 0 && (
+          {render2OutRBI(boxscore, homeaway) && (
             <p>
-              <span>2-out RBI:</span> {twoOutRbiLine}
+              {" "}
+              <span>2-out RBI: </span>
+              {render2OutRBI(boxscore, homeaway)}
             </p>
           )}
-          {boxscore.liveData.boxscore.teams.home.teamStats.batting.leftOnBase >
-            0 && (
+          {boxscore.liveData.boxscore.teams[`${homeaway}`].teamStats.batting
+            .leftOnBase > 0 && (
             <p>
               {" "}
               <span> Team LOB: </span>
               {
-                boxscore.liveData.boxscore.teams.home.teamStats.batting
-                  .leftOnBase
+                boxscore.liveData.boxscore.teams[`${homeaway}`].teamStats
+                  .batting.leftOnBase
               }
             </p>
           )}
@@ -510,15 +474,13 @@ function BattingLinescoreHome({ boxscore }) {
             </p>
           )}
           <br />
-          {(doublePlayLine.length > 0 || renderE(boxscore, homeaway)) && (
+          {(renderDP(boxscore, homeaway) || renderE(boxscore, homeaway)) && (
             <p>
               <strong>Fielding</strong>
             </p>
           )}
-          {doublePlayLine.length > 0 && (
-            <p>
-              <span>DP:</span> {doublePlayLine}
-            </p>
+          {renderDP(boxscore, homeaway) && (
+            <p>DP: {renderDP(boxscore, homeaway)}</p>
           )}
           {renderE(boxscore, homeaway) && (
             <p>E: {renderE(boxscore, homeaway)}</p>
