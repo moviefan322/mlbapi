@@ -10,6 +10,7 @@ import Schedule from "./pages/Schedule";
 import PrivateRoute from "./components/PrivateRoute";
 import Bets from "./pages/Bets";
 import Box from "./pages/Box";
+import Tester from "./components/Tester";
 
 function App() {
   if (typeof window !== "undefined") {
@@ -30,6 +31,7 @@ function App() {
               <Route path="/bets" element={<Bets />} />
             </Route>
             <Route path="/boxscore/:gamePk" element={<Box />} />
+            <Route path="/test" element={<Tester />} />
           </Routes>
           <ToastContainer />
         </div>

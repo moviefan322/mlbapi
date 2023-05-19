@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import ordinalSuffix from "../utils/ordinalSuffix";
 
 function BattingLinescoreHome({ boxscore }) {
-  const awayBatters = boxscore.liveData.boxscore.teams.away.batters.filter(
+  const homeBatters = boxscore.liveData.boxscore.teams.home.batters.filter(
     (batter) =>
       boxscore.liveData.plays.allPlays.filter(
         (play) =>
@@ -20,7 +20,7 @@ function BattingLinescoreHome({ boxscore }) {
       ).length > 0
   );
 
-  const awayPitchers = boxscore.liveData.boxscore.teams.away.pitchers;
+  const homePitchers = boxscore.liveData.boxscore.teams.home.pitchers;
 
   function calculateTotalBases(boxscore, batter) {
     let basesPerInning = [];
@@ -75,7 +75,7 @@ function BattingLinescoreHome({ boxscore }) {
     return totalBases;
   }
 
-  const doubleLine = awayBatters
+  const doubleLine = homeBatters
     .map((batter) => {
       const doubles = boxscore.liveData.plays.allPlays.filter(
         (play) =>
@@ -85,22 +85,22 @@ function BattingLinescoreHome({ boxscore }) {
 
       if (doubles.length === 1) {
         const player =
-          boxscore.liveData.boxscore.teams.away.players[
+          boxscore.liveData.boxscore.teams.home.players[
             "ID" + doubles[0].matchup.batter.id
           ];
         const dblCount =
-          boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
+          boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
             .seasonStats.batting.doubles;
         const pitcher = doubles[0].matchup.pitcher.fullName;
         const lastName = player.person.fullName;
         return ` ${lastName}(${dblCount}, ${pitcher})`;
       } else if (doubles.length > 1) {
         const player =
-          boxscore.liveData.boxscore.teams.away.players[
+          boxscore.liveData.boxscore.teams.home.players[
             "ID" + doubles[0].matchup.batter.id
           ];
         const dblCount =
-          boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
+          boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
             .seasonStats.batting.doubles;
         const pitchers = doubles.map(
           (doubles) => doubles.matchup.pitcher.fullName
@@ -114,11 +114,11 @@ function BattingLinescoreHome({ boxscore }) {
     .filter((batter) => batter !== null)
     .toString();
 
-  const tbLine = awayBatters
+  const tbLine = homeBatters
     .map((batter) => {
       const TB = calculateTotalBases(boxscore, batter);
       const player =
-        boxscore.liveData.boxscore.teams.away.players[`ID${batter}`].person
+        boxscore.liveData.boxscore.teams.home.players[`ID${batter}`].person
           .fullName;
 
       if (TB > 0) {
@@ -130,7 +130,7 @@ function BattingLinescoreHome({ boxscore }) {
     .filter((batter) => batter !== null)
     .toString();
 
-  const tripleLine = awayBatters
+  const tripleLine = homeBatters
     .map((batter) => {
       const triples = boxscore.liveData.plays.allPlays.filter(
         (play) =>
@@ -140,22 +140,22 @@ function BattingLinescoreHome({ boxscore }) {
 
       if (triples.length === 1) {
         const player =
-          boxscore.liveData.boxscore.teams.away.players[
+          boxscore.liveData.boxscore.teams.home.players[
             "ID" + triples[0].matchup.batter.id
           ];
         const dblCount =
-          boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
+          boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
             .seasonStats.batting.triples;
         const pitcher = triples[0].matchup.pitcher.fullName;
         const lastName = player.person.fullName;
         return ` ${lastName}(${dblCount}, ${pitcher})`;
       } else if (triples.length > 1) {
         const player =
-          boxscore.liveData.boxscore.teams.away.players[
+          boxscore.liveData.boxscore.teams.home.players[
             "ID" + triples[0].matchup.batter.id
           ];
         const dblCount =
-          boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
+          boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
             .seasonStats.batting.triples;
         const pitchers = triples.map((matchup) => matchup.pitcher.fullName);
         const lastName = player.person.fullName;
@@ -167,7 +167,7 @@ function BattingLinescoreHome({ boxscore }) {
     .filter((batter) => batter !== null)
     .toString();
 
-  const hrLine = awayBatters
+  const hrLine = homeBatters
     .map((batter) => {
       const hrs = boxscore.liveData.plays.allPlays.filter(
         (play) =>
@@ -177,10 +177,10 @@ function BattingLinescoreHome({ boxscore }) {
 
       if (hrs.length === 1) {
         const hrCount =
-          boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
+          boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
             .seasonStats.batting.homeRuns;
         const player =
-          boxscore.liveData.boxscore.teams.away.players[
+          boxscore.liveData.boxscore.teams.home.players[
             "ID" + hrs[0].matchup.batter.id
           ];
         const inning = hrs[0].about.inning;
@@ -189,12 +189,12 @@ function BattingLinescoreHome({ boxscore }) {
         return ` ${lastName}(${hrCount}, ${ordinalSuffix(inning)}: ${pitcher})`;
       } else if (hrs.length > 1) {
         const player =
-          boxscore.liveData.boxscore.teams.away.players[
+          boxscore.liveData.boxscore.teams.home.players[
             "ID" + hrs[0].matchup.batter.id
           ];
 
         const hrCount =
-          boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
+          boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
             .seasonStats.batting.homeRuns;
         const pitchers = hrs.map((hrs) => hrs.matchup.pitcher.fullName);
         const inning = hrs.map((hr) => ordinalSuffix(hr.about.inning));
@@ -211,7 +211,7 @@ function BattingLinescoreHome({ boxscore }) {
     .filter((batter) => batter !== null)
     .toString();
 
-  const sacFlyLine = awayBatters
+  const sacFlyLine = homeBatters
     .map((batter) => {
       const sacFlys = boxscore.liveData.plays.allPlays.filter(
         (play) =>
@@ -221,7 +221,7 @@ function BattingLinescoreHome({ boxscore }) {
 
       if (sacFlys.length === 1) {
         const player =
-          boxscore.liveData.boxscore.teams.away.players[
+          boxscore.liveData.boxscore.teams.home.players[
             "ID" + sacFlys[0].matchup.batter.id
           ];
         const pitcher = sacFlys[0].matchup.pitcher.fullName;
@@ -230,7 +230,7 @@ function BattingLinescoreHome({ boxscore }) {
         return ` ${lastName}(${inning}:${pitcher})`;
       } else if (sacFlys.length > 1) {
         const player =
-          boxscore.liveData.boxscore.teams.away.players[
+          boxscore.liveData.boxscore.teams.home.players[
             "ID" + sacFlys[0].matchup.batter.id
           ];
         const pitchers = sacFlys.map((matchup) => matchup.pitcher.fullName);
@@ -243,17 +243,17 @@ function BattingLinescoreHome({ boxscore }) {
     .filter((batter) => batter !== null)
     .toString();
 
-  const rbiLine = awayBatters
+  const rbiLine = homeBatters
     .map((batter) => {
       const rbis =
-        boxscore.liveData.boxscore.teams.away.players[`ID${batter}`].stats
+        boxscore.liveData.boxscore.teams.home.players[`ID${batter}`].stats
           .batting.rbi;
       const player =
-        boxscore.liveData.boxscore.teams.away.players[`ID${batter}`].person
+        boxscore.liveData.boxscore.teams.home.players[`ID${batter}`].person
           .fullName;
 
       const seasonTotal =
-        boxscore.liveData.boxscore.teams.away.players[`ID${batter}`].seasonStats
+        boxscore.liveData.boxscore.teams.home.players[`ID${batter}`].seasonStats
           .batting.rbi;
 
       if (rbis === 0) return null;
@@ -263,7 +263,7 @@ function BattingLinescoreHome({ boxscore }) {
     .filter((batter) => batter !== null)
     .toString();
 
-  const twoOutRbiLine = awayBatters
+  const twoOutRbiLine = homeBatters
     .map((batter) => {
       const rbis = boxscore.liveData.plays.allPlays.filter(
         (play) =>
@@ -273,7 +273,7 @@ function BattingLinescoreHome({ boxscore }) {
       ).length;
 
       const player =
-        boxscore.liveData.boxscore.teams.away.players[`ID${batter}`].person
+        boxscore.liveData.boxscore.teams.home.players[`ID${batter}`].person
           .fullName;
 
       if (rbis === 0) return null;
@@ -283,7 +283,7 @@ function BattingLinescoreHome({ boxscore }) {
     .filter((batter) => batter !== null)
     .toString();
 
-  const RISP = boxscore.liveData.boxscore.teams.away.info[0]?.fieldList.filter(
+  const RISP = boxscore.liveData.boxscore.teams.home.info[0]?.fieldList.filter(
     (listitem) => listitem.label.includes("RISP")
   );
 
@@ -293,17 +293,17 @@ function BattingLinescoreHome({ boxscore }) {
   const fieldingErrors = boxscore.liveData.plays.allPlays.filter(
     (play) =>
       play.result.eventType === "field_error" &&
-      play.about.halfInning === "top"
+      play.about.halfInning === "bottom"
   );
 
   const fieldingErrorsLine = fieldingErrors
     .map((play) => {
       const playerId = play.runners[0].credits[0].player.id;
       const player =
-        boxscore.liveData.boxscore.teams.away.players[`ID${playerId}`].person
+        boxscore.liveData.boxscore.teams.home.players[`ID${playerId}`].person
           .fullName;
       const errorCount =
-        boxscore.liveData.boxscore.teams.away.players[`ID${playerId}`].stats
+        boxscore.liveData.boxscore.teams.home.players[`ID${playerId}`].stats
           .fielding.errors;
       return ` ${player}(${errorCount})`;
     })
@@ -312,14 +312,14 @@ function BattingLinescoreHome({ boxscore }) {
   const doublePlays = boxscore.liveData.plays.allPlays.filter(
     (play) =>
       play.result.eventType.includes("double_play") &&
-      play.about.halfInning === "top"
+      play.about.halfInning === "bottom"
   );
 
   const doublePlayLine = doublePlays.map((play) => {
     const credits = play.runners[0].credits;
     const creditCodes = credits.map((credit) => credit.player.id);
     const playerNames = creditCodes.map((code) => {
-      return boxscore.liveData.boxscore.teams.away.players[`ID${code}`].person
+      return boxscore.liveData.boxscore.teams.home.players[`ID${code}`].person
         .fullName;
     });
 
@@ -330,7 +330,7 @@ function BattingLinescoreHome({ boxscore }) {
     }
   });
 
-  const GIDPline = awayBatters
+  const GIDPline = homeBatters
     .map((batter) => {
       const GIDPcount = boxscore.liveData.plays.allPlays.filter(
         (play) =>
@@ -338,7 +338,7 @@ function BattingLinescoreHome({ boxscore }) {
           play.result.eventType === "grounded_into_double_play"
       ).length;
       const player =
-        boxscore.liveData.boxscore.teams.away.players[`ID${batter}`].person
+        boxscore.liveData.boxscore.teams.home.players[`ID${batter}`].person
           .fullName;
 
       if (GIDPcount > 0) {
@@ -366,7 +366,7 @@ function BattingLinescoreHome({ boxscore }) {
           </tr>
         </thead>
         <tbody>
-          {boxscore.liveData.boxscore.teams.away.batters
+          {boxscore.liveData.boxscore.teams.home.batters
             .filter(
               (batter) =>
                 boxscore.liveData.plays.allPlays.filter(
@@ -384,23 +384,23 @@ function BattingLinescoreHome({ boxscore }) {
                 ).length > 0
             )
             .map((batter, index) => (
-              <tr key={`away-${index}`}>
+              <tr key={`home-${index}`}>
                 <td className="batterName">
                   <span>{`${
-                    boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
+                    boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
                       .jerseyNumber
                   }`}</span>
                   <span>
                     {
                       `${
-                        boxscore.liveData.boxscore.teams.away.players[
+                        boxscore.liveData.boxscore.teams.home.players[
                           `ID${batter}`
                         ].person.fullName
                       }`.split(" ")[1]
                     }
                   </span>
                   <span>{`${
-                    boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
+                    boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
                       .position.abbreviation
                   }`}</span>
                 </td>
@@ -427,7 +427,7 @@ function BattingLinescoreHome({ boxscore }) {
                     boxscore.liveData.plays.allPlays.filter((play) =>
                       play.result.description.includes(
                         `${
-                          boxscore.liveData.boxscore.teams.away.players[
+                          boxscore.liveData.boxscore.teams.home.players[
                             `ID${batter}`
                           ].person.fullName
                         } scores`
@@ -482,7 +482,7 @@ function BattingLinescoreHome({ boxscore }) {
                   }
                 </td>
                 <td>{`${
-                  boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
+                  boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
                     .seasonStats.batting.avg
                 }`}</td>
               </tr>
@@ -495,7 +495,7 @@ function BattingLinescoreHome({ boxscore }) {
             </td>
             <td>
               {" "}
-              {awayBatters.reduce((totalABs, batter) => {
+              {homeBatters.reduce((totalABs, batter) => {
                 const batterABs = boxscore.liveData.plays.allPlays.filter(
                   (play) =>
                     play.matchup.batter.id === batter &&
@@ -514,12 +514,12 @@ function BattingLinescoreHome({ boxscore }) {
               }, 0)}
             </td>
             <td>
-              {awayBatters.reduce((totalRuns, batter) => {
+              {homeBatters.reduce((totalRuns, batter) => {
                 const batterRuns = boxscore.liveData.plays.allPlays.filter(
                   (play) =>
                     play.result.description.includes(
                       `${
-                        boxscore.liveData.boxscore.teams.away.players[
+                        boxscore.liveData.boxscore.teams.home.players[
                           `ID${batter}`
                         ].person.fullName
                       } scores`
@@ -530,7 +530,7 @@ function BattingLinescoreHome({ boxscore }) {
               }, 0)}
             </td>
             <td>
-              {awayBatters.reduce((totalHits, batter) => {
+              {homeBatters.reduce((totalHits, batter) => {
                 const batterHits = boxscore.liveData.plays.allPlays.filter(
                   (play) =>
                     play.matchup.batter.id === batter &&
@@ -544,7 +544,7 @@ function BattingLinescoreHome({ boxscore }) {
               }, 0)}
             </td>
             <td>
-              {awayBatters.reduce((totalRBIs, batter) => {
+              {homeBatters.reduce((totalRBIs, batter) => {
                 const batterRBIs = boxscore.liveData.plays.allPlays.reduce(
                   (totalRBIs, play) => {
                     if (
@@ -564,7 +564,7 @@ function BattingLinescoreHome({ boxscore }) {
             </td>
             <td>
               {" "}
-              {awayBatters.reduce((totalBBs, batter) => {
+              {homeBatters.reduce((totalBBs, batter) => {
                 const batterBBs = boxscore.liveData.plays.allPlays.filter(
                   (play) =>
                     play.matchup.batter.id === batter &&
@@ -576,7 +576,7 @@ function BattingLinescoreHome({ boxscore }) {
             </td>
             <td>
               {" "}
-              {awayBatters.reduce((totalBBs, batter) => {
+              {homeBatters.reduce((totalBBs, batter) => {
                 const batterBBs = boxscore.liveData.plays.allPlays.filter(
                   (play) =>
                     play.matchup.batter.id === batter &&
@@ -589,13 +589,13 @@ function BattingLinescoreHome({ boxscore }) {
             <td>
               {" "}
               {(
-                awayBatters.reduce((teamAvg, batter) => {
+                homeBatters.reduce((teamAvg, batter) => {
                   const batterAvg = parseFloat(
-                    boxscore.liveData.boxscore.teams.away.players[`ID${batter}`]
+                    boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
                       .seasonStats.batting.avg
                   );
                   return teamAvg + batterAvg;
-                }, 0) / awayBatters.length
+                }, 0) / homeBatters.length
               )
                 .toFixed(3)
                 .toString()
@@ -624,18 +624,18 @@ function BattingLinescoreHome({ boxscore }) {
             </tr>
           </thead>
           <tbody>
-            {awayPitchers.map((pitcher, index) => (
+            {homePitchers.map((pitcher, index) => (
               <tr key={index}>
                 <td className="batterName">
                   <span>{`${
-                    boxscore.liveData.boxscore.teams.away.players[
+                    boxscore.liveData.boxscore.teams.home.players[
                       `ID${pitcher}`
                     ].jerseyNumber
                   }`}</span>
                   <span>
                     {
                       `${
-                        boxscore.liveData.boxscore.teams.away.players[
+                        boxscore.liveData.boxscore.teams.home.players[
                           `ID${pitcher}`
                         ].person.fullName
                       }`.split(" ")[1]
@@ -646,50 +646,50 @@ function BattingLinescoreHome({ boxscore }) {
                   }`}</span>
                 </td>
                 <td>{`${
-                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
                     .stats.pitching.inningsPitched
                 }`}</td>
                 <td>{`${
-                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
                     .stats.pitching.hits
                 }`}</td>
                 <td>{`${
-                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
                     .stats.pitching.runs
                 }`}</td>
                 <td>{`${
-                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
                     .stats.pitching.earnedRuns
                 }`}</td>
                 <td>{`${
-                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
                     .stats.pitching.baseOnBalls
                 }`}</td>
                 <td>{`${
-                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
                     .stats.pitching.strikeOuts
                 }`}</td>
                 <td>{`${
-                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
                     .stats.pitching.homeRuns
                 }`}</td>
                 <td>{`${
-                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
                     .stats.pitching.hitByPitch
                 }`}</td>
                 <td>{`${
-                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
                     .stats.pitching.wildPitches
                 }`}</td>
                 <td>{`${
-                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
                     .stats.pitching.battersFaced
                 }`}</td>
                 <td>{`${
-                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
                     .stats.pitching.strikes
                 }/${
-                  boxscore.liveData.boxscore.teams.away.players[`ID${pitcher}`]
+                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
                     .stats.pitching.pitchesThrown
                 }`}</td>
               </tr>
@@ -734,13 +734,13 @@ function BattingLinescoreHome({ boxscore }) {
             </p>
           )}
           {twoOutRbiLine.length > 0 && <p><span>2-out RBI:</span> {twoOutRbiLine}</p>}
-          {boxscore.liveData.boxscore.teams.away.teamStats.batting.leftOnBase >
+          {boxscore.liveData.boxscore.teams.home.teamStats.batting.leftOnBase >
             0 && (
             <p>
               {" "}
               <span> Team LOB: </span>
               {
-                boxscore.liveData.boxscore.teams.away.teamStats.batting
+                boxscore.liveData.boxscore.teams.home.teamStats.batting
                   .leftOnBase
               }
             </p>

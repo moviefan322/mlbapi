@@ -23,7 +23,7 @@ const scheduleWriteTodaysGames = cron.schedule("01 10 * 3-10 *", () => {
 });
 
 // Fetches odds every day at 10:15AM
-const scheduleFetchOdds = cron.schedule("51 09 * 3-10 *", () => {
+const scheduleFetchOdds = cron.schedule("45 09 * 3-10 *", () => {
   fetchOdds();
   console.log("It's 10:45 AM and todays odds have been fetched!");
 });
