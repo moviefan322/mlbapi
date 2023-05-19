@@ -218,7 +218,9 @@ function PitcherStats({ boxscore, homeaway }) {
           </tr>
         ))}
         <tr>
-          <td>Totals:</td>
+          <td>
+            <strong>Totals:</strong>
+          </td>
           <td>{totalIP}</td>
           <td>{totalHits}</td>
           <td>{totalRuns}</td>
@@ -236,7 +238,7 @@ function PitcherStats({ boxscore, homeaway }) {
 }
 
 PitcherStats.propTypes = {
-  scoreboard: PropTypes.object.isRequired,
+  boxscore: PropTypes.object.isRequired,
   homeaway: PropTypes.string.isRequired,
 };
 export default PitcherStats;

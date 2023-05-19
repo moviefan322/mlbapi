@@ -1,11 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Linescore from "./Linescore";
+import PitcherStats from "./PitcherStats";
 
-function BattingLinescoreHome({ boxscore }) {
-
-  const pitchers = boxscore.liveData.boxscore.teams[`${homeaway}`].pitchers;
-
+function BattingLinescoreHome({ boxscore, homeaway }) {
   const homeBatters = boxscore.liveData.boxscore.teams.home.batters.filter(
     (batter) =>
       boxscore.liveData.plays.allPlays.filter(
@@ -23,7 +21,6 @@ function BattingLinescoreHome({ boxscore }) {
       ).length > 0
   );
 
-  const homeaway = "home";
   return (
     <>
       <table className="battingbox">
@@ -280,96 +277,7 @@ function BattingLinescoreHome({ boxscore }) {
       </table>
       <br />
       <div className="pitcherstats">
-        {/* <table className="battingbox">
-          <thead>
-            <tr>
-              <th>Pitching</th>
-              <th>IP</th>
-              <th>H</th>
-              <th>R</th>
-              <th>ER</th>
-              <th>BB</th>
-              <th>SO</th>
-              <th>HR</th>
-              <th>HBP</th>
-              <th>WP</th>
-              <th>BF</th>
-              <th>S/P</th>
-            </tr>
-          </thead>
-          <tbody>
-            {homePitchers.map((pitcher, index) => (
-              <tr key={index}>
-                <td className="batterName">
-                  <span>{`${
-                    boxscore.liveData.boxscore.teams.home.players[
-                      `ID${pitcher}`
-                    ].jerseyNumber
-                  }`}</span>
-                  <span>
-                    {
-                      `${
-                        boxscore.liveData.boxscore.teams.home.players[
-                          `ID${pitcher}`
-                        ].person.fullName
-                      }`.split(" ")[1]
-                    }
-                  </span>
-                  <span>{`${
-                    boxscore.gameData.players[`ID${pitcher}`].pitchHand.code
-                  }`}</span>
-                </td>
-                <td>{`${
-                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
-                    .stats.pitching.inningsPitched
-                }`}</td>
-                <td>{`${
-                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
-                    .stats.pitching.hits
-                }`}</td>
-                <td>{`${
-                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
-                    .stats.pitching.runs
-                }`}</td>
-                <td>{`${
-                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
-                    .stats.pitching.earnedRuns
-                }`}</td>
-                <td>{`${
-                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
-                    .stats.pitching.baseOnBalls
-                }`}</td>
-                <td>{`${
-                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
-                    .stats.pitching.strikeOuts
-                }`}</td>
-                <td>{`${
-                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
-                    .stats.pitching.homeRuns
-                }`}</td>
-                <td>{`${
-                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
-                    .stats.pitching.hitByPitch
-                }`}</td>
-                <td>{`${
-                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
-                    .stats.pitching.wildPitches
-                }`}</td>
-                <td>{`${
-                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
-                    .stats.pitching.battersFaced
-                }`}</td>
-                <td>{`${
-                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
-                    .stats.pitching.strikes
-                }/${
-                  boxscore.liveData.boxscore.teams.home.players[`ID${pitcher}`]
-                    .stats.pitching.pitchesThrown
-                }`}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table> */}
+        <PitcherStats boxscore={boxscore} homeaway={homeaway} />
         <br />
         <Linescore boxscore={boxscore} homeaway={homeaway} />
       </div>

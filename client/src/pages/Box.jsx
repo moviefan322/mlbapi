@@ -118,7 +118,7 @@ function Box() {
         </div>
       </div>
       <div className="box-outline">
-        <Boxscore boxscore={boxscore}/>
+        <Boxscore boxscore={boxscore} />
       </div>
       <div className="linescorecontainer">
         <div className="scorescontainer">
@@ -127,7 +127,7 @@ function Box() {
         </div>
         <div className="scorescontainer">
           <h3> {boxscore.liveData.boxscore.teams.home.team.name}</h3>
-          <BattingLinescoreHome boxscore={boxscore} />
+          <BattingLinescoreHome boxscore={boxscore} homeaway={"home"} />
         </div>
         <div className="pitchers"></div>
       </div>

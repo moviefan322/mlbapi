@@ -101,7 +101,7 @@ function Linescore({ boxscore, homeaway }) {
 }
 
 Linescore.propTypes = {
-  scoreboard: PropTypes.object.isRequired,
+  boxscore: PropTypes.object.isRequired,
   homeaway: PropTypes.string.isRequired,
 };
 
