@@ -85,7 +85,6 @@ const renderE = (boxscore, homeaway) => {
   const fieldingErrorsLine = fieldingErrors
     .map((play) => {
       const playerId = play.runners[0].credits[0].player.id;
-      console.log(playerId);
       const player =
         boxscore.liveData.boxscore.teams[`${homeaway}`].players[
           `ID${playerId}`
@@ -100,7 +99,80 @@ const renderE = (boxscore, homeaway) => {
   return fieldingErrorsLine;
 };
 
+const renderRISP = (boxscore, homeaway) => {
+  let runnersOn;
+  if (homeaway === "home") {
+    runnersOn = boxscore.liveData.plays.allPlays.filter(
+      (play) =>
+        play.result.type === "atBat" &&
+        play.about.halfInning === "bottom" &&
+        play.runners.length > 1
+    );
+  } else {
+    runnersOn = boxscore.liveData.plays.allPlays.filter(
+      (play) =>
+        play.result.type === "atBat" &&
+        play.about.halfInning === "top" &&
+        play.runners.length > 1
+    );
+  }
+
+  console.log(runnersOn);
+
+  const RISP = runnersOn.filter((play) => {
+    const runner = play.runners.find((runner) => {
+      return (
+        runner.movement.originBase === "2B" ||
+        runner.movement.originBase === "3B"
+      );
+    });
+    return !!runner;
+  });
+
+  let runnersOnHits;
+  if (homeaway === "home ") {
+    runnersOnHits = boxscore.liveData.plays.allPlays.filter(
+      (play) =>
+        play.result.type === "atBat" &&
+        play.about.halfInning === "bottom" &&
+        play.runners.length > 1 &&
+        (play.result.eventType === "home_run" ||
+          play.result.eventType === "single" ||
+          play.result.eventType === "double" ||
+          play.result.eventType === "triple")
+    );
+  } else {
+    runnersOnHits = boxscore.liveData.plays.allPlays.filter(
+      (play) =>
+        play.result.type === "atBat" &&
+        play.about.halfInning === "top" &&
+        play.runners.length > 1 &&
+        (play.result.eventType === "home_run" ||
+          play.result.eventType === "single" ||
+          play.result.eventType === "double" ||
+          play.result.eventType === "triple")
+    );
+  }
+
+  const RISPH = runnersOnHits.filter((play) => {
+    const runner = play.runners.find((runner) => {
+      return (
+        runner.movement.originBase === "2B" ||
+        runner.movement.originBase === "3B"
+      );
+    });
+    return !!runner;
+  });
+
+  if (RISP.length === 0) {
+    return null;
+  }
+
+  return `${RISPH.length} for ${RISP.length}`;
+};
+
 module.exports = {
   render2B,
   renderE,
+  renderRISP,
 };

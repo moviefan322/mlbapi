@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ordinalSuffix from "../utils/ordinalSuffix";
-import { renderE, render2B } from "../utils/boxscore";
+import { renderE, render2B, renderRISP } from "../utils/boxscore";
 
 function BattingLinescoreHome({ boxscore }) {
   const homeBatters = boxscore.liveData.boxscore.teams.home.batters.filter(
@@ -246,13 +246,6 @@ function BattingLinescoreHome({ boxscore }) {
     })
     .filter((batter) => batter !== null)
     .toString();
-
-  const RISP = boxscore.liveData.boxscore.teams.home.info[0]?.fieldList.filter(
-    (listitem) => listitem.label.includes("RISP")
-  );
-
-  const RISPline =
-    RISP[0]?.value.split("-")[0] + " for " + RISP[0]?.value.split("-")[2];
 
   const doublePlays = boxscore.liveData.plays.allPlays.filter(
     (play) =>
@@ -694,10 +687,10 @@ function BattingLinescoreHome({ boxscore }) {
               }
             </p>
           )}
-          {RISPline.length > 0 && (
+          {renderRISP(boxscore, homeaway) && (
             <p>
-              <span>Team RISP:</span>
-              {RISPline}
+              <span>Team RISP: </span>
+              {renderRISP(boxscore, homeaway)}
             </p>
           )}
           <br />

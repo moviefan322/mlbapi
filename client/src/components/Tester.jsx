@@ -1,17 +1,17 @@
 // humber perfect:  317942
 // high scoring: 718124
 import { useEffect, useState } from "react";
-import { render2B, renderE } from "../utils/boxscore";
+import { render2B, renderE, renderRISP } from "../utils/boxscore";
 
 function Tester() {
   const [boxscore, setBoxscore] = useState();
   const [loading, setLoading] = useState(true);
-  const homeaway = "home";
+  const homeaway = "away";
 
   useEffect(() => {
     const getSingleGameData = async (gamePk) => {
       const response = await fetch(
-        `https://statsapi.mlb.com/api/v1.1/game/718124/feed/live`
+        `https://statsapi.mlb.com/api/v1.1/game/317942/feed/live`
       );
       const data = await response.json();
       setBoxscore(data);
@@ -61,7 +61,9 @@ function Tester() {
       <p> RBI:</p>
       <p> 2-out RBI:</p>
       <p>Team LOB:</p>
-      <p>Team RISP:</p>
+      {renderRISP(boxscore, homeaway) && (
+        <p>Team RISP: {renderRISP(boxscore, homeaway)}</p>
+      )}
       <p>----</p>
       <p>DB: </p>
       {renderE(boxscore, homeaway) && <p>E: {renderE(boxscore, homeaway)}</p>}
