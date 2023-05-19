@@ -44,28 +44,6 @@ function Tester() {
       ).length > 0
   );
 
-  const fieldingErrors = boxscore.liveData.plays.allPlays.filter(
-    (play) =>
-      play.result.eventType === "field_error" && play.about.halfInning === "top"
-  );
-
-  console.log(fieldingErrors);
-
-  const fieldingErrorsLine = fieldingErrors
-    .map((play) => {
-      const playerId = play.runners[0].credits[0].player.id;
-      console.log(playerId);
-      const player =
-        boxscore.liveData.boxscore.teams.home.players[
-          `ID${playerId}`
-        ].person.fullName.match(/\b(\w+)\b$/)?.[1];
-      const errorCount =
-        boxscore.liveData.boxscore.teams.home.players[`ID${playerId}`].stats
-          .fielding.errors;
-      return ` ${player}(${errorCount})`;
-    })
-    .toString();
-
   return (
     <div>
       <p> E: {boxscore.liveData.linescore.teams.home.errors}</p>

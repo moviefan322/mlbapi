@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import ordinalSuffix from "../utils/ordinalSuffix";
+import { renderE, render2B } from "../utils/boxscore";
 
 function BattingLinescoreHome({ boxscore }) {
   const homeBatters = boxscore.liveData.boxscore.teams.home.batters.filter(
@@ -19,6 +20,8 @@ function BattingLinescoreHome({ boxscore }) {
           play.result.eventType !== "hit_by_pitch"
       ).length > 0
   );
+
+  const homeaway = "home";
 
   const homePitchers = boxscore.liveData.boxscore.teams.home.pitchers;
 
@@ -74,45 +77,6 @@ function BattingLinescoreHome({ boxscore }) {
 
     return totalBases;
   }
-
-  const doubleLine = homeBatters
-    .map((batter) => {
-      const doubles = boxscore.liveData.plays.allPlays.filter(
-        (play) =>
-          play.matchup.batter.id === batter &&
-          play.result.eventType === "double"
-      );
-
-      if (doubles.length === 1) {
-        const player =
-          boxscore.liveData.boxscore.teams.home.players[
-            "ID" + doubles[0].matchup.batter.id
-          ];
-        const dblCount =
-          boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
-            .seasonStats.batting.doubles;
-        const pitcher = doubles[0].matchup.pitcher.fullName;
-        const lastName = player.person.fullName;
-        return ` ${lastName}(${dblCount}, ${pitcher})`;
-      } else if (doubles.length > 1) {
-        const player =
-          boxscore.liveData.boxscore.teams.home.players[
-            "ID" + doubles[0].matchup.batter.id
-          ];
-        const dblCount =
-          boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
-            .seasonStats.batting.doubles;
-        const pitchers = doubles.map(
-          (doubles) => doubles.matchup.pitcher.fullName
-        );
-        const lastName = player.person.fullName;
-        return ` ${lastName}(${dblCount}, ${pitchers.toString()})`;
-      } else {
-        return null;
-      }
-    })
-    .filter((batter) => batter !== null)
-    .toString();
 
   const tbLine = homeBatters
     .map((batter) => {
@@ -289,25 +253,6 @@ function BattingLinescoreHome({ boxscore }) {
 
   const RISPline =
     RISP[0]?.value.split("-")[0] + " for " + RISP[0]?.value.split("-")[2];
-
-  const fieldingErrors = boxscore.liveData.plays.allPlays.filter(
-    (play) =>
-      play.result.eventType === "field_error" &&
-      play.about.halfInning === "bottom"
-  );
-
-  const fieldingErrorsLine = fieldingErrors
-    .map((play) => {
-      const playerId = play.runners[0].credits[0].player.id;
-      const player =
-        boxscore.liveData.boxscore.teams.home.players[`ID${playerId}`].person
-          .fullName;
-      const errorCount =
-        boxscore.liveData.boxscore.teams.home.players[`ID${playerId}`].stats
-          .fielding.errors;
-      return ` ${player}(${errorCount})`;
-    })
-    .toString();
 
   const doublePlays = boxscore.liveData.plays.allPlays.filter(
     (play) =>
@@ -698,9 +643,9 @@ function BattingLinescoreHome({ boxscore }) {
         </table>
         <br />
         <div className="battingbox-bottom">
-          {doubleLine.length > 0 && (
+          {render2B(boxscore, homeaway) && (
             <p>
-              <span>2B:</span> {doubleLine}
+              <span>2B:</span> {render2B(boxscore, homeaway)}
             </p>
           )}
           {tripleLine.length > 0 && (
@@ -733,7 +678,11 @@ function BattingLinescoreHome({ boxscore }) {
               <span>RBI:</span> {rbiLine}
             </p>
           )}
-          {twoOutRbiLine.length > 0 && <p><span>2-out RBI:</span> {twoOutRbiLine}</p>}
+          {twoOutRbiLine.length > 0 && (
+            <p>
+              <span>2-out RBI:</span> {twoOutRbiLine}
+            </p>
+          )}
           {boxscore.liveData.boxscore.teams.home.teamStats.batting.leftOnBase >
             0 && (
             <p>
@@ -752,7 +701,7 @@ function BattingLinescoreHome({ boxscore }) {
             </p>
           )}
           <br />
-          {(doublePlayLine.length > 0 || fieldingErrorsLine.length > 0) && (
+          {(doublePlayLine.length > 0 || renderE(boxscore, homeaway)) && (
             <p>
               <strong>Fielding</strong>
             </p>
@@ -762,10 +711,8 @@ function BattingLinescoreHome({ boxscore }) {
               <span>DP:</span> {doublePlayLine}
             </p>
           )}
-          {fieldingErrorsLine.length > 0 && (
-            <p>
-              <span>E:</span> {fieldingErrorsLine}
-            </p>
+          {renderE(boxscore, homeaway) && (
+            <p>E: {renderE(boxscore, homeaway)}</p>
           )}
         </div>
       </div>
