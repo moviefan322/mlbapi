@@ -11,6 +11,6 @@ function PitchingLinescoreAway({ scoreboard }) {
 }
 
 PitchingLinescoreAway.propTypes = {
-  scoreboard: PropTypes.object,
+  scoreboard: PropTypes.object.isRequired,
 };
 export default PitchingLinescoreAway;
