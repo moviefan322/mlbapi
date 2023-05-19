@@ -412,6 +412,32 @@ const renderSF = (boxscore, homeaway) => {
   return sacFlyLine;
 };
 
+const render2OutRBI = (boxscore, homeaway) => {
+  const batters = getBatters(boxscore, homeaway);
+  const twoOutRbiLine = batters
+    .map((batter) => {
+      const rbis = boxscore.liveData.plays.allPlays.filter(
+        (play) =>
+          play.matchup.batter.id === batter &&
+          play.result.rbi > 0 &&
+          play.count.outs === 2
+      ).length;
+
+      const player =
+        boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+          `ID${batter}`
+        ].person.fullName.match(/\b(\w+)\b$/)?.[1];
+
+      if (rbis === 0) return null;
+
+      return ` ${player} ${rbis}`;
+    })
+    .filter((batter) => batter !== null)
+    .toString();
+
+  return twoOutRbiLine;
+};
+
 module.exports = {
   render2B,
   renderE,
@@ -421,4 +447,5 @@ module.exports = {
   renderHR,
   renderRBI,
   renderSF,
+  render2OutRBI,
 };

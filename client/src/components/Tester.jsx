@@ -10,12 +10,13 @@ import {
   renderHR,
   renderRBI,
   renderSF,
+  render2OutRBI,
 } from "../utils/boxscore";
 
 function Tester() {
   const [boxscore, setBoxscore] = useState();
   const [loading, setLoading] = useState(true);
-  const homeaway = "home";
+  const homeaway = "away";
 
   useEffect(() => {
     const getSingleGameData = async (gamePk) => {
@@ -61,7 +62,7 @@ function Tester() {
       {renderRBI(boxscore, homeaway) && (
         <p> RBI: {renderRBI(boxscore, homeaway)}</p>
       )}
-      <p> 2-out RBI:</p>
+      <p> 2-out RBI: {render2OutRBI(boxscore, homeaway)}</p>
       <p>Team LOB:</p>
       {renderRISP(boxscore, homeaway) && (
         <p>Team RISP: {renderRISP(boxscore, homeaway)}</p>
