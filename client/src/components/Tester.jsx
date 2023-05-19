@@ -1,7 +1,7 @@
 // humber perfect:  317942
 // high scoring: 718124
 import { useEffect, useState } from "react";
-import { render2B } from "../utils/boxscore";
+import { render2B, renderE } from "../utils/boxscore";
 
 function Tester() {
   const [boxscore, setBoxscore] = useState();
@@ -86,7 +86,7 @@ function Tester() {
       <p>Team RISP:</p>
       <p>----</p>
       <p>DB: </p>
-      {fieldingErrorsLine && <p>E: {fieldingErrorsLine}</p>}
+      {renderE(boxscore, homeaway) && <p>E: {renderE(boxscore, homeaway)}</p>}
     </div>
   );
 }

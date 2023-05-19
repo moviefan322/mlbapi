@@ -67,6 +67,40 @@ const render2B = (boxscore, homeaway) => {
   return doubleLine;
 };
 
+const renderE = (boxscore, homeaway) => {
+  let fieldingErrors;
+  if (homeaway === "home") {
+    fieldingErrors = boxscore.liveData.plays.allPlays.filter(
+      (play) =>
+        play.result.eventType === "field_error" &&
+        play.about.halfInning === "top"
+    );
+  } else {
+    fieldingErrors = boxscore.liveData.plays.allPlays.filter(
+      (play) =>
+        play.result.eventType === "field_error" &&
+        play.about.halfInning === "bottom"
+    );
+  }
+  const fieldingErrorsLine = fieldingErrors
+    .map((play) => {
+      const playerId = play.runners[0].credits[0].player.id;
+      console.log(playerId);
+      const player =
+        boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+          `ID${playerId}`
+        ].person.fullName.match(/\b(\w+)\b$/)?.[1];
+      const errorCount =
+        boxscore.liveData.boxscore.teams[`${homeaway}`].players[`ID${playerId}`]
+          .stats.fielding.errors;
+      return ` ${player}(${errorCount})`;
+    })
+    .toString();
+
+  return fieldingErrorsLine;
+};
+
 module.exports = {
   render2B,
+  renderE,
 };
