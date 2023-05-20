@@ -28,8 +28,6 @@ function PitcherStats({ boxscore, homeaway }) {
     totalIP += inningsPitched;
   });
 
-  console.log(totalIP);
-
   let totalHits = 0;
   pitchers.forEach((pitcher) => {
     const hits =

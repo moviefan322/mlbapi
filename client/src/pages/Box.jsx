@@ -3,8 +3,6 @@ import { useParams } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import teamKeys from "../utils/teamKeys";
 import { formatDate4 } from "../utils/formatTime";
-import BattingLinescoreAway from "../components/BattingLinescoreAway";
-import BattingLinescoreHome from "../components/BattingLinescoreHome";
 import Boxscore from "../components/Boxscore";
 import TeamBox from "../components/TeamBox";
 
@@ -36,24 +34,6 @@ function Box() {
   if (isLoading) {
     return <Spinner />;
   }
-
-  console.log(boxscore);
-  const awayBatters = boxscore.liveData.boxscore.teams.away.batters.filter(
-    (batter) =>
-      boxscore.liveData.plays.allPlays.filter(
-        (play) =>
-          play.matchup.batter.id === batter &&
-          play.result.type === "atBat" &&
-          play.result.eventType !== "sac_fly" &&
-          play.result.eventType !== "sac_bunt" &&
-          play.result.eventType !== "pickoff_1b" &&
-          play.result.eventType !== "pickoff_2b" &&
-          play.result.eventType !== "pickoff_3b" &&
-          play.result.eventType !== "batter_timeout" &&
-          play.result.eventType !== "walk" &&
-          play.result.eventType !== "hit_by_pitch"
-      ).length > 0
-  );
 
   return (
     <>

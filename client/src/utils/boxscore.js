@@ -119,8 +119,6 @@ const renderRISP = (boxscore, homeaway) => {
     );
   }
 
-  console.log(runnersOn);
-
   const RISP = runnersOn.filter((play) => {
     const runner = play.runners.find((runner) => {
       return (
