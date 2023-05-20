@@ -76,14 +76,13 @@ function Home() {
     return <Spinner />;
   }
 
+  console.log(games);
+
   return (
     <>
       <div className="heading-home">
         <div className="btn-head">
-          <button
-            className="btn"
-            onClick={() => fetchPrevDaysGames()}
-          >
+          <button className="btn" onClick={() => fetchPrevDaysGames()}>
             <FaLongArrowAltLeft />
           </button>
         </div>
@@ -95,10 +94,7 @@ function Home() {
           )}
           <h6>(Click on the moneyline to place a bet)</h6>
         </div>
-        <button
-          className="btn"
-          onClick={() => fetchNextDaysGames()}
-        >
+        <button className="btn" onClick={() => fetchNextDaysGames()}>
           <FaLongArrowAltRight />
         </button>
       </div>

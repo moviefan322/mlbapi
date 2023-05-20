@@ -66,7 +66,7 @@ function SingleGame({ game, odds }) {
   return (
     <div className="card">
       <div className="cardteams">
-      <div className="cardteam">
+        <div className="cardteam">
           <h2>{teamKeys[awayTeam].abb}</h2>
           <p>{game.teams.away.leagueRecord.pct}</p>
           <p>
@@ -116,7 +116,6 @@ function SingleGame({ game, odds }) {
             />
           )}
         </div>
-
         <h1>@</h1>{" "}
         <div>
           <img className="icon" src={teamKeys[homeTeam].image} alt="" />
@@ -176,11 +175,15 @@ function SingleGame({ game, odds }) {
         <div className="data">
           <h3>
             {game.status.statusCode === "I" ||
-            game.status.abstractGameCode === "F" ? (
+            game.status.codedGameState === "F" ? (
               <>
                 {singleGame.liveData.linescore.teams.away.runs} -{" "}
                 {singleGame.liveData.linescore.teams.home.runs}
               </>
+            ) : game.status.codedGameState === "D" ? (
+              <div>
+                <h4>PPD</h4>
+              </div>
             ) : game.status.statusCode === "PW" ? (
               "WARMUP"
             ) : (
@@ -258,7 +261,8 @@ function SingleGame({ game, odds }) {
           ) : (
             ""
           )}
-          {game.status.abstractGameCode === "F" ? (
+          {game.status.codedGameState === "D" ? <> </> : ""}
+          {game.status.codedGameState === "F" ? (
             <>
               {" "}
               <h6>W: {singleGame.liveData?.decisions.winner.fullName}</h6>
@@ -279,6 +283,10 @@ function SingleGame({ game, odds }) {
             )}
             {singleGame.liveData?.linescore.currentInningOrdinal}
           </>
+        ) : game.status.codedGameState === "D" ? (
+          <div>
+            <h4> POSTPONED: {game.status.reason.toUpperCase()} </h4>
+          </div>
         ) : game.status.abstractGameCode === "F" ? (
           <Link to={`/boxscore/${game.gamePk}`}>
             <Boxscore boxscore={singleGame} />
