@@ -7,12 +7,26 @@ function PitcherStats({ boxscore, homeaway }) {
   let totalIP = 0;
   pitchers.forEach((pitcher) => {
     const pitcherID = `ID${pitcher}`;
-    const inningsPitched =
+    const inningsPitchedString =
       boxscore.liveData.boxscore.teams[homeaway].players[pitcherID].stats
         .pitching.inningsPitched;
+    const inningsPitched = parseFloat(inningsPitchedString);
 
     totalIP += inningsPitched;
   });
+  console.log(totalIP);
+  const fractionalPart = totalIP % 1;
+  if (fractionalPart === 0.3) {
+    totalIP = Math.floor(totalIP) + 0.7;
+  } else if (fractionalPart === 0.6) {
+    totalIP = Math.floor(totalIP) + 0.4;
+  } else if (fractionalPart === 0.9) {
+    totalIP = Math.floor(totalIP) + 0.1;
+  } else if (fractionalPart === 0.2) {
+    totalIP = Math.floor(totalIP) + 0.8;
+  }
+
+  console.log(totalIP);
 
   let totalHits = 0;
   pitchers.forEach((pitcher) => {
@@ -212,9 +226,6 @@ function PitcherStats({ boxscore, homeaway }) {
                 `ID${pitcher}`
               ].stats.pitching.pitchesThrown
             }`}</td>
-            <td>
-              {totalStrikes}/{totalPitchesThrown}
-            </td>
           </tr>
         ))}
         <tr>
@@ -231,6 +242,9 @@ function PitcherStats({ boxscore, homeaway }) {
           <td>{totalHBPs}</td>
           <td>{totalWPs}</td>
           <td>{TBF}</td>
+          <td>
+            {totalStrikes}/{totalPitchesThrown}
+          </td>
         </tr>
       </tbody>
     </table>

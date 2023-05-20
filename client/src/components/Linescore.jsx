@@ -51,7 +51,7 @@ function Linescore({ boxscore, homeaway }) {
       )}
       {renderGIDP(boxscore, homeaway) && (
         <p>
-          <strong>GIDP: </strong>
+          <span>GIDP: </span>
           {renderGIDP(boxscore, homeaway)}
         </p>
       )}
@@ -89,13 +89,17 @@ function Linescore({ boxscore, homeaway }) {
       <br />
       {(renderDP(boxscore, homeaway) || renderE(boxscore, homeaway)) && (
         <p>
-          <strong>Fielding</strong>
+          <span>Fielding</span>
         </p>
       )}
       {renderDP(boxscore, homeaway) && (
         <p>DP: {renderDP(boxscore, homeaway)}</p>
       )}
-      {renderE(boxscore, homeaway) && <p>E: {renderE(boxscore, homeaway)}</p>}
+      {renderE(boxscore, homeaway) && (
+        <p>
+          <span>E:</span> {renderE(boxscore, homeaway)}
+        </p>
+      )}
     </div>
   );
 }
