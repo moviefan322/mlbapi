@@ -68,10 +68,18 @@ const formatTime = (date) => {
   return newTime;
 };
 
+function formatShortDate(dateString) {
+  const date = new Date(dateString);
+  const month = date.getMonth() + 1; // Adding 1 since getMonth() returns a zero-based index
+  const day = date.getDate();
+  return `${month}-${day}`;
+}
+
 module.exports = {
   formatDate,
   formatTime,
   formatDate2,
   formatDate3,
   formatDate4,
+  formatShortDate,
 };

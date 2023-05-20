@@ -34,7 +34,6 @@ function BetItem({ bet }) {
 
   return (
     <div className="bet">
-      <div className="bold">{formatDate(bet.createdAt)}</div>
       <div>{bet.gamePlain ? renderBetGame(bet.gamePlain) : bet.gameId}</div>
       <div className="bold">{bet.betAmount}</div>
       <div className="bold">{renderLine(bet.betOdds)}</div>

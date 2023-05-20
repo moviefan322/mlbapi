@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -11,13 +11,10 @@ import {
   FaCoins,
 } from "react-icons/fa";
 import { logout, reset } from "../features/auth/authSlice";
-import baseball from "../assets/baseball.png";
-import HamburgerMenu from "./HamburgerMenu";
 
-function Header() {
+function HamburgerMenu() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [loggedOut, setLoggedOut] = useState(false);
   const { user } = useSelector((state) => state.auth);
 
   const onLogout = () => {
@@ -29,13 +26,13 @@ function Header() {
   };
 
   return (
-    <header className="header">
-      <div className="logo">
-        <Link to="/">
-          <img src={baseball} alt="baseball" height="36px" width="40px" />
-        </Link>
-      </div>
-      <ul>
+    <section className="top-nav">
+      <div></div>
+      <input id="menu-toggle" type="checkbox" />
+      <label className="menu-button-container" htmlFor="menu-toggle">
+        <div className="menu-button"></div>
+      </label>
+      <ul className="menu">
         <li>
           <Link to="/">
             <FaBaseballBall /> Games
@@ -80,8 +77,8 @@ function Header() {
           </>
         )}
       </ul>
-    </header>
+    </section>
   );
 }
 
-export default Header;
+export default HamburgerMenu;
