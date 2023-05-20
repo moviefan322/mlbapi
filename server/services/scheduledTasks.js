@@ -17,6 +17,7 @@ const task5 = cron.schedule("*/1 11-23,0-3 * * *", () => {
 const scheduleWriteTodaysGames = cron.schedule("01 10 * 3-10 *", () => {
   writeTodaysGames();
   writeYesterdaysGames();
+  fetchOdds();
   console.log(
     "It's 10:01 AM and todays schedule has been writ (yesterdays too!)!"
   );

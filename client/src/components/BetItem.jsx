@@ -32,9 +32,6 @@ function BetItem({ bet }) {
     }
   };
 
-  console.log(bet.betAmount);
-
-  console.log(bet.gamePlain.split("@"));
   return (
     <div className="bet">
       <div className="bold">{formatDate(bet.createdAt)}</div>
