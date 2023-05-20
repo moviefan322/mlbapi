@@ -37,7 +37,9 @@ function BetItem({ bet }) {
       <div>{bet.gamePlain ? renderBetGame(bet.gamePlain) : bet.gameId}</div>
       <div className="bold">{bet.betAmount}</div>
       <div className="bold">{renderLine(bet.betOdds)}</div>
-      <div className={`status status-${bet.betResult}`}>{bet.betResult}</div>
+      <div className={`status status-${bet.betResult}`}>
+        {bet.betResult.slice(0, 1).toUpperCase()}
+      </div>
       <div className="bold">{bet.plusMinus}</div>
     </div>
   );
