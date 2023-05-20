@@ -6,6 +6,7 @@ import { formatDate4 } from "../utils/formatTime";
 import BattingLinescoreAway from "../components/BattingLinescoreAway";
 import BattingLinescoreHome from "../components/BattingLinescoreHome";
 import Boxscore from "../components/Boxscore";
+import TeamBox from "../components/TeamBox";
 
 function Box() {
   const [boxscore, setBoxscore] = useState([]);
@@ -123,11 +124,11 @@ function Box() {
       <div className="linescorecontainer">
         <div className="scorescontainer">
           <h3> {boxscore.liveData.boxscore.teams.away.team.name}</h3>
-          <BattingLinescoreAway boxscore={boxscore} />
+          <TeamBox boxscore={boxscore} homeaway={"away"} />
         </div>
         <div className="scorescontainer">
           <h3> {boxscore.liveData.boxscore.teams.home.team.name}</h3>
-          <BattingLinescoreHome boxscore={boxscore} homeaway={"home"} />
+          <TeamBox boxscore={boxscore} homeaway={"home"} />
         </div>
         <div className="pitchers"></div>
       </div>
