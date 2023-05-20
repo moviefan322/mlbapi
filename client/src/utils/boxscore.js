@@ -464,7 +464,7 @@ const renderDP = (boxscore, homeaway) => {
     });
 
     if (creditCodes.length === 1) {
-      return `${creditCodes[0]}u`;
+      return `${playerNames[0]}(u)`;
     } else {
       return playerNames.join("-").toString();
     }

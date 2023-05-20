@@ -93,7 +93,10 @@ function Linescore({ boxscore, homeaway }) {
         </p>
       )}
       {renderDP(boxscore, homeaway) && (
-        <p>DP: {renderDP(boxscore, homeaway)}</p>
+        <p>
+          <span>DP: </span>
+          {renderDP(boxscore, homeaway)}
+        </p>
       )}
       {renderE(boxscore, homeaway) && (
         <p>
