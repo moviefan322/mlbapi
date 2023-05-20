@@ -10,21 +10,23 @@ function PitcherStats({ boxscore, homeaway }) {
     const inningsPitchedString =
       boxscore.liveData.boxscore.teams[homeaway].players[pitcherID].stats
         .pitching.inningsPitched;
-    const inningsPitched = parseFloat(inningsPitchedString);
+
+    // Splitting the inningsPitchedString by the decimal point
+    const [wholeInnings, partialInnings] = inningsPitchedString.split(".");
+
+    let inningsPitched = parseInt(wholeInnings); // Parsing the whole innings
+
+    // Handling fractional parts and converting to desired format
+    if (partialInnings) {
+      if (partialInnings === "1") {
+        inningsPitched += 1 / 3;
+      } else if (partialInnings === "2") {
+        inningsPitched += 2 / 3;
+      }
+    }
 
     totalIP += inningsPitched;
   });
-  console.log(totalIP);
-  const fractionalPart = totalIP % 1;
-  if (fractionalPart === 0.3) {
-    totalIP = Math.floor(totalIP) + 0.7;
-  } else if (fractionalPart === 0.6) {
-    totalIP = Math.floor(totalIP) + 0.4;
-  } else if (fractionalPart === 0.9) {
-    totalIP = Math.floor(totalIP) + 0.1;
-  } else if (fractionalPart === 0.2) {
-    totalIP = Math.floor(totalIP) + 0.8;
-  }
 
   console.log(totalIP);
 
