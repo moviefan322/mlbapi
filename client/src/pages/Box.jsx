@@ -35,6 +35,8 @@ function Box() {
     return <Spinner />;
   }
 
+  console.log(boxscore);
+
   return (
     <>
       <div className="boxscore-gameinfo">

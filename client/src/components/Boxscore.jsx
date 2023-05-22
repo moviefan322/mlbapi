@@ -11,7 +11,7 @@ function Boxscore({ boxscore }) {
             <tr>
               <th></th>
               {boxscore.liveData.linescore.innings.map((inning, index) => (
-                <th>{index + 1}</th>
+                <th key={index}>{index + 1}</th>
               ))}
               <th>R</th>
               <th>H</th>

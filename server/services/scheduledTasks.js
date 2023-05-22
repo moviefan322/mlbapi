@@ -14,7 +14,14 @@ const task5 = cron.schedule("*/1 11-23,0-3 * * *", () => {
   console.log("running every minute during baseball hours");
 });
 
-const scheduleWriteTodaysGames = cron.schedule("01 10 * 3-10 *", () => {
+const scheduleWriteTodaysGames = cron.schedule("0 15 * * *", () => {
+  writeTodaysGames();
+  writeYesterdaysGames();
+  fetchOdds();
+  console.log("It's 3PM and todays schedule has been writ (yesterdays too!)!");
+});
+
+const scheduleWriteTodaysGames2 = cron.schedule("01 10 * 3-10 *", () => {
   writeTodaysGames();
   writeYesterdaysGames();
   fetchOdds();
@@ -40,6 +47,7 @@ const runAllTasks = () => {
   scheduleBetUpdates.start();
   scheduleFetchOdds.start();
   scheduleWriteTodaysGames.start();
+  scheduleWriteTodaysGames2.start();
 };
 
 module.exports = { runAllTasks };

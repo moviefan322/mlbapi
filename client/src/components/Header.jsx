@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -12,12 +11,10 @@ import {
 } from "react-icons/fa";
 import { logout, reset } from "../features/auth/authSlice";
 import baseball from "../assets/baseball.png";
-import HamburgerMenu from "./HamburgerMenu";
 
 function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [loggedOut, setLoggedOut] = useState(false);
   const { user } = useSelector((state) => state.auth);
 
   const onLogout = () => {
