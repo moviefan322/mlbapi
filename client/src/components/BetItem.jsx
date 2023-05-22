@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import teamKeys from "../utils/teamKeys";
-import { formatDate } from "../utils/formatTime";
 import PropTypes from "prop-types";
 
 function BetItem({ bet }) {

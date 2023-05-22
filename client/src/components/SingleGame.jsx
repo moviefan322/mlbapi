@@ -80,7 +80,7 @@ function SingleGame({ game, odds, user }) {
             <div className="tooltip">
               <button
                 className={`btn btn-sm ${awayOdds >= 0 ? "red" : "green"}`}
-                onClick={onOpenAway}
+                onClick={user && onOpenAway}
                 disabled={
                   !(
                     game.status.codedGameState === "S" ||
@@ -130,7 +130,7 @@ function SingleGame({ game, odds, user }) {
                 className={`bet-btn btn btn-sm ${
                   homeOdds >= 0 ? "red" : "green"
                 }`}
-                onClick={onOpenHome}
+                onClick={user && onOpenHome}
                 disabled={
                   !(
                     game.status.codedGameState === "S" ||
