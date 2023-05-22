@@ -40,7 +40,7 @@ function BetItem({ bet }) {
       <div className={`status status-${bet.betResult}`}>
         {bet.betResult.slice(0, 1).toUpperCase()}
       </div>
-      <div className="bold">{bet.plusMinus}</div>
+      <div className="bold">{renderLine(bet.plusMinus)}</div>
     </div>
   );
 }

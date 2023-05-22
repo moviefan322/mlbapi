@@ -13,7 +13,7 @@ import renderOnBaseImage from "../utils/baserunners";
 import BetModal from "./BetModal";
 import Spinner from "./Spinner";
 
-function SingleGame({ game, odds }) {
+function SingleGame({ game, odds, user }) {
   const [openAway, setOpenAway] = useState(false);
   const [openHome, setOpenHome] = useState(false);
   const [singleGame, setSingleGame] = useState(null);
@@ -92,6 +92,11 @@ function SingleGame({ game, odds }) {
                 {awayOdds >= 0 ? "+" : ""}
                 {awayOdds}
               </button>
+              {!user && (
+                <span className="tooltiptext">
+                  You must be logged in to place a bet
+                </span>
+              )}
               {!(
                 game.status.codedGameState === "S" ||
                 game.status.codedGameState === "P" ||
@@ -137,6 +142,11 @@ function SingleGame({ game, odds }) {
                 {homeOdds >= 0 ? "+" : ""}
                 {homeOdds}
               </button>
+              {!user && (
+                <span className="tooltiptext">
+                  You must be logged in to place a bet
+                </span>
+              )}
               {!(
                 game.status.codedGameState === "S" ||
                 game.status.codedGameState === "P" ||
@@ -316,6 +326,7 @@ function SingleGame({ game, odds }) {
 SingleGame.propTypes = {
   game: PropTypes.object.isRequired,
   odds: PropTypes.array.isRequired,
+  user: PropTypes.object,
 };
 
 export default SingleGame;

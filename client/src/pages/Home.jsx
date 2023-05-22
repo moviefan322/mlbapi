@@ -100,7 +100,7 @@ function Home() {
       </div>
       <div id="main" className="card-container">
         {games.map((game, index) => (
-          <SingleGame key={index} game={game} odds={rawOdds} />
+          <SingleGame key={index} game={game} odds={rawOdds} user={user} />
         ))}
       </div>
     </>
