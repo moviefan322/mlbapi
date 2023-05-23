@@ -30,12 +30,18 @@ function Bets() {
 
   console.log(uniqueDays);
 
+  const wins = bets.filter((bet) => bet.betResult === "win").length;
+
   return (
     <>
       {bets.length === 0 ? (
         <h4>No bets placed yet</h4>
       ) : (
         <>
+          <h4>Stats</h4>
+          <p>Total Bets: {bets.length}</p>
+          <p>Wins: {wins}</p>
+          <p>Win%: {parseFloat(wins / bets.length).toFixed(3).slice(1)}</p>
           <h1>Bets</h1>
           <div className="bets-container">
             <div className="bet-headings">

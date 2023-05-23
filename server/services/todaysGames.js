@@ -15,7 +15,7 @@ const getTodaysGames = async () => {
 };
 
 const writeTodaysGames = async () => {
-  const games = await getTodayGames();
+  const games = await getTodaysGames();
   fs.writeFile(
     path.join(__dirname, "../devData/scoreboard.json"),
     JSON.stringify(games),
