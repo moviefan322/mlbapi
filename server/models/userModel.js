@@ -44,6 +44,7 @@ const userSchema = mongoose.Schema(
       default: 100,
       set: (value) => parseFloat(value.toFixed(2)),
     },
+    bets: [{ type: mongoose.Schema.Types.ObjectId, ref: "Bet" }],
   },
   {
     timestamps: true,

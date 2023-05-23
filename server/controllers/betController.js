@@ -64,7 +64,7 @@ const getAllBets = asyncHandler(async (req, res) => {
   const bets = await Bet.find({});
 
   res.status(200).json(bets);
-})
+});
 
 // @desc    Place a bet
 // @route   POST /api/bets
@@ -118,4 +118,4 @@ const placeBet = asyncHandler(async (req, res) => {
   res.status(201).json({ bet, accountBalance: user.accountBalance });
 });
 
-module.exports = { getBets, placeBet, getBet };
+module.exports = { getBets, placeBet, getBet, getAllBets };
