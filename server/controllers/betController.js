@@ -61,9 +61,58 @@ const getBet = asyncHandler(async (req, res) => {
 });
 
 const getAllBets = asyncHandler(async (req, res) => {
-  const bets = await Bet.find({});
+  const userBets = await User.aggregate([
+    {
+      $lookup: {
+        from: "bets",
+        localField: "_id",
+        foreignField: "user",
+        as: "bets",
+      },
+    },
+    {
+      $match: {
+        bets: { $ne: [] }, // Filter users with at least one bet
+      },
+    },
+    {
+      $project: {
+        _id: 0,
+        name: 1,
+        totalBets: { $size: "$bets" },
+        totalWins: {
+          $size: {
+            $filter: {
+              input: "$bets",
+              as: "bet",
+              cond: { $eq: ["$$bet.betResult", "win"] },
+            },
+          },
+        },
+        totalPlusMinus: {
+          $sum: "$bets.plusMinus",
+        },
+      },
+    },
+    {
+      $addFields: {
+        winPercentage: {
+          $cond: {
+            if: { $eq: ["$totalBets", 0] },
+            then: 0,
+            else: { $divide: ["$totalWins", "$totalBets"] },
+          },
+        },
+      },
+    },
+    {
+      $sort: {
+        winPercentage: -1,
+      },
+    },
+  ]);
 
-  res.status(200).json(bets);
+  res.json(userBets);
 });
 
 // @desc    Place a bet
