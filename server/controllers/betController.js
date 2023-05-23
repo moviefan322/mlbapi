@@ -60,6 +60,12 @@ const getBet = asyncHandler(async (req, res) => {
   }
 });
 
+const getAllBets = asyncHandler(async (req, res) => {
+  const bets = await Bet.find({});
+
+  res.status(200).json(bets);
+})
+
 // @desc    Place a bet
 // @route   POST /api/bets
 // @access  Private
