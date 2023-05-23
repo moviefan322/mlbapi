@@ -135,8 +135,14 @@ const getMe = asyncHandler(async (req, res) => {
   }
 });
 
+const getAllUsers = asyncHandler(async (req, res) => {
+  const users = await User.find({}).populate("bets");
+  res.json(users);
+});
+
 module.exports = {
   registerUser,
   loginUser,
   getMe,
+  getAllUsers,
 };
