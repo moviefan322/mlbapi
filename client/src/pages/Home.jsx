@@ -87,7 +87,7 @@ function Home() {
           </button>
         </div>
         <div>
-          {today === day ? (
+          {formatDate(today) === formatDate(day) ? (
             <h4>Live Scores</h4>
           ) : (
             <h5>Games from {formatDate(day)}</h5>
@@ -100,7 +100,7 @@ function Home() {
       </div>
       <div id="main" className="card-container">
         {games.map((game, index) => (
-          <SingleGame key={index} game={game} odds={rawOdds} user={user} />
+          <SingleGame key={index} game={game} odds={rawOdds} user={user} today={formatDate(today) === formatDate(day)} />
         ))}
       </div>
     </>

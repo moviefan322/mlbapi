@@ -13,7 +13,7 @@ import renderOnBaseImage from "../utils/baserunners";
 import BetModal from "./BetModal";
 import Spinner from "./Spinner";
 
-function SingleGame({ game, odds, user }) {
+function SingleGame({ game, odds, user, today }) {
   const [openAway, setOpenAway] = useState(false);
   const [openHome, setOpenHome] = useState(false);
   const [singleGame, setSingleGame] = useState(null);
@@ -76,7 +76,7 @@ function SingleGame({ game, odds, user }) {
         </div>{" "}
         <div className="icon-container">
           <img className="icon" src={teamKeys[awayTeam].image} alt="" />
-          {awayOdds && (
+          {awayOdds && today && (
             <div className="tooltip">
               <button
                 className={`btn btn-sm ${awayOdds >= 0 ? "red" : "green"}`}
@@ -124,7 +124,7 @@ function SingleGame({ game, odds, user }) {
         <h1>@</h1>{" "}
         <div>
           <img className="icon" src={teamKeys[homeTeam].image} alt="" />
-          {homeOdds && (
+          {homeOdds && today && (
             <div className="tooltip">
               <button
                 className={`bet-btn btn btn-sm ${
@@ -327,6 +327,7 @@ SingleGame.propTypes = {
   game: PropTypes.object.isRequired,
   odds: PropTypes.array.isRequired,
   user: PropTypes.object,
+  today: PropTypes.bool.isRequired,
 };
 
 export default SingleGame;
