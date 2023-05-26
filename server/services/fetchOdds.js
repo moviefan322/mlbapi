@@ -40,4 +40,6 @@ const fetchOdds = async () => {
   }
 };
 
+// fetchOdds();
+
 module.exports = fetchOdds;
