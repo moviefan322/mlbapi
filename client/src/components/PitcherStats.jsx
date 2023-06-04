@@ -149,18 +149,20 @@ function PitcherStats({ boxscore, homeaway }) {
         {pitchers.map((pitcher, index) => (
           <tr key={index}>
             <td className="batterName">
-              <span>{`${
-                boxscore.liveData.boxscore.teams[`${homeaway}`].players[
-                  `ID${pitcher}`
-                ].jerseyNumber
-              }`}</span>
+              <span>
+                {`${
+                  boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+                    `ID${pitcher}`
+                  ].jerseyNumber
+                }` ?? "00"}
+              </span>
               <span>
                 {
                   `${
                     boxscore.liveData.boxscore.teams[`${homeaway}`].players[
                       `ID${pitcher}`
                     ].person.fullName
-                  }`.split(" ")[1]
+                  }`.match(/\b(\w+)\b$/)?.[1]
                 }
               </span>
               <span>{`${
