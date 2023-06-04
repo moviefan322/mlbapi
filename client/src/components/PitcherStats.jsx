@@ -154,7 +154,13 @@ function PitcherStats({ boxscore, homeaway }) {
                   boxscore.liveData.boxscore.teams[`${homeaway}`].players[
                     `ID${pitcher}`
                   ].jerseyNumber
-                }` ?? "00"}
+                }` !== "undefined"
+                  ? `${
+                      boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+                        `ID${pitcher}`
+                      ].jerseyNumber
+                    }`
+                  : "-"}
               </span>
               <span>
                 {

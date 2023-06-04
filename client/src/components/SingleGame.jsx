@@ -47,10 +47,10 @@ function SingleGame({ game, odds, user, today }) {
     return <Spinner />;
   }
 
-  const showData = async () => {
-    const singleGameData = await getSingleGameData(718174);
-    console.log(singleGameData);
-  };
+  // const showData = async () => {
+  //   const singleGameData = await getSingleGameData(718174);
+  //   console.log(singleGameData);
+  // };
 
   const thisGame = odds.filter((odd) => {
     return odd.away_team === awayTeam && odd.home_team === homeTeam;
@@ -65,6 +65,9 @@ function SingleGame({ game, odds, user, today }) {
 
   return (
     <div className="card">
+      <p>
+        Game {game.seriesGameNumber}/{game.gamesInSeries}
+      </p>
       <div className="cardteams">
         <div className="cardteam">
           <h2>{teamKeys[awayTeam].abb}</h2>
@@ -197,7 +200,12 @@ function SingleGame({ game, odds, user, today }) {
             ) : game.status.statusCode === "PW" ? (
               "WARMUP"
             ) : (
-              formatTime(game.gameDate)
+              <>
+                <p>{formatTime(game.gameDate)}</p>
+                {/* <p>
+                  {game.gameNumber}/{game.gamesInSeries}
+                </p> */}
+              </>
             )}
           </h3>
           {game.status.statusCode === "I" && (
