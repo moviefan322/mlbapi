@@ -33,7 +33,7 @@ function Bets() {
   const wins = bets.filter((bet) => bet.betResult === "win").length;
   const totalPlusMinus = bets.reduce((totalDiff, bet) => {
     return totalDiff + bet.plusMinus;
-  }, 0)
+  }, 0);
 
   return (
     <>
@@ -41,19 +41,24 @@ function Bets() {
         <h4>No bets placed yet</h4>
       ) : (
         <>
-          <h4>Stats</h4>
-          <p>Total Bets: {bets.length}</p>
-          <p>Wins: {wins}</p>
-          <p>
-            %:{" "}
-            {parseFloat(wins / bets.length)
-              .toFixed(3)
-              .slice(1)}
-          </p>
-          <p>
-            +/-:{" "}
-            {totalPlusMinus > 0 ? "+" + totalPlusMinus.toFixed(2) : totalPlusMinus.toFixed(2)}
-          </p>
+          <div className="stats">
+            <h4>Stats</h4>
+            <p>
+              Wins/Bets: {wins}/{bets.length}
+            </p>
+            <p>
+              Win%:{" "}
+              {parseFloat(wins / bets.length)
+                .toFixed(3)
+                .slice(1)}
+            </p>
+            <p>
+              +/-:{" "}
+              {totalPlusMinus > 0
+                ? "+" + totalPlusMinus.toFixed(2)
+                : totalPlusMinus.toFixed(2)}
+            </p>
+          </div>
           <h1>Bets</h1>
           <div className="bets-container">
             <div className="bet-headings">
