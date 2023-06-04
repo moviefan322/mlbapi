@@ -28,7 +28,7 @@ function Leaderboard() {
       <h1>Leaderboard</h1>
       <p>W/T | % | +/-</p>
       <br />
-      <ol>
+      <ul className="leaderboard">
         {leaderboard.map((user, index) => (
           <li key={user._id + Math.random}>
             {index + 1}. {user.name} - {user.totalWins}/{user.totalBets}
@@ -38,7 +38,7 @@ function Leaderboard() {
             {user.totalPlusMinus}
           </li>
         ))}
-      </ol>
+      </ul>
     </>
   );
 }

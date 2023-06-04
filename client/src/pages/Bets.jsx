@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { FaChartLine } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { getBets, reset } from "../features/bet/betSlice";
 import { getUserData } from "../features/auth/authSlice";
 import BetItem from "../components/BetItem";
@@ -58,6 +60,9 @@ function Bets() {
                 ? "+" + totalPlusMinus.toFixed(2)
                 : totalPlusMinus.toFixed(2)}
             </p>
+            <Link className="statsLink" to="/leaderboard">
+              <FaChartLine /> <span>Leaderboard</span>
+            </Link>
           </div>
           <h1>Bets</h1>
           <div className="bets-container">

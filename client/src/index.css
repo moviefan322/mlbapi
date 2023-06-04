@@ -793,6 +793,19 @@ header img {
   margin-bottom: 1rem;
 }
 
+.statsLink:hover {
+  color: blue;
+}
+
+.leaderboard {
+  display: block;
+  background-color: #d7b49e;
+  border: 1px solid black;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
 /* -------------------------------- */
 @media only screen and (min-width: 992px) {
   .container {
