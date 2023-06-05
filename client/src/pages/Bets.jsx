@@ -76,7 +76,9 @@ function Bets() {
             <div>
               {uniqueDays.map((day) => (
                 <div key={day}>
-                  <p>{formatShortDate(day)}</p>
+                  <p>
+                    <strong>{formatShortDate(day)}</strong>
+                  </p>
                   {bets
                     .filter((bet) => bet.createdAt.split("T")[0] === day)
                     .map((bet) => (
