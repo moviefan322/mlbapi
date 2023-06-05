@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { StaticImage } from "gatsby-plugin-image"
 import "react-responsive-modal/styles.css";
 import PropTypes from "prop-types";
 import teamKeys from "../utils/teamKeys";
@@ -78,7 +79,11 @@ function SingleGame({ game, odds, user, today }) {
           </p>
         </div>{" "}
         <div className="icon-container">
-          <img className="icon" src={teamKeys[awayTeam].image} alt="" />
+          <img
+            className="icon"
+            src={teamKeys[awayTeam].image}
+            alt="team logo"
+          />
           {awayOdds && today && (
             <div className="tooltip">
               <button
@@ -126,7 +131,11 @@ function SingleGame({ game, odds, user, today }) {
         </div>
         <h1>@</h1>{" "}
         <div>
-          <img className="icon" src={teamKeys[homeTeam].image} alt="" />
+          <img
+            className="icon"
+            src={teamKeys[homeTeam].image}
+            alt="team logo"
+          />
           {homeOdds && today && (
             <div className="tooltip">
               <button
