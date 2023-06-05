@@ -13,8 +13,8 @@ import Spinner from "./Spinner";
 function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
   const [confirmBtn, setConfirmBtn] = useState("none");
   const [betBtn, setBetBtn] = useState("");
-  const [betAmount, setBetAmount] = useState(0);
-  const [winAmount, setWinAmount] = useState(0);
+  const [betAmount, setBetAmount] = useState("");
+  const [winAmount, setWinAmount] = useState("");
   const [betError, setBetError] = useState("");
   const { accountBalance } = useSelector((state) => state.auth.user);
   const { isLoading, isError, isSuccess, message } = useSelector(
@@ -119,30 +119,49 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
         </p>
         <p>Betting on: {bettingOn}</p>
         <p>Money Line: {odds}</p>
-        <div className="flex-row">
-          <p>Amount to bet:</p>
-          <input
-            className="narrow-input"
-            type="number"
-            name="betAmount"
-            value={betAmount}
-            onChange={handleBetAmountChange}
-            readOnly={confirmBtn === "flex" ? true : false}
-          />
-        </div>
-        <div>
-          <p>
-            Amount to win:{" "}
-            <input
-              className="narrow-input"
-              type="number"
-              name="winAmount"
-              onChange={handleWinAmountChange}
-              value={winAmount}
-              readOnly={confirmBtn === "flex" ? true : false}
-            />
-          </p>{" "}
-        </div>
+        {confirmBtn === "flex" ? (
+          <>
+            <div className="flex-row">
+              <p>
+                Amount to bet: <strong>{betAmount}</strong>
+              </p>
+            </div>
+            <div className="flex-row">
+              <p>
+                Amount to win: <strong>{winAmount}</strong>
+              </p>
+            </div>
+          </>
+        ) : (
+          <>
+            {" "}
+            <div className="flex-row">
+              <p>Amount to bet:</p>
+              <input
+                className="narrow-input"
+                placeholder={0}
+                type="number"
+                name="betAmount"
+                value={betAmount}
+                onChange={handleBetAmountChange}
+              />
+            </div>
+            <div className="flex-row">
+              <p>
+                Amount to win:{" "}
+                <input
+                  className="narrow-input"
+                  placeholder={0}
+                  type="number"
+                  name="winAmount"
+                  onChange={handleWinAmountChange}
+                  value={winAmount}
+                />
+              </p>{" "}
+            </div>
+          </>
+        )}
+
         <br />
         {betError && (
           <p className="red">
