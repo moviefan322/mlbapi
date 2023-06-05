@@ -7,13 +7,14 @@ import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import PropTypes from "prop-types";
 import { formatDate } from "../utils/formatTime";
-import { calculateWinnings } from "../utils/moneyLine";
+import { calculateWinnings, calculateBetAmount } from "../utils/moneyLine";
 import Spinner from "./Spinner";
 
 function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
   const [confirmBtn, setConfirmBtn] = useState("none");
   const [betBtn, setBetBtn] = useState("");
-  const [betAmount, setBetAmount] = useState("");
+  const [betAmount, setBetAmount] = useState(0);
+  const [winAmount, setWinAmount] = useState(0);
   const [betError, setBetError] = useState("");
   const { accountBalance } = useSelector((state) => state.auth.user);
   const { isLoading, isError, isSuccess, message } = useSelector(
@@ -86,6 +87,20 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
     setBetBtn("");
   };
 
+  const handleBetAmountChange = (e) => {
+    const newBetAmount = e.target.value;
+    setBetAmount(newBetAmount);
+    const newWinAmount = calculateWinnings(odds, newBetAmount);
+    setWinAmount(newWinAmount);
+  };
+
+  const handleWinAmountChange = (e) => {
+    const newWinAmount = e.target.value;
+    setWinAmount(newWinAmount);
+    const newBetAmount = calculateBetAmount(odds, newWinAmount);
+    setBetAmount(newBetAmount);
+  };
+
   if (isLoading) {
     return <Spinner />;
   }
@@ -111,16 +126,21 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
             type="number"
             name="betAmount"
             value={betAmount}
-            onChange={(e) => setBetAmount(e.target.value)}
+            onChange={handleBetAmountChange}
             readOnly={confirmBtn === "flex" ? true : false}
           />
         </div>
         <div>
           <p>
             Amount to win:{" "}
-            <strong>
-              {Number(calculateWinnings(odds, betAmount)) + Number(betAmount)}
-            </strong>
+            <input
+              className="narrow-input"
+              type="number"
+              name="winAmount"
+              onChange={handleWinAmountChange}
+              value={winAmount}
+              readOnly={confirmBtn === "flex" ? true : false}
+            />
           </p>{" "}
         </div>
         <br />
@@ -140,7 +160,9 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
           <button className="btn btn-sm  btn-green" onClick={onPlaceBet}>
             Confirm Bet
           </button>
-          <button className="btn btn-sm btn-red" onClick={hideConfirm}>Cancel Bet</button>
+          <button className="btn btn-sm btn-red" onClick={hideConfirm}>
+            Cancel Bet
+          </button>
         </div>
       </Modal>
     </div>

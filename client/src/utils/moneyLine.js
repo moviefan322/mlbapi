@@ -8,6 +8,16 @@ const calculateWinnings = (moneyLine, amountBet) => {
   }
 };
 
+const calculateBetAmount = (moneyLine, amountToWin) => {
+  if (moneyLine > 0) {
+    // positive money line indicates underdog
+    return parseFloat((amountToWin / (moneyLine / 100)).toFixed(2));
+  } else {
+    // negative money line indicates favorite
+    return parseFloat((amountToWin * (-moneyLine / 100)).toFixed(2));
+  }
+};
+
 const returnNegative = (bet) => {
   return bet * -1;
 };
@@ -15,4 +25,5 @@ const returnNegative = (bet) => {
 module.exports = {
   calculateWinnings,
   returnNegative,
+  calculateBetAmount,
 };
