@@ -454,6 +454,7 @@ const renderDP = (boxscore, homeaway) => {
 
   const doublePlayLine = doublePlays.map((play) => {
     const credits = play.runners[0].credits;
+    const inning = ordinalSuffix(play.about.inning);
     const creditCodes = credits.map((credit) => credit.player.id);
     const playerNames = creditCodes.map((code) => {
       return boxscore.liveData.boxscore.teams[`${homeaway}`].players[
@@ -464,14 +465,14 @@ const renderDP = (boxscore, homeaway) => {
     if (creditCodes.length === 1) {
       return `${playerNames[0]}(u)`;
     } else {
-      return playerNames.join("-").toString();
+      return playerNames.join("-").toString() + `(${inning})`;
     }
   });
 
   if (doublePlayLine.length === 0) {
     return null;
   } else {
-    return doublePlayLine;
+    return doublePlayLine.join(", ");
   }
 };
 
