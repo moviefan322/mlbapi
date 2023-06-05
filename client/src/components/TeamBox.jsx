@@ -67,7 +67,7 @@ function TeamBox({ boxscore, homeaway }) {
                         boxscore.liveData.boxscore.teams.home.players[
                           `ID${batter}`
                         ].person.fullName
-                      }`.split(" ")[1]
+                      }`.match(/\b(\w+)\b$/)?.[1]
                     }
                   </span>
                   <span>{`${

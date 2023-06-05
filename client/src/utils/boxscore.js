@@ -463,7 +463,7 @@ const renderDP = (boxscore, homeaway) => {
     });
 
     if (creditCodes.length === 1) {
-      return `${playerNames[0]}(u)`;
+      return `${playerNames[0]}(${inning})`;
     } else {
       return playerNames.join("-").toString() + `(${inning})`;
     }
