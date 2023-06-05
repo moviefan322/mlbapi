@@ -240,7 +240,7 @@ function PitcherStats({ boxscore, homeaway }) {
           <td>
             <strong>Totals:</strong>
           </td>
-          <td>{totalIP}</td>
+          <td>{Math.ceil(totalIP)}</td>
           <td>{totalHits}</td>
           <td>{totalRuns}</td>
           <td>{totalEarnedRuns}</td>
