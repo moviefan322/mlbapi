@@ -4,7 +4,7 @@ import Linescore from "./Linescore";
 import PitcherStats from "./PitcherStats";
 
 function TeamBox({ boxscore, homeaway }) {
-  const homeBatters = boxscore.liveData.boxscore.teams.home.batters.filter(
+  const homeBatters = boxscore.liveData.boxscore.teams[`${homeaway}`].batters.filter(
     (batter) =>
       boxscore.liveData.plays.allPlays.filter(
         (play) =>
@@ -37,7 +37,7 @@ function TeamBox({ boxscore, homeaway }) {
           </tr>
         </thead>
         <tbody>
-          {boxscore.liveData.boxscore.teams.home.batters
+          {boxscore.liveData.boxscore.teams[`${homeaway}`].batters
             .filter(
               (batter) =>
                 boxscore.liveData.plays.allPlays.filter(
@@ -58,20 +58,20 @@ function TeamBox({ boxscore, homeaway }) {
               <tr key={`home-${index}`}>
                 <td className="batterName">
                   <span>{`${
-                    boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
+                    boxscore.liveData.boxscore.teams[`${homeaway}`].players[`ID${batter}`]
                       .jerseyNumber
                   }`}</span>
                   <span>
                     {
                       `${
-                        boxscore.liveData.boxscore.teams.home.players[
+                        boxscore.liveData.boxscore.teams[`${homeaway}`].players[
                           `ID${batter}`
                         ].person.fullName
-                      }`.match(/\b(\w+)\b$/)?.[1]
+                      }`.split(" ")[1]
                     }
                   </span>
                   <span>{`${
-                    boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
+                    boxscore.liveData.boxscore.teams[`${homeaway}`].players[`ID${batter}`]
                       .position.abbreviation
                   }`}</span>
                 </td>
@@ -98,7 +98,7 @@ function TeamBox({ boxscore, homeaway }) {
                     boxscore.liveData.plays.allPlays.filter((play) =>
                       play.result.description.includes(
                         `${
-                          boxscore.liveData.boxscore.teams.home.players[
+                          boxscore.liveData.boxscore.teams[`${homeaway}`].players[
                             `ID${batter}`
                           ].person.fullName
                         } scores`
@@ -153,7 +153,7 @@ function TeamBox({ boxscore, homeaway }) {
                   }
                 </td>
                 <td>{`${
-                  boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
+                  boxscore.liveData.boxscore.teams[`${homeaway}`].players[`ID${batter}`]
                     .seasonStats.batting.avg
                 }`}</td>
               </tr>
@@ -190,7 +190,7 @@ function TeamBox({ boxscore, homeaway }) {
                   (play) =>
                     play.result.description.includes(
                       `${
-                        boxscore.liveData.boxscore.teams.home.players[
+                        boxscore.liveData.boxscore.teams[`${homeaway}`].players[
                           `ID${batter}`
                         ].person.fullName
                       } scores`
@@ -262,7 +262,7 @@ function TeamBox({ boxscore, homeaway }) {
               {(
                 homeBatters.reduce((teamAvg, batter) => {
                   const batterAvg = parseFloat(
-                    boxscore.liveData.boxscore.teams.home.players[`ID${batter}`]
+                    boxscore.liveData.boxscore.teams[`${homeaway}`].players[`ID${batter}`]
                       .seasonStats.batting.avg
                   );
                   return teamAvg + batterAvg;
