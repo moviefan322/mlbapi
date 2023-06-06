@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image";
 import "react-responsive-modal/styles.css";
 import PropTypes from "prop-types";
 import teamKeys from "../utils/teamKeys";
