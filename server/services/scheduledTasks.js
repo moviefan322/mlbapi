@@ -51,4 +51,4 @@ const runAllTasks = () => {
   scheduleWriteTodaysGames2.start();
 };
 
-module.exports = { runAllTasks };
+module.exports = { runAllTasks, scheduleWriteTodaysGames };
