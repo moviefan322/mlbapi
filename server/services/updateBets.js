@@ -15,6 +15,13 @@ const updateBetsInternally = async (gameResults) => {
     bets.map(async (bet) => {
       const result = results.find((result) => result.gameId === bet.gameId);
       if (result) {
+        if (result.status === "Postponed") {
+          await Bet.findOneAndUpdate(
+            { _id: bet._id },
+            { betResult: "cancelled" }
+          );
+          return bet;
+        }
         // if bet team matches result team
         if (
           bet.betTeam.trim().toLowerCase() ===
@@ -37,6 +44,15 @@ const updateBetsInternally = async (gameResults) => {
     })
   );
 
+  const postPonedBets = updatedBets.filter(
+    (bet) => bet.betResult === "cancelled"
+  );
+  for (const bet of postPonedBets) {
+    const deposit = bet.betAmount;
+    await User.findByIdAndUpdate(bet.user, {
+      $inc: { accountBalance: deposit },
+    });
+  }
   // adjust users account balance
   const winningBets = updatedBets.filter((bet) => bet.betResult === "win");
   for (const bet of winningBets) {
