@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { StaticImage } from "gatsby-plugin-image";
 import "react-responsive-modal/styles.css";
 import PropTypes from "prop-types";
 import teamKeys from "../utils/teamKeys";
 import { getSingleGameData } from "../utils/MLBAPI";
-import { formatTime } from "../utils/formatTime";
+import { formatTime, formatShortDate2 } from "../utils/formatTime";
 import { Link } from "react-router-dom";
 import { AiOutlineArrowUp, AiOutlineArrowDown } from "react-icons/ai";
 import { reset } from "../features/bet/betSlice";
@@ -313,6 +312,7 @@ function SingleGame({ game, odds, user, today }) {
         ) : game.status.codedGameState === "D" ? (
           <div>
             <h4> POSTPONED: {game.status.reason.toUpperCase()} </h4>
+            <h5>Rechedule Date: {formatShortDate2(game.rescheduleGameDate)}</h5>
           </div>
         ) : game.status.abstractGameCode === "F" ? (
           <Link to={`/boxscore/${game.gamePk}`}>
