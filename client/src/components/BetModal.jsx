@@ -177,10 +177,10 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
         </button>
         <div className="confirm-cancel" style={{ display: `${confirmBtn}` }}>
           <button className="btn btn-sm  btn-green" onClick={onPlaceBet}>
-            Confirm Bet
+            Confirm
           </button>
           <button className="btn btn-sm btn-red" onClick={hideConfirm}>
-            Cancel Bet
+            Cancel
           </button>
         </div>
       </Modal>

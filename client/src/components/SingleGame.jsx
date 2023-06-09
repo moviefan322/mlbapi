@@ -82,6 +82,7 @@ function SingleGame({ game, odds, user, today }) {
             className="icon"
             src={teamKeys[awayTeam].image}
             alt="team logo"
+            loading="lazy"
           />
           {awayOdds && today && (
             <div className="tooltip">
@@ -134,6 +135,7 @@ function SingleGame({ game, odds, user, today }) {
             className="icon"
             src={teamKeys[homeTeam].image}
             alt="team logo"
+            loading="lazy"
           />
           {homeOdds && today && (
             <div className="tooltip">

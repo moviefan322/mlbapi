@@ -6,12 +6,15 @@ const { writeYesterdaysGames } = require("./getYesterdaysGames");
 
 const cron = require("node-cron");
 
-const task3 = cron.schedule("15 10 * * *", () => {
+const task3 = cron.schedule("10 09 * * *", () => {
   console.log("Time to fetch the odds!");
+  // writeTodaysGames();
+  // fetchOdds();
 });
 
 const task5 = cron.schedule("*/1 11-23,0-3 * * *", () => {
   console.log("running every minute during baseball hours");
+  // writeTodaysGames();
   // fetchOdds();
 });
 
