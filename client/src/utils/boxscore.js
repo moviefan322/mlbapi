@@ -1,5 +1,28 @@
 const ordinalSuffix = require("../utils/ordinalSuffix");
 
+const renderPlayerName = (boxscore, homeaway, batter) => {
+  let player =
+    boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+      `ID${batter}`
+    ].person.fullName.match(/\b(\w+)\b$/)?.[1];
+
+  if (player === undefined) {
+    player =
+      boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+        `ID${batter}`
+      ].person.fullName.split(" ")[1];
+  }
+
+  if (player === "II" || player === "III" || player === "Jr.") {
+    player =
+      boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+        `ID${batter}`
+      ].person.fullName.split(" ")[1];
+  }
+
+  return player;
+};
+
 const getBatters = (boxscore, homeaway) => {
   const batters = boxscore.liveData.boxscore.teams[
     `${homeaway}`
@@ -44,7 +67,17 @@ const render2B = (boxscore, homeaway) => {
             .seasonStats.batting.doubles;
         const pitcher =
           doubles[0].matchup.pitcher.fullName.match(/\b(\w+)\b$/)?.[1];
-        const lastName = player.person.fullName.match(/\b(\w+)\b$/)?.[1];
+        let lastName = player.person.fullName.match(/\b(\w+)\b$/)?.[1];
+
+        if (
+          lastName === undefined ||
+          lastName === "II" ||
+          lastName === "III" ||
+          lastName === "Jr."
+        ) {
+          lastName = player.person.fullName.split(" ")[1];
+        }
+
         return ` ${lastName}(${dblCount}, ${pitcher})`;
       } else if (doubles.length > 1) {
         const player =
@@ -57,7 +90,17 @@ const render2B = (boxscore, homeaway) => {
         const pitchers = doubles.map(
           (doubles) => doubles.matchup.pitcher.fullName.match(/\b(\w+)\b$/)?.[1]
         );
-        const lastName = player.person.fullName.match(/\b(\w+)\b$/)?.[1];
+        let lastName = player.person.fullName.match(/\b(\w+)\b$/)?.[1];
+
+        if (
+          lastName === undefined ||
+          lastName === "II" ||
+          lastName === "III" ||
+          lastName === "Jr."
+        ) {
+          lastName = player.person.fullName.split(" ")[1];
+        }
+
         return ` ${lastName}(${dblCount}, ${pitchers.toString()})`;
       } else {
         return null;
@@ -84,21 +127,32 @@ const renderE = (boxscore, homeaway) => {
         play.about.halfInning === "bottom"
     );
   }
-  const fieldingErrorsLine = fieldingErrors
-    .map((play) => {
-      const playerId = play.runners[0].credits[0].player.id;
-      const player =
-        boxscore.liveData.boxscore.teams[`${homeaway}`].players[
-          `ID${playerId}`
-        ].person.fullName.match(/\b(\w+)\b$/)?.[1];
-      const errorCount =
-        boxscore.liveData.boxscore.teams[`${homeaway}`].players[`ID${playerId}`]
-          .stats.fielding.errors;
-      return ` ${player}(${errorCount})`;
-    })
-    .toString();
 
-  return fieldingErrorsLine;
+  if (fieldingErrors.length > 0) {
+    const fieldingErrorsLine = fieldingErrors
+      .map((play) => {
+        let playerId;
+        if (play.runners[0].credits[0]?.player.id) {
+          playerId = play.runners[0].credits[0]?.player.id;
+        } else {
+          playerId = play.runners[1].credits[0]?.player.id;
+        }
+        const player =
+          boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+            `ID${playerId}`
+          ].person.fullName.match(/\b(\w+)\b$/)?.[1];
+        const errorCount =
+          boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+            `ID${playerId}`
+          ].stats.fielding.errors;
+        return ` ${player}(${errorCount})`;
+      })
+      .toString();
+
+    return fieldingErrorsLine;
+  } else {
+    return null;
+  }
 };
 
 const renderRISP = (boxscore, homeaway) => {
@@ -231,10 +285,18 @@ const renderTB = (boxscore, homeaway) => {
       const TB = calculateTotalBases(boxscore, batter);
 
       if (TB > 0) {
-        const player =
+        let player =
           boxscore.liveData.boxscore.teams[`${homeaway}`].players[
             `ID${batter}`
           ].person.fullName.match(/\b(\w+)\b$/)?.[1];
+
+        if (player === undefined || player === "II" || player === "III") {
+          player =
+            boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+              `ID${batter}`
+            ].person.fullName.split(" ")[1];
+        }
+
         return ` ${`${player}(${TB})`}`;
       } else {
         return null;
@@ -316,7 +378,17 @@ const renderHR = (boxscore, homeaway) => {
         const inning = hrs[0].about.inning;
         const pitcher =
           hrs[0].matchup.pitcher.fullName.match(/\b(\w+)\b$/)?.[1];
-        const lastName = player.person.fullName.match(/\b(\w+)\b$/)?.[1];
+        let lastName = player.person.fullName.match(/\b(\w+)\b$/)?.[1];
+
+        if (
+          lastName === undefined ||
+          lastName === "Jr." ||
+          lastName === "II" ||
+          lastName === "III"
+        ) {
+          lastName = player.person.fullName.split(" ")[1];
+        }
+
         return ` ${lastName}(${hrCount}, ${ordinalSuffix(inning)}: ${pitcher})`;
       } else if (hrs.length > 1) {
         const player =
@@ -354,10 +426,22 @@ const renderRBI = (boxscore, homeaway) => {
       const rbis =
         boxscore.liveData.boxscore.teams[`${homeaway}`].players[`ID${batter}`]
           .stats.batting.rbi;
-      const player =
+      let player =
         boxscore.liveData.boxscore.teams[`${homeaway}`].players[
           `ID${batter}`
         ].person.fullName.match(/\b(\w+)\b$/)?.[1];
+
+      if (
+        player === undefined ||
+        player === "Jr." ||
+        player === "II" ||
+        player === "III"
+      ) {
+        player =
+          boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+            `ID${batter}`
+          ].person.fullName.split(" ")[1];
+      }
 
       const seasonTotal =
         boxscore.liveData.boxscore.teams[`${homeaway}`].players[`ID${batter}`]
@@ -421,10 +505,24 @@ const render2OutRBI = (boxscore, homeaway) => {
           play.count.outs === 2
       ).length;
 
-      const player =
+      let player =
         boxscore.liveData.boxscore.teams[`${homeaway}`].players[
           `ID${batter}`
         ].person.fullName.match(/\b(\w+)\b$/)?.[1];
+
+      if (player === undefined) {
+        player =
+          boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+            `ID${batter}`
+          ].person.fullName.split(" ")[1];
+      }
+
+      if (player === "II" || player === "III" || player === "Jr.") {
+        player =
+          boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+            `ID${batter}`
+          ].person.fullName.split(" ")[1];
+      }
 
       if (rbis === 0) return null;
 
