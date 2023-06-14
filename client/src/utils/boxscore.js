@@ -472,7 +472,7 @@ const renderSF = (boxscore, homeaway) => {
           boxscore.liveData.boxscore.teams[`${homeaway}`].players[
             "ID" + sacFlys[0].matchup.batter.id
           ];
-        const pitcher = sacFlys[0].matchup.pitcher.fullName;
+        const pitcher = sacFlys[0].matchup.pitcher.fullName.split(" ")[1];
         const inning = ordinalSuffix(sacFlys[0].about.inning);
         const lastName = player.person.fullName.match(/\b(\w+)\b$/)?.[1];
         return ` ${lastName}(${inning}:${pitcher})`;
@@ -481,7 +481,9 @@ const renderSF = (boxscore, homeaway) => {
           boxscore.liveData.boxscore.teams[`${homeaway}`].players[
             "ID" + sacFlys[0].matchup.batter.id
           ];
-        const pitchers = sacFlys.map((matchup) => matchup.pitcher.fullName);
+        const pitchers = sacFlys.map(
+          (matchup) => matchup.pitcher.fullName.split(" ")[1]
+        );
         const lastName = player.person.fullName.match(/\b(\w+)\b$/)?.[1];
         return ` ${lastName}, ${pitchers.toString()})`;
       } else {
