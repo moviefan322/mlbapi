@@ -49,6 +49,17 @@ const updateBetsInternally = async (gameResults) => {
       $inc: { accountBalance: deposit },
     });
   }
+
+  // refund cancelled bets
+  const cancelledBets = updatedBets.filter(
+    (bet) => bet.betResult === "cancelled"
+  );
+  for (const bet of cancelledBets) {
+    const deposit = bet.betAmount;
+    await User.findByIdAndUpdate(bet.user, {
+      $inc: { accountBalance: deposit },
+    });
+  }
   console.log("Bets updated");
 };
 
