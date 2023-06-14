@@ -23,6 +23,20 @@ function TeamBox({ boxscore, homeaway }) {
       ).length > 0
   );
 
+  const formatName = (batter) => {
+    const fullName =
+      boxscore.liveData.boxscore.teams[`${homeaway}`].players[
+        `ID${batter}`
+      ].person.fullName.split(" ");
+    if (fullName[1] === "De") {
+      return fullName[1];
+    } else if (fullName[1].length === 2) {
+      return fullName[2];
+    } else {
+      return fullName[1];
+    }
+  };
+
   return (
     <>
       <table className="battingbox">
@@ -65,17 +79,7 @@ function TeamBox({ boxscore, homeaway }) {
                     ].jerseyNumber
                   }`}</span>
                   <span>
-                    {boxscore.liveData.boxscore.teams[`${homeaway}`].players[
-                      `ID${batter}`
-                    ].person.fullName.split(" ")[1] === "De"
-                      ? `${
-                          boxscore.liveData.boxscore.teams[`${homeaway}`]
-                            .players[`ID${batter}`].person.fullName
-                        }`.split(" ")[3]
-                      : `${
-                          boxscore.liveData.boxscore.teams[`${homeaway}`]
-                            .players[`ID${batter}`].person.fullName
-                        }`.split(" ")[1]}
+                    {formatName(batter)}
                   </span>
                   <span>{`${
                     boxscore.liveData.boxscore.teams[`${homeaway}`].players[
