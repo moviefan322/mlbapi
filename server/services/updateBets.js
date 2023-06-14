@@ -9,21 +9,18 @@ const {
 
 const updateBetsInternally = async (gameResults) => {
   const results = gameResults;
+
   const bets = await Bet.find({ betResult: "pending" });
   const updatedBets = await Promise.all(
     // find all bets where game id matches
     bets.map(async (bet) => {
       const result = results.find((result) => result.gameId === bet.gameId);
       if (result) {
-        if (result.status === "Postponed") {
-          await Bet.findOneAndUpdate(
-            { _id: bet._id },
-            { betResult: "cancelled" }
-          );
-          return bet;
-        }
         // if bet team matches result team
-        if (
+        if (result.winner === "PPD") {
+          bet.betResult = "cancelled";
+          bet.plusMinus = 0; // No winnings or losses for cancelled bets
+        } else if (
           bet.betTeam.trim().toLowerCase() ===
           result.winner.trim().toLowerCase()
         ) {
@@ -44,15 +41,6 @@ const updateBetsInternally = async (gameResults) => {
     })
   );
 
-  const postPonedBets = updatedBets.filter(
-    (bet) => bet.betResult === "cancelled"
-  );
-  for (const bet of postPonedBets) {
-    const deposit = bet.betAmount;
-    await User.findByIdAndUpdate(bet.user, {
-      $inc: { accountBalance: deposit },
-    });
-  }
   // adjust users account balance
   const winningBets = updatedBets.filter((bet) => bet.betResult === "win");
   for (const bet of winningBets) {
@@ -67,6 +55,7 @@ const updateBetsInternally = async (gameResults) => {
 const callUpdateBets = async () => {
   try {
     const gameResults = await getGameResults();
+    // await cancelPostponedBets();
     await updateBetsInternally(gameResults);
   } catch (error) {
     console.error(`Error updating bets: ${error}`);

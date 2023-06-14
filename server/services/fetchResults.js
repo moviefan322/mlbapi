@@ -36,6 +36,18 @@ const getGameResults = async () => {
     });
   });
 
+  const postponedGames = games.filter(
+    (game) => game.status.codedGameState === "D"
+  );
+
+  postponedGames.forEach((game) => {
+    gameResults.push({
+      gameId: game.gamePk,
+      winner: "PPD",
+      loser: "PPD",
+    });
+  });
+
   console.log("results", gameResults);
   return gameResults;
 };
