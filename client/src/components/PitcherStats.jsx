@@ -115,6 +115,11 @@ function PitcherStats({ boxscore, homeaway }) {
       boxscore.liveData.boxscore.teams[`${homeaway}`].players[`ID${pitcher}`]
         .stats.pitching.strikes;
 
+    if (!strikes) {
+      const pitcherIndex = pitchers.indexOf(pitcher);
+      pitchers.splice(pitcherIndex, 1);
+    }
+
     totalStrikes += strikes;
   });
 
