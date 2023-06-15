@@ -6,7 +6,6 @@ import Spinner from "../components/Spinner";
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import monthSeriesMap from "../utils/monthSeriesMap";
 import monthMap from "../utils/monthMap";
-import { fixScheduleErrors } from "../utils/scheduleCorrection";
 import formatBySeries from "../utils/formatBySeries";
 
 function Schedule() {
@@ -33,12 +32,6 @@ function Schedule() {
     };
     getSeasonData();
   }, [month]);
-
-  useEffect(() => {
-    if (!isLoading) {
-      fixScheduleErrors(schedule);
-    }
-  }, [schedule]);
 
   const prevMonth = () => {
     if (month > 1) {
