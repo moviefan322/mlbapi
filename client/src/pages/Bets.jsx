@@ -30,8 +30,6 @@ function Bets() {
     ...new Set(bets.map((bet) => bet.createdAt.split("T")[0])),
   ];
 
-  console.log(uniqueDays);
-
   const wins = bets.filter((bet) => bet.betResult === "win").length;
   const totalPlusMinus = bets.reduce((totalDiff, bet) => {
     return totalDiff + bet.plusMinus;

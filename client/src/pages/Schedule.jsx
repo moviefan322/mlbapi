@@ -7,6 +7,7 @@ import Spinner from "../components/Spinner";
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import monthSeriesMap from "../utils/monthSeriesMap";
 import monthMap from "../utils/monthMap";
+import { fixScheduleErrors } from "../utils/scheduleCorrection";
 
 function Schedule() {
   const [month, setMonth] = useState(new Date().getMonth() + 1);
@@ -47,6 +48,8 @@ function Schedule() {
       setIsLoading(false);
     }
   };
+
+  fixScheduleErrors(schedule)
 
   if (isLoading) {
     return <Spinner />;

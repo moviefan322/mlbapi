@@ -49,7 +49,6 @@ const postYesterdaysScores = asyncHandler(async (req, res) => {
 
 const postXXXgames = asyncHandler(async (req, res) => {
   try {
-    console.log("params ", req.params.date);
     const response = await getXXXGames(req.params.date);
     res.status(200).json(response);
   } catch (error) {

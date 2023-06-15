@@ -31,7 +31,6 @@ function Home() {
       const response = await axios.get("/api/odds");
       if (response.data) {
         setRawOdds(response.data);
-        // console.log(response.data);
         setGames(scoreboard.data);
       }
     };
@@ -52,7 +51,6 @@ function Home() {
     const query = `${year}-${month}-${day2}`;
     setGamesLoading(true);
     const prevDayGames = await axios.get(`/api/odds/${query}`);
-    console.log(prevDayGames.data);
     setGames(prevDayGames.data);
     setDay(prevDay);
     setGamesLoading(false);
@@ -66,7 +64,6 @@ function Home() {
     const query = `${year}-${month}-${day2}`;
     setGamesLoading(true);
     const nextDayGames = await axios.get(`/api/odds/${query}`);
-    console.log(nextDayGames.data);
     setGames(nextDayGames.data);
     setDay(nextDay);
     setGamesLoading(false);

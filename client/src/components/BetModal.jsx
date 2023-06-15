@@ -105,7 +105,6 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
     return <Spinner />;
   }
 
-  console.log(game.status.codedGameState);
 
   return (
     <div>

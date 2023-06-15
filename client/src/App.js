@@ -33,6 +33,7 @@ function App() {
             </Route>
             <Route path="/boxscore/:gamePk" element={<Box />} />
             <Route path="/Leaderboard" element={<Leaderboard />} />
+            <Route path="/*" element={<Home />} />
           </Routes>
           <ToastContainer />
         </div>

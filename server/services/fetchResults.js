@@ -8,7 +8,6 @@ let games = [];
 const getGameResults = async () => {
   try {
     games = await getTodaysGames();
-    // console.log(games);
   } catch (error) {
     console.error(error);
   }

@@ -16,8 +16,6 @@ function Leaderboard() {
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(leaderboard);
-
   if (loading) {
     return <Spinner />;
   }

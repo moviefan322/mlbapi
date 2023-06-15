@@ -73,4 +73,6 @@ const callUpdateBets = async () => {
   }
 };
 
+// callUpdateBets();
+
 module.exports = { callUpdateBets };

@@ -36,8 +36,7 @@ function Tester() {
   if (loading || !boxscore) {
     return <h1>loading</h1>;
   }
-  console.log(boxscore);
-  // console.log(boxscore.liveData);
+
 
   return (
     <div>
