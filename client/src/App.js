@@ -10,7 +10,6 @@ import Schedule from "./pages/Schedule";
 import PrivateRoute from "./components/PrivateRoute";
 import Bets from "./pages/Bets";
 import Box from "./pages/Box";
-import Tester from "./components/Tester";
 import Leaderboard from "./pages/Leaderboard";
 
 function App() {

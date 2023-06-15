@@ -1,5 +1,4 @@
 export const fixScheduleErrors = (schedule) => {
-  console.log("fixing schedule");
   // loop through each team
   for (var i = 108; i < 158; i++) {
     if (schedule[i] === undefined) {

@@ -33,6 +33,8 @@ function Schedule() {
     getSeasonData();
   }, [month]);
 
+  fixScheduleErrors(schedule);
+
   const prevMonth = () => {
     if (month > 1) {
       setIsLoading(true);
@@ -49,7 +51,7 @@ function Schedule() {
     }
   };
 
-  fixScheduleErrors(schedule)
+  // fixScheduleErrors(schedule)
 
   if (isLoading) {
     return <Spinner />;

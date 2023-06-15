@@ -4,13 +4,14 @@ const {
   getOdds,
   postScores,
   postYesterdaysScores,
-  postXXXgames
-
+  postXXXgames,
+  postSchedule,
 } = require("../controllers/oddsController");
 
 router.get("/", getOdds);
 router.get("/scoreboard", postScores);
+router.get("/schedule", postSchedule);
 router.get("/yesterdaysScores", postYesterdaysScores);
-router.get("/:date", postXXXgames)
+router.get("/:date", postXXXgames);
 
 module.exports = router;

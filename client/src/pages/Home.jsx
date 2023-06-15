@@ -15,7 +15,7 @@ function Home() {
   const [gamesLoading, setGamesLoading] = useState(false);
   const [day, setDay] = useState(null);
   const [rawOdds, setRawOdds] = useState([]);
-  const { user, isLoading } = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.auth);
 
   const today = new Date().toString();
 
@@ -97,7 +97,13 @@ function Home() {
       </div>
       <div id="main" className="card-container">
         {games.map((game, index) => (
-          <SingleGame key={index} game={game} odds={rawOdds} user={user} today={formatDate(today) === formatDate(day)} />
+          <SingleGame
+            key={index}
+            game={game}
+            odds={rawOdds}
+            user={user}
+            today={formatDate(today) === formatDate(day)}
+          />
         ))}
       </div>
     </>

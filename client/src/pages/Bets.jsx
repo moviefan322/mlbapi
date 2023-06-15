@@ -19,7 +19,7 @@ function Bets() {
     dispatch(getBets());
     dispatch(getUserData(user.token));
     setUpdatedBets(true);
-  }, []);
+  }, [dispatch, user.token]);
 
   if (isLoading || !updatedBets) {
     return <Spinner />;
