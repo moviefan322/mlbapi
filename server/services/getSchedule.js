@@ -55,21 +55,51 @@ const formatBySeries = async () => {
         teamSchedule[teamId][seriesNumber].push(game);
       }
     }
+
+    for (let series in teamSchedule[teamId]) {
+      const seriesNumber = parseInt(series);
+      if (teamSchedule[teamId][seriesNumber].length === 1) {
+        delete teamSchedule[teamId][seriesNumber];
+
+        // fix keys of following series
+        for (let j = seriesNumber + 1; j < 53; j++) {
+          const seriesVariableName = `${j}`;
+          const newSeriesVariableName = `${j - 1}`;
+          teamSchedule[teamId][newSeriesVariableName] =
+            teamSchedule[teamId][seriesVariableName];
+          delete teamSchedule[teamId][seriesVariableName];
+        }
+      }
+    }
   }
 
-  return teamSchedule;
+  const fixedSchedule = fixScheduleErrors(teamSchedule);
+
+  return fixedSchedule;
+};
+
+const pruneOutMakeUpGames = (schedule) => {
+  for (let teamId in schedule) {
+    for (let seriesNumber in schedule[teamId]) {
+      const series = schedule[teamId][seriesNumber];
+      if (series.length === 1) {
+        delete schedule[teamId][seriesNumber];
+      }
+    }
+  }
+  return schedule;
 };
 
 const fixScheduleErrors = (schedule) => {
   console.log("fixing schedule");
   // loop through each team
-  for (var i = 108; i < 158; i++) {
+  for (let i = 108; i < 158; i++) {
     if (schedule[i] === undefined) {
       continue; // Skip empty objects
     }
 
     // loop through each series
-    for (var j = 1; j < 52; j++) {
+    for (let j = 1; j < 52; j++) {
       // if series is empty, save to new variable
       if (schedule[i][j].length === 0) {
         const previousSeriesArrayLength = schedule[i][j - 1].length;
@@ -86,8 +116,7 @@ const fixScheduleErrors = (schedule) => {
             );
           }
           // if seriesGameNumber is equal to series.length, repeat steps for series after empty series
-
-          if (previousSeriesLength === previousSeriesArrayLength) {
+          else {
             const nextSeriesArrayLength = schedule[i][j + 1].length;
             if (schedule[i][j + 1].length > 0) {
               const nextSeriesLength =
@@ -105,6 +134,7 @@ const fixScheduleErrors = (schedule) => {
       }
     }
   }
+  return schedule;
 };
 
 module.exports = { formatBySeries };

@@ -1,5 +1,4 @@
 import axios from "axios";
-import formatBySeries from "../utils/formatBySeries";
 import teamKeysArray from "../utils/teamKeysArray";
 import { useEffect, useState } from "react";
 import ScheduleLine from "../components/ScheduleLine";
@@ -8,6 +7,7 @@ import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import monthSeriesMap from "../utils/monthSeriesMap";
 import monthMap from "../utils/monthMap";
 import { fixScheduleErrors } from "../utils/scheduleCorrection";
+import formatBySeries from "../utils/formatBySeries";
 
 function Schedule() {
   const [month, setMonth] = useState(new Date().getMonth() + 1);
@@ -21,8 +21,9 @@ function Schedule() {
   useEffect(() => {
     const getSeasonData = async () => {
       const res = await formatBySeries();
+      // const res = await axios.get("/api/odds/schedule");
       const scores = await axios.get("/api/odds/scoreboard");
-      setSchedule(JSON.parse(JSON.stringify(res)));
+      setSchedule(res);
       setScoreboard(scores.data);
       setMonthSeries(monthSeriesMap(month));
       setMonthName(monthMap(month));
@@ -33,7 +34,11 @@ function Schedule() {
     getSeasonData();
   }, [month]);
 
-  fixScheduleErrors(schedule);
+  useEffect(() => {
+    if (!isLoading) {
+      fixScheduleErrors(schedule);
+    }
+  }, [schedule]);
 
   const prevMonth = () => {
     if (month > 1) {
@@ -51,11 +56,11 @@ function Schedule() {
     }
   };
 
-  // fixScheduleErrors(schedule)
-
   if (isLoading) {
     return <Spinner />;
   }
+
+  // console.log("schedule", schedule);
 
   return (
     <>

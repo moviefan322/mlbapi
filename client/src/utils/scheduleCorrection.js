@@ -1,12 +1,43 @@
+const pruneSchedule = (teamSchedule) => {
+  for (let teamId in teamSchedule) {
+    for (let series in teamSchedule[teamId]) {
+      const seriesNumber = parseInt(series);
+      if (teamSchedule[teamId][seriesNumber].length === 1) {
+        delete teamSchedule[teamId][seriesNumber];
+
+        // fix keys of following series
+        for (let j = seriesNumber + 1; j < 53; j++) {
+          const seriesVariableName = `${j}`;
+          const newSeriesVariableName = `${j - 1}`;
+          teamSchedule[teamId][newSeriesVariableName] =
+            teamSchedule[teamId][seriesVariableName];
+          delete teamSchedule[teamId][seriesVariableName];
+        }
+      }
+    }
+  }
+  return teamSchedule;
+};
+
 export const fixScheduleErrors = (schedule) => {
+  pruneSchedule(schedule);
   // loop through each team
   for (var i = 108; i < 158; i++) {
     if (schedule[i] === undefined) {
       continue; // Skip empty objects
     }
-
+    let unEvenSeries = [];
     // loop through each series
     for (var j = 1; j < 52; j++) {
+      if (schedule[i][j].length > 0) {
+        const currentSeriesArrayLength = schedule[i][j].length;
+        const currentSeriesLength =
+          schedule[i][j][currentSeriesArrayLength - 1].seriesGameNumber;
+
+        if (currentSeriesLength !== currentSeriesArrayLength) {
+          unEvenSeries.push(j);
+        }
+      }
       // if series is empty, save to new variable
       if (schedule[i][j].length === 0) {
         const previousSeriesArrayLength = schedule[i][j - 1].length;
@@ -42,4 +73,15 @@ export const fixScheduleErrors = (schedule) => {
       }
     }
   }
+
+  return schedule;
 };
+
+
+
+// export const manualFixes = (schedule) => {
+//   // schedule[109][29] = schedule[109][28];
+//   console.log(schedule[109][28]);
+
+//   return schedule;
+// };
