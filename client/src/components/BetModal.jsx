@@ -33,9 +33,9 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
     }
     if (isSuccess) {
       dispatch(reset());
-      navigate("/bets");
+      onClose();
     }
-  }, [isSuccess, dispatch, navigate, isError, message]);
+  }, [isSuccess, dispatch, navigate, isError, message, onClose]);
 
   const onPlaceBet = (e) => {
     e.preventDefault();
@@ -104,7 +104,6 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
   if (isLoading) {
     return <Spinner />;
   }
-
 
   return (
     <div>
