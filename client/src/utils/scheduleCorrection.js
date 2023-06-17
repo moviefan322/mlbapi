@@ -20,6 +20,9 @@ const pruneSchedule = (teamSchedule) => {
 };
 
 export const fixScheduleErrors = (schedule) => {
+  delete schedule[160];
+  delete schedule[159];
+  
   pruneSchedule(schedule);
   // loop through each team
   for (var i = 108; i < 158; i++) {
@@ -74,14 +77,53 @@ export const fixScheduleErrors = (schedule) => {
     }
   }
 
+  const newSched = fixScheduleErrors2(schedule);
+
+  return newSched;
+};
+
+const fixScheduleErrors2 = (schedule) => {
+  for (let teamId in schedule) {
+    let doubleSeries = [];
+    let undefinedSeries = [];
+    for (let seriesIndex in schedule[teamId]) {
+      const series = schedule[teamId][seriesIndex];
+      if (series.length === 0) {
+        undefinedSeries.push(seriesIndex);
+      }
+      if (series.length > 1) {
+        const PPD = checkForPPD(series);
+        if (PPD) {
+          continue;
+        }
+        if (series.length !== series[series.length - 1].gamesInSeries) {
+          doubleSeries.push(Number(seriesIndex));
+        }
+      }
+
+      if (doubleSeries.length > 0 && undefinedSeries.length > 0) {
+        // console.log(doubleSeries, undefinedSeries);
+      }
+    }
+    console.log(doubleSeries, undefinedSeries);
+  }
   return schedule;
 };
 
+const checkForPPD = (series) => {
+  for (let game in series) {
+    if (series[game].status.codedGameState === "D") {
+      return true;
+    }
+  }
+  return false;
+};
 
-
-// export const manualFixes = (schedule) => {
-//   // schedule[109][29] = schedule[109][28];
-//   console.log(schedule[109][28]);
-
-//   return schedule;
-// };
+const shiftSeries = (series) => {
+  for (let game in series) {
+    const seriesNumber = Number(game.teams.away.seriesNumber);
+    game.teams.away.seriesNumber = seriesNumber + 1;
+    game.teams.home.seriesNumber = seriesNumber + 1;
+    console.log(seriesNumber, series);
+  }
+};

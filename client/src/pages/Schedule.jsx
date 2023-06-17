@@ -7,6 +7,7 @@ import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import monthSeriesMap from "../utils/monthSeriesMap";
 import monthMap from "../utils/monthMap";
 import formatBySeries from "../utils/formatBySeries";
+import { fixScheduleErrors } from "../utils/scheduleCorrection";
 
 function Schedule() {
   const [month, setMonth] = useState(new Date().getMonth() + 1);
@@ -20,9 +21,10 @@ function Schedule() {
   useEffect(() => {
     const getSeasonData = async () => {
       const res = await formatBySeries();
+      const cleanedSchedule = fixScheduleErrors(res);
       // const res = await axios.get("/api/odds/schedule");
       const scores = await axios.get("/api/odds/scoreboard");
-      setSchedule(res);
+      setSchedule(cleanedSchedule);
       setScoreboard(scores.data);
       setMonthSeries(monthSeriesMap(month));
       setMonthName(monthMap(month));

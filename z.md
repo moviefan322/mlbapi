@@ -1,4 +1,7 @@
-import axios from "axios";
+One of the passion apps I'm working on is a (<a href='https://sports-app322.herokuapp.com/'>sports betting website</a>). For now it's only baseball, but I hope to eventually get all major sports in there. I've implemented betting and most of the functionality you would expect from a sports website, and the experience has been been the most 'logical gymnastics' heavy experience I've had with coding so far. I've had to do a lot of work to get the data I need in the format I need it in.
+
+My latest challenge is correcting errors in the schedule- for some reason the MLB
+
 
 const getFullSchedule = async () => {
   const response = await axios.get(
@@ -95,40 +98,6 @@ const pruneOutMakeUpGames = (schedule) => {
   return schedule;
 };
 
-const fixScheduleErrors = (schedule) => {
-  for (let teamId in schedule) {
-    for (let seriesIndex in schedule[teamId]) {
-      const series = schedule[teamId][seriesIndex];
-      let doubleSeries = [];
-      let undefinedSeries = [];
-      if (series.length === 0) {
-        undefinedSeries.push(Number(seriesIndex));
-      }
-      if (series.length > 1) {
-        if (series.length !== series[series.length - 1].gamesInSeries) {
-          doubleSeries.push(Number(seriesIndex));
-        }
-      }
 
-      if (doubleSeries.length > 0) {
-        doubleSeries.forEach((seriesNumber) => {
-          // shiftSeries(
-          //   schedule[teamId][seriesNumber][0].teams.away.seriesNumber
-          // );
-          console.log(schedule[teamId][seriesNumber][0], seriesNumber);
-        });
-      }
-    }
-  }
-};
-
-const shiftSeries = (series) => {
-  for (let game in series) {
-    const seriesNumber = Number(game.teams.away.seriesNumber);
-    game.teams.away.seriesNumber = seriesNumber + 1;
-    game.teams.home.seriesNumber = seriesNumber + 1;
-    console.log(seriesNumber, series);
-  }
-};
 
 module.exports = { formatBySeries };

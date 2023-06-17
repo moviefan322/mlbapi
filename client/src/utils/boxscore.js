@@ -1,22 +1,22 @@
 const ordinalSuffix = require("../utils/ordinalSuffix");
 
-const renderPlayerName = (boxscore, homeaway, batter) => {
+const renderPlayerName = (boxscore, homeaway, playerId) => {
   let player =
     boxscore.liveData.boxscore.teams[`${homeaway}`].players[
-      `ID${batter}`
+      `ID${playerId}`
     ].person.fullName.match(/\b(\w+)\b$/)?.[1];
 
   if (player === undefined) {
     player =
       boxscore.liveData.boxscore.teams[`${homeaway}`].players[
-        `ID${batter}`
+        `ID${playerId}`
       ].person.fullName.split(" ")[1];
   }
 
   if (player === "II" || player === "III" || player === "Jr.") {
     player =
       boxscore.liveData.boxscore.teams[`${homeaway}`].players[
-        `ID${batter}`
+        `ID${playerId}`
       ].person.fullName.split(" ")[1];
   }
 
