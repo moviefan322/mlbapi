@@ -77,13 +77,18 @@ function SingleGame({ game, odds, user, today }) {
             {game.teams.away.leagueRecord.losses})
           </p>
         </div>{" "}
-        <div className="icon-container">
-          <img
+        <div className="icon-odds">
+        <div
             className="icon"
-            src={teamKeys[awayTeam].image}
-            alt="team logo"
-            loading="lazy"
-          />
+            style={{
+              backgroundImage: `url(${teamKeys[awayTeam].image})`,
+              backgroundPosition: "center",
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              height: "60px",
+              width: "60px",
+            }}
+          ></div>
           {awayOdds && today && (
             <div className="tooltip">
               <button
@@ -130,47 +135,54 @@ function SingleGame({ game, odds, user, today }) {
           )}
         </div>
         <h1>@</h1>{" "}
-        <div>
-          <img
+        <div className="icon-odds">
+          <div
             className="icon"
-            src={teamKeys[homeTeam].image}
-            alt="team logo"
-            loading="lazy"
-          />
-          {homeOdds && today && (
-            <div className="tooltip">
-              <button
-                className={`bet-btn btn btn-sm ${
-                  homeOdds >= 0 ? "red" : "green"
-                }`}
-                onClick={user && onOpenHome}
-                disabled={
-                  !(
-                    game.status.codedGameState === "S" ||
-                    game.status.codedGameState === "P" ||
-                    game.status.codedGameState === "PW"
-                  )
-                }
-              >
-                {homeOdds >= 0 ? "+" : ""}
-                {homeOdds}
-              </button>
-              {!user && (
-                <span className="tooltiptext">
-                  You must be logged in to place a bet
-                </span>
-              )}
-              {!(
-                game.status.codedGameState === "S" ||
-                game.status.codedGameState === "P" ||
-                game.status.codedGameState === "PW"
-              ) && (
-                <span className="tooltiptext">
-                  Betting is closed at first pitch
-                </span>
-              )}
-            </div>
-          )}
+            style={{
+              backgroundImage: `url(${teamKeys[homeTeam].image})`,
+              backgroundPosition: "center",
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              height: "60px",
+              width: "60px",
+            }}
+          ></div>
+          <div>
+            {homeOdds && today && (
+              <div className="tooltip">
+                <button
+                  className={`bet-btn btn btn-sm ${
+                    homeOdds >= 0 ? "red" : "green"
+                  }`}
+                  onClick={user && onOpenHome}
+                  disabled={
+                    !(
+                      game.status.codedGameState === "S" ||
+                      game.status.codedGameState === "P" ||
+                      game.status.codedGameState === "PW"
+                    )
+                  }
+                >
+                  {homeOdds >= 0 ? "+" : ""}
+                  {homeOdds}
+                </button>
+                {!user && (
+                  <span className="tooltiptext">
+                    You must be logged in to place a bet
+                  </span>
+                )}
+                {!(
+                  game.status.codedGameState === "S" ||
+                  game.status.codedGameState === "P" ||
+                  game.status.codedGameState === "PW"
+                ) && (
+                  <span className="tooltiptext">
+                    Betting is closed at first pitch
+                  </span>
+                )}
+              </div>
+            )}
+          </div>
 
           {openHome && (
             <BetModal

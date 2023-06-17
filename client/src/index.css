@@ -805,6 +805,10 @@ header img {
   margin-bottom: 1rem;
 }
 
+.icon-odds div {
+  margin: 0.5rem auto;
+}
+
 /* -------------------------------- */
 @media only screen and (min-width: 992px) {
   .container {
