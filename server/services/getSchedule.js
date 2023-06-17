@@ -97,22 +97,25 @@ const pruneOutMakeUpGames = (schedule) => {
 
 const fixScheduleErrors = (schedule) => {
   schedule = pruneOutMakeUpGames(schedule);
-  for (let teamId in schedule) {
-    for (let seriesIndex in schedule[teamId]) {
-      const series = schedule[teamId][seriesIndex];
-      let doubleSeries = [];
-      let undefinedSeries = [];
-      if (series.length === 0) {
-        undefinedSeries.push(Number(seriesIndex));
-      }
-      if (series.length > 1) {
-        if (series.length !== series[series.length - 1].gamesInSeries) {
-          doubleSeries.push(Number(seriesIndex));
-        }
-      }
-      console.log(undefinedSeries);
-    }
-  }
+  // for (let teamId in schedule) {
+  //   for (let seriesIndex in schedule[teamId]) {
+  //     const series = schedule[teamId][seriesIndex];
+  //     let doubleSeries = [];
+  //     let undefinedSeries = [];
+  //     if (series.length === 0) {
+  //       undefinedSeries.push(Number(seriesIndex));
+  //     }
+  //     if (series.length > 1) {
+  //       if (series.length !== series[series.length - 1].gamesInSeries) {
+  //         doubleSeries.push(Number(seriesIndex));
+  //       }
+  //     }
+
+  //     if (doubleSeries.length > 0) {
+  //       console.log(dob.length);
+  //     }
+  //   }
+  // }
 };
 
 module.exports = { formatBySeries };
