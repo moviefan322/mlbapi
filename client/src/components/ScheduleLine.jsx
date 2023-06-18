@@ -9,6 +9,7 @@ function ScheduleLine({
   scoreboard,
   yesterdaysScores,
 }) {
+
   const latestGame = scoreboard.find((game) => {
     return (
       game.teams.away.team.id === team.id || game.teams.home.team.id === team.id

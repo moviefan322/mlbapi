@@ -8,7 +8,16 @@ const pruneSchedule = (teamSchedule) => {
     for (let series in teamSchedule[teamId]) {
       const seriesNumber = parseInt(series);
       if (teamSchedule[teamId][seriesNumber].length === 1) {
-        delete teamSchedule[teamId][seriesNumber];
+        teamSchedule[teamId][seriesNumber] = [];
+
+        // fix keys of following series
+        for (let j = seriesNumber; j < 53; j++) {
+          const seriesVariableName = `${j}`;
+          const newSeriesVariableName = `${j - 1}`;
+          teamSchedule[teamId][newSeriesVariableName] =
+            teamSchedule[teamId][seriesVariableName];
+          delete teamSchedule[teamId][seriesVariableName];
+        }
       }
     }
   }
@@ -82,6 +91,8 @@ export const fixScheduleErrors2 = (schedule) => {
   delete schedule[160];
   delete schedule[159];
   // schedule = pruneSchedule(schedule);
+  schedule = givePropertyToSeries(schedule);
+  console.log(schedule[109][30]);
 
   for (let teamId in schedule) {
     let doubleSeries = [];
@@ -90,10 +101,10 @@ export const fixScheduleErrors2 = (schedule) => {
 
     for (let seriesIndex in schedule[teamId]) {
       const series = schedule[teamId][seriesIndex];
-      if (series.length === 0) {
-        if (Number(seriesIndex) === 52) {
-          continue;
-        }
+      if (series === false) {
+        // if (Number(seriesIndex) === 52) {
+        //   continue;
+        // }
         undefinedSeries.push(Number(seriesIndex));
       }
 
@@ -165,27 +176,26 @@ export const fixScheduleErrors2 = (schedule) => {
           ].splice(lengthOfSeries, doubleSeries.length - lengthOfSeries);
         }
 
-        // for (let i = 0; i < keyArray.length; i++) {
-        //   const key = keyArray[i];
-        //   console.log(key);
-        //   const missingSeries = schedule[key].find((series) => {
-        //     if (
-        //       series[0].teams.away.team.id === teamId ||
-        //       series[0].teams.home.team.id === teamId
-        //     ) {
-        //       return series;
-        //     }
-        //   });
-        //   schedule[teamId][undefinedSeriesIndex] = missingSeries;
-        // }
+        for (let j = 0; j < keyArray.length; j++) {
+          const key = keyArray[j];
+          if (
+            schedule[key][undefinedSeriesIndex]?.teams?.away.team.id ===
+              schedule[teamId][undefinedSeriesIndex]?.teams?.away.team.id ||
+            schedule[key][undefinedSeriesIndex]?.teams.home?.team.id ===
+              schedule[teamId][undefinedSeriesIndex]?.teams?.home.team.id
+          ) {
+            schedule[teamId][undefinedSeriesIndex] =
+              schedule[key][undefinedSeriesIndex];
+          }
+        }
       }
     }
   }
 
-  schedule[120][29] = schedule[140][29];
-  schedule[109][29] = schedule[134][29];
-  schedule[158][31] = schedule[144][31];
-  schedule[109][34] = schedule[136][34];
+  // schedule[120][29] = schedule[140][29];
+  // schedule[109][29] = schedule[134][29];
+  // schedule[158][31] = schedule[144][31];
+  // schedule[109][34] = schedule[136][34];
   return schedule;
 };
 
@@ -198,11 +208,14 @@ const checkForPPD = (series) => {
   return false;
 };
 
-const shiftSeries = (series) => {
-  for (let game in series) {
-    const seriesNumber = Number(game.teams.away.seriesNumber);
-    game.teams.away.seriesNumber = seriesNumber + 1;
-    game.teams.home.seriesNumber = seriesNumber + 1;
-    console.log(seriesNumber, series);
+const givePropertyToSeries = (schedule) => {
+  for (let teamId in schedule) {
+    for (let seriesIndex in schedule[teamId]) {
+      const series = schedule[teamId][seriesIndex];
+      if (series.length === 0) {
+        schedule[teamId][seriesIndex] = false;
+      }
+    }
   }
+  return schedule;
 };
