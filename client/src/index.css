@@ -82,11 +82,12 @@ h3 {
 }
 
 .header ul li {
-  margin-left: 20px;
   text-align: center;
   background-color: blanchedalmond;
-  padding: 0.5rem 0.8rem;
+  padding: 0.3rem 0.7rem;
   border-radius: 30px;
+  font-size: 0.7rem;
+  margin: 0 0.3rem;
 }
 
 .header ul li a {
