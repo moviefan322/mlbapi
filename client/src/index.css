@@ -60,16 +60,33 @@ h3 {
   margin-bottom: 5%;
   width: 100%;
   font-size: 0.9rem;
+  background-color: rgba(0, 0, 0, 0.543);
+  padding-left: 1rem;
+}
+
+.logo {
+  padding-left: 2rem;
+}
+
+.logo img {
+  height: 70px;
+  width: 75px;
+  background-color: #f2d8d8c6;
+  border-radius: 210%;
 }
 
 .header ul {
   display: flex;
   justify-content: space-around;
+  padding: 0 2rem;
 }
 
 .header ul li {
   margin-left: 20px;
   text-align: center;
+  background-color: blanchedalmond;
+  padding: 0.5rem 0.8rem;
+  border-radius: 30px;
 }
 
 .header ul li a {

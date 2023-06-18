@@ -1,4 +1,4 @@
-import axios from "axios";
+const axios = require("axios");
 
 const getFullSchedule = async () => {
   const response = await axios.get(
