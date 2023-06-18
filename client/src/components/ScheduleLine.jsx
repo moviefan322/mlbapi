@@ -9,7 +9,6 @@ function ScheduleLine({
   scoreboard,
   yesterdaysScores,
 }) {
-
   const latestGame = scoreboard.find((game) => {
     return (
       game.teams.away.team.id === team.id || game.teams.home.team.id === team.id
@@ -40,18 +39,24 @@ function ScheduleLine({
     return (
       <>
         <td className="team-cell">
-          <img
-            className="icon-scoreboard"
-            src={team.image}
-            alt=""
-            height="25px"
-            width="25px"
-          />
-          {typeof teamPct === "string" ? (
-            <span className="pct">{teamPct}</span>
-          ) : (
-            <span className="pct">{yesterdaysTeamPct}</span>
-          )}
+          {/* <div>
+            {typeof teamPct === "string" ? (
+              <span className="pct">{teamPct}</span>
+            ) : (
+              <span className="pct">{yesterdaysTeamPct}</span>
+            )}
+          </div> */}
+          <div
+            style={{
+              backgroundImage: `url(${team.image})`,
+              backgroundPosition: "center",
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+              height: "40px",
+              width: "40px",
+              margin: "5px",
+            }}
+          ></div>
         </td>
         {series.map((series, index) => (
           <td key={index} className="unit">

@@ -24,7 +24,7 @@ function Schedule() {
       const cleanedSchedule = fixScheduleErrors(res);
       // const res = await axios.get("/api/odds/schedule");
       const scores = await axios.get("/api/odds/scoreboard");
-      setSchedule(cleanedSchedule);
+      setSchedule(res);
       setScoreboard(scores.data);
       setMonthSeries(monthSeriesMap(month));
       setMonthName(monthMap(month));

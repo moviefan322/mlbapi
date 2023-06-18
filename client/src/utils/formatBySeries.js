@@ -49,7 +49,7 @@ const formatBySeries = async () => {
     for (let i = 0; i < fullSchedule[teamId].undefined.length; i++) {
       const game = fullSchedule[teamId].undefined[i];
       const seriesNumber = game.teams.away.seriesNumber;
-      if (teamSchedule[teamId][seriesNumber]) {
+      if (teamSchedule[teamId][seriesNumber] && game.gamesInSeries > 1) {
         teamSchedule[teamId][seriesNumber].push(game);
       }
     }

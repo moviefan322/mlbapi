@@ -73,7 +73,7 @@ function Home() {
     return <Spinner />;
   }
 
-  console.log(games);
+  // console.log(games);
 
   return (
     <>

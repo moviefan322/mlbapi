@@ -63,6 +63,7 @@ function SingleGame({ game, odds, user, today }) {
     awayOdds = thisGame[0]?.bookmakers[0].markets[0].outcomes[1].price;
   }
 
+  console.log(singleGame);
   return (
     <div className="card">
       <p>
@@ -78,7 +79,7 @@ function SingleGame({ game, odds, user, today }) {
           </p>
         </div>{" "}
         <div className="icon-odds">
-        <div
+          <div
             className="icon"
             style={{
               backgroundImage: `url(${teamKeys[awayTeam].image})`,
