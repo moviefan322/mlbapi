@@ -179,23 +179,55 @@ export const fixScheduleErrors2 = (schedule) => {
         for (let j = 0; j < keyArray.length; j++) {
           const key = keyArray[j];
           if (
-            schedule[key][undefinedSeriesIndex]?.teams?.away.team.id ===
-              schedule[teamId][undefinedSeriesIndex]?.teams?.away.team.id ||
-            schedule[key][undefinedSeriesIndex]?.teams.home?.team.id ===
-              schedule[teamId][undefinedSeriesIndex]?.teams?.home.team.id
+            schedule[key][undefinedSeriesIndex]?.teams?.away?.team.id ===
+              teamId ||
+            schedule[key][undefinedSeriesIndex]?.teams?.home?.team.id === teamId
           ) {
             schedule[teamId][undefinedSeriesIndex] =
               schedule[key][undefinedSeriesIndex];
           }
+
+          // const prevGameDate =
+          //   schedule[teamId][undefinedSeriesIndex - 1][
+          //     schedule[teamId][undefinedSeriesIndex - 1]?.length - 1
+          //   ]?.calendarEventID.split("-")[4];
+          // const nextGameDate =
+          //   schedule[teamId][
+          //     undefinedSeriesIndex + 1
+          //   ][0]?.calendarEventID.split("-")[4];
+
+          // if (
+          //   schedule[key][undefinedSeriesIndex - 1][0]?.teams?.away.team
+          //     .id === teamId ||
+          //   (schedule[key][undefinedSeriesIndex - 1][0]?.teams?.home?.team
+          //     .id === teamId &&
+          //     schedule[key][
+          //       undefinedSeriesIndex - 1
+          //     ]?.[0]?.calendarEventID.split("-")[4] ===
+          //       prevGameDate + 1)
+          // ) {
+          //   schedule[teamId][undefinedSeriesIndex] =
+          //     schedule[key][undefinedSeriesIndex - 1];
+          // }
+
+          // if (
+          //   schedule[key][undefinedSeriesIndex + 1]?.[0]?.teams?.away.team
+          //     .id === teamId ||
+          //   (schedule[key][undefinedSeriesIndex + 1]?.[0]?.teams?.home?.team
+          //     .id === teamId &&
+          //     schedule[key][
+          //       undefinedSeriesIndex + 1
+          //     ]?.[0]?.calendarEventID.split("-")[4] ===
+          //       nextGameDate - 1)
+          // ) {
+          //   schedule[teamId][undefinedSeriesIndex] =
+          //     schedule[key][undefinedSeriesIndex + 1];
+          // }
         }
       }
     }
   }
 
-  // schedule[120][29] = schedule[140][29];
-  // schedule[109][29] = schedule[134][29];
-  // schedule[158][31] = schedule[144][31];
-  // schedule[109][34] = schedule[136][34];
   return schedule;
 };
 
