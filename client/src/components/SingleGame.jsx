@@ -48,9 +48,24 @@ function SingleGame({ game, odds, user, today }) {
   }
 
   // const showData = async () => {
-  //   const singleGameData = await getSingleGameData(718174);
+  //   const singleGameData = await getSingleGameData(717678);
   //   console.log(singleGameData);
   // };
+
+  const awayStarterId = singleGame.gameData?.probablePitchers.away?.id;
+  const homeStarterId = singleGame.gameData?.probablePitchers.home?.id;
+  console.log(awayStarterId);
+
+  const awayStarterStats =
+    singleGame.liveData.boxscore.teams.away.players[`ID${awayStarterId}`]
+      ?.seasonStats.pitching;
+  const homeStarterStats =
+    singleGame.liveData.boxscore.teams.home.players[`ID${homeStarterId}`]
+      ?.seasonStats.pitching;
+
+  console.log(
+    singleGame.liveData.boxscore.teams.away.players[`ID${awayStarterId}`]
+  );
 
   const thisGame = odds.filter((odd) => {
     return odd.away_team === awayTeam && odd.home_team === homeTeam;
@@ -209,28 +224,88 @@ function SingleGame({ game, odds, user, today }) {
       </div>
       <div className="score">
         <div className="data">
-          <h3>
-            {game.status.statusCode === "I" ||
-            game.status.codedGameState === "F" ? (
-              <>
-                {singleGame.liveData.linescore.teams.away.runs} -{" "}
-                {singleGame.liveData.linescore.teams.home.runs}
-              </>
-            ) : game.status.codedGameState === "D" ? (
+          {game.status.statusCode === "I" ||
+          game.status.codedGameState === "F" ? (
+            <>
+              {singleGame.liveData.linescore.teams.away.runs} -{" "}
+              {singleGame.liveData.linescore.teams.home.runs}
+            </>
+          ) : game.status.codedGameState === "D" ? (
+            <div>
+              <h4>PPD</h4>
+            </div>
+          ) : game.status.statusCode === "PW" ? (
+            "WARMUP"
+          ) : (
+            <div className="data-preview">
               <div>
-                <h4>PPD</h4>
+                <p>
+                  <strong>
+                    #
+                    {
+                      singleGame.liveData.boxscore.teams.away.players[
+                        `ID${awayStarterId}`
+                      ].jerseyNumber
+                    }
+                  </strong>
+                </p>
+                <p>
+                  {awayStarterStats.wins}-{awayStarterStats.losses}
+                </p>
+                <p>{awayStarterStats.era}</p>
               </div>
-            ) : game.status.statusCode === "PW" ? (
-              "WARMUP"
-            ) : (
-              <>
-                <p>{formatTime(game.gameDate)}</p>
-                {/* <p>
-                  {game.gameNumber}/{game.gamesInSeries}
-                </p> */}
-              </>
-            )}
-          </h3>
+              <div
+                style={{
+                  backgroundImage: `url(https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/${singleGame.gameData?.probablePitchers.away?.id}/headshot/67/current)`,
+                  backgroundPosition: "center",
+                  backgroundSize: "contain",
+                  backgroundRepeat: "no-repeat",
+                  height: "100px",
+                  width: "68px",
+                  border: "1px solid black",
+                  borderRadius: "5px",
+                }}
+              ></div>
+              <h3>{formatTime(game.gameDate)} </h3>
+              <div
+                style={{
+                  backgroundImage: `url(https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/${singleGame.gameData?.probablePitchers.home?.id}/headshot/67/current)`,
+                  backgroundPosition: "center",
+                  backgroundSize: "contain",
+                  backgroundRepeat: "no-repeat",
+                  height: "100px",
+                  width: "68px",
+                  border: "1px solid black",
+                  borderRadius: "5px",
+                }}
+              ></div>
+              <div>
+                {singleGame.liveData.boxscore.teams.home.players[
+                  `ID${homeStarterId}`
+                ] ? (
+                  <>
+                    <p>
+                      <strong>
+                        #
+                        {
+                          singleGame.liveData.boxscore.teams.home.players[
+                            `ID${homeStarterId}`
+                          ]?.jerseyNumber
+                        }
+                      </strong>
+                    </p>
+                    <p>
+                      {homeStarterStats?.wins}-{homeStarterStats?.losses}
+                    </p>
+                    <p>{homeStarterStats?.era}</p>
+                  </>
+                ) : (
+                  <p><strong>???</strong></p>
+                )}
+              </div>
+            </div>
+          )}
+
           {game.status.statusCode === "I" && (
             <div className="onbase">
               <div>

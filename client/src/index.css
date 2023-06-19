@@ -299,6 +299,7 @@ h3 {
 
 .score {
   margin: 0.5rem;
+  width: 100%;
 }
 
 .green {
@@ -452,7 +453,17 @@ h3 {
 }
 
 .data {
-  margin: 0;
+  margin: auto;
+  width: 100%;
+}
+
+.data-preview {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
 }
 
 .onbase {
@@ -501,23 +512,6 @@ h3 {
   top: 0.35rem;
 }
 
-.team-cell {
-  /* display: flex;
-  flex-direction: row;
-  top: 0.5rem; */
-  /* position: relative;
-  left: 1rem;
-  top: 0.8rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 0.8rem;
-  text-align: right; */
-}
-/* .pct {
-  position: relative;
-  right: 1.5rem;
-} */
 
 .boxscore-top {
   display: flex;

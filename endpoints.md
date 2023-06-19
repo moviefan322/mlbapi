@@ -1,3 +1,15 @@
+player photo:
+
+https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/670541/headshot/67/current
+
+(213x320)
+
+hero:
+https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:action:hero:current.jpg/q_auto:good,w_1500/v1/people/670541/action/hero/current
+
+
+
+
 live game data: https://ws.statsapi.mlb.com/api/v1.1/game/718312/feed/live?language=en
 
 fullSeason =
