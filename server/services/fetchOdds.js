@@ -20,6 +20,7 @@ const options = {
 const fetchOdds = async () => {
   try {
     const response = await axios.request(options);
+    console.log(response.data);
     fs.writeFile(
       path.join(__dirname, "../devData/odds.json"),
       JSON.stringify(response.data),

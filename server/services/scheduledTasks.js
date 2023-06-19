@@ -8,7 +8,7 @@ const cron = require("node-cron");
 
 const task3 = cron.schedule("10 09 * * *", () => {
   console.log("Time to fetch the odds!");
-  // writeTodaysGames();
+  writeTodaysGames();
   fetchOdds();
 });
 
