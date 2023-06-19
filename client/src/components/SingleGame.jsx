@@ -238,70 +238,76 @@ function SingleGame({ game, odds, user, today }) {
             "WARMUP"
           ) : (
             <div className="data-preview">
-              <div>
-                <p>
-                  <strong>
-                    #
-                    {
-                      singleGame.liveData.boxscore.teams.away.players[
-                        `ID${awayStarterId}`
-                      ].jerseyNumber
-                    }
-                  </strong>
-                </p>
-                <p>
-                  {awayStarterStats.wins}-{awayStarterStats.losses}
-                </p>
-                <p>{awayStarterStats.era}</p>
+              <div class="pitch-preview-contianer">
+                <div className="cardteam2">
+                  <p>
+                    <strong>
+                      #
+                      {
+                        singleGame.liveData.boxscore.teams.away.players[
+                          `ID${awayStarterId}`
+                        ].jerseyNumber
+                      }
+                    </strong>
+                  </p>
+                  <p>
+                    {awayStarterStats.wins}-{awayStarterStats.losses}
+                  </p>
+                  <p>{awayStarterStats.era}</p>
+                </div>
+                <div
+                  style={{
+                    backgroundImage: `url(https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/${singleGame.gameData?.probablePitchers.away?.id}/headshot/67/current)`,
+                    backgroundPosition: "center",
+                    backgroundSize: "contain",
+                    backgroundRepeat: "no-repeat",
+                    height: "100px",
+                    width: "68px",
+                    border: "1px solid black",
+                    borderRadius: "5px",
+                  }}
+                ></div>
               </div>
-              <div
-                style={{
-                  backgroundImage: `url(https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/${singleGame.gameData?.probablePitchers.away?.id}/headshot/67/current)`,
-                  backgroundPosition: "center",
-                  backgroundSize: "contain",
-                  backgroundRepeat: "no-repeat",
-                  height: "100px",
-                  width: "68px",
-                  border: "1px solid black",
-                  borderRadius: "5px",
-                }}
-              ></div>
               <h3>{formatTime(game.gameDate)} </h3>
-              <div
-                style={{
-                  backgroundImage: `url(https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/${singleGame.gameData?.probablePitchers.home?.id}/headshot/67/current)`,
-                  backgroundPosition: "center",
-                  backgroundSize: "contain",
-                  backgroundRepeat: "no-repeat",
-                  height: "100px",
-                  width: "68px",
-                  border: "1px solid black",
-                  borderRadius: "5px",
-                }}
-              ></div>
-              <div>
-                {singleGame.liveData.boxscore.teams.home.players[
-                  `ID${homeStarterId}`
-                ] ? (
-                  <>
+              <div class="pitch-preview-contianer">
+                <div
+                  style={{
+                    backgroundImage: `url(https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/${singleGame.gameData?.probablePitchers.home?.id}/headshot/67/current)`,
+                    backgroundPosition: "center",
+                    backgroundSize: "contain",
+                    backgroundRepeat: "no-repeat",
+                    height: "100px",
+                    width: "68px",
+                    border: "1px solid black",
+                    borderRadius: "5px",
+                  }}
+                ></div>
+                <div className="cardteam2">
+                  {singleGame.liveData.boxscore.teams.home.players[
+                    `ID${homeStarterId}`
+                  ] ? (
+                    <>
+                      <p>
+                        <strong>
+                          #
+                          {
+                            singleGame.liveData.boxscore.teams.home.players[
+                              `ID${homeStarterId}`
+                            ]?.jerseyNumber
+                          }
+                        </strong>
+                      </p>
+                      <p>
+                        {homeStarterStats?.wins}-{homeStarterStats?.losses}
+                      </p>
+                      <p>{homeStarterStats?.era}</p>
+                    </>
+                  ) : (
                     <p>
-                      <strong>
-                        #
-                        {
-                          singleGame.liveData.boxscore.teams.home.players[
-                            `ID${homeStarterId}`
-                          ]?.jerseyNumber
-                        }
-                      </strong>
+                      <strong>???</strong>
                     </p>
-                    <p>
-                      {homeStarterStats?.wins}-{homeStarterStats?.losses}
-                    </p>
-                    <p>{homeStarterStats?.era}</p>
-                  </>
-                ) : (
-                  <p><strong>???</strong></p>
-                )}
+                  )}
+                </div>
               </div>
             </div>
           )}
