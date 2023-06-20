@@ -69,11 +69,9 @@ function Home() {
     setGamesLoading(false);
   };
 
-  if (gamesLoading || day === null || games === null) {
+  if (gamesLoading || day === null || !games) {
     return <Spinner />;
   }
-
-  // console.log(games);
 
   return (
     <>

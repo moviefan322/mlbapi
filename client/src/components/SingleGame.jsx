@@ -221,7 +221,8 @@ function SingleGame({ game, odds, user, today }) {
       <div className="score">
         <div className="data">
           {game.status.statusCode === "I" ||
-          game.status.codedGameState === "O" || game.status.codedGameState === "F" ? (
+          game.status.codedGameState === "O" ||
+          game.status.codedGameState === "F" ? (
             <>
               <strong>
                 {singleGame.liveData.linescore.teams.away.runs} -{" "}
@@ -236,7 +237,7 @@ function SingleGame({ game, odds, user, today }) {
             "WARMUP"
           ) : (
             <div className="data-preview">
-              {today && (
+              {singleGame.gameData.probablePitchers.away ? (
                 <div className="pitch-preview-contianer">
                   <div className="cardteam2">
                     <p>
@@ -267,11 +268,31 @@ function SingleGame({ game, odds, user, today }) {
                     }}
                   ></div>
                 </div>
+              ) : (
+                <div className="pitch-preview-contianer">
+                  <div className="cardteam2">
+                    <p>
+                      <strong>???</strong>
+                    </p>
+                  </div>
+                  <div
+                    style={{
+                      backgroundImage: `url(https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/${singleGame.gameData?.probablePitchers.away?.id}/headshot/67/current)`,
+                      backgroundPosition: "center",
+                      backgroundSize: "contain",
+                      backgroundRepeat: "no-repeat",
+                      height: "100px",
+                      width: "68px",
+                      border: "1px solid black",
+                      borderRadius: "5px",
+                    }}
+                  ></div>
+                </div>
               )}
 
-              <h3>{formatTime(game.gameDate)} </h3>
+              <h3 style={{ margin: "2rem" }}>{formatTime(game.gameDate)} </h3>
               <div className="pitch-preview-contianer">
-                {today && (
+                {singleGame.gameData.probablePitchers.home ? (
                   <>
                     <div
                       style={{
@@ -312,6 +333,26 @@ function SingleGame({ game, odds, user, today }) {
                       )}
                     </div>
                   </>
+                ) : (
+                  <div className="pitch-preview-contianer">
+                    <div
+                      style={{
+                        backgroundImage: `url(https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/${singleGame.gameData?.probablePitchers.home?.id}/headshot/67/current)`,
+                        backgroundPosition: "center",
+                        backgroundSize: "contain",
+                        backgroundRepeat: "no-repeat",
+                        height: "100px",
+                        width: "68px",
+                        border: "1px solid black",
+                        borderRadius: "5px",
+                      }}
+                    ></div>
+                    <div className="cardteam2">
+                      <p>
+                        <strong>???</strong>
+                      </p>
+                    </div>
+                  </div>
                 )}
               </div>
             </div>
@@ -568,7 +609,8 @@ function SingleGame({ game, odds, user, today }) {
             ""
           )}
           {game.status.codedGameState === "D" ? <> </> : ""}
-          {game.status.codedGameState === "F" || game.status.codedGameState === "O" ? (
+          {game.status.codedGameState === "F" ||
+          game.status.codedGameState === "O" ? (
             <>
               {" "}
               <h6>W: {singleGame.liveData?.decisions.winner.fullName}</h6>
