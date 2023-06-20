@@ -47,6 +47,8 @@ function SingleGame({ game, odds, user, today }) {
     return <Spinner />;
   }
 
+  console.log(singleGame);
+
   // const showData = async () => {
   //   const singleGameData = await getSingleGameData(717678);
   //   console.log(singleGameData);
@@ -221,8 +223,10 @@ function SingleGame({ game, odds, user, today }) {
           {game.status.statusCode === "I" ||
           game.status.codedGameState === "F" ? (
             <>
-              {singleGame.liveData.linescore.teams.away.runs} -{" "}
-              {singleGame.liveData.linescore.teams.home.runs}
+              <strong>
+                {singleGame.liveData.linescore.teams.away.runs} -{" "}
+                {singleGame.liveData.linescore.teams.home.runs}
+              </strong>
             </>
           ) : game.status.codedGameState === "D" ? (
             <div>
@@ -314,57 +318,236 @@ function SingleGame({ game, odds, user, today }) {
           )}
 
           {game.status.statusCode === "I" && (
-            <div className="onbase">
-              <div>
-                <img
-                  src={renderOnBaseImage(singleGame)}
-                  alt="baserunners"
-                  height="70px"
-                  width="70px"
-                  className="onbaseimg"
-                />
+            <div className="live-look-in">
+              {singleGame.liveData?.linescore.inningHalf === "Bottom" ? (
+                <div className="pitch-preview-contianer">
+                  <div className="cardteam2">
+                    <p>
+                      <strong>
+                        #
+                        {
+                          singleGame.liveData.boxscore.teams?.away?.players[
+                            `ID${singleGame.liveData?.plays.currentPlay.matchup.pitcher.id}`
+                          ].jerseyNumber
+                        }
+                      </strong>
+                    </p>
+
+                    <p>
+                      {" "}
+                      {
+                        singleGame.liveData.boxscore.teams?.away?.players[
+                          `ID${singleGame.liveData?.plays.currentPlay.matchup.pitcher.id}`
+                        ]?.stats.pitching.strikeOuts
+                      }{" "}
+                      K
+                    </p>
+                    <p>
+                      {singleGame.liveData.boxscore.teams?.away?.players[
+                        `ID${singleGame.liveData?.plays.currentPlay.matchup.pitcher.id}`
+                      ]?.stats.pitching.pitchesThrown || 0}
+                      P
+                    </p>
+                  </div>
+                  <div
+                    style={{
+                      backgroundImage: `url(https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/${singleGame.liveData?.plays.currentPlay.matchup.pitcher.id}/headshot/67/current)`,
+                      backgroundPosition: "center",
+                      backgroundSize: "contain",
+                      backgroundRepeat: "no-repeat",
+                      height: "100px",
+                      width: "68px",
+                      border: "1px solid black",
+                      borderRadius: "5px",
+                    }}
+                  ></div>
+                </div>
+              ) : (
+                <div className="pitch-preview-contianer">
+                  <div className="cardteam2">
+                    <p>
+                      <strong>
+                        #
+                        {
+                          singleGame.liveData.boxscore.teams?.away?.players[
+                            `ID${singleGame.liveData?.plays.currentPlay.matchup.batter.id}`
+                          ].jerseyNumber
+                        }
+                      </strong>
+                    </p>
+                    <p>
+                      {
+                        singleGame.liveData.boxscore.teams?.away?.players[
+                          `ID${singleGame.liveData?.plays.currentPlay.matchup.batter.id}`
+                        ]?.seasonStats.batting.avg
+                      }
+                    </p>
+                    <p>
+                      {" "}
+                      {singleGame.liveData.boxscore.teams?.away?.players[
+                        `ID${singleGame.liveData?.plays.currentPlay.matchup.batter.id}`
+                      ]?.stats.batting.hits || 0}
+                      -
+                      {singleGame.liveData.boxscore.teams?.away?.players[
+                        `ID${singleGame.liveData?.plays.currentPlay.matchup.batter.id}`
+                      ]?.stats.batting.atBats || 0}
+                    </p>
+                  </div>
+                  <div
+                    style={{
+                      backgroundImage: `url(https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/${singleGame.liveData?.plays.currentPlay.matchup.batter.id}/headshot/67/current)`,
+                      backgroundPosition: "center",
+                      backgroundSize: "contain",
+                      backgroundRepeat: "no-repeat",
+                      height: "100px",
+                      width: "68px",
+                      border: "1px solid black",
+                      borderRadius: "5px",
+                    }}
+                  ></div>
+                </div>
+              )}
+
+              <div className="onbase">
+                <div>
+                  <img
+                    src={renderOnBaseImage(singleGame)}
+                    alt="baserunners"
+                    height="70px"
+                    width="70px"
+                    className="onbaseimg"
+                  />
+                </div>
+                <div className="BSO">
+                  <p>
+                    B:{" "}
+                    <span className="green">
+                      {" "}
+                      {[...Array(singleGame.liveData?.linescore.balls)].map(
+                        (_, index) => (
+                          <span key={index} className="count">
+                            &bull;
+                          </span>
+                        )
+                      )}
+                    </span>
+                  </p>
+                  <p>
+                    S:{" "}
+                    <span className="red">
+                      {" "}
+                      {[...Array(singleGame.liveData?.linescore.strikes)].map(
+                        (_, index) => (
+                          <span key={index} className="count">
+                            &bull;
+                          </span>
+                        )
+                      )}
+                    </span>
+                  </p>
+                  <p>
+                    O:{" "}
+                    <span>
+                      {" "}
+                      {[...Array(singleGame.liveData?.linescore.outs)].map(
+                        (_, index) => (
+                          <span key={index} className="count">
+                            &bull;
+                          </span>
+                        )
+                      )}
+                    </span>
+                  </p>
+                </div>
               </div>
-              <div className="BSO">
-                <p>
-                  B:{" "}
-                  <span className="green">
-                    {" "}
-                    {[...Array(singleGame.liveData?.linescore.balls)].map(
-                      (_, index) => (
-                        <span key={index} className="count">
-                          &bull;
-                        </span>
-                      )
-                    )}
-                  </span>
-                </p>
-                <p>
-                  S:{" "}
-                  <span className="red">
-                    {" "}
-                    {[...Array(singleGame.liveData?.linescore.strikes)].map(
-                      (_, index) => (
-                        <span key={index} className="count">
-                          &bull;
-                        </span>
-                      )
-                    )}
-                  </span>
-                </p>
-                <p>
-                  O:{" "}
-                  <span>
-                    {" "}
-                    {[...Array(singleGame.liveData?.linescore.outs)].map(
-                      (_, index) => (
-                        <span key={index} className="count">
-                          &bull;
-                        </span>
-                      )
-                    )}
-                  </span>
-                </p>
-              </div>
+              {singleGame.liveData?.linescore.inningHalf === "Bottom" ? (
+                <div className="pitch-preview-contianer">
+                  <div
+                    style={{
+                      backgroundImage: `url(https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/${singleGame.liveData?.plays.currentPlay.matchup.batter.id}/headshot/67/current)`,
+                      backgroundPosition: "center",
+                      backgroundSize: "contain",
+                      backgroundRepeat: "no-repeat",
+                      height: "100px",
+                      width: "68px",
+                      border: "1px solid black",
+                      borderRadius: "5px",
+                    }}
+                  ></div>
+                  <div className="cardteam2">
+                    <p>
+                      <strong>
+                        #
+                        {
+                          singleGame.liveData.boxscore.teams?.home?.players[
+                            `ID${singleGame.liveData?.plays.currentPlay.matchup.batter.id}`
+                          ].jerseyNumber
+                        }
+                      </strong>
+                    </p>
+                    <p>
+                      {
+                        singleGame.liveData.boxscore.teams?.home?.players[
+                          `ID${singleGame.liveData?.plays.currentPlay.matchup.batter.id}`
+                        ]?.seasonStats.batting.avg
+                      }
+                    </p>
+                    <p>
+                      {" "}
+                      {singleGame.liveData.boxscore.teams?.home?.players[
+                        `ID${singleGame.liveData?.plays.currentPlay.matchup.batter.id}`
+                      ]?.stats.batting.hits || 0}
+                      -
+                      {singleGame.liveData.boxscore.teams?.home?.players[
+                        `ID${singleGame.liveData?.plays.currentPlay.matchup.batter.id}`
+                      ]?.stats.batting.atBats || 0}
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                <div className="pitch-preview-contianer">
+                  <div
+                    style={{
+                      backgroundImage: `url(https://img.mlbstatic.com/mlb-photos/image/upload/d_people:generic:headshot:67:current.png/w_213,q_auto:best/v1/people/${singleGame.liveData?.plays.currentPlay.matchup.pitcher.id}/headshot/67/current)`,
+                      backgroundPosition: "center",
+                      backgroundSize: "contain",
+                      backgroundRepeat: "no-repeat",
+                      height: "100px",
+                      width: "68px",
+                      border: "1px solid black",
+                      borderRadius: "5px",
+                    }}
+                  ></div>
+                  <div className="cardteam2">
+                    <p>
+                      <strong>
+                        #
+                        {
+                          singleGame.liveData.boxscore.teams?.home?.players[
+                            `ID${singleGame.liveData?.plays.currentPlay.matchup.pitcher.id}`
+                          ].jerseyNumber
+                        }
+                      </strong>
+                    </p>
+
+                    <p>
+                      {" "}
+                      {
+                        singleGame.liveData.boxscore.teams?.home?.players[
+                          `ID${singleGame.liveData?.plays.currentPlay.matchup.pitcher.id}`
+                        ]?.stats.pitching.strikeOuts
+                      }{" "}
+                      K
+                    </p>
+                    <p>
+                      {singleGame.liveData.boxscore.teams?.home?.players[
+                        `ID${singleGame.liveData?.plays.currentPlay.matchup.pitcher.id}`
+                      ]?.stats.pitching.pitchesThrown || 0}
+                      P
+                    </p>
+                  </div>
+                </div>
+              )}
             </div>
           )}
           {game.status.abstractGameCode === "L" ? (

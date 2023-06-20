@@ -281,20 +281,32 @@ h3 {
   padding: 0.2rem;
 }
 
+.live-look-in {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0.5rem auto;
+}
+
 .cardteam2 {
   display: inline;
   background: rgba(0, 0, 0, 0.57);
   border: rgb(244, 242, 242) 1px dashed;
   padding: 0.2rem;
   color: white;
-  margin: 0 .2rem;
-  height:fit-content;
+  margin: 0 0.2rem;
+  height: fit-content;
   align-self: center;
 }
 
 .pitch-preview-contianer {
   display: flex;
+}
 
+.pitch-preview-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .icon {
@@ -474,18 +486,15 @@ h3 {
   display: flex;
   flex-direction: row;
   margin: auto;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
   align-items: center;
 }
 
 .onbase {
   display: flex;
-  flex-direction: row;
-  margin: auto;
-  width: 200%;
+  flex-direction: column;
   justify-content: center;
-  margin-left: -45%;
 }
 
 .onbase div {
@@ -502,9 +511,12 @@ h3 {
 }
 
 .BSO {
+  display: flex;
+  flex-direction: column;
   font-size: 0.6rem;
   line-height: 0.2em;
   font-weight: bolder;
+  align-items: center;
 }
 
 .BSO p {
