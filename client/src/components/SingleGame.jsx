@@ -54,7 +54,6 @@ function SingleGame({ game, odds, user, today }) {
 
   const awayStarterId = singleGame.gameData?.probablePitchers.away?.id;
   const homeStarterId = singleGame.gameData?.probablePitchers.home?.id;
-  console.log(awayStarterId);
 
   const awayStarterStats =
     singleGame.liveData.boxscore.teams.away.players[`ID${awayStarterId}`]
@@ -62,10 +61,6 @@ function SingleGame({ game, odds, user, today }) {
   const homeStarterStats =
     singleGame.liveData.boxscore.teams.home.players[`ID${homeStarterId}`]
       ?.seasonStats.pitching;
-
-  console.log(
-    singleGame.liveData.boxscore.teams.away.players[`ID${awayStarterId}`]
-  );
 
   const thisGame = odds.filter((odd) => {
     return odd.away_team === awayTeam && odd.home_team === homeTeam;
@@ -78,7 +73,6 @@ function SingleGame({ game, odds, user, today }) {
     awayOdds = thisGame[0]?.bookmakers[0].markets[0].outcomes[1].price;
   }
 
-  console.log(singleGame);
   return (
     <div className="card">
       <p>
@@ -97,7 +91,7 @@ function SingleGame({ game, odds, user, today }) {
           <div
             className="icon"
             style={{
-              backgroundImage: `url(${teamKeys[awayTeam].image})`,
+              backgroundImage: `url(https://midfield.mlbstatic.com/v1/team/${teamKeys[awayTeam].id}/spots/64)`,
               backgroundPosition: "center",
               backgroundSize: "contain",
               backgroundRepeat: "no-repeat",
@@ -155,7 +149,7 @@ function SingleGame({ game, odds, user, today }) {
           <div
             className="icon"
             style={{
-              backgroundImage: `url(${teamKeys[homeTeam].image})`,
+              backgroundImage: `url(https://midfield.mlbstatic.com/v1/team/${teamKeys[homeTeam].id}/spots/64)`,
               backgroundPosition: "center",
               backgroundSize: "contain",
               backgroundRepeat: "no-repeat",
@@ -239,7 +233,7 @@ function SingleGame({ game, odds, user, today }) {
           ) : (
             <div className="data-preview">
               {today && (
-                <div class="pitch-preview-contianer">
+                <div className="pitch-preview-contianer">
                   <div className="cardteam2">
                     <p>
                       <strong>
@@ -272,7 +266,7 @@ function SingleGame({ game, odds, user, today }) {
               )}
 
               <h3>{formatTime(game.gameDate)} </h3>
-              <div class="pitch-preview-contianer">
+              <div className="pitch-preview-contianer">
                 {today && (
                   <>
                     <div
