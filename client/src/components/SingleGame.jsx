@@ -238,9 +238,7 @@ function SingleGame({ game, odds, user, today }) {
             "WARMUP"
           ) : (
             <div className="data-preview">
-              {/* {singleGame.liveData.boxscore.teams.home.players[
-                `ID${homeStarterId}`
-              ]?.jerseyNumber && (
+              {today && (
                 <div class="pitch-preview-contianer">
                   <div className="cardteam2">
                     <p>
@@ -271,13 +269,11 @@ function SingleGame({ game, odds, user, today }) {
                     }}
                   ></div>
                 </div>
-              )} */}
+              )}
 
               <h3>{formatTime(game.gameDate)} </h3>
-              {/* <div class="pitch-preview-contianer">
-                {singleGame.liveData.boxscore.teams.home.players[
-                  `ID${homeStarterId}`
-                ]?.jerseyNumber && (
+              <div class="pitch-preview-contianer">
+                {today && (
                   <>
                     <div
                       style={{
@@ -319,7 +315,7 @@ function SingleGame({ game, odds, user, today }) {
                     </div>
                   </>
                 )}
-              </div> */}
+              </div>
             </div>
           )}
 
