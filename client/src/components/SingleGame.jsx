@@ -221,7 +221,7 @@ function SingleGame({ game, odds, user, today }) {
       <div className="score">
         <div className="data">
           {game.status.statusCode === "I" ||
-          game.status.codedGameState === "F" ? (
+          game.status.codedGameState === "O" || game.status.codedGameState === "F" ? (
             <>
               <strong>
                 {singleGame.liveData.linescore.teams.away.runs} -{" "}
@@ -568,7 +568,7 @@ function SingleGame({ game, odds, user, today }) {
             ""
           )}
           {game.status.codedGameState === "D" ? <> </> : ""}
-          {game.status.codedGameState === "F" ? (
+          {game.status.codedGameState === "F" || game.status.codedGameState === "O" ? (
             <>
               {" "}
               <h6>W: {singleGame.liveData?.decisions.winner.fullName}</h6>
