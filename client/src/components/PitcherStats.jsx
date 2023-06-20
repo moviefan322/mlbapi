@@ -4,6 +4,14 @@ import PropTypes from "prop-types";
 function PitcherStats({ boxscore, homeaway }) {
   const pitchers = boxscore.liveData.boxscore.teams[`${homeaway}`].pitchers;
 
+  const displayName = (pitcher) => {
+    const rawName =
+      boxscore.liveData.boxscore.teams[`${homeaway}`].players[`ID${pitcher}`]
+        .person.fullName;
+
+    return rawName.split(" ").slice(1).join(" ");
+  };
+
   let totalIP = 0;
   pitchers.forEach((pitcher) => {
     const pitcherID = `ID${pitcher}`;
@@ -170,10 +178,8 @@ function PitcherStats({ boxscore, homeaway }) {
               <span>
                 {
                   `${
-                    boxscore.liveData.boxscore.teams[`${homeaway}`].players[
-                      `ID${pitcher}`
-                    ].person.fullName
-                  }`.match(/\b(\w+)\b$/)?.[1]
+                  displayName(pitcher)
+                  }`
                 }
               </span>
               <span>{`${
