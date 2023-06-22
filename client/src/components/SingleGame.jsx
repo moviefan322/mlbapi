@@ -47,7 +47,7 @@ function SingleGame({ game, odds, user, today }) {
     return <Spinner />;
   }
 
-  console.log(singleGame);
+  console.log(game);
 
   // const showData = async () => {
   //   const singleGameData = await getSingleGameData(717678);
@@ -754,6 +754,10 @@ function SingleGame({ game, odds, user, today }) {
           <div>
             <h4> POSTPONED: {game.status.reason.toUpperCase()} </h4>
             <h5>Rechedule Date: {formatShortDate2(game.rescheduleGameDate)}</h5>
+          </div>
+        ) : game.status.statusCode === "PR" ? (
+          <div>
+            <h4> DELAYED: {game.status.reason.toUpperCase()} </h4>
           </div>
         ) : game.status.abstractGameCode === "F" ? (
           <Link to={`/boxscore/${game.gamePk}`}>
