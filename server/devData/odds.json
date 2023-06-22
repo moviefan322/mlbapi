@@ -1,1 +1,3405 @@
-[{"id":"0864f77f48db59a38aedbc0052178877","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-19T20:05:00Z","home_team":"Washington Nationals","away_team":"St. Louis Cardinals","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"St. Louis Cardinals","price":-150},{"name":"Washington Nationals","price":130}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"St. Louis Cardinals","price":105,"point":-1.5},{"name":"Washington Nationals","price":-125,"point":1.5}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"St. Louis Cardinals","price":-143},{"name":"Washington Nationals","price":132}]},{"key":"spreads","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"St. Louis Cardinals","price":105,"point":-1.5},{"name":"Washington Nationals","price":-115,"point":1.5}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"St. Louis Cardinals","price":-143},{"name":"Washington Nationals","price":132}]},{"key":"spreads","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"St. Louis Cardinals","price":100,"point":-1.5},{"name":"Washington Nationals","price":-120,"point":1.5}]}]},{"key":"mybookieag","title":"MyBookie.ag","last_update":"2023-06-19T18:42:33Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:33Z","outcomes":[{"name":"St. Louis Cardinals","price":-149},{"name":"Washington Nationals","price":122}]},{"key":"spreads","last_update":"2023-06-19T18:42:33Z","outcomes":[{"name":"St. Louis Cardinals","price":108,"point":-1.5},{"name":"Washington Nationals","price":-131,"point":1.5}]}]},{"key":"foxbet","title":"FOX Bet","last_update":"2023-06-19T18:42:34Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:34Z","outcomes":[{"name":"St. Louis Cardinals","price":-161},{"name":"Washington Nationals","price":120}]},{"key":"spreads","last_update":"2023-06-19T18:42:34Z","outcomes":[{"name":"St. Louis Cardinals","price":-125,"point":-1},{"name":"Washington Nationals","price":100,"point":1}]}]},{"key":"pointsbetus","title":"PointsBet (US)","last_update":"2023-06-19T18:42:44Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:44Z","outcomes":[{"name":"St. Louis Cardinals","price":-150},{"name":"Washington Nationals","price":125}]},{"key":"spreads","last_update":"2023-06-19T18:42:44Z","outcomes":[{"name":"St. Louis Cardinals","price":105,"point":-1.5},{"name":"Washington Nationals","price":-125,"point":1.5}]}]},{"key":"williamhill_us","title":"William Hill (US)","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"St. Louis Cardinals","price":-155},{"name":"Washington Nationals","price":130}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"St. Louis Cardinals","price":105,"point":-1.5},{"name":"Washington Nationals","price":-125,"point":1.5}]}]},{"key":"betmgm","title":"BetMGM","last_update":"2023-06-19T18:42:25Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:25Z","outcomes":[{"name":"St. Louis Cardinals","price":-150},{"name":"Washington Nationals","price":125}]},{"key":"spreads","last_update":"2023-06-19T18:42:25Z","outcomes":[{"name":"St. Louis Cardinals","price":105,"point":-1.5},{"name":"Washington Nationals","price":-125,"point":1.5}]}]},{"key":"bovada","title":"Bovada","last_update":"2023-06-19T18:42:38Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"St. Louis Cardinals","price":-150},{"name":"Washington Nationals","price":126}]},{"key":"spreads","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"St. Louis Cardinals","price":105,"point":-1.5},{"name":"Washington Nationals","price":-125,"point":1.5}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"St. Louis Cardinals","price":-142},{"name":"Washington Nationals","price":127}]},{"key":"spreads","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"St. Louis Cardinals","price":100,"point":-1.5},{"name":"Washington Nationals","price":-120,"point":1.5}]}]},{"key":"fanduel","title":"FanDuel","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"St. Louis Cardinals","price":-152},{"name":"Washington Nationals","price":128}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"St. Louis Cardinals","price":106,"point":-1.5},{"name":"Washington Nationals","price":-128,"point":1.5}]}]},{"key":"circasports","title":"Circa Sports","last_update":"2023-06-19T18:42:20Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:20Z","outcomes":[{"name":"St. Louis Cardinals","price":-159},{"name":"Washington Nationals","price":132}]},{"key":"spreads","last_update":"2023-06-19T18:42:20Z","outcomes":[{"name":"St. Louis Cardinals","price":105,"point":-1.5},{"name":"Washington Nationals","price":-127,"point":1.5}]}]},{"key":"wynnbet","title":"WynnBET","last_update":"2023-06-19T18:39:06Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:39:06Z","outcomes":[{"name":"St. Louis Cardinals","price":-143},{"name":"Washington Nationals","price":130}]}]},{"key":"superbook","title":"SuperBook","last_update":"2023-06-19T18:42:08Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:08Z","outcomes":[{"name":"St. Louis Cardinals","price":-150},{"name":"Washington Nationals","price":130}]}]},{"key":"barstool","title":"Barstool Sportsbook","last_update":"2023-06-19T18:42:42Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:42Z","outcomes":[{"name":"St. Louis Cardinals","price":-148},{"name":"Washington Nationals","price":125}]},{"key":"spreads","last_update":"2023-06-19T18:42:42Z","outcomes":[{"name":"St. Louis Cardinals","price":106,"point":-1.5},{"name":"Washington Nationals","price":-129,"point":1.5}]}]},{"key":"unibet_us","title":"Unibet","last_update":"2023-06-19T18:42:49Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:49Z","outcomes":[{"name":"St. Louis Cardinals","price":-148},{"name":"Washington Nationals","price":125}]},{"key":"spreads","last_update":"2023-06-19T18:42:49Z","outcomes":[{"name":"St. Louis Cardinals","price":106,"point":-1.5},{"name":"Washington Nationals","price":-129,"point":1.5}]}]},{"key":"twinspires","title":"TwinSpires","last_update":"2023-06-19T18:42:46Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:46Z","outcomes":[{"name":"St. Louis Cardinals","price":-148},{"name":"Washington Nationals","price":125}]},{"key":"spreads","last_update":"2023-06-19T18:42:46Z","outcomes":[{"name":"St. Louis Cardinals","price":106,"point":-1.5},{"name":"Washington Nationals","price":-129,"point":1.5}]}]},{"key":"betrivers","title":"BetRivers","last_update":"2023-06-19T18:42:50Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:50Z","outcomes":[{"name":"St. Louis Cardinals","price":-143},{"name":"Washington Nationals","price":128}]},{"key":"spreads","last_update":"2023-06-19T18:42:50Z","outcomes":[{"name":"St. Louis Cardinals","price":106,"point":-1.5},{"name":"Washington Nationals","price":-129,"point":1.5}]}]}]},{"id":"6199ec59a3fdaf203b0152c54e12a1ad","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-19T22:40:00Z","home_team":"Detroit Tigers","away_team":"Kansas City Royals","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Detroit Tigers","price":-140},{"name":"Kansas City Royals","price":120}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Detroit Tigers","price":130,"point":-1.5},{"name":"Kansas City Royals","price":-150,"point":1.5}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Detroit Tigers","price":-143},{"name":"Kansas City Royals","price":132}]},{"key":"spreads","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Detroit Tigers","price":134,"point":-1.5},{"name":"Kansas City Royals","price":-154,"point":1.5}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Detroit Tigers","price":-143},{"name":"Kansas City Royals","price":132}]},{"key":"spreads","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Detroit Tigers","price":138,"point":-1.5},{"name":"Kansas City Royals","price":-150,"point":1.5}]}]},{"key":"bovada","title":"Bovada","last_update":"2023-06-19T18:42:38Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:38Z","outcomes":[{"name":"Detroit Tigers","price":-150},{"name":"Kansas City Royals","price":126}]},{"key":"spreads","last_update":"2023-06-19T18:42:38Z","outcomes":[{"name":"Detroit Tigers","price":130,"point":-1.5},{"name":"Kansas City Royals","price":-150,"point":1.5}]}]},{"key":"williamhill_us","title":"William Hill (US)","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Detroit Tigers","price":-155},{"name":"Kansas City Royals","price":130}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Detroit Tigers","price":130,"point":-1.5},{"name":"Kansas City Royals","price":-155,"point":1.5}]}]},{"key":"wynnbet","title":"WynnBET","last_update":"2023-06-19T18:39:06Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:39:06Z","outcomes":[{"name":"Detroit Tigers","price":-145},{"name":"Kansas City Royals","price":132}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Detroit Tigers","price":-145},{"name":"Kansas City Royals","price":130}]},{"key":"spreads","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Detroit Tigers","price":135,"point":-1.5},{"name":"Kansas City Royals","price":-155,"point":1.5}]}]},{"key":"fanduel","title":"FanDuel","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Detroit Tigers","price":-148},{"name":"Kansas City Royals","price":126}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Detroit Tigers","price":128,"point":-1.5},{"name":"Kansas City Royals","price":-154,"point":1.5}]}]},{"key":"foxbet","title":"FOX Bet","last_update":"2023-06-19T18:42:34Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:34Z","outcomes":[{"name":"Detroit Tigers","price":-154},{"name":"Kansas City Royals","price":115}]},{"key":"spreads","last_update":"2023-06-19T18:42:34Z","outcomes":[{"name":"Detroit Tigers","price":-105,"point":-1},{"name":"Kansas City Royals","price":-120,"point":1}]}]},{"key":"pointsbetus","title":"PointsBet (US)","last_update":"2023-06-19T18:42:44Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:44Z","outcomes":[{"name":"Detroit Tigers","price":-145},{"name":"Kansas City Royals","price":120}]},{"key":"spreads","last_update":"2023-06-19T18:42:44Z","outcomes":[{"name":"Detroit Tigers","price":130,"point":-1.5},{"name":"Kansas City Royals","price":-160,"point":1.5}]}]},{"key":"betmgm","title":"BetMGM","last_update":"2023-06-19T18:42:25Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:25Z","outcomes":[{"name":"Detroit Tigers","price":-150},{"name":"Kansas City Royals","price":125}]},{"key":"spreads","last_update":"2023-06-19T18:42:25Z","outcomes":[{"name":"Detroit Tigers","price":125,"point":-1.5},{"name":"Kansas City Royals","price":-155,"point":1.5}]}]},{"key":"circasports","title":"Circa Sports","last_update":"2023-06-19T18:42:20Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:20Z","outcomes":[{"name":"Detroit Tigers","price":-139},{"name":"Kansas City Royals","price":117}]},{"key":"spreads","last_update":"2023-06-19T18:42:20Z","outcomes":[{"name":"Detroit Tigers","price":131,"point":-1.5},{"name":"Kansas City Royals","price":-159,"point":1.5}]}]},{"key":"mybookieag","title":"MyBookie.ag","last_update":"2023-06-19T18:42:33Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:33Z","outcomes":[{"name":"Detroit Tigers","price":-147},{"name":"Kansas City Royals","price":119}]},{"key":"spreads","last_update":"2023-06-19T18:42:33Z","outcomes":[{"name":"Detroit Tigers","price":136,"point":-1.5},{"name":"Kansas City Royals","price":-166,"point":1.5}]}]},{"key":"superbook","title":"SuperBook","last_update":"2023-06-19T18:42:08Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:08Z","outcomes":[{"name":"Detroit Tigers","price":-150},{"name":"Kansas City Royals","price":130}]}]},{"key":"unibet_us","title":"Unibet","last_update":"2023-06-19T18:42:49Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:49Z","outcomes":[{"name":"Detroit Tigers","price":-148},{"name":"Kansas City Royals","price":125}]},{"key":"spreads","last_update":"2023-06-19T18:42:49Z","outcomes":[{"name":"Detroit Tigers","price":135,"point":-1.5},{"name":"Kansas City Royals","price":-165,"point":1.5}]}]},{"key":"twinspires","title":"TwinSpires","last_update":"2023-06-19T18:42:46Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:46Z","outcomes":[{"name":"Detroit Tigers","price":-148},{"name":"Kansas City Royals","price":125}]},{"key":"spreads","last_update":"2023-06-19T18:42:46Z","outcomes":[{"name":"Detroit Tigers","price":135,"point":-1.5},{"name":"Kansas City Royals","price":-165,"point":1.5}]}]},{"key":"barstool","title":"Barstool Sportsbook","last_update":"2023-06-19T18:42:42Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:42Z","outcomes":[{"name":"Detroit Tigers","price":-148},{"name":"Kansas City Royals","price":125}]},{"key":"spreads","last_update":"2023-06-19T18:42:42Z","outcomes":[{"name":"Detroit Tigers","price":135,"point":-1.5},{"name":"Kansas City Royals","price":-165,"point":1.5}]}]},{"key":"betrivers","title":"BetRivers","last_update":"2023-06-19T18:42:50Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:50Z","outcomes":[{"name":"Detroit Tigers","price":-148},{"name":"Kansas City Royals","price":125}]},{"key":"spreads","last_update":"2023-06-19T18:42:50Z","outcomes":[{"name":"Detroit Tigers","price":135,"point":-1.5},{"name":"Kansas City Royals","price":-165,"point":1.5}]}]}]},{"id":"d6d04fdf303714e9d41eba679b8997f3","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-19T22:40:00Z","home_team":"Miami Marlins","away_team":"Toronto Blue Jays","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Miami Marlins","price":135},{"name":"Toronto Blue Jays","price":-155}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Miami Marlins","price":-125,"point":1.5},{"name":"Toronto Blue Jays","price":105,"point":-1.5}]}]},{"key":"betmgm","title":"BetMGM","last_update":"2023-06-19T18:42:25Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:25Z","outcomes":[{"name":"Miami Marlins","price":135},{"name":"Toronto Blue Jays","price":-160}]},{"key":"spreads","last_update":"2023-06-19T18:42:25Z","outcomes":[{"name":"Miami Marlins","price":-125,"point":1.5},{"name":"Toronto Blue Jays","price":105,"point":-1.5}]}]},{"key":"pointsbetus","title":"PointsBet (US)","last_update":"2023-06-19T18:42:44Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:44Z","outcomes":[{"name":"Miami Marlins","price":130},{"name":"Toronto Blue Jays","price":-160}]},{"key":"spreads","last_update":"2023-06-19T18:42:44Z","outcomes":[{"name":"Miami Marlins","price":-125,"point":1.5},{"name":"Toronto Blue Jays","price":105,"point":-1.5}]}]},{"key":"foxbet","title":"FOX Bet","last_update":"2023-06-19T18:42:34Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:34Z","outcomes":[{"name":"Miami Marlins","price":125},{"name":"Toronto Blue Jays","price":-167}]},{"key":"spreads","last_update":"2023-06-19T18:42:34Z","outcomes":[{"name":"Miami Marlins","price":100,"point":1},{"name":"Toronto Blue Jays","price":-125,"point":-1}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Miami Marlins","price":135},{"name":"Toronto Blue Jays","price":-150}]},{"key":"spreads","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Miami Marlins","price":-120,"point":1.5},{"name":"Toronto Blue Jays","price":100,"point":-1.5}]}]},{"key":"mybookieag","title":"MyBookie.ag","last_update":"2023-06-19T18:42:33Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:33Z","outcomes":[{"name":"Miami Marlins","price":131},{"name":"Toronto Blue Jays","price":-161}]},{"key":"spreads","last_update":"2023-06-19T18:42:33Z","outcomes":[{"name":"Miami Marlins","price":-131,"point":1.5},{"name":"Toronto Blue Jays","price":107,"point":-1.5}]}]},{"key":"williamhill_us","title":"William Hill (US)","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Miami Marlins","price":135},{"name":"Toronto Blue Jays","price":-160}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Miami Marlins","price":-125,"point":1.5},{"name":"Toronto Blue Jays","price":105,"point":-1.5}]}]},{"key":"fanduel","title":"FanDuel","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Miami Marlins","price":136},{"name":"Toronto Blue Jays","price":-162}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Miami Marlins","price":-128,"point":1.5},{"name":"Toronto Blue Jays","price":106,"point":-1.5}]}]},{"key":"circasports","title":"Circa Sports","last_update":"2023-06-19T18:42:20Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:20Z","outcomes":[{"name":"Miami Marlins","price":129},{"name":"Toronto Blue Jays","price":-154}]},{"key":"spreads","last_update":"2023-06-19T18:42:20Z","outcomes":[{"name":"Miami Marlins","price":-132,"point":1.5},{"name":"Toronto Blue Jays","price":109,"point":-1.5}]}]},{"key":"bovada","title":"Bovada","last_update":"2023-06-19T18:42:38Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:38Z","outcomes":[{"name":"Miami Marlins","price":139},{"name":"Toronto Blue Jays","price":-165}]},{"key":"spreads","last_update":"2023-06-19T18:42:38Z","outcomes":[{"name":"Miami Marlins","price":-125,"point":1.5},{"name":"Toronto Blue Jays","price":105,"point":-1.5}]}]},{"key":"wynnbet","title":"WynnBET","last_update":"2023-06-19T18:39:06Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:39:06Z","outcomes":[{"name":"Miami Marlins","price":140},{"name":"Toronto Blue Jays","price":-154}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Miami Marlins","price":138},{"name":"Toronto Blue Jays","price":-149}]},{"key":"spreads","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Miami Marlins","price":-120,"point":1.5},{"name":"Toronto Blue Jays","price":110,"point":-1.5}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Miami Marlins","price":138},{"name":"Toronto Blue Jays","price":-149}]},{"key":"spreads","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Miami Marlins","price":-125,"point":1.5},{"name":"Toronto Blue Jays","price":105,"point":-1.5}]}]},{"key":"superbook","title":"SuperBook","last_update":"2023-06-19T18:42:08Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:08Z","outcomes":[{"name":"Miami Marlins","price":135},{"name":"Toronto Blue Jays","price":-160}]}]},{"key":"twinspires","title":"TwinSpires","last_update":"2023-06-19T18:42:46Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:46Z","outcomes":[{"name":"Miami Marlins","price":125},{"name":"Toronto Blue Jays","price":-150}]},{"key":"spreads","last_update":"2023-06-19T18:42:46Z","outcomes":[{"name":"Miami Marlins","price":-136,"point":1.5},{"name":"Toronto Blue Jays","price":112,"point":-1.5}]}]},{"key":"barstool","title":"Barstool Sportsbook","last_update":"2023-06-19T18:42:42Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:42Z","outcomes":[{"name":"Miami Marlins","price":128},{"name":"Toronto Blue Jays","price":-148}]},{"key":"spreads","last_update":"2023-06-19T18:42:42Z","outcomes":[{"name":"Miami Marlins","price":-136,"point":1.5},{"name":"Toronto Blue Jays","price":112,"point":-1.5}]}]},{"key":"betrivers","title":"BetRivers","last_update":"2023-06-19T18:42:50Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:50Z","outcomes":[{"name":"Miami Marlins","price":128},{"name":"Toronto Blue Jays","price":-148}]},{"key":"spreads","last_update":"2023-06-19T18:42:50Z","outcomes":[{"name":"Miami Marlins","price":-136,"point":1.5},{"name":"Toronto Blue Jays","price":112,"point":-1.5}]}]},{"key":"unibet_us","title":"Unibet","last_update":"2023-06-19T18:42:49Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:49Z","outcomes":[{"name":"Miami Marlins","price":128},{"name":"Toronto Blue Jays","price":-148}]},{"key":"spreads","last_update":"2023-06-19T18:42:49Z","outcomes":[{"name":"Miami Marlins","price":-136,"point":1.5},{"name":"Toronto Blue Jays","price":112,"point":-1.5}]}]}]},{"id":"269f9c9a60f285741050ce24dca884e0","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-19T23:05:00Z","home_team":"Pittsburgh Pirates","away_team":"Chicago Cubs","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Chicago Cubs","price":-130},{"name":"Pittsburgh Pirates","price":110}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Chicago Cubs","price":120,"point":-1.5},{"name":"Pittsburgh Pirates","price":-140,"point":1.5}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Chicago Cubs","price":-127},{"name":"Pittsburgh Pirates","price":116}]},{"key":"spreads","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Chicago Cubs","price":121,"point":-1.5},{"name":"Pittsburgh Pirates","price":-141,"point":1.5}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Chicago Cubs","price":-126},{"name":"Pittsburgh Pirates","price":116}]},{"key":"spreads","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Chicago Cubs","price":126,"point":-1.5},{"name":"Pittsburgh Pirates","price":-137,"point":1.5}]}]},{"key":"williamhill_us","title":"William Hill (US)","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Chicago Cubs","price":-130},{"name":"Pittsburgh Pirates","price":110}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Chicago Cubs","price":122,"point":-1.5},{"name":"Pittsburgh Pirates","price":-145,"point":1.5}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Chicago Cubs","price":-128},{"name":"Pittsburgh Pirates","price":118}]},{"key":"spreads","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Chicago Cubs","price":120,"point":-1.5},{"name":"Pittsburgh Pirates","price":-140,"point":1.5}]}]},{"key":"bovada","title":"Bovada","last_update":"2023-06-19T18:42:38Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:38Z","outcomes":[{"name":"Chicago Cubs","price":-130},{"name":"Pittsburgh Pirates","price":108}]},{"key":"spreads","last_update":"2023-06-19T18:42:38Z","outcomes":[{"name":"Chicago Cubs","price":120,"point":-1.5},{"name":"Pittsburgh Pirates","price":-140,"point":1.5}]}]},{"key":"wynnbet","title":"WynnBET","last_update":"2023-06-19T18:39:06Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:39:06Z","outcomes":[{"name":"Chicago Cubs","price":-127},{"name":"Pittsburgh Pirates","price":115}]}]},{"key":"fanduel","title":"FanDuel","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Chicago Cubs","price":-136},{"name":"Pittsburgh Pirates","price":116}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Chicago Cubs","price":114,"point":-1.5},{"name":"Pittsburgh Pirates","price":-137,"point":1.5}]}]},{"key":"betmgm","title":"BetMGM","last_update":"2023-06-19T18:42:25Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:25Z","outcomes":[{"name":"Chicago Cubs","price":-140},{"name":"Pittsburgh Pirates","price":115}]},{"key":"spreads","last_update":"2023-06-19T18:42:25Z","outcomes":[{"name":"Chicago Cubs","price":115,"point":-1.5},{"name":"Pittsburgh Pirates","price":-140,"point":1.5}]}]},{"key":"foxbet","title":"FOX Bet","last_update":"2023-06-19T18:42:34Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:34Z","outcomes":[{"name":"Chicago Cubs","price":-143},{"name":"Pittsburgh Pirates","price":110}]},{"key":"spreads","last_update":"2023-06-19T18:42:34Z","outcomes":[{"name":"Chicago Cubs","price":-105,"point":-1},{"name":"Pittsburgh Pirates","price":-118,"point":1}]}]},{"key":"circasports","title":"Circa Sports","last_update":"2023-06-19T18:42:20Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:20Z","outcomes":[{"name":"Chicago Cubs","price":-132},{"name":"Pittsburgh Pirates","price":109}]},{"key":"spreads","last_update":"2023-06-19T18:42:20Z","outcomes":[{"name":"Chicago Cubs","price":123,"point":-1.5},{"name":"Pittsburgh Pirates","price":-150,"point":1.5}]}]},{"key":"pointsbetus","title":"PointsBet (US)","last_update":"2023-06-19T18:42:44Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:44Z","outcomes":[{"name":"Chicago Cubs","price":-130},{"name":"Pittsburgh Pirates","price":110}]},{"key":"spreads","last_update":"2023-06-19T18:42:44Z","outcomes":[{"name":"Chicago Cubs","price":120,"point":-1.5},{"name":"Pittsburgh Pirates","price":-145,"point":1.5}]}]},{"key":"mybookieag","title":"MyBookie.ag","last_update":"2023-06-19T18:42:33Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:33Z","outcomes":[{"name":"Chicago Cubs","price":-129},{"name":"Pittsburgh Pirates","price":106}]},{"key":"spreads","last_update":"2023-06-19T18:42:33Z","outcomes":[{"name":"Chicago Cubs","price":125,"point":-1.5},{"name":"Pittsburgh Pirates","price":-153,"point":1.5}]}]},{"key":"superbook","title":"SuperBook","last_update":"2023-06-19T18:42:08Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:08Z","outcomes":[{"name":"Chicago Cubs","price":-132},{"name":"Pittsburgh Pirates","price":112}]}]},{"key":"barstool","title":"Barstool Sportsbook","last_update":"2023-06-19T18:42:42Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:42Z","outcomes":[{"name":"Chicago Cubs","price":-132},{"name":"Pittsburgh Pirates","price":114}]},{"key":"spreads","last_update":"2023-06-19T18:42:42Z","outcomes":[{"name":"Chicago Cubs","price":120,"point":-1.5},{"name":"Pittsburgh Pirates","price":-148,"point":1.5}]}]},{"key":"betrivers","title":"BetRivers","last_update":"2023-06-19T18:42:50Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:50Z","outcomes":[{"name":"Chicago Cubs","price":-130},{"name":"Pittsburgh Pirates","price":115}]},{"key":"spreads","last_update":"2023-06-19T18:42:50Z","outcomes":[{"name":"Chicago Cubs","price":120,"point":-1.5},{"name":"Pittsburgh Pirates","price":-148,"point":1.5}]}]},{"key":"unibet_us","title":"Unibet","last_update":"2023-06-19T18:42:49Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:49Z","outcomes":[{"name":"Chicago Cubs","price":-132},{"name":"Pittsburgh Pirates","price":114}]},{"key":"spreads","last_update":"2023-06-19T18:42:49Z","outcomes":[{"name":"Chicago Cubs","price":120,"point":-1.5},{"name":"Pittsburgh Pirates","price":-148,"point":1.5}]}]},{"key":"twinspires","title":"TwinSpires","last_update":"2023-06-19T18:42:46Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:46Z","outcomes":[{"name":"Chicago Cubs","price":-134},{"name":"Pittsburgh Pirates","price":112}]},{"key":"spreads","last_update":"2023-06-19T18:42:46Z","outcomes":[{"name":"Chicago Cubs","price":120,"point":-1.5},{"name":"Pittsburgh Pirates","price":-148,"point":1.5}]}]}]},{"id":"2f7ad157cf8f39c97328996e8225e264","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-19T23:10:00Z","home_team":"Cincinnati Reds","away_team":"Colorado Rockies","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Cincinnati Reds","price":-165},{"name":"Colorado Rockies","price":140}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Cincinnati Reds","price":110,"point":-1.5},{"name":"Colorado Rockies","price":-130,"point":1.5}]}]},{"key":"betmgm","title":"BetMGM","last_update":"2023-06-19T18:42:25Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:25Z","outcomes":[{"name":"Cincinnati Reds","price":-175},{"name":"Colorado Rockies","price":145}]},{"key":"spreads","last_update":"2023-06-19T18:42:25Z","outcomes":[{"name":"Cincinnati Reds","price":105,"point":-1.5},{"name":"Colorado Rockies","price":-125,"point":1.5}]}]},{"key":"foxbet","title":"FOX Bet","last_update":"2023-06-19T18:42:34Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:34Z","outcomes":[{"name":"Cincinnati Reds","price":-182},{"name":"Colorado Rockies","price":138}]},{"key":"spreads","last_update":"2023-06-19T18:42:34Z","outcomes":[{"name":"Cincinnati Reds","price":-125,"point":-1},{"name":"Colorado Rockies","price":100,"point":1}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Cincinnati Reds","price":-170},{"name":"Colorado Rockies","price":150}]},{"key":"spreads","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Cincinnati Reds","price":105,"point":-1.5},{"name":"Colorado Rockies","price":-125,"point":1.5}]}]},{"key":"mybookieag","title":"MyBookie.ag","last_update":"2023-06-19T18:42:33Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:33Z","outcomes":[{"name":"Cincinnati Reds","price":-172},{"name":"Colorado Rockies","price":139}]},{"key":"spreads","last_update":"2023-06-19T18:42:33Z","outcomes":[{"name":"Cincinnati Reds","price":113,"point":-1.5},{"name":"Colorado Rockies","price":-136,"point":1.5}]}]},{"key":"pointsbetus","title":"PointsBet (US)","last_update":"2023-06-19T18:42:44Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:44Z","outcomes":[{"name":"Cincinnati Reds","price":-170},{"name":"Colorado Rockies","price":140}]},{"key":"spreads","last_update":"2023-06-19T18:42:44Z","outcomes":[{"name":"Cincinnati Reds","price":110,"point":-1.5},{"name":"Colorado Rockies","price":-130,"point":1.5}]}]},{"key":"williamhill_us","title":"William Hill (US)","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Cincinnati Reds","price":-170},{"name":"Colorado Rockies","price":143}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Cincinnati Reds","price":105,"point":-1.5},{"name":"Colorado Rockies","price":-125,"point":1.5}]}]},{"key":"circasports","title":"Circa Sports","last_update":"2023-06-19T18:42:20Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:20Z","outcomes":[{"name":"Cincinnati Reds","price":-167},{"name":"Colorado Rockies","price":140}]},{"key":"spreads","last_update":"2023-06-19T18:42:20Z","outcomes":[{"name":"Cincinnati Reds","price":111,"point":-1.5},{"name":"Colorado Rockies","price":-136,"point":1.5}]}]},{"key":"fanduel","title":"FanDuel","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Cincinnati Reds","price":-168},{"name":"Colorado Rockies","price":142}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Cincinnati Reds","price":112,"point":-1.5},{"name":"Colorado Rockies","price":-134,"point":1.5}]}]},{"key":"bovada","title":"Bovada","last_update":"2023-06-19T18:42:38Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:38Z","outcomes":[{"name":"Cincinnati Reds","price":-180},{"name":"Colorado Rockies","price":148}]},{"key":"spreads","last_update":"2023-06-19T18:42:38Z","outcomes":[{"name":"Cincinnati Reds","price":105,"point":-1.5},{"name":"Colorado Rockies","price":-125,"point":1.5}]}]},{"key":"wynnbet","title":"WynnBET","last_update":"2023-06-19T18:39:06Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:39:06Z","outcomes":[{"name":"Cincinnati Reds","price":-167},{"name":"Colorado Rockies","price":153}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Cincinnati Reds","price":-164},{"name":"Colorado Rockies","price":151}]},{"key":"spreads","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Cincinnati Reds","price":108,"point":-1.5},{"name":"Colorado Rockies","price":-128,"point":1.5}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Cincinnati Reds","price":-164},{"name":"Colorado Rockies","price":151}]},{"key":"spreads","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Cincinnati Reds","price":113,"point":-1.5},{"name":"Colorado Rockies","price":-123,"point":1.5}]}]},{"key":"superbook","title":"SuperBook","last_update":"2023-06-19T18:42:08Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:08Z","outcomes":[{"name":"Cincinnati Reds","price":-172},{"name":"Colorado Rockies","price":147}]}]},{"key":"barstool","title":"Barstool Sportsbook","last_update":"2023-06-19T18:42:42Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:42Z","outcomes":[{"name":"Cincinnati Reds","price":-167},{"name":"Colorado Rockies","price":138}]},{"key":"spreads","last_update":"2023-06-19T18:42:42Z","outcomes":[{"name":"Cincinnati Reds","price":112,"point":-1.5},{"name":"Colorado Rockies","price":-139,"point":1.5}]}]},{"key":"betrivers","title":"BetRivers","last_update":"2023-06-19T18:42:50Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:50Z","outcomes":[{"name":"Cincinnati Reds","price":-167},{"name":"Colorado Rockies","price":148}]},{"key":"spreads","last_update":"2023-06-19T18:42:50Z","outcomes":[{"name":"Cincinnati Reds","price":112,"point":-1.5},{"name":"Colorado Rockies","price":-139,"point":1.5}]}]},{"key":"unibet_us","title":"Unibet","last_update":"2023-06-19T18:42:49Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:49Z","outcomes":[{"name":"Cincinnati Reds","price":-167},{"name":"Colorado Rockies","price":138}]},{"key":"spreads","last_update":"2023-06-19T18:42:49Z","outcomes":[{"name":"Cincinnati Reds","price":112,"point":-1.5},{"name":"Colorado Rockies","price":-139,"point":1.5}]}]},{"key":"twinspires","title":"TwinSpires","last_update":"2023-06-19T18:42:46Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:46Z","outcomes":[{"name":"Cincinnati Reds","price":-167},{"name":"Colorado Rockies","price":138}]},{"key":"spreads","last_update":"2023-06-19T18:42:46Z","outcomes":[{"name":"Cincinnati Reds","price":112,"point":-1.5},{"name":"Colorado Rockies","price":-139,"point":1.5}]}]}]},{"id":"f898f386740856afd3bc0ae8cd953df7","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-19T23:40:00Z","home_team":"Minnesota Twins","away_team":"Boston Red Sox","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Boston Red Sox","price":125},{"name":"Minnesota Twins","price":-145}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Boston Red Sox","price":-170,"point":1.5},{"name":"Minnesota Twins","price":145,"point":-1.5}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Boston Red Sox","price":128},{"name":"Minnesota Twins","price":-139}]},{"key":"spreads","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Boston Red Sox","price":-167,"point":1.5},{"name":"Minnesota Twins","price":148,"point":-1.5}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Boston Red Sox","price":128},{"name":"Minnesota Twins","price":-138}]},{"key":"spreads","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Boston Red Sox","price":-165,"point":1.5},{"name":"Minnesota Twins","price":152,"point":-1.5}]}]},{"key":"bovada","title":"Bovada","last_update":"2023-06-19T18:42:38Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:38Z","outcomes":[{"name":"Boston Red Sox","price":122},{"name":"Minnesota Twins","price":-145}]},{"key":"spreads","last_update":"2023-06-19T18:42:38Z","outcomes":[{"name":"Boston Red Sox","price":-170,"point":1.5},{"name":"Minnesota Twins","price":145,"point":-1.5}]}]},{"key":"williamhill_us","title":"William Hill (US)","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Boston Red Sox","price":122},{"name":"Minnesota Twins","price":-145}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Boston Red Sox","price":-170,"point":1.5},{"name":"Minnesota Twins","price":143,"point":-1.5}]}]},{"key":"wynnbet","title":"WynnBET","last_update":"2023-06-19T18:39:06Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:39:06Z","outcomes":[{"name":"Boston Red Sox","price":131},{"name":"Minnesota Twins","price":-143}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Boston Red Sox","price":125},{"name":"Minnesota Twins","price":-140}]},{"key":"spreads","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Boston Red Sox","price":-165,"point":1.5},{"name":"Minnesota Twins","price":145,"point":-1.5}]}]},{"key":"fanduel","title":"FanDuel","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Boston Red Sox","price":122},{"name":"Minnesota Twins","price":-144}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Boston Red Sox","price":-176,"point":1.5},{"name":"Minnesota Twins","price":146,"point":-1.5}]}]},{"key":"betmgm","title":"BetMGM","last_update":"2023-06-19T18:42:25Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:25Z","outcomes":[{"name":"Boston Red Sox","price":120},{"name":"Minnesota Twins","price":-145}]},{"key":"spreads","last_update":"2023-06-19T18:42:25Z","outcomes":[{"name":"Boston Red Sox","price":-165,"point":1.5},{"name":"Minnesota Twins","price":140,"point":-1.5}]}]},{"key":"circasports","title":"Circa Sports","last_update":"2023-06-19T18:42:20Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:20Z","outcomes":[{"name":"Boston Red Sox","price":119},{"name":"Minnesota Twins","price":-143}]},{"key":"spreads","last_update":"2023-06-19T18:42:20Z","outcomes":[{"name":"Boston Red Sox","price":-170,"point":1.5},{"name":"Minnesota Twins","price":139,"point":-1.5}]}]},{"key":"superbook","title":"SuperBook","last_update":"2023-06-19T18:42:08Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:08Z","outcomes":[{"name":"Boston Red Sox","price":122},{"name":"Minnesota Twins","price":-142}]}]},{"key":"mybookieag","title":"MyBookie.ag","last_update":"2023-06-19T18:42:33Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:33Z","outcomes":[{"name":"Boston Red Sox","price":115},{"name":"Minnesota Twins","price":-140}]},{"key":"spreads","last_update":"2023-06-19T18:42:33Z","outcomes":[{"name":"Boston Red Sox","price":-185,"point":1.5},{"name":"Minnesota Twins","price":150,"point":-1.5}]}]},{"key":"foxbet","title":"FOX Bet","last_update":"2023-06-19T18:42:34Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:34Z","outcomes":[{"name":"Boston Red Sox","price":115},{"name":"Minnesota Twins","price":-154}]},{"key":"spreads","last_update":"2023-06-19T18:42:34Z","outcomes":[{"name":"Boston Red Sox","price":-120,"point":1},{"name":"Minnesota Twins","price":-105,"point":-1}]}]},{"key":"twinspires","title":"TwinSpires","last_update":"2023-06-19T18:42:46Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:46Z","outcomes":[{"name":"Boston Red Sox","price":123},{"name":"Minnesota Twins","price":-148}]},{"key":"spreads","last_update":"2023-06-19T18:42:46Z","outcomes":[{"name":"Boston Red Sox","price":-177,"point":1.5},{"name":"Minnesota Twins","price":145,"point":-1.5}]}]},{"key":"barstool","title":"Barstool Sportsbook","last_update":"2023-06-19T18:42:42Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:42Z","outcomes":[{"name":"Boston Red Sox","price":125},{"name":"Minnesota Twins","price":-143}]},{"key":"spreads","last_update":"2023-06-19T18:42:42Z","outcomes":[{"name":"Boston Red Sox","price":-177,"point":1.5},{"name":"Minnesota Twins","price":145,"point":-1.5}]}]},{"key":"betrivers","title":"BetRivers","last_update":"2023-06-19T18:42:50Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:50Z","outcomes":[{"name":"Boston Red Sox","price":125},{"name":"Minnesota Twins","price":-143}]},{"key":"spreads","last_update":"2023-06-19T18:42:50Z","outcomes":[{"name":"Boston Red Sox","price":-177,"point":1.5},{"name":"Minnesota Twins","price":145,"point":-1.5}]}]},{"key":"unibet_us","title":"Unibet","last_update":"2023-06-19T18:42:49Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:49Z","outcomes":[{"name":"Boston Red Sox","price":125},{"name":"Minnesota Twins","price":-143}]},{"key":"spreads","last_update":"2023-06-19T18:42:49Z","outcomes":[{"name":"Boston Red Sox","price":-177,"point":1.5},{"name":"Minnesota Twins","price":145,"point":-1.5}]}]},{"key":"pointsbetus","title":"PointsBet (US)","last_update":"2023-06-19T18:42:44Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:44Z","outcomes":[{"name":"Boston Red Sox","price":120},{"name":"Minnesota Twins","price":-145}]},{"key":"spreads","last_update":"2023-06-19T18:42:44Z","outcomes":[{"name":"Boston Red Sox","price":-170,"point":1.5},{"name":"Minnesota Twins","price":140,"point":-1.5}]}]}]},{"id":"147c1c770d07d34460ddd021e495af5b","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-20T00:10:00Z","home_team":"Milwaukee Brewers","away_team":"Arizona Diamondbacks","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Arizona Diamondbacks","price":-105},{"name":"Milwaukee Brewers","price":-115}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Arizona Diamondbacks","price":165,"point":-1.5},{"name":"Milwaukee Brewers","price":-195,"point":1.5}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Arizona Diamondbacks","price":102},{"name":"Milwaukee Brewers","price":-112}]},{"key":"spreads","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Arizona Diamondbacks","price":-199,"point":1.5},{"name":"Milwaukee Brewers","price":182,"point":-1.5}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Arizona Diamondbacks","price":102},{"name":"Milwaukee Brewers","price":-112}]},{"key":"spreads","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Arizona Diamondbacks","price":-204,"point":1.5},{"name":"Milwaukee Brewers","price":175,"point":-1.5}]}]},{"key":"williamhill_us","title":"William Hill (US)","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Arizona Diamondbacks","price":100},{"name":"Milwaukee Brewers","price":-120}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Arizona Diamondbacks","price":-205,"point":1.5},{"name":"Milwaukee Brewers","price":170,"point":-1.5}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Arizona Diamondbacks","price":103},{"name":"Milwaukee Brewers","price":-113}]},{"key":"spreads","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Arizona Diamondbacks","price":-200,"point":1.5},{"name":"Milwaukee Brewers","price":170,"point":-1.5}]}]},{"key":"wynnbet","title":"WynnBET","last_update":"2023-06-19T18:39:06Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:39:06Z","outcomes":[{"name":"Arizona Diamondbacks","price":103},{"name":"Milwaukee Brewers","price":-112}]}]},{"key":"fanduel","title":"FanDuel","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Arizona Diamondbacks","price":-102},{"name":"Milwaukee Brewers","price":-116}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Arizona Diamondbacks","price":172,"point":-1.5},{"name":"Milwaukee Brewers","price":-210,"point":1.5}]}]},{"key":"bovada","title":"Bovada","last_update":"2023-06-19T18:42:38Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:38Z","outcomes":[{"name":"Arizona Diamondbacks","price":-105},{"name":"Milwaukee Brewers","price":-115}]},{"key":"spreads","last_update":"2023-06-19T18:42:38Z","outcomes":[{"name":"Arizona Diamondbacks","price":-195,"point":1.5},{"name":"Milwaukee Brewers","price":165,"point":-1.5}]}]},{"key":"betmgm","title":"BetMGM","last_update":"2023-06-19T18:42:25Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:25Z","outcomes":[{"name":"Arizona Diamondbacks","price":-105},{"name":"Milwaukee Brewers","price":-115}]},{"key":"spreads","last_update":"2023-06-19T18:42:25Z","outcomes":[{"name":"Arizona Diamondbacks","price":165,"point":-1.5},{"name":"Milwaukee Brewers","price":-200,"point":1.5}]}]},{"key":"circasports","title":"Circa Sports","last_update":"2023-06-19T18:42:20Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:20Z","outcomes":[{"name":"Arizona Diamondbacks","price":108},{"name":"Milwaukee Brewers","price":-129}]},{"key":"spreads","last_update":"2023-06-19T18:42:20Z","outcomes":[{"name":"Arizona Diamondbacks","price":-205,"point":1.5},{"name":"Milwaukee Brewers","price":164,"point":-1.5}]}]},{"key":"superbook","title":"SuperBook","last_update":"2023-06-19T18:42:08Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:08Z","outcomes":[{"name":"Arizona Diamondbacks","price":103},{"name":"Milwaukee Brewers","price":-119}]}]},{"key":"barstool","title":"Barstool Sportsbook","last_update":"2023-06-19T18:42:42Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:42Z","outcomes":[{"name":"Arizona Diamondbacks","price":104},{"name":"Milwaukee Brewers","price":-121}]},{"key":"spreads","last_update":"2023-06-19T18:42:42Z","outcomes":[{"name":"Arizona Diamondbacks","price":170,"point":-1.5},{"name":"Milwaukee Brewers","price":-220,"point":1.5}]}]},{"key":"betrivers","title":"BetRivers","last_update":"2023-06-19T18:42:50Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:50Z","outcomes":[{"name":"Arizona Diamondbacks","price":106},{"name":"Milwaukee Brewers","price":-120}]},{"key":"spreads","last_update":"2023-06-19T18:42:50Z","outcomes":[{"name":"Arizona Diamondbacks","price":170,"point":-1.5},{"name":"Milwaukee Brewers","price":-220,"point":1.5}]}]},{"key":"unibet_us","title":"Unibet","last_update":"2023-06-19T18:42:49Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:49Z","outcomes":[{"name":"Arizona Diamondbacks","price":104},{"name":"Milwaukee Brewers","price":-121}]},{"key":"spreads","last_update":"2023-06-19T18:42:49Z","outcomes":[{"name":"Arizona Diamondbacks","price":170,"point":-1.5},{"name":"Milwaukee Brewers","price":-220,"point":1.5}]}]},{"key":"twinspires","title":"TwinSpires","last_update":"2023-06-19T18:42:46Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:46Z","outcomes":[{"name":"Arizona Diamondbacks","price":104},{"name":"Milwaukee Brewers","price":-122}]},{"key":"spreads","last_update":"2023-06-19T18:42:46Z","outcomes":[{"name":"Arizona Diamondbacks","price":170,"point":-1.5},{"name":"Milwaukee Brewers","price":-220,"point":1.5}]}]},{"key":"foxbet","title":"FOX Bet","last_update":"2023-06-19T18:42:34Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:34Z","outcomes":[{"name":"Arizona Diamondbacks","price":-110},{"name":"Milwaukee Brewers","price":-120}]},{"key":"spreads","last_update":"2023-06-19T18:42:34Z","outcomes":[{"name":"Arizona Diamondbacks","price":120,"point":-1},{"name":"Milwaukee Brewers","price":-154,"point":1}]}]},{"key":"mybookieag","title":"MyBookie.ag","last_update":"2023-06-19T18:42:33Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:33Z","outcomes":[{"name":"Arizona Diamondbacks","price":-105},{"name":"Milwaukee Brewers","price":-116}]},{"key":"spreads","last_update":"2023-06-19T18:42:33Z","outcomes":[{"name":"Arizona Diamondbacks","price":158,"point":-1.5},{"name":"Milwaukee Brewers","price":-196,"point":1.5}]}]},{"key":"pointsbetus","title":"PointsBet (US)","last_update":"2023-06-19T18:42:44Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:44Z","outcomes":[{"name":"Arizona Diamondbacks","price":-105},{"name":"Milwaukee Brewers","price":-115}]},{"key":"spreads","last_update":"2023-06-19T18:42:44Z","outcomes":[{"name":"Arizona Diamondbacks","price":-200,"point":1.5},{"name":"Milwaukee Brewers","price":165,"point":-1.5}]}]}]},{"id":"01352a402a6000c0470e89c1523a82e3","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-20T00:10:00Z","home_team":"Chicago White Sox","away_team":"Texas Rangers","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Chicago White Sox","price":105},{"name":"Texas Rangers","price":-125}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Chicago White Sox","price":-145,"point":1.5},{"name":"Texas Rangers","price":125,"point":-1.5}]}]},{"key":"fanduel","title":"FanDuel","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Chicago White Sox","price":108},{"name":"Texas Rangers","price":-126}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Chicago White Sox","price":-138,"point":1.5},{"name":"Texas Rangers","price":115,"point":-1.5}]}]},{"key":"mybookieag","title":"MyBookie.ag","last_update":"2023-06-19T18:42:33Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:33Z","outcomes":[{"name":"Chicago White Sox","price":104},{"name":"Texas Rangers","price":-126}]},{"key":"spreads","last_update":"2023-06-19T18:42:33Z","outcomes":[{"name":"Chicago White Sox","price":-151,"point":1.5},{"name":"Texas Rangers","price":123,"point":-1.5}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"spreads","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Chicago White Sox","price":-140,"point":1.5},{"name":"Texas Rangers","price":120,"point":-1.5}]}]},{"key":"foxbet","title":"FOX Bet","last_update":"2023-06-19T18:42:34Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:34Z","outcomes":[{"name":"Chicago White Sox","price":100},{"name":"Texas Rangers","price":-133}]},{"key":"spreads","last_update":"2023-06-19T18:42:34Z","outcomes":[{"name":"Chicago White Sox","price":-120,"point":1},{"name":"Texas Rangers","price":-105,"point":-1}]}]},{"key":"barstool","title":"Barstool Sportsbook","last_update":"2023-06-19T18:42:42Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:42Z","outcomes":[{"name":"Chicago White Sox","price":104},{"name":"Texas Rangers","price":-121}]},{"key":"spreads","last_update":"2023-06-19T18:42:42Z","outcomes":[{"name":"Chicago White Sox","price":-157,"point":1.5},{"name":"Texas Rangers","price":130,"point":-1.5}]}]},{"key":"twinspires","title":"TwinSpires","last_update":"2023-06-19T18:42:46Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:46Z","outcomes":[{"name":"Chicago White Sox","price":102},{"name":"Texas Rangers","price":-122}]},{"key":"spreads","last_update":"2023-06-19T18:42:46Z","outcomes":[{"name":"Chicago White Sox","price":-157,"point":1.5},{"name":"Texas Rangers","price":130,"point":-1.5}]}]},{"key":"betrivers","title":"BetRivers","last_update":"2023-06-19T18:42:50Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:50Z","outcomes":[{"name":"Chicago White Sox","price":105},{"name":"Texas Rangers","price":-120}]},{"key":"spreads","last_update":"2023-06-19T18:42:50Z","outcomes":[{"name":"Chicago White Sox","price":-157,"point":1.5},{"name":"Texas Rangers","price":130,"point":-1.5}]}]},{"key":"unibet_us","title":"Unibet","last_update":"2023-06-19T18:42:49Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:49Z","outcomes":[{"name":"Chicago White Sox","price":104},{"name":"Texas Rangers","price":-121}]},{"key":"spreads","last_update":"2023-06-19T18:42:49Z","outcomes":[{"name":"Chicago White Sox","price":-157,"point":1.5},{"name":"Texas Rangers","price":130,"point":-1.5}]}]},{"key":"pointsbetus","title":"PointsBet (US)","last_update":"2023-06-19T18:42:44Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:44Z","outcomes":[{"name":"Chicago White Sox","price":105},{"name":"Texas Rangers","price":-125}]},{"key":"spreads","last_update":"2023-06-19T18:42:44Z","outcomes":[{"name":"Chicago White Sox","price":-145,"point":1.5},{"name":"Texas Rangers","price":120,"point":-1.5}]}]},{"key":"williamhill_us","title":"William Hill (US)","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Chicago White Sox","price":105},{"name":"Texas Rangers","price":-125}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Chicago White Sox","price":-145,"point":1.5},{"name":"Texas Rangers","price":122,"point":-1.5}]}]}]},{"id":"1c41fcba5f29f9c8a3dad4789f515ba4","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-20T00:10:00Z","home_team":"Houston Astros","away_team":"New York Mets","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Houston Astros","price":-115},{"name":"New York Mets","price":-105}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Houston Astros","price":-195,"point":1.5},{"name":"New York Mets","price":165,"point":-1.5}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Houston Astros","price":-110},{"name":"New York Mets","price":100}]},{"key":"spreads","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Houston Astros","price":191,"point":-1.5},{"name":"New York Mets","price":-209,"point":1.5}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Houston Astros","price":-110},{"name":"New York Mets","price":100}]},{"key":"spreads","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Houston Astros","price":185,"point":-1.5},{"name":"New York Mets","price":-217,"point":1.5}]}]},{"key":"williamhill_us","title":"William Hill (US)","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Houston Astros","price":-115},{"name":"New York Mets","price":-105}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Houston Astros","price":175,"point":-1.5},{"name":"New York Mets","price":-210,"point":1.5}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Houston Astros","price":-110},{"name":"New York Mets","price":100}]},{"key":"spreads","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Houston Astros","price":175,"point":-1.5},{"name":"New York Mets","price":-210,"point":1.5}]}]},{"key":"wynnbet","title":"WynnBET","last_update":"2023-06-19T18:39:06Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:39:06Z","outcomes":[{"name":"Houston Astros","price":-112},{"name":"New York Mets","price":103}]}]},{"key":"fanduel","title":"FanDuel","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Houston Astros","price":-120},{"name":"New York Mets","price":102}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Houston Astros","price":-205,"point":1.5},{"name":"New York Mets","price":168,"point":-1.5}]}]},{"key":"bovada","title":"Bovada","last_update":"2023-06-19T18:42:38Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:38Z","outcomes":[{"name":"Houston Astros","price":-115},{"name":"New York Mets","price":-105}]},{"key":"spreads","last_update":"2023-06-19T18:42:38Z","outcomes":[{"name":"Houston Astros","price":170,"point":-1.5},{"name":"New York Mets","price":-200,"point":1.5}]}]},{"key":"betmgm","title":"BetMGM","last_update":"2023-06-19T18:42:25Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:25Z","outcomes":[{"name":"Houston Astros","price":-120},{"name":"New York Mets","price":100}]},{"key":"spreads","last_update":"2023-06-19T18:42:25Z","outcomes":[{"name":"Houston Astros","price":165,"point":-1.5},{"name":"New York Mets","price":-200,"point":1.5}]}]},{"key":"circasports","title":"Circa Sports","last_update":"2023-06-19T18:42:20Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:20Z","outcomes":[{"name":"Houston Astros","price":-117},{"name":"New York Mets","price":-103}]},{"key":"spreads","last_update":"2023-06-19T18:42:20Z","outcomes":[{"name":"Houston Astros","price":172,"point":-1.5},{"name":"New York Mets","price":-213,"point":1.5}]}]},{"key":"superbook","title":"SuperBook","last_update":"2023-06-19T18:42:08Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:08Z","outcomes":[{"name":"Houston Astros","price":-112},{"name":"New York Mets","price":-104}]}]},{"key":"barstool","title":"Barstool Sportsbook","last_update":"2023-06-19T18:42:42Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:42Z","outcomes":[{"name":"Houston Astros","price":-115},{"name":"New York Mets","price":-103}]},{"key":"spreads","last_update":"2023-06-19T18:42:42Z","outcomes":[{"name":"Houston Astros","price":-210,"point":1.5},{"name":"New York Mets","price":163,"point":-1.5}]}]},{"key":"betrivers","title":"BetRivers","last_update":"2023-06-19T18:42:50Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:50Z","outcomes":[{"name":"Houston Astros","price":-114},{"name":"New York Mets","price":100}]},{"key":"spreads","last_update":"2023-06-19T18:42:50Z","outcomes":[{"name":"Houston Astros","price":-210,"point":1.5},{"name":"New York Mets","price":163,"point":-1.5}]}]},{"key":"unibet_us","title":"Unibet","last_update":"2023-06-19T18:42:49Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:49Z","outcomes":[{"name":"Houston Astros","price":-115},{"name":"New York Mets","price":-103}]},{"key":"spreads","last_update":"2023-06-19T18:42:49Z","outcomes":[{"name":"Houston Astros","price":-210,"point":1.5},{"name":"New York Mets","price":163,"point":-1.5}]}]},{"key":"twinspires","title":"TwinSpires","last_update":"2023-06-19T18:42:46Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:46Z","outcomes":[{"name":"Houston Astros","price":-117},{"name":"New York Mets","price":-103}]},{"key":"spreads","last_update":"2023-06-19T18:42:46Z","outcomes":[{"name":"Houston Astros","price":-210,"point":1.5},{"name":"New York Mets","price":163,"point":-1.5}]}]},{"key":"foxbet","title":"FOX Bet","last_update":"2023-06-19T18:42:34Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:34Z","outcomes":[{"name":"Houston Astros","price":-120},{"name":"New York Mets","price":-110}]},{"key":"spreads","last_update":"2023-06-19T18:42:34Z","outcomes":[{"name":"Houston Astros","price":-161,"point":1},{"name":"New York Mets","price":125,"point":-1}]}]},{"key":"mybookieag","title":"MyBookie.ag","last_update":"2023-06-19T18:42:33Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:33Z","outcomes":[{"name":"Houston Astros","price":-116},{"name":"New York Mets","price":-105}]},{"key":"spreads","last_update":"2023-06-19T18:42:33Z","outcomes":[{"name":"Houston Astros","price":-192,"point":1.5},{"name":"New York Mets","price":156,"point":-1.5}]}]},{"key":"pointsbetus","title":"PointsBet (US)","last_update":"2023-06-19T18:42:44Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:44Z","outcomes":[{"name":"Houston Astros","price":-120},{"name":"New York Mets","price":100}]},{"key":"spreads","last_update":"2023-06-19T18:42:44Z","outcomes":[{"name":"Houston Astros","price":165,"point":-1.5},{"name":"New York Mets","price":-200,"point":1.5}]}]}]},{"id":"34a80631c46352ed877c48fdd85748b0","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-20T01:45:00Z","home_team":"San Francisco Giants","away_team":"San Diego Padres","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"San Diego Padres","price":-115},{"name":"San Francisco Giants","price":-105}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"San Diego Padres","price":145,"point":-1.5},{"name":"San Francisco Giants","price":-170,"point":1.5}]}]},{"key":"pointsbetus","title":"PointsBet (US)","last_update":"2023-06-19T18:42:44Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:44Z","outcomes":[{"name":"San Diego Padres","price":-110},{"name":"San Francisco Giants","price":-110}]},{"key":"spreads","last_update":"2023-06-19T18:42:44Z","outcomes":[{"name":"San Diego Padres","price":140,"point":-1.5},{"name":"San Francisco Giants","price":-170,"point":1.5}]}]},{"key":"fanduel","title":"FanDuel","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"San Diego Padres","price":-116},{"name":"San Francisco Giants","price":-102}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"San Diego Padres","price":140,"point":-1.5},{"name":"San Francisco Giants","price":-170,"point":1.5}]}]},{"key":"mybookieag","title":"MyBookie.ag","last_update":"2023-06-19T18:42:33Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:33Z","outcomes":[{"name":"San Diego Padres","price":-116},{"name":"San Francisco Giants","price":-105}]},{"key":"spreads","last_update":"2023-06-19T18:42:33Z","outcomes":[{"name":"San Diego Padres","price":140,"point":-1.5},{"name":"San Francisco Giants","price":-172,"point":1.5}]}]},{"key":"circasports","title":"Circa Sports","last_update":"2023-06-19T18:42:20Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:20Z","outcomes":[{"name":"San Diego Padres","price":-114},{"name":"San Francisco Giants","price":-105}]},{"key":"spreads","last_update":"2023-06-19T18:42:20Z","outcomes":[{"name":"San Diego Padres","price":139,"point":-1.5},{"name":"San Francisco Giants","price":-170,"point":1.5}]}]},{"key":"betmgm","title":"BetMGM","last_update":"2023-06-19T18:42:25Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:25Z","outcomes":[{"name":"San Diego Padres","price":-115},{"name":"San Francisco Giants","price":-105}]},{"key":"spreads","last_update":"2023-06-19T18:42:25Z","outcomes":[{"name":"San Diego Padres","price":140,"point":-1.5},{"name":"San Francisco Giants","price":-165,"point":1.5}]}]},{"key":"foxbet","title":"FOX Bet","last_update":"2023-06-19T18:42:34Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:34Z","outcomes":[{"name":"San Diego Padres","price":-120},{"name":"San Francisco Giants","price":-110}]},{"key":"spreads","last_update":"2023-06-19T18:42:34Z","outcomes":[{"name":"San Diego Padres","price":110,"point":-1},{"name":"San Francisco Giants","price":-143,"point":1}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"San Diego Padres","price":-110},{"name":"San Francisco Giants","price":100}]},{"key":"spreads","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"San Diego Padres","price":145,"point":-1.5},{"name":"San Francisco Giants","price":-165,"point":1.5}]}]},{"key":"williamhill_us","title":"William Hill (US)","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"San Diego Padres","price":-115},{"name":"San Francisco Giants","price":-105}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"San Diego Padres","price":140,"point":-1.5},{"name":"San Francisco Giants","price":-165,"point":1.5}]}]},{"key":"superbook","title":"SuperBook","last_update":"2023-06-19T18:42:08Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:08Z","outcomes":[{"name":"San Diego Padres","price":-108},{"name":"San Francisco Giants","price":-108}]}]},{"key":"bovada","title":"Bovada","last_update":"2023-06-19T18:42:38Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:38Z","outcomes":[{"name":"San Diego Padres","price":-115},{"name":"San Francisco Giants","price":-105}]},{"key":"spreads","last_update":"2023-06-19T18:42:38Z","outcomes":[{"name":"San Diego Padres","price":145,"point":-1.5},{"name":"San Francisco Giants","price":-170,"point":1.5}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"San Diego Padres","price":-109},{"name":"San Francisco Giants","price":-101}]},{"key":"spreads","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"San Diego Padres","price":147,"point":-1.5},{"name":"San Francisco Giants","price":-160,"point":1.5}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"San Diego Padres","price":-109},{"name":"San Francisco Giants","price":-101}]},{"key":"spreads","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"San Diego Padres","price":143,"point":-1.5},{"name":"San Francisco Giants","price":-164,"point":1.5}]}]},{"key":"wynnbet","title":"WynnBET","last_update":"2023-06-19T18:39:06Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:39:06Z","outcomes":[{"name":"San Diego Padres","price":-114},{"name":"San Francisco Giants","price":104}]}]},{"key":"betrivers","title":"BetRivers","last_update":"2023-06-19T18:42:50Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:50Z","outcomes":[{"name":"San Diego Padres","price":-114},{"name":"San Francisco Giants","price":100}]},{"key":"spreads","last_update":"2023-06-19T18:42:50Z","outcomes":[{"name":"San Diego Padres","price":135,"point":-1.5},{"name":"San Francisco Giants","price":-165,"point":1.5}]}]},{"key":"unibet_us","title":"Unibet","last_update":"2023-06-19T18:42:49Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:49Z","outcomes":[{"name":"San Diego Padres","price":-120},{"name":"San Francisco Giants","price":100}]},{"key":"spreads","last_update":"2023-06-19T18:42:49Z","outcomes":[{"name":"San Diego Padres","price":135,"point":-1.5},{"name":"San Francisco Giants","price":-165,"point":1.5}]}]},{"key":"twinspires","title":"TwinSpires","last_update":"2023-06-19T18:42:46Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:46Z","outcomes":[{"name":"San Diego Padres","price":-120},{"name":"San Francisco Giants","price":100}]},{"key":"spreads","last_update":"2023-06-19T18:42:46Z","outcomes":[{"name":"San Diego Padres","price":135,"point":-1.5},{"name":"San Francisco Giants","price":-165,"point":1.5}]}]},{"key":"barstool","title":"Barstool Sportsbook","last_update":"2023-06-19T18:42:42Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:42Z","outcomes":[{"name":"San Diego Padres","price":-120},{"name":"San Francisco Giants","price":100}]},{"key":"spreads","last_update":"2023-06-19T18:42:42Z","outcomes":[{"name":"San Diego Padres","price":135,"point":-1.5},{"name":"San Francisco Giants","price":-165,"point":1.5}]}]}]},{"id":"24f14fa61993d7b9c36afbc327b5abb6","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-20T22:40:00Z","home_team":"Philadelphia Phillies","away_team":"Atlanta Braves","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Atlanta Braves","price":-140},{"name":"Philadelphia Phillies","price":120}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Atlanta Braves","price":120,"point":-1.5},{"name":"Philadelphia Phillies","price":-140,"point":1.5}]}]},{"key":"fanduel","title":"FanDuel","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Atlanta Braves","price":-154},{"name":"Philadelphia Phillies","price":130}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Atlanta Braves","price":105,"point":-1.5},{"name":"Philadelphia Phillies","price":-126,"point":1.5}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Atlanta Braves","price":-150},{"name":"Philadelphia Phillies","price":135}]},{"key":"spreads","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Atlanta Braves","price":115,"point":-1.5},{"name":"Philadelphia Phillies","price":-135,"point":1.5}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Atlanta Braves","price":-150},{"name":"Philadelphia Phillies","price":139}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Atlanta Braves","price":-149},{"name":"Philadelphia Phillies","price":139}]}]}]},{"id":"35e08333925bb8ad6411372f71d912c0","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-20T22:40:00Z","home_team":"Tampa Bay Rays","away_team":"Baltimore Orioles","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Baltimore Orioles","price":140},{"name":"Tampa Bay Rays","price":-165}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Baltimore Orioles","price":-145,"point":1.5},{"name":"Tampa Bay Rays","price":125,"point":-1.5}]}]},{"key":"fanduel","title":"FanDuel","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Baltimore Orioles","price":154},{"name":"Tampa Bay Rays","price":-184}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Baltimore Orioles","price":-130,"point":1.5},{"name":"Tampa Bay Rays","price":108,"point":-1.5}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Baltimore Orioles","price":145},{"name":"Tampa Bay Rays","price":-165}]},{"key":"spreads","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Baltimore Orioles","price":-135,"point":1.5},{"name":"Tampa Bay Rays","price":115,"point":-1.5}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Baltimore Orioles","price":153},{"name":"Tampa Bay Rays","price":-166}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Baltimore Orioles","price":153},{"name":"Tampa Bay Rays","price":-167}]}]}]},{"id":"e2cdee7799062674ea0ba393cfb80da0","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-20T22:40:00Z","home_team":"Detroit Tigers","away_team":"Kansas City Royals","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Detroit Tigers","price":-145},{"name":"Kansas City Royals","price":125}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Detroit Tigers","price":130,"point":-1.5},{"name":"Kansas City Royals","price":-150,"point":1.5}]}]},{"key":"fanduel","title":"FanDuel","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Detroit Tigers","price":-164},{"name":"Kansas City Royals","price":138}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Detroit Tigers","price":118,"point":-1.5},{"name":"Kansas City Royals","price":-142,"point":1.5}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Detroit Tigers","price":-148},{"name":"Kansas City Royals","price":137}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Detroit Tigers","price":-147},{"name":"Kansas City Royals","price":137}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Detroit Tigers","price":-150},{"name":"Kansas City Royals","price":135}]}]}]},{"id":"6081b4bb07a98f77ce630b70a4709918","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-20T23:05:00Z","home_team":"Pittsburgh Pirates","away_team":"Chicago Cubs","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Chicago Cubs","price":-135},{"name":"Pittsburgh Pirates","price":115}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Chicago Cubs","price":130,"point":-1.5},{"name":"Pittsburgh Pirates","price":-150,"point":1.5}]}]},{"key":"fanduel","title":"FanDuel","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Chicago Cubs","price":-126},{"name":"Pittsburgh Pirates","price":108}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Chicago Cubs","price":130,"point":-1.5},{"name":"Pittsburgh Pirates","price":-156,"point":1.5}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Chicago Cubs","price":-130},{"name":"Pittsburgh Pirates","price":120}]},{"key":"spreads","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Chicago Cubs","price":135,"point":-1.5},{"name":"Pittsburgh Pirates","price":-155,"point":1.5}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Chicago Cubs","price":-130},{"name":"Pittsburgh Pirates","price":120}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Chicago Cubs","price":-130},{"name":"Pittsburgh Pirates","price":120}]}]}]},{"id":"4dbd9095a633e8b1eccff38e2aeaa909","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-20T23:05:00Z","home_team":"New York Yankees","away_team":"Seattle Mariners","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"New York Yankees","price":-135},{"name":"Seattle Mariners","price":115}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"New York Yankees","price":160,"point":-1.5},{"name":"Seattle Mariners","price":-190,"point":1.5}]}]},{"key":"fanduel","title":"FanDuel","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"New York Yankees","price":-142},{"name":"Seattle Mariners","price":120}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"New York Yankees","price":142,"point":-1.5},{"name":"Seattle Mariners","price":-172,"point":1.5}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"New York Yankees","price":-130},{"name":"Seattle Mariners","price":120}]},{"key":"spreads","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"New York Yankees","price":150,"point":-1.5},{"name":"Seattle Mariners","price":-170,"point":1.5}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"New York Yankees","price":-130},{"name":"Seattle Mariners","price":120}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"New York Yankees","price":-130},{"name":"Seattle Mariners","price":120}]}]}]},{"id":"4a8849c694f3b350680667562aec26eb","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-20T23:05:00Z","home_team":"Washington Nationals","away_team":"St. Louis Cardinals","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"St. Louis Cardinals","price":-155},{"name":"Washington Nationals","price":135}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"St. Louis Cardinals","price":100,"point":-1.5},{"name":"Washington Nationals","price":-120,"point":1.5}]}]},{"key":"fanduel","title":"FanDuel","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"St. Louis Cardinals","price":-162},{"name":"Washington Nationals","price":136}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"St. Louis Cardinals","price":104,"point":-1.5},{"name":"Washington Nationals","price":-125,"point":1.5}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"St. Louis Cardinals","price":-145},{"name":"Washington Nationals","price":134}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"St. Louis Cardinals","price":-145},{"name":"Washington Nationals","price":134}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"St. Louis Cardinals","price":-145},{"name":"Washington Nationals","price":130}]}]}]},{"id":"acb7f5fefc2d8226c2e43938529b5e52","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-20T23:10:00Z","home_team":"Cincinnati Reds","away_team":"Colorado Rockies","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Cincinnati Reds","price":-165},{"name":"Colorado Rockies","price":140}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Cincinnati Reds","price":125,"point":-1.5},{"name":"Colorado Rockies","price":-145,"point":1.5}]}]},{"key":"fanduel","title":"FanDuel","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Cincinnati Reds","price":-168},{"name":"Colorado Rockies","price":142}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Cincinnati Reds","price":114,"point":-1.5},{"name":"Colorado Rockies","price":-137,"point":1.5}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Cincinnati Reds","price":-155},{"name":"Colorado Rockies","price":140}]},{"key":"spreads","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Cincinnati Reds","price":115,"point":-1.5},{"name":"Colorado Rockies","price":-135,"point":1.5}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Cincinnati Reds","price":-155},{"name":"Colorado Rockies","price":143}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Cincinnati Reds","price":-156},{"name":"Colorado Rockies","price":143}]}]}]},{"id":"a78ae71f7fc834daa12e03d060c5855d","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-20T23:10:00Z","home_team":"Cleveland Guardians","away_team":"Oakland Athletics","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Cleveland Guardians","price":-210},{"name":"Oakland Athletics","price":180}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Cleveland Guardians","price":-110,"point":-1.5},{"name":"Oakland Athletics","price":-110,"point":1.5}]}]},{"key":"fanduel","title":"FanDuel","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Cleveland Guardians","price":-250},{"name":"Oakland Athletics","price":205}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Cleveland Guardians","price":-122,"point":-1.5},{"name":"Oakland Athletics","price":102,"point":1.5}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Cleveland Guardians","price":-210},{"name":"Oakland Athletics","price":180}]},{"key":"spreads","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Cleveland Guardians","price":-120,"point":-1.5},{"name":"Oakland Athletics","price":100,"point":1.5}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Cleveland Guardians","price":-210},{"name":"Oakland Athletics","price":192}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Cleveland Guardians","price":-208},{"name":"Oakland Athletics","price":192}]}]}]},{"id":"65c6b2876b6c0c1c18c2619b01cd114b","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-20T23:40:00Z","home_team":"Minnesota Twins","away_team":"Boston Red Sox","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Boston Red Sox","price":130},{"name":"Minnesota Twins","price":-150}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Boston Red Sox","price":-155,"point":1.5},{"name":"Minnesota Twins","price":135,"point":-1.5}]}]},{"key":"fanduel","title":"FanDuel","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Boston Red Sox","price":116},{"name":"Minnesota Twins","price":-136}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Boston Red Sox","price":-162,"point":1.5},{"name":"Minnesota Twins","price":134,"point":-1.5}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Boston Red Sox","price":125},{"name":"Minnesota Twins","price":-140}]},{"key":"spreads","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Boston Red Sox","price":-165,"point":1.5},{"name":"Minnesota Twins","price":145,"point":-1.5}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Boston Red Sox","price":130},{"name":"Minnesota Twins","price":-140}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Boston Red Sox","price":130},{"name":"Minnesota Twins","price":-141}]}]}]},{"id":"783f28b0885bcd9f727a2bfa215f2a79","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-21T00:10:00Z","home_team":"Milwaukee Brewers","away_team":"Arizona Diamondbacks","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Arizona Diamondbacks","price":105},{"name":"Milwaukee Brewers","price":-125}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Arizona Diamondbacks","price":-180,"point":1.5},{"name":"Milwaukee Brewers","price":155,"point":-1.5}]}]},{"key":"fanduel","title":"FanDuel","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Arizona Diamondbacks","price":108},{"name":"Milwaukee Brewers","price":-126}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Arizona Diamondbacks","price":-178,"point":1.5},{"name":"Milwaukee Brewers","price":146,"point":-1.5}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Arizona Diamondbacks","price":109},{"name":"Milwaukee Brewers","price":-119}]},{"key":"spreads","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Arizona Diamondbacks","price":-175,"point":1.5},{"name":"Milwaukee Brewers","price":155,"point":-1.5}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Arizona Diamondbacks","price":105},{"name":"Milwaukee Brewers","price":-115}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Arizona Diamondbacks","price":105},{"name":"Milwaukee Brewers","price":-115}]}]}]},{"id":"847755221eee27a8e6413d424ac3df91","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-21T00:10:00Z","home_team":"Chicago White Sox","away_team":"Texas Rangers","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Chicago White Sox","price":105},{"name":"Texas Rangers","price":-125}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Chicago White Sox","price":-155,"point":1.5},{"name":"Texas Rangers","price":135,"point":-1.5}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Chicago White Sox","price":107},{"name":"Texas Rangers","price":-117}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Chicago White Sox","price":107},{"name":"Texas Rangers","price":-116}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Chicago White Sox","price":105},{"name":"Texas Rangers","price":-115}]}]}]},{"id":"18312e338ad62a3d7566f0fc0cf81554","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-21T00:10:00Z","home_team":"Houston Astros","away_team":"New York Mets","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Houston Astros","price":-140},{"name":"New York Mets","price":120}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Houston Astros","price":145,"point":-1.5},{"name":"New York Mets","price":-170,"point":1.5}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Houston Astros","price":-127},{"name":"New York Mets","price":117}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Houston Astros","price":-127},{"name":"New York Mets","price":117}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Houston Astros","price":-127},{"name":"New York Mets","price":117}]}]}]},{"id":"44d5da5d7bfe1601dba07be3531a7f0a","sport_key":"baseball_mlb","sport_title":"MLB","commence_time":"2023-06-21T02:07:00Z","home_team":"Los Angeles Angels","away_team":"Los Angeles Dodgers","bookmakers":[{"key":"draftkings","title":"DraftKings","last_update":"2023-06-19T18:42:52Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Los Angeles Angels","price":130},{"name":"Los Angeles Dodgers","price":-150}]},{"key":"spreads","last_update":"2023-06-19T18:42:52Z","outcomes":[{"name":"Los Angeles Angels","price":-135,"point":1.5},{"name":"Los Angeles Dodgers","price":115,"point":-1.5}]}]},{"key":"fanduel","title":"FanDuel","last_update":"2023-06-19T18:42:30Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Los Angeles Angels","price":130},{"name":"Los Angeles Dodgers","price":-154}]},{"key":"spreads","last_update":"2023-06-19T18:42:30Z","outcomes":[{"name":"Los Angeles Angels","price":-128,"point":1.5},{"name":"Los Angeles Dodgers","price":106,"point":-1.5}]}]},{"key":"betus","title":"BetUS","last_update":"2023-06-19T18:42:01Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Los Angeles Angels","price":130},{"name":"Los Angeles Dodgers","price":-145}]},{"key":"spreads","last_update":"2023-06-19T18:42:01Z","outcomes":[{"name":"Los Angeles Angels","price":-135,"point":1.5},{"name":"Los Angeles Dodgers","price":115,"point":-1.5}]}]},{"key":"lowvig","title":"LowVig.ag","last_update":"2023-06-19T18:42:45Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:45Z","outcomes":[{"name":"Los Angeles Angels","price":134},{"name":"Los Angeles Dodgers","price":-145}]}]},{"key":"betonlineag","title":"BetOnline.ag","last_update":"2023-06-19T18:42:37Z","markets":[{"key":"h2h","last_update":"2023-06-19T18:42:37Z","outcomes":[{"name":"Los Angeles Angels","price":134},{"name":"Los Angeles Dodgers","price":-145}]}]}]}]
+[
+  {
+    "id": "7594ea114f21277d2e946a442929ddc4",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-06-22T17:05:00Z",
+    "home_team": "Washington Nationals",
+    "away_team": "Arizona Diamondbacks",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Arizona Diamondbacks", "price": -280 },
+              { "name": "Washington Nationals", "price": 300 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Arizona Diamondbacks", "price": 165, "point": -4.5 },
+              { "name": "Washington Nationals", "price": -205, "point": 4.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pointsbetus",
+        "title": "PointsBet (US)",
+        "last_update": "2023-06-22T19:00:37Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:37Z",
+            "outcomes": [
+              { "name": "Arizona Diamondbacks", "price": -2995 },
+              { "name": "Washington Nationals", "price": 1200 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:37Z",
+            "outcomes": [
+              { "name": "Arizona Diamondbacks", "price": 165, "point": -4.5 },
+              { "name": "Washington Nationals", "price": -225, "point": 4.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "mybookieag",
+        "title": "MyBookie.ag",
+        "last_update": "2023-06-22T19:00:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:18Z",
+            "outcomes": [
+              { "name": "Arizona Diamondbacks", "price": -5000 },
+              { "name": "Washington Nationals", "price": 1150 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:18Z",
+            "outcomes": [
+              { "name": "Arizona Diamondbacks", "price": -212, "point": -3.5 },
+              { "name": "Washington Nationals", "price": 165, "point": 3.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2023-06-22T19:00:45Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:45Z",
+            "outcomes": [
+              { "name": "Arizona Diamondbacks", "price": -5000 },
+              { "name": "Washington Nationals", "price": 900 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:45Z",
+            "outcomes": [
+              { "name": "Arizona Diamondbacks", "price": -227, "point": -3.5 },
+              { "name": "Washington Nationals", "price": 160, "point": 3.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2023-06-22T19:00:58Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:58Z",
+            "outcomes": [
+              { "name": "Arizona Diamondbacks", "price": -5000 },
+              { "name": "Washington Nationals", "price": 1400 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:58Z",
+            "outcomes": [
+              { "name": "Arizona Diamondbacks", "price": -220, "point": -3.5 },
+              { "name": "Washington Nationals", "price": 165, "point": 3.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-06-22T19:00:28Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "Arizona Diamondbacks", "price": -6000 },
+              { "name": "Washington Nationals", "price": 2400 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "Arizona Diamondbacks", "price": -230, "point": -3.5 },
+              { "name": "Washington Nationals", "price": 176, "point": 3.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "circasports",
+        "title": "Circa Sports",
+        "last_update": "2023-06-22T19:00:30Z",
+        "markets": [
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:30Z",
+            "outcomes": [
+              { "name": "Arizona Diamondbacks", "price": -122, "point": -4 },
+              { "name": "Washington Nationals", "price": 101, "point": 4 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-06-22T19:00:32Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:32Z",
+            "outcomes": [
+              { "name": "Arizona Diamondbacks", "price": -10000 },
+              { "name": "Washington Nationals", "price": 1400 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:32Z",
+            "outcomes": [
+              { "name": "Arizona Diamondbacks", "price": -225, "point": -3.5 },
+              { "name": "Washington Nationals", "price": 170, "point": 3.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-06-22T19:00:54Z",
+        "markets": [
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:54Z",
+            "outcomes": [
+              { "name": "Arizona Diamondbacks", "price": -137, "point": -4 },
+              { "name": "Washington Nationals", "price": 107, "point": 4 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet_us",
+        "title": "Unibet",
+        "last_update": "2023-06-22T19:00:44Z",
+        "markets": [
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:44Z",
+            "outcomes": [
+              { "name": "Arizona Diamondbacks", "price": -137, "point": -4 },
+              { "name": "Washington Nationals", "price": 107, "point": 4 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2023-06-22T19:00:48Z",
+        "markets": [
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:48Z",
+            "outcomes": [
+              { "name": "Arizona Diamondbacks", "price": -137, "point": -4 },
+              { "name": "Washington Nationals", "price": 107, "point": 4 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "c1ee577b1f974bdaaaa757efa91f6041",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-06-22T17:07:02Z",
+    "home_team": "Philadelphia Phillies",
+    "away_team": "Atlanta Braves",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": 115 },
+              { "name": "Philadelphia Phillies", "price": -145 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": 300, "point": -1.5 },
+              { "name": "Philadelphia Phillies", "price": -400, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pointsbetus",
+        "title": "PointsBet (US)",
+        "last_update": "2023-06-22T19:00:37Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:37Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": 125 },
+              { "name": "Philadelphia Phillies", "price": -165 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:37Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": -425, "point": 1.5 },
+              { "name": "Philadelphia Phillies", "price": 300, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-06-22T19:00:28Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": 114 },
+              { "name": "Philadelphia Phillies", "price": -144 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": 300, "point": -1.5 },
+              { "name": "Philadelphia Phillies", "price": -430, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2023-06-22T19:00:03Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:03Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": -105 },
+              { "name": "Philadelphia Phillies", "price": -133 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:03Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": 260, "point": -1.5 },
+              { "name": "Philadelphia Phillies", "price": -400, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "mybookieag",
+        "title": "MyBookie.ag",
+        "last_update": "2023-06-22T19:00:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:18Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": 120 },
+              { "name": "Philadelphia Phillies", "price": -153 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:18Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": -454, "point": 1.5 },
+              { "name": "Philadelphia Phillies", "price": 320, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2023-06-22T19:00:58Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:58Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": -110 },
+              { "name": "Philadelphia Phillies", "price": -120 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:58Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": 260, "point": -1.5 },
+              { "name": "Philadelphia Phillies", "price": -375, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "circasports",
+        "title": "Circa Sports",
+        "last_update": "2023-06-22T19:00:30Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:30Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": 115 },
+              { "name": "Philadelphia Phillies", "price": -137 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:30Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": -257, "point": 1 },
+              { "name": "Philadelphia Phillies", "price": 205, "point": -1 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-06-22T19:00:32Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:32Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": 125 },
+              { "name": "Philadelphia Phillies", "price": -160 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:32Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": 320, "point": -1.5 },
+              { "name": "Philadelphia Phillies", "price": -450, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet_us",
+        "title": "Unibet",
+        "last_update": "2023-06-22T19:00:44Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:44Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": 108 },
+              { "name": "Philadelphia Phillies", "price": -137 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:44Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": 310, "point": -1.5 },
+              { "name": "Philadelphia Phillies", "price": -670, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2023-06-22T19:00:48Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:48Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": 108 },
+              { "name": "Philadelphia Phillies", "price": -137 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:48Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": 310, "point": -1.5 },
+              { "name": "Philadelphia Phillies", "price": -670, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-06-22T19:00:54Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:54Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": 108 },
+              { "name": "Philadelphia Phillies", "price": -137 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:54Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": 310, "point": -1.5 },
+              { "name": "Philadelphia Phillies", "price": -670, "point": 1.5 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "d6e976237fb9365a8ed2e6b0fbcc1e73",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-06-22T17:10:00Z",
+    "home_team": "Minnesota Twins",
+    "away_team": "Boston Red Sox",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Boston Red Sox", "price": 125, "point": 5.5 },
+              { "name": "Minnesota Twins", "price": -155, "point": -5.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pointsbetus",
+        "title": "PointsBet (US)",
+        "last_update": "2023-06-22T19:00:37Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:37Z",
+            "outcomes": [
+              { "name": "Boston Red Sox", "price": 4500 },
+              { "name": "Minnesota Twins", "price": -40000 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:37Z",
+            "outcomes": [
+              { "name": "Boston Red Sox", "price": 140, "point": 5.5 },
+              { "name": "Minnesota Twins", "price": -180, "point": -5.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "mybookieag",
+        "title": "MyBookie.ag",
+        "last_update": "2023-06-22T18:59:33Z",
+        "markets": [
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T18:59:33Z",
+            "outcomes": [
+              { "name": "Boston Red Sox", "price": 155, "point": 5.5 },
+              { "name": "Minnesota Twins", "price": -200, "point": -5.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2023-06-22T19:00:45Z",
+        "markets": [
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:45Z",
+            "outcomes": [
+              { "name": "Boston Red Sox", "price": 160, "point": 5.5 },
+              { "name": "Minnesota Twins", "price": -227, "point": -5.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "circasports",
+        "title": "Circa Sports",
+        "last_update": "2023-06-22T19:00:30Z",
+        "markets": [
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:30Z",
+            "outcomes": [
+              { "name": "Boston Red Sox", "price": 145, "point": 5.5 },
+              { "name": "Minnesota Twins", "price": -179, "point": -5.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2023-06-22T19:00:48Z",
+        "markets": [
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:48Z",
+            "outcomes": [
+              { "name": "Boston Red Sox", "price": 140, "point": 5.5 },
+              { "name": "Minnesota Twins", "price": -180, "point": -5.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-06-22T19:00:54Z",
+        "markets": [
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:54Z",
+            "outcomes": [
+              { "name": "Boston Red Sox", "price": 140, "point": 5.5 },
+              { "name": "Minnesota Twins", "price": -180, "point": -5.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet_us",
+        "title": "Unibet",
+        "last_update": "2023-06-22T19:00:44Z",
+        "markets": [
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:44Z",
+            "outcomes": [
+              { "name": "Boston Red Sox", "price": 140, "point": 5.5 },
+              { "name": "Minnesota Twins", "price": -180, "point": -5.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-06-22T19:00:32Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:32Z",
+            "outcomes": [
+              { "name": "Boston Red Sox", "price": 3300 },
+              { "name": "Minnesota Twins", "price": -10000 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:32Z",
+            "outcomes": [
+              { "name": "Boston Red Sox", "price": 155, "point": 5.5 },
+              { "name": "Minnesota Twins", "price": -200, "point": -5.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-06-22T19:00:28Z",
+        "markets": [
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "Boston Red Sox", "price": 150, "point": 5.5 },
+              { "name": "Minnesota Twins", "price": -194, "point": -5.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2023-06-22T19:00:58Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:58Z",
+            "outcomes": [
+              { "name": "Boston Red Sox", "price": 1800 },
+              { "name": "Minnesota Twins", "price": -20000 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:58Z",
+            "outcomes": [
+              { "name": "Boston Red Sox", "price": -225, "point": 6.5 },
+              { "name": "Minnesota Twins", "price": 170, "point": -6.5 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "825eb688e8706ad9467a64ade43b6651",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-06-22T17:10:00Z",
+    "home_team": "Cleveland Guardians",
+    "away_team": "Oakland Athletics",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": -600 },
+              { "name": "Oakland Athletics", "price": 430 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": 180, "point": -1.5 },
+              { "name": "Oakland Athletics", "price": -220, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pointsbetus",
+        "title": "PointsBet (US)",
+        "last_update": "2023-06-22T19:00:37Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:37Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": -800 },
+              { "name": "Oakland Athletics", "price": 475 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:37Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": 175, "point": -1.5 },
+              { "name": "Oakland Athletics", "price": -240, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-06-22T19:00:28Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": -800 },
+              { "name": "Oakland Athletics", "price": 500 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": 144, "point": -1.5 },
+              { "name": "Oakland Athletics", "price": -186, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2023-06-22T19:00:58Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:58Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": -700 },
+              { "name": "Oakland Athletics", "price": 425 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:58Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": 130, "point": -1.5 },
+              { "name": "Oakland Athletics", "price": -170, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "mybookieag",
+        "title": "MyBookie.ag",
+        "last_update": "2023-06-22T19:00:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:18Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": -714 },
+              { "name": "Oakland Athletics", "price": 440 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:18Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": 145, "point": -1.5 },
+              { "name": "Oakland Athletics", "price": -192, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2023-06-22T19:00:45Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:45Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": -714 },
+              { "name": "Oakland Athletics", "price": 400 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:45Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": 125, "point": -1.5 },
+              { "name": "Oakland Athletics", "price": -175, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "circasports",
+        "title": "Circa Sports",
+        "last_update": "2023-06-22T18:59:07Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T18:59:07Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": -715 },
+              { "name": "Oakland Athletics", "price": 506 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T18:59:07Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": 145, "point": -1.5 },
+              { "name": "Oakland Athletics", "price": -179, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-06-22T19:00:32Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:32Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": -700 },
+              { "name": "Oakland Athletics", "price": 450 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:32Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": 180, "point": -1.5 },
+              { "name": "Oakland Athletics", "price": -250, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-06-22T19:00:54Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:54Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": -1250 },
+              { "name": "Oakland Athletics", "price": 700 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:54Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": 155, "point": -1.5 },
+              { "name": "Oakland Athletics", "price": -220, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet_us",
+        "title": "Unibet",
+        "last_update": "2023-06-22T19:00:44Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:44Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": -1250 },
+              { "name": "Oakland Athletics", "price": 650 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:44Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": 160, "point": -1.5 },
+              { "name": "Oakland Athletics", "price": -235, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2023-06-22T19:00:48Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:48Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": -1250 },
+              { "name": "Oakland Athletics", "price": 700 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:48Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": 155, "point": -1.5 },
+              { "name": "Oakland Athletics", "price": -220, "point": 1.5 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "24520c5e49ebe6c3a74e0e7e44632edc",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-06-22T19:45:00Z",
+    "home_team": "San Francisco Giants",
+    "away_team": "San Diego Padres",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -145 },
+              { "name": "San Francisco Giants", "price": 125 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": 115, "point": -1.5 },
+              { "name": "San Francisco Giants", "price": -135, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2023-06-22T19:00:16Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:16Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -141 },
+              { "name": "San Francisco Giants", "price": 130 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:16Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": 118, "point": -1.5 },
+              { "name": "San Francisco Giants", "price": -128, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2023-06-22T19:00:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:50Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -141 },
+              { "name": "San Francisco Giants", "price": 130 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:50Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": 113, "point": -1.5 },
+              { "name": "San Francisco Giants", "price": -133, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-06-22T19:00:28Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -144 },
+              { "name": "San Francisco Giants", "price": 122 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": 112, "point": -1.5 },
+              { "name": "San Francisco Giants", "price": -134, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betus",
+        "title": "BetUS",
+        "last_update": "2023-06-22T19:00:36Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:36Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -142 },
+              { "name": "San Francisco Giants", "price": 127 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:36Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": 110, "point": -1.5 },
+              { "name": "San Francisco Giants", "price": -130, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2023-06-22T19:00:58Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:58Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -150 },
+              { "name": "San Francisco Giants", "price": 126 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:58Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": 115, "point": -1.5 },
+              { "name": "San Francisco Giants", "price": -135, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -145 },
+              { "name": "San Francisco Giants", "price": 122 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": 115, "point": -1.5 },
+              { "name": "San Francisco Giants", "price": -135, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "wynnbet",
+        "title": "WynnBET",
+        "last_update": "2023-06-22T18:58:19Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T18:58:19Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -141 },
+              { "name": "San Francisco Giants", "price": 128 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "mybookieag",
+        "title": "MyBookie.ag",
+        "last_update": "2023-06-22T19:00:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:18Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -147 },
+              { "name": "San Francisco Giants", "price": 121 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:18Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": 115, "point": -1.5 },
+              { "name": "San Francisco Giants", "price": -140, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2023-06-22T19:00:45Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:45Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -154 },
+              { "name": "San Francisco Giants", "price": 115 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:45Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -110, "point": -1 },
+              { "name": "San Francisco Giants", "price": -110, "point": 1 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pointsbetus",
+        "title": "PointsBet (US)",
+        "last_update": "2023-06-22T19:00:37Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:37Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -150 },
+              { "name": "San Francisco Giants", "price": 125 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:37Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": 115, "point": -1.5 },
+              { "name": "San Francisco Giants", "price": -140, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "circasports",
+        "title": "Circa Sports",
+        "last_update": "2023-06-22T19:00:30Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:30Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -148 },
+              { "name": "San Francisco Giants", "price": 124 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:30Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": 109, "point": -1.5 },
+              { "name": "San Francisco Giants", "price": -132, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-06-22T19:00:32Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:32Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -145 },
+              { "name": "San Francisco Giants", "price": 125 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:32Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": 115, "point": -1.5 },
+              { "name": "San Francisco Giants", "price": -140, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2023-06-22T19:00:36Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:36Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -148 },
+              { "name": "San Francisco Giants", "price": 125 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:36Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": 114, "point": -1.5 },
+              { "name": "San Francisco Giants", "price": -139, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2023-06-22T19:00:48Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:48Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -148 },
+              { "name": "San Francisco Giants", "price": 125 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:48Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": 114, "point": -1.5 },
+              { "name": "San Francisco Giants", "price": -139, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-06-22T19:00:54Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:54Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -148 },
+              { "name": "San Francisco Giants", "price": 125 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:54Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": 114, "point": -1.5 },
+              { "name": "San Francisco Giants", "price": -139, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet_us",
+        "title": "Unibet",
+        "last_update": "2023-06-22T19:00:44Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:44Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -148 },
+              { "name": "San Francisco Giants", "price": 125 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:44Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": 114, "point": -1.5 },
+              { "name": "San Francisco Giants", "price": -139, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "superbook",
+        "title": "SuperBook",
+        "last_update": "2023-06-22T19:00:30Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:30Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -145 },
+              { "name": "San Francisco Giants", "price": 125 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "aa43715b0212e9c780dc4a6182ccb811",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-06-22T22:40:00Z",
+    "home_team": "Tampa Bay Rays",
+    "away_team": "Kansas City Royals",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 260 },
+              { "name": "Tampa Bay Rays", "price": -315 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 130, "point": 1.5 },
+              { "name": "Tampa Bay Rays", "price": -150, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "circasports",
+        "title": "Circa Sports",
+        "last_update": "2023-06-22T19:00:30Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:30Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 263 },
+              { "name": "Tampa Bay Rays", "price": -334 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:30Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 118, "point": 1.5 },
+              { "name": "Tampa Bay Rays", "price": -143, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pointsbetus",
+        "title": "PointsBet (US)",
+        "last_update": "2023-06-22T19:00:37Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:37Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 250 },
+              { "name": "Tampa Bay Rays", "price": -325 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:37Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 125, "point": 1.5 },
+              { "name": "Tampa Bay Rays", "price": -150, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 260 },
+              { "name": "Tampa Bay Rays", "price": -335 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 130, "point": 1.5 },
+              { "name": "Tampa Bay Rays", "price": -155, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "mybookieag",
+        "title": "MyBookie.ag",
+        "last_update": "2023-06-22T19:00:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:18Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 259 },
+              { "name": "Tampa Bay Rays", "price": -333 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:18Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": -133, "point": 2.5 },
+              { "name": "Tampa Bay Rays", "price": 109, "point": -2.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2023-06-22T19:00:45Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:45Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 250 },
+              { "name": "Tampa Bay Rays", "price": -357 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:45Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": -105, "point": 2 },
+              { "name": "Tampa Bay Rays", "price": -118, "point": -2 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betus",
+        "title": "BetUS",
+        "last_update": "2023-06-22T19:00:36Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:36Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 255 },
+              { "name": "Tampa Bay Rays", "price": -315 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:36Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 135, "point": 1.5 },
+              { "name": "Tampa Bay Rays", "price": -155, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-06-22T19:00:28Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 270 },
+              { "name": "Tampa Bay Rays", "price": -335 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 132, "point": 1.5 },
+              { "name": "Tampa Bay Rays", "price": -160, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-06-22T19:00:32Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:32Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 275 },
+              { "name": "Tampa Bay Rays", "price": -350 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:32Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": -120, "point": 2.5 },
+              { "name": "Tampa Bay Rays", "price": 100, "point": -2.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "wynnbet",
+        "title": "WynnBET",
+        "last_update": "2023-06-22T18:58:19Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T18:58:19Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 267 },
+              { "name": "Tampa Bay Rays", "price": -303 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2023-06-22T19:00:58Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:58Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 270 },
+              { "name": "Tampa Bay Rays", "price": -345 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:58Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 135, "point": 1.5 },
+              { "name": "Tampa Bay Rays", "price": -160, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2023-06-22T19:00:16Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:16Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 270 },
+              { "name": "Tampa Bay Rays", "price": -305 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:16Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 134, "point": 1.5 },
+              { "name": "Tampa Bay Rays", "price": -145, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2023-06-22T19:00:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:50Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 270 },
+              { "name": "Tampa Bay Rays", "price": -303 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:50Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 129, "point": 1.5 },
+              { "name": "Tampa Bay Rays", "price": -149, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "superbook",
+        "title": "SuperBook",
+        "last_update": "2023-06-22T19:00:30Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:30Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 265 },
+              { "name": "Tampa Bay Rays", "price": -335 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet_us",
+        "title": "Unibet",
+        "last_update": "2023-06-22T19:00:44Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:44Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 260 },
+              { "name": "Tampa Bay Rays", "price": -315 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:44Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 120, "point": 1.5 },
+              { "name": "Tampa Bay Rays", "price": -152, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2023-06-22T19:00:48Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:48Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 255 },
+              { "name": "Tampa Bay Rays", "price": -315 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:48Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 120, "point": 1.5 },
+              { "name": "Tampa Bay Rays", "price": -152, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2023-06-22T19:00:36Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:36Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 260 },
+              { "name": "Tampa Bay Rays", "price": -315 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:36Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 120, "point": 1.5 },
+              { "name": "Tampa Bay Rays", "price": -152, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-06-22T19:00:54Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:54Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 260 },
+              { "name": "Tampa Bay Rays", "price": -315 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:54Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 120, "point": 1.5 },
+              { "name": "Tampa Bay Rays", "price": -152, "point": -1.5 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "c236cbb767c1bd1fc20c0f1e41f3ed67",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-06-22T22:40:00Z",
+    "home_team": "Miami Marlins",
+    "away_team": "Pittsburgh Pirates",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -165 },
+              { "name": "Pittsburgh Pirates", "price": 140 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": 130, "point": -1.5 },
+              { "name": "Pittsburgh Pirates", "price": -150, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2023-06-22T19:00:16Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:16Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -161 },
+              { "name": "Pittsburgh Pirates", "price": 148 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:16Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": 136, "point": -1.5 },
+              { "name": "Pittsburgh Pirates", "price": -148, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2023-06-22T19:00:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:50Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -161 },
+              { "name": "Pittsburgh Pirates", "price": 148 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:50Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": 132, "point": -1.5 },
+              { "name": "Pittsburgh Pirates", "price": -152, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-06-22T19:00:28Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -164 },
+              { "name": "Pittsburgh Pirates", "price": 138 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": 128, "point": -1.5 },
+              { "name": "Pittsburgh Pirates", "price": -154, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betus",
+        "title": "BetUS",
+        "last_update": "2023-06-22T19:00:36Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:36Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -165 },
+              { "name": "Pittsburgh Pirates", "price": 145 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:36Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": 135, "point": -1.5 },
+              { "name": "Pittsburgh Pirates", "price": -155, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2023-06-22T19:00:58Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:58Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -175 },
+              { "name": "Pittsburgh Pirates", "price": 144 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:58Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": 130, "point": -1.5 },
+              { "name": "Pittsburgh Pirates", "price": -150, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -170 },
+              { "name": "Pittsburgh Pirates", "price": 143 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": 135, "point": -1.5 },
+              { "name": "Pittsburgh Pirates", "price": -160, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "wynnbet",
+        "title": "WynnBET",
+        "last_update": "2023-06-22T18:58:19Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T18:58:19Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -159 },
+              { "name": "Pittsburgh Pirates", "price": 145 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "circasports",
+        "title": "Circa Sports",
+        "last_update": "2023-06-22T19:00:30Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:30Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -162 },
+              { "name": "Pittsburgh Pirates", "price": 135 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:30Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": 131, "point": -1.5 },
+              { "name": "Pittsburgh Pirates", "price": -159, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "mybookieag",
+        "title": "MyBookie.ag",
+        "last_update": "2023-06-22T19:00:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:18Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -169 },
+              { "name": "Pittsburgh Pirates", "price": 137 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:18Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": 132, "point": -1.5 },
+              { "name": "Pittsburgh Pirates", "price": -163, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2023-06-22T19:00:45Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:45Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -175 },
+              { "name": "Pittsburgh Pirates", "price": 130 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:45Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -118, "point": -1 },
+              { "name": "Pittsburgh Pirates", "price": -105, "point": 1 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pointsbetus",
+        "title": "PointsBet (US)",
+        "last_update": "2023-06-22T19:00:37Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:37Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -170 },
+              { "name": "Pittsburgh Pirates", "price": 140 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:37Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": 130, "point": -1.5 },
+              { "name": "Pittsburgh Pirates", "price": -160, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-06-22T19:00:32Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:32Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -160 },
+              { "name": "Pittsburgh Pirates", "price": 135 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:32Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": 135, "point": -1.5 },
+              { "name": "Pittsburgh Pirates", "price": -160, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2023-06-22T19:00:36Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:36Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -165 },
+              { "name": "Pittsburgh Pirates", "price": 140 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:36Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": 135, "point": -1.5 },
+              { "name": "Pittsburgh Pirates", "price": -167, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2023-06-22T19:00:48Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:48Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -165 },
+              { "name": "Pittsburgh Pirates", "price": 138 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:48Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": 135, "point": -1.5 },
+              { "name": "Pittsburgh Pirates", "price": -167, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-06-22T19:00:54Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:54Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -165 },
+              { "name": "Pittsburgh Pirates", "price": 140 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:54Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": 135, "point": -1.5 },
+              { "name": "Pittsburgh Pirates", "price": -167, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet_us",
+        "title": "Unibet",
+        "last_update": "2023-06-22T19:00:44Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:44Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -165 },
+              { "name": "Pittsburgh Pirates", "price": 140 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:44Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": 135, "point": -1.5 },
+              { "name": "Pittsburgh Pirates", "price": -167, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "superbook",
+        "title": "SuperBook",
+        "last_update": "2023-06-22T19:00:30Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:30Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -160 },
+              { "name": "Pittsburgh Pirates", "price": 135 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "b2a756b547b24d5192b8f98fde3c9757",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-06-22T23:05:00Z",
+    "home_team": "New York Yankees",
+    "away_team": "Seattle Mariners",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -105 },
+              { "name": "Seattle Mariners", "price": -115 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -180, "point": 1.5 },
+              { "name": "Seattle Mariners", "price": 155, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2023-06-22T19:00:16Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:16Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -101 },
+              { "name": "Seattle Mariners", "price": -109 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:16Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": 196, "point": -1.5 },
+              { "name": "Seattle Mariners", "price": -214, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2023-06-22T19:00:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:50Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -101 },
+              { "name": "Seattle Mariners", "price": -109 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:50Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": 190, "point": -1.5 },
+              { "name": "Seattle Mariners", "price": -217, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-06-22T19:00:28Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -104 },
+              { "name": "Seattle Mariners", "price": -112 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -182, "point": 1.5 },
+              { "name": "Seattle Mariners", "price": 150, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betus",
+        "title": "BetUS",
+        "last_update": "2023-06-22T19:00:36Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:36Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -102 },
+              { "name": "Seattle Mariners", "price": -108 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:36Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": 180, "point": -1.5 },
+              { "name": "Seattle Mariners", "price": -220, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "williamhill_us",
+        "title": "William Hill (US)",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": 100 },
+              { "name": "Seattle Mariners", "price": -120 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": 185, "point": -1.5 },
+              { "name": "Seattle Mariners", "price": -225, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "wynnbet",
+        "title": "WynnBET",
+        "last_update": "2023-06-22T18:58:19Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T18:58:19Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": 100 },
+              { "name": "Seattle Mariners", "price": -110 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "bovada",
+        "title": "Bovada",
+        "last_update": "2023-06-22T19:00:58Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:58Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -105 },
+              { "name": "Seattle Mariners", "price": -115 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:58Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": 185, "point": -1.5 },
+              { "name": "Seattle Mariners", "price": -225, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "circasports",
+        "title": "Circa Sports",
+        "last_update": "2023-06-22T19:00:30Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:30Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -109 },
+              { "name": "Seattle Mariners", "price": -109 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:30Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": 187, "point": -1.5 },
+              { "name": "Seattle Mariners", "price": -233, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "mybookieag",
+        "title": "MyBookie.ag",
+        "last_update": "2023-06-22T19:00:18Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:18Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -106 },
+              { "name": "Seattle Mariners", "price": -114 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:18Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -192, "point": 1.5 },
+              { "name": "Seattle Mariners", "price": 155, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "foxbet",
+        "title": "FOX Bet",
+        "last_update": "2023-06-22T19:00:45Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:45Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -110 },
+              { "name": "Seattle Mariners", "price": -120 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:45Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -149, "point": 1 },
+              { "name": "Seattle Mariners", "price": 115, "point": -1 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "pointsbetus",
+        "title": "PointsBet (US)",
+        "last_update": "2023-06-22T19:00:37Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:37Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -110 },
+              { "name": "Seattle Mariners", "price": -110 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:37Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -190, "point": 1.5 },
+              { "name": "Seattle Mariners", "price": 160, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "barstool",
+        "title": "Barstool Sportsbook",
+        "last_update": "2023-06-22T19:00:54Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:54Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": 100 },
+              { "name": "Seattle Mariners", "price": -115 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:54Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -195, "point": 1.5 },
+              { "name": "Seattle Mariners", "price": 155, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "unibet_us",
+        "title": "Unibet",
+        "last_update": "2023-06-22T19:00:44Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:44Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": 100 },
+              { "name": "Seattle Mariners", "price": -115 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:44Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -195, "point": 1.5 },
+              { "name": "Seattle Mariners", "price": 155, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betrivers",
+        "title": "BetRivers",
+        "last_update": "2023-06-22T19:00:36Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:36Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": 100 },
+              { "name": "Seattle Mariners", "price": -115 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:36Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -195, "point": 1.5 },
+              { "name": "Seattle Mariners", "price": 155, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "twinspires",
+        "title": "TwinSpires",
+        "last_update": "2023-06-22T19:00:48Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:48Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -106 },
+              { "name": "Seattle Mariners", "price": -115 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:48Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -195, "point": 1.5 },
+              { "name": "Seattle Mariners", "price": 155, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "superbook",
+        "title": "SuperBook",
+        "last_update": "2023-06-22T19:00:30Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:30Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -106 },
+              { "name": "Seattle Mariners", "price": -110 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betmgm",
+        "title": "BetMGM",
+        "last_update": "2023-06-22T19:00:32Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:32Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -105 },
+              { "name": "Seattle Mariners", "price": -115 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:32Z",
+            "outcomes": [
+              { "name": "New York Yankees", "price": -185, "point": 1.5 },
+              { "name": "Seattle Mariners", "price": 150, "point": -1.5 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "7a7e0d5d24fdf52987133d715aec14af",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-06-23T22:40:00Z",
+    "home_team": "Cincinnati Reds",
+    "away_team": "Atlanta Braves",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": -150 },
+              { "name": "Cincinnati Reds", "price": 130 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": 105, "point": -1.5 },
+              { "name": "Cincinnati Reds", "price": -125, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2023-06-22T19:00:16Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:16Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": -152 },
+              { "name": "Cincinnati Reds", "price": 140 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2023-06-22T19:00:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:50Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": -152 },
+              { "name": "Cincinnati Reds", "price": 140 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-06-22T19:00:28Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": -172 },
+              { "name": "Cincinnati Reds", "price": 144 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "Atlanta Braves", "price": -111, "point": -1.5 },
+              { "name": "Cincinnati Reds", "price": -108, "point": 1.5 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "85dc387103ca0423e1ff99e27a11177a",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-06-23T22:40:00Z",
+    "home_team": "Detroit Tigers",
+    "away_team": "Minnesota Twins",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Detroit Tigers", "price": 120 },
+              { "name": "Minnesota Twins", "price": -140 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Detroit Tigers", "price": -150, "point": 1.5 },
+              { "name": "Minnesota Twins", "price": 130, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2023-06-22T19:00:16Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:16Z",
+            "outcomes": [
+              { "name": "Detroit Tigers", "price": 134 },
+              { "name": "Minnesota Twins", "price": -145 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2023-06-22T19:00:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:50Z",
+            "outcomes": [
+              { "name": "Detroit Tigers", "price": 134 },
+              { "name": "Minnesota Twins", "price": -145 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-06-22T19:00:28Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "Detroit Tigers", "price": 120 },
+              { "name": "Minnesota Twins", "price": -142 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "Detroit Tigers", "price": -144, "point": 1.5 },
+              { "name": "Minnesota Twins", "price": 120, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betus",
+        "title": "BetUS",
+        "last_update": "2023-06-22T19:00:36Z",
+        "markets": [
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:36Z",
+            "outcomes": [
+              { "name": "Detroit Tigers", "price": -145, "point": 1.5 },
+              { "name": "Minnesota Twins", "price": 125, "point": -1.5 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "667c8b6b010a64e10255124d82833a98",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-06-23T22:40:00Z",
+    "home_team": "Tampa Bay Rays",
+    "away_team": "Kansas City Royals",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 215 },
+              { "name": "Tampa Bay Rays", "price": -255 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": -105, "point": 1.5 },
+              { "name": "Tampa Bay Rays", "price": -115, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2023-06-22T19:00:16Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:16Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 224 },
+              { "name": "Tampa Bay Rays", "price": -250 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2023-06-22T19:00:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:50Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 224 },
+              { "name": "Tampa Bay Rays", "price": -250 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-06-22T19:00:28Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 220 },
+              { "name": "Tampa Bay Rays", "price": -270 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 104, "point": 1.5 },
+              { "name": "Tampa Bay Rays", "price": -125, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betus",
+        "title": "BetUS",
+        "last_update": "2023-06-22T19:00:36Z",
+        "markets": [
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:36Z",
+            "outcomes": [
+              { "name": "Kansas City Royals", "price": 100, "point": 1.5 },
+              { "name": "Tampa Bay Rays", "price": -120, "point": -1.5 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "92a36e999a4313dca355d48cfdf41e30",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-06-23T22:40:00Z",
+    "home_team": "Miami Marlins",
+    "away_team": "Pittsburgh Pirates",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -165 },
+              { "name": "Pittsburgh Pirates", "price": 140 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": 130, "point": -1.5 },
+              { "name": "Pittsburgh Pirates", "price": -150, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2023-06-22T19:00:16Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:16Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -161 },
+              { "name": "Pittsburgh Pirates", "price": 148 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2023-06-22T19:00:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:50Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -161 },
+              { "name": "Pittsburgh Pirates", "price": 148 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "fanduel",
+        "title": "FanDuel",
+        "last_update": "2023-06-22T19:00:28Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": -172 },
+              { "name": "Pittsburgh Pirates", "price": 144 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:28Z",
+            "outcomes": [
+              { "name": "Miami Marlins", "price": 130, "point": -1.5 },
+              { "name": "Pittsburgh Pirates", "price": -156, "point": 1.5 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ef17411cc57fb0334e06217d4d3e76ac",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-06-23T23:05:00Z",
+    "home_team": "Philadelphia Phillies",
+    "away_team": "New York Mets",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "New York Mets", "price": 110 },
+              { "name": "Philadelphia Phillies", "price": -130 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "New York Mets", "price": -180, "point": 1.5 },
+              { "name": "Philadelphia Phillies", "price": 155, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2023-06-22T19:00:16Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:16Z",
+            "outcomes": [
+              { "name": "New York Mets", "price": 101 },
+              { "name": "Philadelphia Phillies", "price": -111 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2023-06-22T19:00:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:50Z",
+            "outcomes": [
+              { "name": "New York Mets", "price": 101 },
+              { "name": "Philadelphia Phillies", "price": -111 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "e931c5bdf2c434d2996b13770b7e5b51",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-06-23T23:07:00Z",
+    "home_team": "Toronto Blue Jays",
+    "away_team": "Oakland Athletics",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Oakland Athletics", "price": 250 },
+              { "name": "Toronto Blue Jays", "price": -300 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Oakland Athletics", "price": 120, "point": 1.5 },
+              { "name": "Toronto Blue Jays", "price": -140, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2023-06-22T19:00:16Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:16Z",
+            "outcomes": [
+              { "name": "Oakland Athletics", "price": 253 },
+              { "name": "Toronto Blue Jays", "price": -285 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2023-06-22T19:00:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:50Z",
+            "outcomes": [
+              { "name": "Oakland Athletics", "price": 253 },
+              { "name": "Toronto Blue Jays", "price": -286 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "90eeaa19a9297fc6c1da5b3ba432883a",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-06-23T23:10:00Z",
+    "home_team": "Cleveland Guardians",
+    "away_team": "Milwaukee Brewers",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": -140 },
+              { "name": "Milwaukee Brewers", "price": 120 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": 150, "point": -1.5 },
+              { "name": "Milwaukee Brewers", "price": -175, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2023-06-22T19:00:16Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:16Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": -135 },
+              { "name": "Milwaukee Brewers", "price": 125 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2023-06-22T19:00:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:50Z",
+            "outcomes": [
+              { "name": "Cleveland Guardians", "price": -135 },
+              { "name": "Milwaukee Brewers", "price": 125 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "09ff9eaf94450887856c296a063dfef2",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-06-24T00:10:00Z",
+    "home_team": "Chicago White Sox",
+    "away_team": "Boston Red Sox",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Boston Red Sox", "price": -115 },
+              { "name": "Chicago White Sox", "price": -105 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Boston Red Sox", "price": 140, "point": -1.5 },
+              { "name": "Chicago White Sox", "price": -165, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2023-06-22T19:00:16Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:16Z",
+            "outcomes": [
+              { "name": "Boston Red Sox", "price": -110 },
+              { "name": "Chicago White Sox", "price": 100 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2023-06-22T19:00:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:50Z",
+            "outcomes": [
+              { "name": "Boston Red Sox", "price": -110 },
+              { "name": "Chicago White Sox", "price": 100 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "a3bdecd2683e6ddddf58d50d8103991a",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-06-24T00:40:00Z",
+    "home_team": "Colorado Rockies",
+    "away_team": "Los Angeles Angels",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Colorado Rockies", "price": 135 },
+              { "name": "Los Angeles Angels", "price": -155 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Colorado Rockies", "price": -110, "point": 1.5 },
+              { "name": "Los Angeles Angels", "price": -110, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2023-06-22T19:00:16Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:16Z",
+            "outcomes": [
+              { "name": "Colorado Rockies", "price": 147 },
+              { "name": "Los Angeles Angels", "price": -159 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2023-06-22T19:00:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:50Z",
+            "outcomes": [
+              { "name": "Colorado Rockies", "price": 147 },
+              { "name": "Los Angeles Angels", "price": -159 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "9bec102756dd42b61555aa90947c24f5",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-06-24T01:40:00Z",
+    "home_team": "San Diego Padres",
+    "away_team": "Washington Nationals",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -240 },
+              { "name": "Washington Nationals", "price": 200 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -120, "point": -1.5 },
+              { "name": "Washington Nationals", "price": 100, "point": 1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2023-06-22T19:00:16Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:16Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -255 },
+              { "name": "Washington Nationals", "price": 228 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2023-06-22T19:00:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:50Z",
+            "outcomes": [
+              { "name": "San Diego Padres", "price": -256 },
+              { "name": "Washington Nationals", "price": 228 }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "110d3b9127c69bafd725998a029c47d3",
+    "sport_key": "baseball_mlb",
+    "sport_title": "MLB",
+    "commence_time": "2023-06-24T02:10:00Z",
+    "home_team": "Los Angeles Dodgers",
+    "away_team": "Houston Astros",
+    "bookmakers": [
+      {
+        "key": "draftkings",
+        "title": "DraftKings",
+        "last_update": "2023-06-22T19:00:22Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Houston Astros", "price": 125 },
+              { "name": "Los Angeles Dodgers", "price": -145 }
+            ]
+          },
+          {
+            "key": "spreads",
+            "last_update": "2023-06-22T19:00:22Z",
+            "outcomes": [
+              { "name": "Houston Astros", "price": -155, "point": 1.5 },
+              { "name": "Los Angeles Dodgers", "price": 135, "point": -1.5 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "lowvig",
+        "title": "LowVig.ag",
+        "last_update": "2023-06-22T19:00:16Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:16Z",
+            "outcomes": [
+              { "name": "Houston Astros", "price": 132 },
+              { "name": "Los Angeles Dodgers", "price": -143 }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "betonlineag",
+        "title": "BetOnline.ag",
+        "last_update": "2023-06-22T19:00:50Z",
+        "markets": [
+          {
+            "key": "h2h",
+            "last_update": "2023-06-22T19:00:50Z",
+            "outcomes": [
+              { "name": "Houston Astros", "price": 132 },
+              { "name": "Los Angeles Dodgers", "price": -143 }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

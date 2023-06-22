@@ -106,13 +106,13 @@ function SingleGame({ game, odds, user, today }) {
               <button
                 className={`btn btn-sm ${awayOdds >= 0 ? "red" : "green"}`}
                 onClick={user && onOpenAway}
-                disabled={
-                  !(
-                    game.status.codedGameState === "S" ||
-                    game.status.codedGameState === "P" ||
-                    game.status.codedGameState === "PW"
-                  )
-                }
+                // disabled={
+                //   !(
+                //     game.status.codedGameState === "S" ||
+                //     game.status.codedGameState === "P" ||
+                //     game.status.codedGameState === "PW"
+                //   )
+                // }
               >
                 {awayOdds >= 0 ? "+" : ""}
                 {awayOdds}
@@ -167,13 +167,13 @@ function SingleGame({ game, odds, user, today }) {
                     homeOdds >= 0 ? "red" : "green"
                   }`}
                   onClick={user && onOpenHome}
-                  disabled={
-                    !(
-                      game.status.codedGameState === "S" ||
-                      game.status.codedGameState === "P" ||
-                      game.status.codedGameState === "PW"
-                    )
-                  }
+                  // disabled={
+                  //   !(
+                  //     game.status.codedGameState === "S" ||
+                  //     game.status.codedGameState === "P" ||
+                  //     game.status.codedGameState === "PW"
+                  //   )
+                  // }
                 >
                   {homeOdds >= 0 ? "+" : ""}
                   {homeOdds}
