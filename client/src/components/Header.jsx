@@ -56,11 +56,16 @@ function Header() {
                 {user.accountBalance && " " + user.accountBalance.toFixed(2)}
               </Link>
             </li>
-            <li className="logout">
+            <li onClick={onLogout}>
+              <Link>
+                <FaRegCaretSquareLeft className="bigger" /> Logout
+              </Link>
+            </li>
+            {/* <li className="logout">
               <button onClick={onLogout} className="btn-none">
                 <FaRegCaretSquareLeft className="bigger" /> Logout
               </button>
-            </li>
+            </li> */}
           </>
         ) : (
           <>

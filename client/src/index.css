@@ -181,7 +181,7 @@ h3 {
   font-family: "Courier New", Courier, monospace;
   background: none;
   border: none;
-  font-size: 16px;
+  font-size: 12px;
   cursor: pointer;
   text-align: center;
   align-items: center;
@@ -819,7 +819,11 @@ header img {
 }
 
 .logout {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   display: none;
+  align-items: center;
 }
 
 .stats {
