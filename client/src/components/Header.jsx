@@ -53,7 +53,7 @@ function Header() {
             <li>
               <Link>
                 <FaCoins />
-                {" " + user.accountBalance.toFixed(2)}
+                {user.accountBalance && " " + user.accountBalance.toFixed(2)}
               </Link>
             </li>
             <li className="logout">
