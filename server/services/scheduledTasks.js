@@ -15,7 +15,7 @@ const task3 = cron.schedule("10 09 * * *", () => {
 const task5 = cron.schedule("*/1 10-23,0-3 * * *", () => {
   console.log("running every minute during baseball hours");
   writeTodaysGames();
-  fetchOdds();
+  // fetchOdds();
 });
 
 const scheduleWriteTodaysGames = cron.schedule("25 15 * * *", () => {
@@ -24,6 +24,13 @@ const scheduleWriteTodaysGames = cron.schedule("25 15 * * *", () => {
   fetchOdds();
   console.log("It's 3PM and todays schedule has been writ (yesterdays too!)!");
 });
+
+const herokuTask = () => {
+  writeTodaysGames();
+  writeYesterdaysGames();
+  fetchOdds();
+  console.log("It's 3PM and todays schedule has been writ (yesterdays too!)!");
+}
 
 const scheduleWriteTodaysGames2 = cron.schedule("01 10 * 3-10 *", () => {
   writeTodaysGames();
@@ -54,4 +61,4 @@ const runAllTasks = () => {
   scheduleWriteTodaysGames2.start();
 };
 
-module.exports = { runAllTasks, scheduleWriteTodaysGames };
+module.exports = { runAllTasks, scheduleWriteTodaysGames, herokuTask };
