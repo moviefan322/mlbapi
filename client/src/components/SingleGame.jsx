@@ -23,6 +23,8 @@ function SingleGame({ game, odds, user, today }) {
   let homeOdds = 0;
   let awayOdds = 0;
 
+  console.log(homeTeam, awayTeam);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -75,6 +77,14 @@ function SingleGame({ game, odds, user, today }) {
     awayOdds = thisGame[0]?.bookmakers[0].markets[0].outcomes[1].price;
   }
 
+  if (game.seriesDescription === "All-Star Game") {
+    return (
+      <div className="card">
+        <p>All Star Game</p>
+      </div>
+    );
+  }
+
   return (
     <div className="card">
       <p>
@@ -106,13 +116,13 @@ function SingleGame({ game, odds, user, today }) {
               <button
                 className={`btn btn-sm ${awayOdds >= 0 ? "red" : "green"}`}
                 onClick={user && onOpenAway}
-                // disabled={
-                //   !(
-                //     game.status.codedGameState === "S" ||
-                //     game.status.codedGameState === "P" ||
-                //     game.status.codedGameState === "PW"
-                //   )
-                // }
+                disabled={
+                  !(
+                    game.status.codedGameState === "S" ||
+                    game.status.codedGameState === "P" ||
+                    game.status.codedGameState === "PW"
+                  )
+                }
               >
                 {awayOdds >= 0 ? "+" : ""}
                 {awayOdds}

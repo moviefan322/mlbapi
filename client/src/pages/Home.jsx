@@ -7,8 +7,7 @@ import Spinner from "../components/Spinner.jsx";
 import SingleGame from "../components/SingleGame.jsx";
 import axios from "axios";
 
-axios.defaults.headers.common["accepts"] = `application/json
-`;
+axios.defaults.headers.common["accepts"] = `application/json`;
 
 function Home() {
   const [games, setGames] = useState(null);
@@ -73,6 +72,8 @@ function Home() {
     return <Spinner />;
   }
 
+  console.log(games)
+
   return (
     <>
       <div className="heading-home">
@@ -94,15 +95,19 @@ function Home() {
         </button>
       </div>
       <div id="main" className="card-container">
-        {games.map((game, index) => (
-          <SingleGame
-            key={index}
-            game={game}
-            odds={rawOdds}
-            user={user}
-            today={formatDate(today) === formatDate(day)}
-          />
-        ))}
+        {games && !games.error && games !== "No games today" ? (
+          games.map((game, index) => (
+            <SingleGame
+              key={index}
+              game={game}
+              odds={rawOdds}
+              user={user}
+              today={formatDate(today) === formatDate(day)}
+            />
+          ))
+        ) : (
+          <h4>No games today</h4>
+        )}
       </div>
     </>
   );
