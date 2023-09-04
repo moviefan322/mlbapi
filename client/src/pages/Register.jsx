@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { register, reset } from "../features/auth/authSlice";
-import { toast } from "react-toastify";
 import { FaUser } from "react-icons/fa";
 import Spinner from "../components/Spinner";
 
 function Register() {
+  const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,10 +24,6 @@ function Register() {
   );
 
   useEffect(() => {
-    if (isError) {
-      toast.error(message);
-    }
-
     if (isSuccess) {
       navigate("/");
     }
@@ -44,7 +40,7 @@ function Register() {
     e.preventDefault();
 
     if (password !== password2) {
-      toast.error("Password do not match");
+      setError("Password do not match");
     } else {
       const userData = {
         name,

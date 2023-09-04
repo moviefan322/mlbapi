@@ -20,8 +20,6 @@ function SingleGame({ game, odds, user, today }) {
   const [isLoading, setIsLoading] = useState(true);
   const homeTeam = game.teams.home.team.name;
   const awayTeam = game.teams.away.team.name;
-  // let homeOdds = +120;
-  // let awayOdds = -100;
   const generateOdds = (awayAvg, homeAvg) => {
     console.log(awayAvg, homeAvg);
     let homeOdds = 0;
@@ -48,13 +46,6 @@ function SingleGame({ game, odds, user, today }) {
     game.teams.home.leagueRecord.pct
   );
 
-  console.log(
-    game.teams.away.leagueRecord.pct,
-    game.teams.home.leagueRecord.pct
-  );
-
-  console.log("YO", awayOdds, homeOdds);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -79,8 +70,6 @@ function SingleGame({ game, odds, user, today }) {
     return <Spinner />;
   }
 
-  console.log(game);
-
   // const showData = async () => {
   //   const singleGameData = await getSingleGameData(717678);
   //   console.log(singleGameData);
@@ -95,18 +84,6 @@ function SingleGame({ game, odds, user, today }) {
   const homeStarterStats =
     singleGame.liveData.boxscore.teams.home.players[`ID${homeStarterId}`]
       ?.seasonStats.pitching;
-
-  const thisGame = odds.filter((odd) => {
-    return odd.away_team === awayTeam && odd.home_team === homeTeam;
-  });
-
-  // if (homeTeam === thisGame[0]?.bookmakers[0].markets[0].outcomes[1].name) {
-  //   homeOdds = thisGame[0]?.bookmakers[0].markets[0].outcomes[1].price;
-  //   awayOdds = thisGame[0]?.bookmakers[0].markets[0].outcomes[0].price;
-  // } else {
-  //   homeOdds = thisGame[0]?.bookmakers[0].markets[0].outcomes[0].price;
-  //   awayOdds = thisGame[0]?.bookmakers[0].markets[0].outcomes[1].price;
-  // }
 
   if (game.seriesDescription === "All-Star Game") {
     return (

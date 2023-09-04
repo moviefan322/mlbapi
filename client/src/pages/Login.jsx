@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login, reset } from "../features/auth/authSlice";
-import { toast } from "react-toastify";
 import { FaSignInAlt } from "react-icons/fa";
 import Spinner from "../components/Spinner";
 
@@ -22,10 +21,6 @@ function Login() {
   );
 
   useEffect(() => {
-    if (isError) {
-      toast.error(message);
-    }
-
     if (isSuccess || user) {
       navigate("/");
     }

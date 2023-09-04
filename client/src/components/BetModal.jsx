@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import { placeBet, reset } from "../features/bet/betSlice";
 import { Modal } from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
@@ -11,6 +10,7 @@ import { calculateWinnings, calculateBetAmount } from "../utils/moneyLine";
 import Spinner from "./Spinner";
 
 function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
+  const [error, setError] = useState(null);
   const [confirmBtn, setConfirmBtn] = useState("none");
   const [betBtn, setBetBtn] = useState("");
   const [betAmount, setBetAmount] = useState("");
@@ -29,7 +29,7 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
 
   useEffect(() => {
     if (isError) {
-      toast.error(message);
+      setError(message);
     }
     if (isSuccess) {
       dispatch(reset());
