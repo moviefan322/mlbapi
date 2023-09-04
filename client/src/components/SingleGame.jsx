@@ -20,10 +20,40 @@ function SingleGame({ game, odds, user, today }) {
   const [isLoading, setIsLoading] = useState(true);
   const homeTeam = game.teams.home.team.name;
   const awayTeam = game.teams.away.team.name;
-  let homeOdds = 0;
-  let awayOdds = 0;
+  // let homeOdds = +120;
+  // let awayOdds = -100;
+  const generateOdds = (awayAvg, homeAvg) => {
+    console.log(awayAvg, homeAvg);
+    let homeOdds = 0;
+    let awayOdds = 0;
 
-  console.log(homeTeam, awayTeam);
+    if (awayAvg > homeAvg) {
+      awayOdds = Math.ceil(100 * (-1 * (2 - +awayAvg)));
+      homeOdds = Math.ceil(100 * (2 - +homeAvg));
+    } else {
+      awayOdds = Math.ceil(100 * (2 - +awayAvg));
+      homeOdds = Math.ceil(100 * (-1 * (2 - +homeAvg)));
+    }
+
+    console.log(awayOdds, homeOdds);
+
+    return {
+      awayOdds,
+      homeOdds,
+    };
+  };
+
+  const { awayOdds, homeOdds } = generateOdds(
+    game.teams.away.leagueRecord.pct,
+    game.teams.home.leagueRecord.pct
+  );
+
+  console.log(
+    game.teams.away.leagueRecord.pct,
+    game.teams.home.leagueRecord.pct
+  );
+
+  console.log("YO", awayOdds, homeOdds);
 
   const dispatch = useDispatch();
 
@@ -69,13 +99,14 @@ function SingleGame({ game, odds, user, today }) {
   const thisGame = odds.filter((odd) => {
     return odd.away_team === awayTeam && odd.home_team === homeTeam;
   });
-  if (homeTeam === thisGame[0]?.bookmakers[0].markets[0].outcomes[1].name) {
-    homeOdds = thisGame[0]?.bookmakers[0].markets[0].outcomes[1].price;
-    awayOdds = thisGame[0]?.bookmakers[0].markets[0].outcomes[0].price;
-  } else {
-    homeOdds = thisGame[0]?.bookmakers[0].markets[0].outcomes[0].price;
-    awayOdds = thisGame[0]?.bookmakers[0].markets[0].outcomes[1].price;
-  }
+
+  // if (homeTeam === thisGame[0]?.bookmakers[0].markets[0].outcomes[1].name) {
+  //   homeOdds = thisGame[0]?.bookmakers[0].markets[0].outcomes[1].price;
+  //   awayOdds = thisGame[0]?.bookmakers[0].markets[0].outcomes[0].price;
+  // } else {
+  //   homeOdds = thisGame[0]?.bookmakers[0].markets[0].outcomes[0].price;
+  //   awayOdds = thisGame[0]?.bookmakers[0].markets[0].outcomes[1].price;
+  // }
 
   if (game.seriesDescription === "All-Star Game") {
     return (
