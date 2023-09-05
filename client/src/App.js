@@ -9,7 +9,6 @@ import PrivateRoute from "./components/PrivateRoute";
 import Bets from "./pages/Bets";
 import Box from "./pages/Box";
 import Leaderboard from "./pages/Leaderboard";
-import "./css/desktop.css";
 
 function App() {
   if (typeof window !== "undefined") {

@@ -38,7 +38,7 @@ function Header() {
             <FaBaseballBall /> Games
           </Link>
         </li>
-        <li className='navschedule'>
+        <li>
           <Link to="/schedule">
             <FaCalendarAlt /> Schedule
           </Link>

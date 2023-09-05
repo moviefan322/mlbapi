@@ -852,28 +852,6 @@ header img {
   margin: 0.5rem auto;
 }
 
-.leadTable {
-  background-color: #d7b49e;
-  margin: auto;
-}
-
-.leadTable td {
-  font-weight: bold;
-  padding: 10px;
-  border: 1px solid black;
-}
-.leadTable th {
-  border: 1px solid black;
-}
-
-.row1 {
-  min-width: 120px;
-}
-
-.container {
-  width: 90%;
-}
-
 /* -------------------------------- */
 @media only screen and (min-width: 992px) {
   .container {

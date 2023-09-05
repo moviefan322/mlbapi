@@ -21,36 +21,23 @@ function Leaderboard() {
   }
 
   return (
-    <div className="container">
+    <>
       {" "}
       <h1>Leaderboard</h1>
       <p>W/T | % | +/-</p>
       <br />
-      <table className="leadTable">
-        <thead>
-          <tr>
-            <th className="row1"><span>Name</span></th>
-            <th><span>W/T</span></th>
-            <th><span>%</span></th>
-            <th><span>+/-</span></th>
-          </tr>
-        </thead>
-        <tbody>
-          {leaderboard.map((user, index) => (
-            <tr key={index}>
-              <td className="row1">
-                {index + 1}. {user.name.split(" ")[0]}{" "}
-              </td>{" "}
-              <td>
-                {user.totalWins}/{user.totalBets}
-              </td>
-              <td>{parseFloat(user.winPercentage).toFixed(3).slice(1)}</td>
-              <td>{user.totalPlusMinus}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+      <ul className="leaderboard">
+        {leaderboard.map((user, index) => (
+          <li key={user._id + Math.random}>
+            {index + 1}. {user.name} - {user.totalWins}/{user.totalBets}
+            {" | "}
+            {parseFloat(user.winPercentage).toFixed(3).slice(1)}
+            {" | "}
+            {user.totalPlusMinus}
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 
