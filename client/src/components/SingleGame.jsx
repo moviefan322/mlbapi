@@ -25,12 +25,14 @@ function SingleGame({ game, odds, user, today }) {
     let homeOdds = 0;
     let awayOdds = 0;
 
+    const avgDifference = awayAvg - homeAvg;
+
     if (awayAvg > homeAvg) {
-      awayOdds = Math.ceil(100 * (-1 * (2 - +awayAvg)));
-      homeOdds = Math.ceil(100 * (2 - +homeAvg));
+      awayOdds = Math.ceil(100 * (-1 * ((2 + awayAvg - avgDifference))));
+      homeOdds = Math.ceil(100 * ((2 + homeAvg - avgDifference)));
     } else {
-      awayOdds = Math.ceil(100 * (2 - +awayAvg));
-      homeOdds = Math.ceil(100 * (-1 * (2 - +homeAvg)));
+      awayOdds = Math.ceil(100 * ((2 - awayAvg - avgDifference)));
+      homeOdds = Math.ceil(100 * (-1 * ((2 - homeAvg - avgDifference))));
     }
 
     console.log(awayOdds, homeOdds);
