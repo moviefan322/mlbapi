@@ -46,6 +46,15 @@ const Test = () => {
         return "BB";
       case "Single":
         return "1B";
+      case "Double":
+        return "2B";
+      case "Triple":
+        return "3B";
+      case "Home Run":
+        return "HR";
+      case "Groundout":
+        return handleGroundout(play);
+
       default:
         return allPlays[play].result.event;
     }
@@ -110,18 +119,19 @@ const Test = () => {
     }`;
   };
 
-//   const handleGroundout = (play) => {
-//     const playeId = allPlays[`${play}`].matchup.batter.id;
+  const handleGroundout = (play) => {
+    const playerId = allPlays[play].matchup.batter.id;
 
-//     for (let runnerOb in allPlays[`${play}`].runners) {
-//       if (runnerOb.details.runner.id === playeId) {
-//         return runnerOut(play, runnerOb);
-//     }
-//   }
-// }
+    for (let runnerOb in allPlays[`${play}`].runners) {
+      console.log(runnerOb);
+      if (allPlays[`${play}`].runners[runnerOb].details?.runner?.id === playerId) {
+        return runnerOut(play, runnerOb);
+      }
+    }
+  };
 
-  console.log(allPlays[2]);
-
+  console.log(allPlays[3]);
+  console.log(allPlays[2].runners);
   //data.liveData.plays.allPlays
   return (
     <table>
@@ -173,8 +183,7 @@ const Test = () => {
             {playerNumber(battingOrder[2])}|{playerName(battingOrder[2])}
           </td>
           <td>
-            {runnerOut(2, 0)}
-            {/* {handleGroundout(2)} */}
+            {result(2)}
           </td>
           <td></td>
           <td></td>
@@ -188,7 +197,7 @@ const Test = () => {
           <td>
             {playerNumber(battingOrder[3])}|{playerName(battingOrder[3])}
           </td>
-          <td></td>
+          <td>{result(3)}</td>
           <td></td>
           <td></td>
           <td></td>
@@ -324,4 +333,3 @@ export default Test;
 // "B" = ball
 // .details.type.code -
 // "CH" = changeup
-
