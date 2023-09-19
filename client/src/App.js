@@ -9,7 +9,6 @@ import PrivateRoute from "./components/PrivateRoute";
 import Bets from "./pages/Bets";
 import Box from "./pages/Box";
 import Leaderboard from "./pages/Leaderboard";
-import Test from "./pages/Test";
 
 function App() {
   if (typeof window !== "undefined") {
@@ -32,7 +31,6 @@ function App() {
             <Route path="/boxscore/:gamePk" element={<Box />} />
             <Route path="/Leaderboard" element={<Leaderboard />} />
             <Route path="/*" element={<Home />} />
-            <Route path="/test" element={<Test />} />
           </Routes>
         </div>
       </Router>
