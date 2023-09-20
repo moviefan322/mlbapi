@@ -18,6 +18,8 @@ function Home() {
 
   const today = new Date().toString();
 
+  console.log(games)
+
   useEffect(() => {
     setDay(new Date());
   }, []);

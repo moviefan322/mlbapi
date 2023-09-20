@@ -62,10 +62,11 @@ const Test = () => {
   };
 
   useEffect(() => {
+    const pk = 716509
     const getBoxscore = async () => {
       let response = () => {
         return new Promise(function (resolve, reject) {
-          fetch(`https://statsapi.mlb.com/api/v1.1/game/716529/feed/live`).then(
+          fetch(`https://statsapi.mlb.com/api/v1.1/game/${pk}/feed/live`).then(
             (response) => {
               resolve(response);
             }
@@ -132,11 +133,10 @@ const Test = () => {
     }
   };
 
-  console.log(allPlays[8]);
   //data.liveData.plays.allPlays
   return (
     <>
-      <table>
+      {/* <table>
         <thead>
           <tr>
             <th>Lineup</th>
@@ -322,7 +322,7 @@ const Test = () => {
             <td></td>
           </tr>
         </tbody>
-      </table>
+      </table> */}
 
       <Scorescard allPlays={allPlays} battingOrder={battingOrder}/>
     </>
