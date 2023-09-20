@@ -62,8 +62,8 @@ const Scorescard = ({ allPlays, battingOrder }) => {
         return "1: IBB";
       case "Pop Out":
         return "0: P" + returnCode(allPlays[cell.playIndex], "Pop Out");
-      case "Grounded Into DP":
-        console.log(allPlays[cell.playIndex]);
+      // case "Grounded Into DP":
+      //   console.log(allPlays[cell.playIndex]);
       // case "Fielders Choice Out":
         //
         // return "1: FC" + handleGroundout(allPlays[cell.playIndex])
