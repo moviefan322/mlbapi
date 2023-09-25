@@ -62,30 +62,39 @@ const Scorescard = ({ allPlays, battingOrder }) => {
         return "1: IBB";
       case "Pop Out":
         return "0: P" + returnCode(allPlays[cell.playIndex], "Pop Out");
-      // case "Grounded Into DP":
-      //   console.log(allPlays[cell.playIndex]);
+      case "Grounded Into DP":
+        console.log(allPlays[cell.playIndex]);
+        return (
+          "0:DP" + handleDP(allPlays[cell.playIndex], "Grounded Into DP")
+        );
+      case "Bunt Groundout":
+        return  handleGroundout(allPlays[cell.playIndex]);
       // case "Fielders Choice Out":
-        //
-        // return "1: FC" + handleGroundout(allPlays[cell.playIndex])
+      //
+      // return "1: FC" + handleGroundout(allPlays[cell.playIndex])
       default:
         return cell.event;
     }
   };
 
-  const returnCode = (play, event) => {
-    const code = play.runners.filter((runner) => {
-      if(event === "Grounded Into DP") {
-
-      }
-     else if(runner.details.event === event && runner.credits.length > 0) {
-        return runner.credits[0].position.code;
-      } else {
-        return "404 code"
-      }
-    });
-    return code[0].credits[0].position.code
+  const handleDP = (play) => {
+    return (
+      play.runners[1].credits[0].position.code +
+      "-" +
+      play.runners[1].credits[1].position.code
+    );
   };
 
+  const returnCode = (play, event) => {
+    const code = play.runners.filter((runner) => {
+      if (runner.details.event === event && runner.credits.length > 0) {
+        return runner.credits[0].position.code;
+      } else {
+        return "404 code";
+      }
+    });
+    return code[0].credits[0].position.code;
+  };
 
   const strikeOut = (play) => {
     return play.playEvents[play.playEvents.length - 1].details.description;
@@ -95,7 +104,6 @@ const Scorescard = ({ allPlays, battingOrder }) => {
     const playRes = [];
 
     for (let credit in play.runners[`${runIndex}`].credits) {
-  
       if (
         playRes.indexOf(
           play.runners[`${runIndex}`].credits[`${credit}`].position.code
