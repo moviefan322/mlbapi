@@ -772,8 +772,9 @@ function SingleGame({ game, odds, user, today }) {
           </>
         ) : game.status.codedGameState === "D" ? (
           <div>
-            <h4> POSTPONED: {game.status.reason.toUpperCase()} </h4>
+            <h4> POSTPONED </h4>
             <h5>Rechedule Date: {formatShortDate2(game.rescheduleGameDate)}</h5>
+            {console.log(game.status.detailedState)}
           </div>
         ) : game.status.statusCode === "PR" ? (
           <div>

@@ -3,6 +3,7 @@ import Spinner from "./Spinner";
 
 const Scorescard = ({ allPlays, battingOrder }) => {
   const [cells, setCells] = useState([]);
+  const [SB, setSB] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const inningsTotal = allPlays[allPlays.length - 1].about.inning;
@@ -32,6 +33,68 @@ const Scorescard = ({ allPlays, battingOrder }) => {
     };
     generateScorecard(allPlays);
   }, []);
+
+  useEffect(() => {
+    const runnersMoving = allPlays.filter((play) => {
+      let runners = [];
+
+      if (play.runners.length > 0) {
+        runners.push(play.runners);
+      }
+
+      const filteredRunners = runners.filter((runner) => {
+        if (!runner.isOut) {
+          return runner;
+        }
+      });
+
+      return filteredRunners;
+    });
+    const mapRunners = (runnersMoving) => {
+      runnersMoving.filter((runner) => {
+        for (let run in runner.runners) {
+          if (
+            runner.runners[run].details.event === "Stolen Base 2B" &&
+            runner.about.isTopInning
+          ) {
+            setSB((SB) => [
+              ...SB,
+              {
+                batter: runner.matchup.batter.id,
+                runner: runner.runners[run].details.runner.id,
+                inning: runner.about.inning,
+                event: runner.result.event,
+                playIndex: runner.about.atBatIndex,
+                out: runner.about.hasOut,
+                lineUpindex: battingOrder.indexOf(runner.matchup.batter.id),
+                base: "2B",
+              },
+            ]);
+          }
+          if (
+            runner.runners[run].details.event === "Stolen Base 3B" &&
+            runner.about.isTopInning
+          ) {
+            setSB((SB) => [
+              ...SB,
+              {
+                batter: runner.matchup.batter.id,
+                runner: runner.runners[run].details.runner.id,
+                inning: runner.about.inning,
+                event: runner.result.event,
+                playIndex: runner.about.atBatIndex,
+                out: runner.about.hasOut,
+                lineUpindex: battingOrder.indexOf(runner.matchup.batter.id),
+                base: "3B",
+              },
+            ]);
+          }
+        }
+      });
+    };
+
+    mapRunners(runnersMoving);
+  }, [allPlays, battingOrder]);
 
   if (loading) return <Spinner />;
 
@@ -63,12 +126,9 @@ const Scorescard = ({ allPlays, battingOrder }) => {
       case "Pop Out":
         return "0: P" + returnCode(allPlays[cell.playIndex], "Pop Out");
       case "Grounded Into DP":
-        console.log(allPlays[cell.playIndex]);
-        return (
-          "0:DP" + handleDP(allPlays[cell.playIndex], "Grounded Into DP")
-        );
+        return "0:DP" + handleDP(allPlays[cell.playIndex], "Grounded Into DP");
       case "Bunt Groundout":
-        return  handleGroundout(allPlays[cell.playIndex]);
+        return handleGroundout(allPlays[cell.playIndex]);
       // case "Fielders Choice Out":
       //
       // return "1: FC" + handleGroundout(allPlays[cell.playIndex])
@@ -147,7 +207,17 @@ const Scorescard = ({ allPlays, battingOrder }) => {
       if (isPlay.length === 0) {
         row.push(<td key={inn}></td>);
       } else {
-        row.push(<td key={inn}>{showPlay(isPlay[0])}</td>);
+        let base = ""
+        for (let sb in SB) {
+          if (SB[sb].inning === inn && SB[sb].lineUpindex === batIndx) {
+            base = "|SB" + SB[sb].base
+          }
+        }
+        row.push(<td key={inn}>{showPlay(isPlay[0])}{base && base}</td>);
+
+        // console.log(isPlay[0]);
+        console.log(SB);
+        // console.log(battingOrder[batIndx]);
       }
     }
     return row;
