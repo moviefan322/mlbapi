@@ -207,17 +207,21 @@ const Scorescard = ({ allPlays, battingOrder }) => {
       if (isPlay.length === 0) {
         row.push(<td key={inn}></td>);
       } else {
-        let base = ""
+        let base = "";
         for (let sb in SB) {
-          if (SB[sb].inning === inn && SB[sb].lineUpindex === batIndx) {
-            base = "|SB" + SB[sb].base
+          if (
+            SB[sb].inning === inn &&
+            SB[sb].runner === battingOrder[batIndx]
+          ) {
+            base = "|SB" + SB[sb].base;
           }
         }
-        row.push(<td key={inn}>{showPlay(isPlay[0])}{base && base}</td>);
-
-        // console.log(isPlay[0]);
-        console.log(SB);
-        // console.log(battingOrder[batIndx]);
+        row.push(
+          <td key={inn}>
+            {showPlay(isPlay[0])}
+            {base && base}
+          </td>
+        );
       }
     }
     return row;
