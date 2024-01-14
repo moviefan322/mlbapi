@@ -1,6 +1,6 @@
 # MLBAPI [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-<img src="./client/public/readmeimg.png" alt="Screenshot of webpage" width="300" height="200">
+<img src="./client/public/readmeimg.png" alt="Screenshot of webpage" width="400" style="margin: auto">
 
 ## Table of Contents
 
