@@ -1,6 +1,6 @@
 # MLBAPI [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-![Screenshot of webpage](./client/public/readmeimg.png)
+<img src="./client/public/readmeimg.png" alt="Screenshot of webpage" width="300" height="200">
 
 ## Table of Contents
 
@@ -29,8 +29,6 @@ No installation is necessary, the site is deployed and fully functional at https
 ## Usage
 
 Simply navigate to the start page and follow the games. If you wish to place a bet, you must register for a free account.
-
-![Screenshot of webpage](./Develop/assets/images/screenshot.png)
 
 ## Testing
 
