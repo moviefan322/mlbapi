@@ -40,7 +40,7 @@ Just me
 
 ## License
 
-This is the first stage of the AllSports app, it gives live play-by-play updates for all ongoing baseball games, allows users to review stats, and even place bets on games. More sports soon to follow!
+MIT License
 
 ## Questions
 
