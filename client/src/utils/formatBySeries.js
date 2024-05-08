@@ -1,6 +1,6 @@
 const getFullSchedule = async () => {
   const response = await fetch(
-    "https://statsapi.mlb.com/api/v1/schedule/games/?sportId=1&startDate=2023-03-30&endDate=2023-10-01"
+    "https://statsapi.mlb.com/api/v1/schedule/games/?sportId=1&startDate=2024-03-30&endDate=2024-10-01"
   );
   const data = await response.json();
   const games = data.dates.flatMap((date) => date.games);
