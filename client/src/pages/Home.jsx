@@ -18,7 +18,7 @@ function Home() {
 
   const today = new Date().toString();
 
-  console.log(games)
+  console.log(games);
 
   useEffect(() => {
     setDay(new Date());
@@ -29,9 +29,9 @@ function Home() {
   useEffect(() => {
     const fetchOdds = async () => {
       const scoreboard = await axios.get("/api/odds/scoreboard");
-      const response = await axios.get("/api/odds");
-      if (response.data) {
-        setRawOdds(response.data);
+      // const response = await axios.get("/api/odds");
+      if (scoreboard.data) {
+        // setRawOdds(response.data);
         setGames(scoreboard.data);
       }
     };
@@ -74,7 +74,7 @@ function Home() {
     return <Spinner />;
   }
 
-  console.log(games)
+  console.log(games);
 
   return (
     <>

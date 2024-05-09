@@ -104,7 +104,7 @@ export const fixScheduleErrors2 = (schedule) => {
 
       if (
         series?.teams?.home?.team?.seriesNumber !==
-          series?.teams?.away?.team?.seriesNumber
+        series?.teams?.away?.team?.seriesNumber
       ) {
         if (
           series?.teams?.home?.team?.seriesNumber <
