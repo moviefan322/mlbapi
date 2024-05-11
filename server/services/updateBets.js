@@ -64,6 +64,7 @@ const updateBetsInternally = async (gameResults) => {
 };
 
 const callUpdateBets = async () => {
+  console.log("Updating bets...");
   try {
     const gameResults = await getGameResults();
     // await cancelPostponedBets();
