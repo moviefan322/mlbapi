@@ -34,7 +34,6 @@ function Login() {
   };
 
   const onSubmit = async (e) => {
-    console.log("submitted");
     e.preventDefault();
 
     const userData = {

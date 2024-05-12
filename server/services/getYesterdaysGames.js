@@ -7,7 +7,6 @@ const getXXXGames = async (query) => {
   const url = `http://statsapi.mlb.com/api/v1/schedule/games/?sportId=1&startDate=${query}&endDate=${query}`;
 
   const { data } = await axios.get(url);
-  console.log(data);
 
   if (data.totalGames === 0) {
     return "No games today";

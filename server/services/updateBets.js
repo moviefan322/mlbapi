@@ -9,12 +9,21 @@ const {
 
 const updateBetsInternally = async (gameResults) => {
   const results = gameResults;
+  console.log(results);
 
   const bets = await Bet.find({ betResult: "pending" });
+  console.log(bets);
   const updatedBets = await Promise.all(
     // find all bets where game id matches
     bets.map(async (bet) => {
-      const result = results.find((result) => result.gameId === bet.gameId);
+      const result = results.find(
+        (result) =>
+          result.winner.trim().toLowerCase() ===
+            bet.betTeam.trim().toLowerCase() ||
+          result.loser.trim().toLowerCase() === bet.betTeam.trim().toLowerCase()
+      );
+      console.log(result);
+
       if (result) {
         // if bet team matches result team
         if (result.winner === "PPD") {
@@ -74,6 +83,6 @@ const callUpdateBets = async () => {
   }
 };
 
-// callUpdateBets();
+callUpdateBets();
 
 module.exports = { callUpdateBets };

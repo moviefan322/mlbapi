@@ -47,7 +47,6 @@ const getGameResults = async () => {
     });
   });
 
-  console.log("results", gameResults);
   return gameResults;
 };
 

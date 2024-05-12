@@ -92,7 +92,6 @@ export const fixScheduleErrors2 = (schedule) => {
   delete schedule[159];
   // schedule = pruneSchedule(schedule);
   schedule = givePropertyToSeries(schedule);
-  console.log(schedule[109][30]);
 
   for (let teamId in schedule) {
     let doubleSeries = [];

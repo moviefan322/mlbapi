@@ -21,7 +21,6 @@ function SingleGame({ game, odds, user, today }) {
   const homeTeam = game.teams.home.team.name;
   const awayTeam = game.teams.away.team.name;
   const generateOdds = (awayAvg, homeAvg) => {
-    console.log(awayAvg, homeAvg);
     let homeOdds = 0;
     let awayOdds = 0;
 
@@ -34,8 +33,6 @@ function SingleGame({ game, odds, user, today }) {
       awayOdds = Math.ceil(100 * (2 + awayAvg / 2 - avgDifference));
       homeOdds = Math.ceil(100 * (-1 * (2 - homeAvg / 2 - avgDifference)));
     }
-
-    console.log(awayOdds, homeOdds);
 
     return {
       awayOdds,
@@ -774,7 +771,6 @@ function SingleGame({ game, odds, user, today }) {
           <div>
             <h4> POSTPONED </h4>
             <h5>Rechedule Date: {formatShortDate2(game.rescheduleGameDate)}</h5>
-            {console.log(game.status.detailedState)}
           </div>
         ) : game.status.statusCode === "PR" ? (
           <div>

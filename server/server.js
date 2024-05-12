@@ -30,15 +30,15 @@ const io = SocketIO(server, {
   // etc
 });
 
-io.on("connection", (socket) => {
-  console.log("connected");
-});
+// io.on("connection", (socket) => {
+//   console.log("connected");
+// });
 
-io.on("disconnect", (socket) => {
-  console.log("disconnected");
-});
+// io.on("disconnect", (socket) => {
+//   console.log("disconnected");
+// });
 
-app.set("socket.io", io);
+// app.set("socket.io", io);
 
 // Scheduled tasks
 runAllTasks();

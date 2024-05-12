@@ -115,7 +115,6 @@ const fixScheduleErrors = (schedule) => {
           // shiftSeries(
           //   schedule[teamId][seriesNumber][0].teams.away.seriesNumber
           // );
-          console.log(schedule[teamId][seriesNumber][0], seriesNumber);
         });
       }
     }

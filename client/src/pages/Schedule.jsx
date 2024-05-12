@@ -55,7 +55,6 @@ function Schedule() {
     return <Spinner />;
   }
 
-  console.log("schedule", schedule);
 
   return (
     <>

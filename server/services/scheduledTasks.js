@@ -49,6 +49,7 @@ const scheduleFetchOdds = cron.schedule("06 11 * 3-10 *", () => {
 
 // Checks for game resuls every minute during baseball hours
 const scheduleBetUpdates = cron.schedule("*/1 12-23,0-3 * 3-10 *", () => {
+  console.log("scheduledUpdate");
   callUpdateBets();
 });
 

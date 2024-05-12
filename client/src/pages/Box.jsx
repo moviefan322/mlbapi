@@ -35,7 +35,6 @@ function Box() {
     return <Spinner />;
   }
 
-  console.log(boxscore);
 
   return (
     <>

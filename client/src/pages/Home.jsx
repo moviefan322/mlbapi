@@ -18,8 +18,6 @@ function Home() {
 
   const today = new Date().toString();
 
-  console.log(games);
-
   useEffect(() => {
     setDay(new Date());
   }, []);
@@ -73,8 +71,6 @@ function Home() {
   if (gamesLoading || day === null || !games) {
     return <Spinner />;
   }
-
-  console.log(games);
 
   return (
     <>
