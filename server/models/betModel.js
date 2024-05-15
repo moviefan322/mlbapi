@@ -58,6 +58,10 @@ const betSchema = mongoose.Schema(
       default: 0,
       cast: false,
     },
+    uqId: {
+      type: String,
+      required: [true, "Please enter the unique ID"],
+    },
   },
   {
     timestamps: true,

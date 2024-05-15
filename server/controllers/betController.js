@@ -119,7 +119,7 @@ const getAllBets = asyncHandler(async (req, res) => {
 // @route   POST /api/bets
 // @access  Private
 const placeBet = asyncHandler(async (req, res) => {
-  const { betAmount, betOdds, betTeam, gameId, gamePlain } = req.body;
+  const { betAmount, betOdds, betTeam, gameId, gamePlain, uqId } = req.body;
 
   if (!betAmount || !betOdds || !betTeam || !gameId) {
     res.status(400);
@@ -150,6 +150,7 @@ const placeBet = asyncHandler(async (req, res) => {
     gameId,
     gamePlain,
     betResult: "pending", // TODO: add bet result to request body
+    uqId,
   });
 
   // adjust users account balance
