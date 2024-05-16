@@ -52,6 +52,10 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
       }, 3000);
     }
     if (betAmount > 0 && betAmount <= accountBalance) {
+      const gameDate = game.gameDate.split("T")[0];
+      const awayId = game.teams.away.team.id;
+      const homeId = game.teams.home.team.id;
+      const uqId = `${gameDate}${awayId}@${homeId}`;
       setBetError("");
       dispatch(
         placeBet({
@@ -60,6 +64,7 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
           betTeam: bettingOn,
           gameId: game.gamePk,
           gamePlain: `${teamKeys[awayTeam].abb}@${teamKeys[homeTeam].abb}`,
+          uqId: game.calendarEventId,
         })
       );
     }
@@ -104,6 +109,10 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
   if (isLoading) {
     return <Spinner />;
   }
+
+  console.log(game.gameDate.split("T")[0]);
+  console.log(game.teams.away.team.id);
+  console.log(game.teams.home.team.id);
 
   return (
     <div>

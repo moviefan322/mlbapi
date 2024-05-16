@@ -32,6 +32,7 @@ const getGameResults = async () => {
       gameId: game.gamePk,
       winner,
       loser,
+      uqId: game.calendarEventID,
     });
   });
 
