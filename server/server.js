@@ -21,25 +21,6 @@ app.use(express.urlencoded({ extended: false }));
 
 const server = http.createServer(app);
 
-const io = SocketIO(server, {
-  cors: {
-    origin: "*",
-  },
-  // namesapce config
-  // headers - cookies i.e auth (jwt token)
-  // etc
-});
-
-// io.on("connection", (socket) => {
-//   console.log("connected");
-// });
-
-// io.on("disconnect", (socket) => {
-//   console.log("disconnected");
-// });
-
-// app.set("socket.io", io);
-
 // Scheduled tasks
 runAllTasks();
 
@@ -54,7 +35,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
 
   app.get("*", (req, res) =>
-    res.sendFile(__dirname, ("../", "client", "build", "index.html"))
+    res.sendFile(path.join(__dirname, "../client/build/index.html"))
   );
 } else {
   app.get("/", (req, res) => {
