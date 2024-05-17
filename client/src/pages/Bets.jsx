@@ -35,8 +35,6 @@ function Bets() {
     return totalDiff + bet.plusMinus;
   }, 0);
 
-  console.log(bets);
-
   return (
     <>
       {bets.length === 0 ? (

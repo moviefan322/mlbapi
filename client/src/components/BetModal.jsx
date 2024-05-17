@@ -57,16 +57,18 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
       const homeId = game.teams.home.team.id;
       const uqId = `${gameDate}${awayId}@${homeId}`;
       setBetError("");
-      dispatch(
-        placeBet({
-          betAmount: Number(betAmount).toFixed(2),
-          betOdds: odds,
-          betTeam: bettingOn,
-          gameId: game.gamePk,
-          gamePlain: `${teamKeys[awayTeam].abb}@${teamKeys[homeTeam].abb}`,
-          uqId: game.calendarEventId,
-        })
-      );
+
+      const newBet = {
+        betAmount: Number(betAmount).toFixed(2),
+        betOdds: odds,
+        betTeam: bettingOn,
+        gameId: game.gamePk,
+        gamePlain: `${teamKeys[awayTeam].abb}@${teamKeys[homeTeam].abb}`,
+        uqId: game.calendarEventID,
+      };
+      dispatch(placeBet(newBet));
+      console.log(newBet);
+      console.log(game);
     }
   };
 
@@ -109,10 +111,6 @@ function BetModal({ open, onClose, teamKeys, odds, game, bettingOn }) {
   if (isLoading) {
     return <Spinner />;
   }
-
-  console.log(game.gameDate.split("T")[0]);
-  console.log(game.teams.away.team.id);
-  console.log(game.teams.home.team.id);
 
   return (
     <div>
