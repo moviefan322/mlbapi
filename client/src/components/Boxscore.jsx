@@ -59,11 +59,19 @@ function Boxscore({ boxscore }) {
       <div className="decision-container">
         <strong className="decision">
           W:
-          {boxscore.liveData.decisions.winner.fullName.match(/\b(\w+)\b$/)?.[1]}
+          {
+            boxscore.liveData.decisions.winner.fullName.match(
+              /\b(\p{L}+)\b$/u
+            )?.[1]
+          }
         </strong>
         <strong className="decision">
           L:{" "}
-          {boxscore.liveData.decisions.loser.fullName.match(/\b(\w+)\b$/)?.[1]}
+          {
+            boxscore.liveData.decisions.loser.fullName.match(
+              /\b(\p{L}+)\b$/u
+            )?.[1]
+          }
         </strong>
       </div>
     </div>
