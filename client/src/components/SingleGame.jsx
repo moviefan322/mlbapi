@@ -184,13 +184,13 @@ function SingleGame({ game, odds, user, today }) {
                     homeOdds >= 0 ? "red" : "green"
                   }`}
                   onClick={user && onOpenHome}
-                  // disabled={
-                  //   !(
-                  //     game.status.codedGameState === "S" ||
-                  //     game.status.codedGameState === "P" ||
-                  //     game.status.codedGameState === "PW"
-                  //   )
-                  // }
+                  disabled={
+                    !(
+                      game.status.codedGameState === "S" ||
+                      game.status.codedGameState === "P" ||
+                      game.status.codedGameState === "PW"
+                    )
+                  }
                 >
                   {homeOdds >= 0 ? "+" : ""}
                   {homeOdds}
