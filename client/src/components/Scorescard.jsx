@@ -21,7 +21,7 @@ const Scorescard = ({ allPlays, battingOrder }) => {
           const playIndex = play;
 
           if (lineUpindex === -1) {
-            // console.log("batter not in lineup");
+            console.log(play, "batter not in lineup");
             // WRITE CODE HERE
           } else {
             tempCells.push({ inning, event, out, lineUpindex, playIndex });

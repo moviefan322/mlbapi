@@ -62,7 +62,7 @@ const Test = () => {
   };
 
   useEffect(() => {
-    const pk = 716509
+    const pk = 746541
     const getBoxscore = async () => {
       let response = () => {
         return new Promise(function (resolve, reject) {
