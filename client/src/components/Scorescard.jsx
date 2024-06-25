@@ -7,6 +7,23 @@ const Scorescard = ({ allPlays, battingOrder }) => {
   const [loading, setLoading] = useState(true);
 
   const inningsTotal = allPlays[allPlays.length - 1].about.inning;
+  const positionMap = {
+    pit: 1,
+    cat: 2,
+    fir: 3,
+    sec: 4,
+    thi: 5,
+    sho: 6,
+    lef: 7,
+    cen: 8,
+    rig: 9,
+  };
+
+  const returnPositionNumber = (position) => {
+    /// return first 3 letters of position
+    const shorthand = position.slice(0, 3).toLowerCase();
+    return positionMap[shorthand];
+  };
 
   useEffect(() => {
     const generateScorecard = (allPlays) => {
@@ -21,7 +38,7 @@ const Scorescard = ({ allPlays, battingOrder }) => {
           const playIndex = play;
 
           if (lineUpindex === -1) {
-            console.log(play, "batter not in lineup");
+            // console.log(play, "batter not in lineup");
             // WRITE CODE HERE
           } else {
             tempCells.push({ inning, event, out, lineUpindex, playIndex });
@@ -129,12 +146,32 @@ const Scorescard = ({ allPlays, battingOrder }) => {
         return "0:DP" + handleDP(allPlays[cell.playIndex], "Grounded Into DP");
       case "Bunt Groundout":
         return handleGroundout(allPlays[cell.playIndex]);
+      case "Field Error":
+        return (
+          allPlays[cell.playIndex].runners[0].movement.end +
+          ": E" +
+          returnCode(allPlays[cell.playIndex])
+        );
+      case "Caught Stealing Home":
+        return "4:CS" + handleCS(allPlays[cell.playIndex]);
+      case "Caught Stealing 2B":
+        return "2:CS" + handleCS(allPlays[cell.playIndex]);
+      case "Caught Stealing 3B":
+        return "3:CS" + handleCS(allPlays[cell.playIndex]);
       // case "Fielders Choice Out":
-      //
       // return "1: FC" + handleGroundout(allPlays[cell.playIndex])
       default:
         return cell.event;
     }
+  };
+
+  const handleCS = (play) => {
+    const players = play.result.description.split(",")[1].trim().split(" to ");
+    const playerCodes = [];
+    for (let player in players) {
+      playerCodes.push(returnPositionNumber(players[player]));
+    }
+    return playerCodes.join("-");
   };
 
   const handleDP = (play) => {
