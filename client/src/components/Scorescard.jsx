@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Spinner from "./Spinner";
 
-const Scorescard = ({ allPlays, battingOrder }) => {
+const Scorescard = ({ allPlays, battingOrder, players }) => {
   const [cells, setCells] = useState([]);
   const [SB, setSB] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -24,6 +24,17 @@ const Scorescard = ({ allPlays, battingOrder }) => {
     const shorthand = position.slice(0, 3).toLowerCase();
     return positionMap[shorthand];
   };
+
+  const returnBatterInfo = (playerId) => {
+    const playerInfo = allPlays.filter((play) => {
+      if (play.matchup.batter.id === playerId) {
+        return play;
+      }
+    });
+    return playerInfo;
+  }
+
+  console.log(allPlays)
 
   useEffect(() => {
     const generateScorecard = (allPlays) => {
@@ -264,9 +275,11 @@ const Scorescard = ({ allPlays, battingOrder }) => {
     return row;
   };
 
+  console.log(players)
+  console.log(battingOrder)
+
   return (
     <div>
-      POOP
       <table>
         <thead>
           <tr>
@@ -286,7 +299,7 @@ const Scorescard = ({ allPlays, battingOrder }) => {
           {battingOrder.map((player, batIndex) => {
             return (
               <tr key={batIndex}>
-                <td>{battingOrder[batIndex]}</td>
+                <td>{players["ID" + battingOrder[batIndex]].lastName}</td>
                 {generateRows(batIndex)}
               </tr>
             );
